@@ -1,9 +1,10 @@
 // js/transport/core/transport_osrm.js
 import { map } from "../../map/map.js";
 import { setAccessLayer, getAccessLayer } from "./transport_state.js";
+import { fetchOsrmRoute } from "../../services/api.js";
 
 /* =====================================================
-   DASHED usuario -> punto/parada (OSRM)
+   DASHED usuario -> punto/parada (OSRM vía backend)
    FIX: permitir 2+ dashed sin borrar el anterior
 ===================================================== */
 export async function drawDashedAccessRoute(userLoc, stopLatLng, color = "#444") {
@@ -21,14 +22,17 @@ export async function drawDashedAccessRoute(userLoc, stopLatLng, color = "#444")
   }
 
   const profile = "foot";
-  const url =
-    `https://router.project-osrm.org/route/v1/${profile}/` +
-    `${userLoc[1]},${userLoc[0]};${stopLatLng[1]},${stopLatLng[0]}` +
-    `?overview=full&geometries=geojson`;
+  const coordinates =
+    `${userLoc[1]},${userLoc[0]};${stopLatLng[1]},${stopLatLng[0]}`;
 
   try {
-    const res = await fetch(url);
-    const data = await res.json();
+    const data = await fetchOsrmRoute({
+      profile,
+      coordinates,
+      overview: "full",
+      geometries: "geojson"
+    });
+
     if (!data.routes?.length) return null;
 
     const route = data.routes[0];
@@ -49,7 +53,7 @@ export async function drawDashedAccessRoute(userLoc, stopLatLng, color = "#444")
 }
 
 /* =====================================================
-   RUTA de línea siguiendo calles (OSRM) por chunks
+   RUTA de línea siguiendo calles (OSRM vía backend) por chunks
 ===================================================== */
 function chunkArray(arr, size) {
   const out = [];
@@ -58,13 +62,16 @@ function chunkArray(arr, size) {
 }
 
 async function fetchOSRMRouteChunk(latlngs, profile = "car") {
-  const coords = latlngs.map(p => `${p[1]},${p[0]}`).join(";");
-  const url =
-    `https://router.project-osrm.org/route/v1/${profile}/${coords}` +
-    `?overview=full&geometries=geojson&continue_straight=true`;
+  const coordinates = latlngs.map(p => `${p[1]},${p[0]}`).join(";");
 
-  const res = await fetch(url);
-  const data = await res.json();
+  const data = await fetchOsrmRoute({
+    profile,
+    coordinates,
+    overview: "full",
+    geometries: "geojson",
+    continueStraight: true
+  });
+
   if (!data.routes?.length) return null;
 
   const r = data.routes[0];

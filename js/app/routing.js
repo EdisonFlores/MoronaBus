@@ -1,5 +1,6 @@
 // js/app/routing.js
 import { map } from "../map/map.js";
+import { fetchOsrmRoute } from "../services/api.js";
 
 let routeLayer = null;
 
@@ -11,7 +12,6 @@ function clearRouteLayer() {
 }
 
 export async function drawRoute(userLoc, place, mode = "walking", infoEl = null) {
-
   if (!userLoc || !place?.ubicacion) return;
 
   clearRouteLayer();
@@ -29,21 +29,20 @@ export async function drawRoute(userLoc, place, mode = "walking", infoEl = null)
   };
 
   const profile = profileMap[mode] || "foot";
-
-  const url =
-    `https://router.project-osrm.org/route/v1/${profile}/` +
-    `${userLoc[1]},${userLoc[0]};${dest[1]},${dest[0]}` +
-    `?overview=full&geometries=geojson`;
+  const coordinates =
+    `${userLoc[1]},${userLoc[0]};${dest[1]},${dest[0]}`;
 
   try {
-
-    const res = await fetch(url);
-    const data = await res.json();
+    const data = await fetchOsrmRoute({
+      profile,
+      coordinates,
+      overview: "full",
+      geometries: "geojson"
+    });
 
     if (!data.routes?.length) return;
 
     const route = data.routes[0];
-
     const coords = route.geometry.coordinates.map(c => [c[1], c[0]]);
 
     routeLayer = L.polyline(coords, {
@@ -55,7 +54,6 @@ export async function drawRoute(userLoc, place, mode = "walking", infoEl = null)
     map.fitBounds(routeLayer.getBounds(), { padding: [30, 30] });
 
     if (infoEl) {
-
       const km = (route.distance / 1000).toFixed(2);
       const min = Math.round(route.duration / 60);
 
@@ -66,7 +64,6 @@ export async function drawRoute(userLoc, place, mode = "walking", infoEl = null)
         </div>
       `;
     }
-
   } catch (err) {
     console.error("Error OSRM:", err);
   }

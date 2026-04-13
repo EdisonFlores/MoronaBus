@@ -98,3 +98,41 @@ export async function fetchCollection(name, params = {}, options = {}) {
   const endpoint = resolveEndpoint(name);
   return apiGet(endpoint, params, options);
 }
+
+/* =========================
+   OSRM vía backend
+========================= */
+export async function fetchOsrmRoute({
+  profile = "car",
+  coordinates,
+  steps = false,
+  overview = "full",
+  geometries = "geojson",
+  alternatives = false,
+  continueStraight,
+  annotations,
+  timeoutMs = 15000
+} = {}) {
+  if (!coordinates || typeof coordinates !== "string") {
+    throw new Error("coordinates es requerido para consultar OSRM");
+  }
+
+  const params = {
+    profile,
+    coordinates,
+    steps: String(steps),
+    overview,
+    geometries,
+    alternatives: String(alternatives)
+  };
+
+  if (continueStraight !== undefined) {
+    params.continue_straight = String(continueStraight);
+  }
+
+  if (annotations !== undefined) {
+    params.annotations = String(annotations);
+  }
+
+  return apiGet("osrm-route", params, { timeoutMs });
+}

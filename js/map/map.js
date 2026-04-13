@@ -1,5 +1,6 @@
 // js/map/map.js
 import { formatDurationFromSeconds } from "../app/helpers.js";
+import { fetchOsrmRoute } from "../services/api.js";
 
 export const map = L.map("map").setView([-2.309948, -78.124482], 13);
 
@@ -96,6 +97,7 @@ export function renderMarkers(list, onSelect) {
       .on("click", () => onSelect(p));
   });
 }
+
 /* ================= RUTAS (1 tramo - normal) ================= */
 export async function drawRoute(userLoc, place, mode, infoBox) {
   if (!userLoc || !place?.ubicacion) return;
@@ -118,12 +120,15 @@ export async function drawRoute(userLoc, place, mode, infoBox) {
     bus: "car"
   }[mode] || "foot";
 
-  const url =
-    `https://router.project-osrm.org/route/v1/${profile}/` +
-    `${userLoc[1]},${userLoc[0]};${longitude},${latitude}?overview=full&geometries=geojson`;
+  const coordinates =
+    `${userLoc[1]},${userLoc[0]};${longitude},${latitude}`;
 
-  const res = await fetch(url);
-  const data = await res.json();
+  const data = await fetchOsrmRoute({
+    profile,
+    coordinates,
+    overview: "full",
+    geometries: "geojson"
+  });
 
   if (!data.routes?.length) return;
 
@@ -194,12 +199,16 @@ export async function drawRouteToPoint({
     bus: "car"
   }[mode] || "foot";
 
-  const url =
-    `https://router.project-osrm.org/route/v1/${profile}/` +
-    `${from[1]},${from[0]};${to[1]},${to[0]}?overview=full&geometries=geojson`;
+  const coordinates =
+    `${from[1]},${from[0]};${to[1]},${to[0]}`;
 
-  const res = await fetch(url);
-  const data = await res.json();
+  const data = await fetchOsrmRoute({
+    profile,
+    coordinates,
+    overview: "full",
+    geometries: "geojson"
+  });
+
   if (!data.routes?.length) return null;
 
   const r = data.routes[0];
@@ -259,12 +268,16 @@ function modeToProfile(mode) {
 }
 
 async function fetchOSRMRoute(from, to, profile) {
-  const url =
-    `https://router.project-osrm.org/route/v1/${profile}/` +
-    `${from[1]},${from[0]};${to[1]},${to[0]}?overview=full&geometries=geojson`;
+  const coordinates =
+    `${from[1]},${from[0]};${to[1]},${to[0]}`;
 
-  const res = await fetch(url);
-  const data = await res.json();
+  const data = await fetchOsrmRoute({
+    profile,
+    coordinates,
+    overview: "full",
+    geometries: "geojson"
+  });
+
   if (!data.routes?.length) return null;
   return data.routes[0];
 }
