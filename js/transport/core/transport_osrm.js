@@ -22,18 +22,20 @@ export async function drawDashedAccessRoute(userLoc, stopLatLng, color = "#444")
   }
 
   const profile = "foot";
-  const coordinates =
-    `${userLoc[1]},${userLoc[0]};${stopLatLng[1]},${stopLatLng[0]}`;
+  const coordinates = `${userLoc[1]},${userLoc[0]};${stopLatLng[1]},${stopLatLng[0]}`;
 
   try {
     const data = await fetchOsrmRoute({
       profile,
       coordinates,
       overview: "full",
-      geometries: "geojson"
+      geometries: "geojson",
+      timeoutMs: 8000
     });
 
-    if (!data.routes?.length) return null;
+    if (!data.routes?.length) {
+      throw new Error("OSRM no devolvió ruta de acceso");
+    }
 
     const route = data.routes[0];
 
@@ -46,9 +48,25 @@ export async function drawDashedAccessRoute(userLoc, stopLatLng, color = "#444")
 
     layer.addLayer(poly);
     return poly;
+
   } catch (e) {
-    console.error("Error OSRM acceso:", e);
-    return null;
+    console.error("Error OSRM acceso, usando fallback:", e);
+
+    const poly = L.polyline([userLoc, stopLatLng], {
+      color: "#ff9800",
+      weight: 4,
+      dashArray: "8,10",
+      opacity: 0.8,
+    });
+
+    poly.bindPopup(`
+      <b>Acceso aproximado</b><br>
+      OSRM falló o tardó demasiado.<br>
+      Se muestra una línea recta referencial.
+    `);
+
+    layer.addLayer(poly);
+    return poly;
   }
 }
 
@@ -64,21 +82,33 @@ function chunkArray(arr, size) {
 async function fetchOSRMRouteChunk(latlngs, profile = "car") {
   const coordinates = latlngs.map(p => `${p[1]},${p[0]}`).join(";");
 
-  const data = await fetchOsrmRoute({
-    profile,
-    coordinates,
-    overview: "full",
-    geometries: "geojson",
-    continueStraight: true
-  });
+  try {
+    const data = await fetchOsrmRoute({
+      profile,
+      coordinates,
+      overview: "full",
+      geometries: "geojson",
+      continueStraight: true,
+      timeoutMs: 8000
+    });
 
-  if (!data.routes?.length) return null;
+    if (!data.routes?.length) return null;
 
-  const r = data.routes[0];
-  return {
-    coords: r.geometry.coordinates.map(c => [c[1], c[0]]),
-    distance: Number(r.distance) || 0
-  };
+    const r = data.routes[0];
+    return {
+      fallback: false,
+      coords: r.geometry.coordinates.map(c => [c[1], c[0]]),
+      distance: Number(r.distance) || 0
+    };
+  } catch (err) {
+    console.warn("OSRM chunk falló, usando puntos originales:", err);
+
+    return {
+      fallback: true,
+      coords: latlngs,
+      distance: 0
+    };
+  }
 }
 
 function stripNearDuplicates(latlngs, epsMeters = 6) {
@@ -104,6 +134,7 @@ export async function drawLineRouteFollowingStreets(latlngs, color = "#000") {
 
   const chunks = chunkArray(clean, MAX_POINTS);
   const full = [];
+  let usedFallback = false;
 
   for (let i = 0; i < chunks.length; i++) {
     let points = chunks[i];
@@ -116,9 +147,14 @@ export async function drawLineRouteFollowingStreets(latlngs, color = "#000") {
     const r = await fetchOSRMRouteChunk(points, profile);
 
     if (!r?.coords?.length) {
+      usedFallback = true;
       if (full.length) points.shift();
       full.push(...points);
       continue;
+    }
+
+    if (r.fallback) {
+      usedFallback = true;
     }
 
     let straight = 0;
@@ -127,16 +163,36 @@ export async function drawLineRouteFollowingStreets(latlngs, color = "#000") {
     }
 
     const osrmDist = r.distance || 0;
-    const isWeird = straight > 0 && straight <= 500 && osrmDist > straight * 2.2;
+    const isWeird =
+      !r.fallback &&
+      straight > 0 &&
+      straight <= 500 &&
+      osrmDist > straight * 2.2;
+
     const geom = isWeird ? points : r.coords;
+
+    if (isWeird) {
+      usedFallback = true;
+    }
 
     if (full.length && geom.length) geom.shift();
     full.push(...geom);
   }
 
-  if (!full.length) {
-    return L.polyline(clean, { color, weight: 4, opacity: 0.9 }).addTo(map);
+  const line = L.polyline(full.length ? full : clean, {
+    color: usedFallback ? "#ff9800" : color,
+    weight: 4,
+    opacity: usedFallback ? 0.8 : 0.9,
+    dashArray: usedFallback ? "8,10" : null
+  }).addTo(map);
+
+  if (usedFallback) {
+    line.bindPopup(`
+      <b>Ruta aproximada</b><br>
+      OSRM falló, tardó demasiado o devolvió un trazado extraño.<br>
+      Se conectaron las paradas con líneas rectas referenciales.
+    `);
   }
 
-  return L.polyline(full, { color, weight: 4, opacity: 0.9 }).addTo(map);
+  return line;
 }

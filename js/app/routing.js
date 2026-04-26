@@ -29,18 +29,20 @@ export async function drawRoute(userLoc, place, mode = "walking", infoEl = null)
   };
 
   const profile = profileMap[mode] || "foot";
-  const coordinates =
-    `${userLoc[1]},${userLoc[0]};${dest[1]},${dest[0]}`;
+  const coordinates = `${userLoc[1]},${userLoc[0]};${dest[1]},${dest[0]}`;
 
   try {
     const data = await fetchOsrmRoute({
       profile,
       coordinates,
       overview: "full",
-      geometries: "geojson"
+      geometries: "geojson",
+      timeoutMs: 8000
     });
 
-    if (!data.routes?.length) return;
+    if (!data.routes?.length) {
+      throw new Error("OSRM no devolvió rutas");
+    }
 
     const route = data.routes[0];
     const coords = route.geometry.coordinates.map(c => [c[1], c[0]]);
@@ -64,8 +66,49 @@ export async function drawRoute(userLoc, place, mode = "walking", infoEl = null)
         </div>
       `;
     }
+
+    return {
+      fallback: false,
+      route,
+      line: routeLayer
+    };
+
   } catch (err) {
-    console.error("Error OSRM:", err);
+    console.error("Error OSRM, usando fallback con polilínea:", err);
+
+    const straightDistance = map.distance(userLoc, dest);
+    const km = (straightDistance / 1000).toFixed(2);
+
+    routeLayer = L.polyline([userLoc, dest], {
+      color: "#ff9800",
+      weight: 4,
+      opacity: 0.85,
+      dashArray: "8,10"
+    }).addTo(map);
+
+    routeLayer.bindPopup(`
+      <b>Ruta aproximada</b><br>
+      OSRM no respondió correctamente o tardó demasiado.<br>
+      Se muestra una línea recta referencial.
+    `).openPopup();
+
+    map.fitBounds(routeLayer.getBounds(), { padding: [30, 30] });
+
+    if (infoEl) {
+      infoEl.innerHTML = `
+        <div class="alert alert-warning py-2 mb-0">
+          ⚠️ OSRM no respondió correctamente.<br>
+          Se muestra una ruta aproximada con línea recta.<br>
+          Distancia referencial: <b>${km} km</b>
+        </div>
+      `;
+    }
+
+    return {
+      fallback: true,
+      distance: straightDistance,
+      line: routeLayer
+    };
   }
 }
 

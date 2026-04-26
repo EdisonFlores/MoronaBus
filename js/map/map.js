@@ -47,7 +47,30 @@ function buildPopupHTML(p) {
     🕒 ${horario}
   `;
 }
+function drawFallbackPolyline(points, {
+  color = "#ff9800",
+  weight = 4,
+  dashed = true,
+  target = routeOverlay,
+  popupText = `
+    <b>Ruta aproximada</b><br>
+    OSRM no respondió correctamente o tardó demasiado.<br>
+    Se muestra una línea recta referencial.
+  `
+} = {}) {
+  const line = L.polyline(points, {
+    color,
+    weight,
+    opacity: 0.85,
+    dashArray: dashed ? "8,10" : null
+  }).addTo(target);
 
+  if (popupText) {
+    line.bindPopup(popupText);
+  }
+
+  return line;
+}
 /* ================= LIMPIEZA ================= */
 export function clearMarkers() {
   markersLayer.clearLayers();
@@ -105,8 +128,9 @@ export async function drawRoute(userLoc, place, mode, infoBox) {
   clearRoute();
 
   const { latitude, longitude } = place.ubicacion;
+  const dest = [latitude, longitude];
 
-  markerSelected = L.marker([latitude, longitude])
+  markerSelected = L.marker(dest)
     .addTo(routeOverlay)
     .bindPopup(buildPopupHTML(place))
     .openPopup();
@@ -120,52 +144,84 @@ export async function drawRoute(userLoc, place, mode, infoBox) {
     bus: "car"
   }[mode] || "foot";
 
-  const coordinates =
-    `${userLoc[1]},${userLoc[0]};${longitude},${latitude}`;
+  const coordinates = `${userLoc[1]},${userLoc[0]};${longitude},${latitude}`;
 
-  const data = await fetchOsrmRoute({
-    profile,
-    coordinates,
-    overview: "full",
-    geometries: "geojson"
-  });
+  try {
+    const data = await fetchOsrmRoute({
+      profile,
+      coordinates,
+      overview: "full",
+      geometries: "geojson",
+      timeoutMs: 8000
+    });
 
-  if (!data.routes?.length) return;
+    if (!data.routes?.length) {
+      throw new Error("OSRM no devolvió rutas");
+    }
 
-  const route = data.routes[0];
+    const route = data.routes[0];
 
-  routeLine = L.polyline(
-    route.geometry.coordinates.map(c => [c[1], c[0]]),
-    { color: "#1e88e5", weight: 5 }
-  ).addTo(routeOverlay);
+    routeLine = L.polyline(
+      route.geometry.coordinates.map(c => [c[1], c[0]]),
+      { color: "#1e88e5", weight: 5 }
+    ).addTo(routeOverlay);
 
-  map.fitBounds(routeLine.getBounds());
+    map.fitBounds(routeLine.getBounds());
 
-  const distanciaKm = route.distance / 1000;
+    const distanciaKm = route.distance / 1000;
 
-  const velocidadPorModo = {
-    walking: 5,
-    cycling: 15,
-    bicycle: 15,
-    motorcycle: 35,
-    driving: 30
-  };
+    const velocidadPorModo = {
+      walking: 5,
+      cycling: 15,
+      bicycle: 15,
+      motorcycle: 35,
+      driving: 30
+    };
 
-  const usaTiempoOsrm = mode === "bus" || !velocidadPorModo[mode];
+    const usaTiempoOsrm = mode === "bus" || !velocidadPorModo[mode];
 
-  const tiempoSeg = usaTiempoOsrm
-    ? Math.round(route.duration)
-    : Math.round((distanciaKm / velocidadPorModo[mode]) * 3600);
+    const tiempoSeg = usaTiempoOsrm
+      ? Math.round(route.duration)
+      : Math.round((distanciaKm / velocidadPorModo[mode]) * 3600);
 
-  const tiempoTexto = formatDurationFromSeconds(tiempoSeg);
-  const distanciaKmTexto = distanciaKm.toFixed(2);
+    if (infoBox) {
+      infoBox.innerHTML = `
+        <b>Ruta (${mode})</b><br>
+        ⏱ ${formatDurationFromSeconds(tiempoSeg)}<br>
+        📏 ${distanciaKm.toFixed(2)} km
+      `;
+    }
 
-  if (infoBox) {
-    infoBox.innerHTML = `
-      <b>Ruta (${mode})</b><br>
-      ⏱ ${tiempoTexto}<br>
-      📏 ${distanciaKmTexto} km
-    `;
+    return {
+      fallback: false,
+      route,
+      line: routeLine
+    };
+
+  } catch (err) {
+    console.error("OSRM falló en drawRoute, usando fallback:", err);
+
+    routeLine = drawFallbackPolyline([userLoc, dest], {
+      target: routeOverlay
+    });
+
+    map.fitBounds(routeLine.getBounds());
+
+    const distanciaKm = map.distance(userLoc, dest) / 1000;
+
+    if (infoBox) {
+      infoBox.innerHTML = `
+        <b>Ruta (${mode})</b><br>
+        ⚠️ Ruta aproximada por fallo de OSRM<br>
+        📏 ${distanciaKm.toFixed(2)} km referenciales
+      `;
+    }
+
+    return {
+      fallback: true,
+      distance: distanciaKm * 1000,
+      line: routeLine
+    };
   }
 }
 
@@ -199,65 +255,96 @@ export async function drawRouteToPoint({
     bus: "car"
   }[mode] || "foot";
 
-  const coordinates =
-    `${from[1]},${from[0]};${to[1]},${to[0]}`;
-
-  const data = await fetchOsrmRoute({
-    profile,
-    coordinates,
-    overview: "full",
-    geometries: "geojson"
-  });
-
-  if (!data.routes?.length) return null;
-
-  const r = data.routes[0];
-
-  const line = L.polyline(
-    r.geometry.coordinates.map(c => [c[1], c[0]]),
-    { color: "#1e88e5", weight: 5 }
-  );
+  const coordinates = `${from[1]},${from[0]};${to[1]},${to[0]}`;
 
   const target =
     layerGroup
       ? layerGroup
       : (layerTarget === "transport" ? transportOverlay : routeOverlay);
 
-  line.addTo(target);
+  try {
+    const data = await fetchOsrmRoute({
+      profile,
+      coordinates,
+      overview: "full",
+      geometries: "geojson",
+      timeoutMs: 8000
+    });
 
-  if (!layerGroup && layerTarget !== "transport") {
-    routeLine = line;
+    if (!data.routes?.length) {
+      throw new Error("OSRM no devolvió rutas");
+    }
+
+    const r = data.routes[0];
+
+    const line = L.polyline(
+      r.geometry.coordinates.map(c => [c[1], c[0]]),
+      { color: "#1e88e5", weight: 5 }
+    ).addTo(target);
+
+    if (!layerGroup && layerTarget !== "transport") {
+      routeLine = line;
+    }
+
+    map.fitBounds(line.getBounds());
+
+    const distanciaKm = (Number(r.distance) || 0) / 1000;
+
+    const velocidadPorModo = {
+      walking: 5,
+      cycling: 15,
+      bicycle: 15,
+      motorcycle: 35,
+      driving: 30
+    };
+
+    const usaTiempoOsrm = mode === "bus" || !velocidadPorModo[mode];
+
+    const tiempoSeg = usaTiempoOsrm
+      ? Math.round(Number(r.duration) || 0)
+      : Math.round((distanciaKm / velocidadPorModo[mode]) * 3600);
+
+    if (infoBox) {
+      infoBox.innerHTML = `
+        <b>${title} (${mode})</b><br>
+        ⏱ ${formatDurationFromSeconds(tiempoSeg)}<br>
+        📏 ${distanciaKm.toFixed(2)} km
+      `;
+    }
+
+    return r;
+
+  } catch (err) {
+    console.error("OSRM falló en drawRouteToPoint, usando fallback:", err);
+
+    const line = drawFallbackPolyline([from, to], {
+      target
+    });
+
+    if (!layerGroup && layerTarget !== "transport") {
+      routeLine = line;
+    }
+
+    map.fitBounds(line.getBounds());
+
+    const distanciaKm = map.distance(from, to) / 1000;
+
+    if (infoBox) {
+      infoBox.innerHTML = `
+        <b>${title} (${mode})</b><br>
+        ⚠️ Ruta aproximada por fallo de OSRM<br>
+        📏 ${distanciaKm.toFixed(2)} km referenciales
+      `;
+    }
+
+    return {
+      fallback: true,
+      distance: distanciaKm * 1000,
+      duration: null,
+      line
+    };
   }
-
-  map.fitBounds(line.getBounds());
-
-  const distanciaKm = (Number(r.distance) || 0) / 1000;
-
-  const velocidadPorModo = {
-    walking: 5,
-    cycling: 15,
-    bicycle: 15,
-    motorcycle: 35,
-    driving: 30
-  };
-
-  const usaTiempoOsrm = mode === "bus" || !velocidadPorModo[mode];
-
-  const tiempoSeg = usaTiempoOsrm
-    ? Math.round(Number(r.duration) || 0)
-    : Math.round((distanciaKm / velocidadPorModo[mode]) * 3600);
-
-  if (infoBox) {
-    infoBox.innerHTML = `
-      <b>${title} (${mode})</b><br>
-      ⏱ ${formatDurationFromSeconds(tiempoSeg)}<br>
-      📏 ${distanciaKm.toFixed(2)} km
-    `;
-  }
-
-  return r;
 }
-
 /* ================= utilidades OSRM ================= */
 function modeToProfile(mode) {
   return ({
@@ -268,20 +355,25 @@ function modeToProfile(mode) {
 }
 
 async function fetchOSRMRoute(from, to, profile) {
-  const coordinates =
-    `${from[1]},${from[0]};${to[1]},${to[0]}`;
+  const coordinates = `${from[1]},${from[0]};${to[1]},${to[0]}`;
 
-  const data = await fetchOsrmRoute({
-    profile,
-    coordinates,
-    overview: "full",
-    geometries: "geojson"
-  });
+  try {
+    const data = await fetchOsrmRoute({
+      profile,
+      coordinates,
+      overview: "full",
+      geometries: "geojson",
+      timeoutMs: 8000
+    });
 
-  if (!data.routes?.length) return null;
-  return data.routes[0];
+    if (!data.routes?.length) return null;
+    return data.routes[0];
+
+  } catch (err) {
+    console.warn("OSRM falló en fetchOSRMRoute:", err);
+    return null;
+  }
 }
-
 export async function drawRouteBetweenPoints({
   from,
   to,
@@ -294,29 +386,40 @@ export async function drawRouteBetweenPoints({
 }) {
   if (!from || !to) return null;
 
-  const r = await fetchOSRMRoute(from, to, modeToProfile(mode));
-  if (!r) return null;
-
-  const coords = r.geometry.coordinates.map(c => [c[1], c[0]]);
-  const line = L.polyline(coords, {
-    color,
-    weight,
-    dashArray: dashed ? "8 10" : null
-  });
-
   const target =
     layerGroup
       ? layerGroup
       : (layerTarget === "transport" ? transportOverlay : routeOverlay);
 
-  line.addTo(target);
+  const r = await fetchOSRMRoute(from, to, modeToProfile(mode));
+
+  let line;
+
+  if (r) {
+    const coords = r.geometry.coordinates.map(c => [c[1], c[0]]);
+    line = L.polyline(coords, {
+      color,
+      weight,
+      dashArray: dashed ? "8 10" : null
+    }).addTo(target);
+  } else {
+    line = drawFallbackPolyline([from, to], {
+      target,
+      color: "#ff9800",
+      weight,
+      dashed: true
+    });
+  }
 
   if (!layerGroup && layerTarget === "transport") transportLines.push(line);
   if (!layerGroup && layerTarget !== "transport") routeLines.push(line);
 
-  return { route: r, line };
+  return {
+    fallback: !r,
+    route: r,
+    line
+  };
 }
-
 export async function drawTwoLegOSRM({
   userLoc,
   terminalLoc,
@@ -343,38 +446,78 @@ export async function drawTwoLegOSRM({
     }
   }
 
-  const r1 = await fetchOSRMRoute(userLoc, terminalLoc, modeToProfile(mode));
-  const r2 = await fetchOSRMRoute(terminalLoc, targetLoc, modeToProfile(mode));
-  if (!r1 || !r2) return null;
-
-  const coords1 = r1.geometry.coordinates.map(c => [c[1], c[0]]);
-  const coords2 = r2.geometry.coordinates.map(c => [c[1], c[0]]);
-
-  const line1 = L.polyline(coords1, { color: color1, weight: 5, dashArray: "8 10" });
-  const line2 = L.polyline(coords2, { color: color2, weight: 5 });
-
   const target =
     layerGroup
       ? layerGroup
       : (layerTarget === "transport" ? transportOverlay : routeOverlay);
 
-  line1.addTo(target);
-  line2.addTo(target);
+  const r1 = await fetchOSRMRoute(userLoc, terminalLoc, modeToProfile(mode));
+  const r2 = await fetchOSRMRoute(terminalLoc, targetLoc, modeToProfile(mode));
+
+  let line1;
+  let line2;
+
+  if (r1) {
+    line1 = L.polyline(
+      r1.geometry.coordinates.map(c => [c[1], c[0]]),
+      { color: color1, weight: 5, dashArray: "8 10" }
+    ).addTo(target);
+  } else {
+    line1 = drawFallbackPolyline([userLoc, terminalLoc], {
+      target,
+      color: "#ff9800",
+      dashed: true,
+      popupText: `
+        <b>Tramo aproximado</b><br>
+        OSRM falló en el tramo hacia el terminal.
+      `
+    });
+  }
+
+  if (r2) {
+    line2 = L.polyline(
+      r2.geometry.coordinates.map(c => [c[1], c[0]]),
+      { color: color2, weight: 5 }
+    ).addTo(target);
+  } else {
+    line2 = drawFallbackPolyline([terminalLoc, targetLoc], {
+      target,
+      color: "#ff9800",
+      dashed: true,
+      popupText: `
+        <b>Tramo aproximado</b><br>
+        OSRM falló en el tramo desde el terminal hacia el destino.
+      `
+    });
+  }
 
   if (!layerGroup && layerTarget === "transport") transportLines = [line1, line2];
   if (!layerGroup && layerTarget !== "transport") routeLines = [line1, line2];
 
-  const totalDist = (Number(r1.distance) || 0) + (Number(r2.distance) || 0);
-  const totalDur = (Number(r1.duration) || 0) + (Number(r2.duration) || 0);
+  const dist1 = r1 ? Number(r1.distance) || 0 : map.distance(userLoc, terminalLoc);
+  const dist2 = r2 ? Number(r2.distance) || 0 : map.distance(terminalLoc, targetLoc);
+
+  const dur1 = r1 ? Number(r1.duration) || 0 : 0;
+  const dur2 = r2 ? Number(r2.duration) || 0 : 0;
+
+  const usedFallback = !r1 || !r2;
 
   if (infoBox) {
     infoBox.innerHTML = `
       <b>${title}</b><br>
-      ⏱ ${formatDurationFromSeconds(Math.round(totalDur))}<br>
-      📏 ${(totalDist / 1000).toFixed(2)} km
+      ${usedFallback ? "⚠️ Ruta parcialmente aproximada por fallo de OSRM<br>" : ""}
+      ${!usedFallback ? `⏱ ${formatDurationFromSeconds(Math.round(dur1 + dur2))}<br>` : ""}
+      📏 ${((dist1 + dist2) / 1000).toFixed(2)} km ${usedFallback ? "referenciales" : ""}
     `;
   }
 
   map.fitBounds(L.latLngBounds([userLoc, terminalLoc, targetLoc]).pad(0.2));
-  return { r1, r2, line1, line2 };
+
+  return {
+    fallback: usedFallback,
+    r1,
+    r2,
+    line1,
+    line2
+  };
 }

@@ -111,7 +111,7 @@ export async function fetchOsrmRoute({
   alternatives = false,
   continueStraight,
   annotations,
-  timeoutMs = 15000
+  timeoutMs = 8000
 } = {}) {
   if (!coordinates || typeof coordinates !== "string") {
     throw new Error("coordinates es requerido para consultar OSRM");
