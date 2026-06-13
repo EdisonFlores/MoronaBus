@@ -1,0 +1,95 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="pinGrad" x1="236" y1="119" x2="790" y2="772" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1EB6FF"/>
+      <stop offset="0.52" stop-color="#1688E8"/>
+      <stop offset="1" stop-color="#0B3B75"/>
+    </linearGradient>
+    <linearGradient id="greenGrad" x1="571" y1="276" x2="770" y2="662" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8BCF22"/>
+      <stop offset="1" stop-color="#14843B"/>
+    </linearGradient>
+    <linearGradient id="sunGrad" x1="397" y1="181" x2="477" y2="267" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFB000"/>
+      <stop offset="1" stop-color="#FF6A00"/>
+    </linearGradient>
+    <filter id="shadow" x="128" y="88" width="768" height="784" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#06213F" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <!-- Background glow -->
+  <circle cx="512" cy="430" r="350" fill="#F7C84B" opacity="0.15"/>
+
+  <!-- Main pin -->
+  <g filter="url(#shadow)">
+    <path d="M512 106C333 106 188 251 188 430c0 246 324 470 324 470s324-224 324-470C836 251 691 106 512 106Z" fill="url(#pinGrad)"/>
+    <path d="M512 126C344 126 208 262 208 430c0 211 245 407 304 451 59-44 304-240 304-451 0-168-136-304-304-304Z" stroke="white" stroke-width="18" opacity="0.9"/>
+  </g>
+
+  <!-- Sky circle area -->
+  <clipPath id="pinClip">
+    <path d="M512 126C344 126 208 262 208 430c0 211 245 407 304 451 59-44 304-240 304-451 0-168-136-304-304-304Z"/>
+  </clipPath>
+  <g clip-path="url(#pinClip)">
+    <rect x="190" y="122" width="648" height="315" fill="#35B8FF"/>
+    <circle cx="430" cy="245" r="45" fill="url(#sunGrad)" stroke="white" stroke-width="10"/>
+    <path d="M226 337c45-12 80-12 121 0 28-50 69-91 114-122 42 40 70 80 94 122 48-41 82-65 126-76 46 40 86 76 129 94v90H226V337Z" fill="white"/>
+    <path d="M234 386c45-29 86-58 137-100 31-25 58-52 92-80 52 61 80 108 112 168 40-39 74-74 109-98 51 41 91 80 133 104v150H234V386Z" fill="#0A6D36"/>
+    <path d="M359 337c39-46 72-85 104-131 42 47 67 89 94 151-72-41-135-42-198-20Z" fill="#7ED321"/>
+    <path d="M564 372c42-42 77-72 119-96 46 37 83 71 124 95-93-19-168-17-243 1Z" fill="#1F9B47"/>
+    <path d="M188 417C325 463 468 470 625 415c77-27 143-26 211 0v99H188v-97Z" fill="white"/>
+    <path d="M188 463c134 34 258 38 392-2 96-29 170-29 256 5v208H188V463Z" fill="url(#greenGrad)"/>
+  </g>
+
+  <!-- Compass -->
+  <g transform="translate(655 185)">
+    <circle cx="72" cy="72" r="54" stroke="white" stroke-width="8" fill="none" opacity="0.95"/>
+    <path d="M96 38L82 84 45 106l22-38 29-30Z" fill="#FF8F00" stroke="white" stroke-width="5" stroke-linejoin="round"/>
+    <path d="M72 2v23M72 119v23M2 72h23M119 72h23" stroke="white" stroke-width="8" stroke-linecap="round"/>
+  </g>
+
+  <!-- M road -->
+  <path d="M282 725L354 342c8-42 63-54 88-19l70 98 70-98c25-35 80-23 88 19l72 383H616l-38-229-66 92-66-92-38 229H282Z" fill="#102C4C" stroke="white" stroke-width="18" stroke-linejoin="round"/>
+  <path d="M370 392l-37 250M448 396l42 71M574 467l42-71M654 392l37 250" stroke="white" stroke-width="12" stroke-linecap="round" stroke-dasharray="28 28"/>
+
+  <!-- Phone map -->
+  <g transform="translate(167 426) rotate(-8)">
+    <rect x="0" y="0" width="166" height="245" rx="28" fill="#0E2B4A" stroke="white" stroke-width="8"/>
+    <rect x="22" y="34" width="122" height="168" rx="12" fill="#F2F7E8"/>
+    <path d="M28 74c39 17 67 11 105-8" stroke="#BBD7A9" stroke-width="14"/>
+    <path d="M32 137c39-10 67-5 106 9" stroke="#D7C8A0" stroke-width="14"/>
+    <path d="M44 181c34-23 66-27 90-22" stroke="#BBD7A9" stroke-width="12"/>
+    <path d="M53 65c34 23 35 54 0 88" stroke="#1688E8" stroke-width="9" fill="none" stroke-linecap="round"/>
+    <path d="M108 62c-20 0-35 16-35 35 0 27 35 62 35 62s35-35 35-62c0-19-16-35-35-35Z" fill="#43A047" stroke="white" stroke-width="6"/>
+    <circle cx="108" cy="96" r="11" fill="white"/>
+    <path d="M64 134c-17 0-31 14-31 31 0 24 31 55 31 55s31-31 31-55c0-17-14-31-31-31Z" fill="#FF7A00" stroke="white" stroke-width="6"/>
+    <circle cx="64" cy="164" r="9" fill="white"/>
+    <rect x="62" y="215" width="42" height="6" rx="3" fill="#C7D6E5"/>
+  </g>
+
+  <!-- Bus -->
+  <g transform="translate(407 566)">
+    <rect x="0" y="0" width="210" height="164" rx="34" fill="white" stroke="#0E2B4A" stroke-width="12"/>
+    <rect x="31" y="26" width="148" height="72" rx="12" fill="#0A64B7"/>
+    <path d="M42 87L93 32H179L119 98H42V87Z" fill="#1EB6FF" opacity="0.75"/>
+    <rect x="78" y="10" width="54" height="13" rx="4" fill="#FF8F00"/>
+    <rect x="25" y="115" width="44" height="14" rx="7" fill="#0E2B4A"/>
+    <rect x="141" y="115" width="44" height="14" rx="7" fill="#0E2B4A"/>
+    <rect x="18" y="142" width="45" height="22" rx="8" fill="#0E2B4A"/>
+    <rect x="147" y="142" width="45" height="22" rx="8" fill="#0E2B4A"/>
+    <rect x="72" y="124" width="66" height="15" rx="7" fill="#7ED321"/>
+  </g>
+
+  <!-- Wireless signal -->
+  <g transform="translate(228 378)">
+    <path d="M0 54c30-30 79-30 109 0" stroke="#0E2B4A" stroke-width="12" stroke-linecap="round"/>
+    <path d="M23 78c18-18 46-18 64 0" stroke="#0E2B4A" stroke-width="12" stroke-linecap="round"/>
+    <circle cx="55" cy="101" r="9" fill="#0E2B4A"/>
+  </g>
+
+  <!-- Text -->
+  <g>
+    <text x="512" y="970" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="112" font-weight="900" font-style="italic" fill="#0B55C8" stroke="white" stroke-width="8" paint-order="stroke">Tourist<tspan fill="#FF7A00">MS</tspan></text>
+  </g>
+</svg>
