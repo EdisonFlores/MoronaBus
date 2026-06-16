@@ -1,6 +1,6 @@
 // api/eventos.js
 import { db } from "./_lib/firebaseAdmin.js";
-import { ok, fail } from "./_lib/response.js";
+import { ok, fail, cacheUntilEcuadorMidnight } from "./_lib/response.js";
 import { mapSnapshot } from "./_lib/normalize.js";
 
 export default async function handler(req, res) {
@@ -12,6 +12,7 @@ export default async function handler(req, res) {
     const snapshot = await db.collection("eventosms").get();
     const data = mapSnapshot(snapshot);
 
+    cacheUntilEcuadorMidnight(res);
     return ok(res, data, {
       collection: "eventosms",
       total: data.length

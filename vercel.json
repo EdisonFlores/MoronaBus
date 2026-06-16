@@ -10,5 +10,12 @@
       "src": "/(.*)",
       "dest": "/$1"
     }
+  ],
+
+  "crons": [
+    {
+      "path": "/api/warm-cache",
+      "schedule": "1 5 * * *"
+    }
   ]
 }
