@@ -4,41 +4,60 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>MoronaBus | Guía turística, servicios y transporte en Macas y Morona Santiago</title>
-  <meta name="description" content="MoronaBus es una plataforma turística y de servicios para consultar lugares, rutas, transporte urbano y rural, eventos y sitios de interés en Macas y Morona Santiago, Ecuador.">
-  <meta name="keywords" content="Macas, Morona Santiago, turismo, transporte, rutas, lugares turísticos, restaurantes, hoteles, eventos, guía turística Ecuador">
+  <title>MoronaBus | Rutas de bus y guía turística de Morona Santiago</title>
+  <meta name="description" content="Consulta rutas de bus urbano y rural, paradas, terminales, eventos, restaurantes, hoteles y servicios turísticos en Macas y Morona Santiago con MoronaBus.">
+  <meta name="keywords" content="MoronaBus, buses Macas, rutas de bus Macas, transporte Morona Santiago, turismo Macas, paradas de bus, terminal terrestre Macas, restaurantes Macas, hoteles Macas, eventos Morona Santiago">
   <meta name="author" content="Edison Flores">
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
   <meta name="theme-color" content="#0d6efd">
+  <meta name="application-name" content="MoronaBus">
+  <meta name="apple-mobile-web-app-title" content="MoronaBus">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
   <link rel="canonical" href="https://moronabus.vercel.app/">
+  <link rel="alternate" hreflang="es-EC" href="https://moronabus.vercel.app/">
+  <link rel="alternate" hreflang="x-default" href="https://moronabus.vercel.app/">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="MoronaBus | Guía turística, servicios y transporte en Macas y Morona Santiago">
-  <meta property="og:description" content="Consulta lugares, rutas, transporte urbano y rural, eventos y servicios en Macas y Morona Santiago desde un mapa interactivo.">
+  <meta property="og:title" content="MoronaBus | Rutas de bus y guía turística de Morona Santiago">
+  <meta property="og:description" content="Encuentra rutas de bus, paradas, terminales, eventos, lugares turísticos, restaurantes, hoteles y servicios en Macas y Morona Santiago.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://moronabus.vercel.app/">
-  <meta property="og:image" content="https://moronabus.vercel.app/assets/icons/favicon.svg">
+  <meta property="og:image" content="https://moronabus.vercel.app/assets/icons/icon-512.png">
+  <meta property="og:image:secure_url" content="https://moronabus.vercel.app/assets/icons/icon-512.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="MoronaBus - rutas, transporte y turismo en Morona Santiago">
   <meta property="og:locale" content="es_EC">
   <meta property="og:site_name" content="MoronaBus">
 
   <!-- Twitter -->
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="MoronaBus | Guía turística, servicios y transporte en Macas y Morona Santiago">
-  <meta name="twitter:description" content="Explora lugares, eventos, transporte y servicios en Macas y Morona Santiago.">
-  <meta name="twitter:image" content="https://moronabus.vercel.app/assets/icons/favicon.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="MoronaBus | Rutas de bus y guía turística de Morona Santiago">
+  <meta name="twitter:description" content="Consulta rutas de bus urbano y rural, paradas, terminales, eventos y servicios turísticos en Macas y Morona Santiago.">
+  <meta name="twitter:image" content="https://moronabus.vercel.app/assets/icons/icon-512.png">
+  <meta name="twitter:image:alt" content="MoronaBus - rutas, transporte y turismo en Morona Santiago">
 
   <meta name="google-site-verification" content="Wa1ojqFd_THQMGXOenFd7YEGhJPR891gBgVrqAUCUh4" />
-<link rel="manifest" href="/manifest.json">
-<meta name="theme-color" content="#0d6efd">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" href="/assets/icons/icon-192.png">
   <!-- Datos estructurados -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "MoronaBus",
+    "alternateName": "Morona Bus",
     "url": "https://moronabus.vercel.app/",
-    "inLanguage": "es",
-    "description": "Plataforma turística y de servicios para consultar lugares, rutas, transporte y eventos en Macas y Morona Santiago, Ecuador."
+    "inLanguage": "es-EC",
+    "description": "Guía web para consultar rutas de bus, transporte urbano y rural, paradas, terminales, lugares turísticos, eventos y servicios en Macas y Morona Santiago, Ecuador.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "MoronaBus",
+      "url": "https://moronabus.vercel.app/",
+      "logo": "https://moronabus.vercel.app/assets/icons/icon-512.png"
+    }
   }
   </script>
 
@@ -48,13 +67,28 @@
     "@type": "WebApplication",
     "name": "MoronaBus",
     "applicationCategory": "TravelApplication",
-    "operatingSystem": "Web",
+    "operatingSystem": "Web, Android, iOS",
     "url": "https://moronabus.vercel.app/",
-    "inLanguage": "es",
-    "description": "Mapa interactivo para consultar lugares turísticos, servicios, transporte y eventos en Macas y Morona Santiago, Ecuador."
+    "inLanguage": "es-EC",
+    "description": "Mapa interactivo para consultar rutas de bus urbano y rural, paradas, terminales, lugares turísticos, servicios y eventos en Macas y Morona Santiago, Ecuador.",
+    "areaServed": {
+      "@type": "AdministrativeArea",
+      "name": "Morona Santiago, Ecuador"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": [
+      "Rutas de bus urbano y rural",
+      "Paradas y terminales de transporte",
+      "Lugares turísticos y servicios cercanos",
+      "Eventos en Macas y Morona Santiago",
+      "Mapa interactivo con rutas"
+    ]
   }
   </script>
-
   <!-- Google Tag Manager -->
   <script>
     (function(w,d,s,l,i){

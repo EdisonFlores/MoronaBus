@@ -1,14 +1,15 @@
 {
   "name": "MoronaBus",
   "short_name": "MoronaBus",
-  "description": "Guía turística, servicios y transporte en Macas y Morona Santiago.",
+  "description": "Rutas de bus, paradas, terminales, turismo, eventos y servicios en Macas y Morona Santiago.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#0d6efd",
   "orientation": "portrait-primary",
-  "lang": "es",
+  "lang": "es-EC",
+  "categories": ["travel", "navigation", "maps", "transportation"],
   "icons": [
     {
       "src": "/assets/icons/icon-192.png",
