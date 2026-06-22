@@ -1,2 +1,2 @@
-# TouristMS
-Backend y Frontend del TouristMS
+# MoronaBus
+Backend y Frontend del MoronaBus

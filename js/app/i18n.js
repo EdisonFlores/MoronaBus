@@ -4,12 +4,12 @@ const LS_LANG = "tm_lang";
 
 const I18N = {
   es: {
-    "app.name": "TouristMacas",
+    "app.name": "MoronaBus",
     "weather.title": "Pronóstico del tiempo",
     "btn.close": "Cerrar"
   },
   en: {
-    "app.name": "TouristMacas",
+    "app.name": "MoronaBus",
     "weather.title": "Weather forecast",
     "btn.close": "Close"
   }

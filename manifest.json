@@ -1,6 +1,6 @@
 {
-  "name": "TouristMS",
-  "short_name": "TouristMS",
+  "name": "MoronaBus",
+  "short_name": "MoronaBus",
   "description": "Guía turística, servicios y transporte en Macas y Morona Santiago.",
   "start_url": "/",
   "scope": "/",
