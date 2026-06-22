@@ -138,6 +138,57 @@
 
   <!-- Estilos -->
   <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .offline-required {
+      position: fixed;
+      inset: 0;
+      z-index: 3000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background: rgba(11, 18, 32, 0.88);
+      color: #fff;
+      text-align: center;
+    }
+
+    .offline-required.is-visible {
+      display: flex;
+    }
+
+    .offline-required__panel {
+      width: min(420px, 100%);
+      padding: 24px;
+      border-radius: 12px;
+      background: #ffffff;
+      color: #1f2937;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.28);
+    }
+
+    .offline-required__icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      margin-bottom: 12px;
+      border-radius: 999px;
+      background: #fee2e2;
+      color: #b91c1c;
+      font-size: 24px;
+    }
+
+    .offline-required__title {
+      margin: 0 0 8px;
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    .offline-required__text {
+      margin: 0 0 16px;
+      color: #4b5563;
+    }
+  </style>
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -149,6 +200,16 @@
       style="display:none;visibility:hidden"
     ></iframe>
   </noscript>
+  <div id="offlineRequired" class="offline-required" role="alert" aria-live="assertive" aria-hidden="true">
+    <div class="offline-required__panel">
+      <div class="offline-required__icon" aria-hidden="true">!</div>
+      <h1 class="offline-required__title">Se requiere internet</h1>
+      <p class="offline-required__text">
+        MoronaBus necesita conexión para cargar el mapa, rutas, paradas, clima y datos actualizados.
+      </p>
+      <button id="offlineRetry" type="button" class="btn btn-primary">Reintentar</button>
+    </div>
+  </div>
 
   <header class="main-header">
     <nav class="navbar navbar-expand-lg navbar-dark container">
@@ -491,6 +552,25 @@
   <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
 
   <script type="module" src="js/script.js"></script>
+  <script>
+    (function () {
+      const banner = document.getElementById("offlineRequired");
+      const retry = document.getElementById("offlineRetry");
+      if (!banner) return;
+
+      function syncConnectionState() {
+        const offline = !navigator.onLine;
+        banner.classList.toggle("is-visible", offline);
+        banner.setAttribute("aria-hidden", offline ? "false" : "true");
+        document.body.classList.toggle("is-offline", offline);
+      }
+
+      window.addEventListener("online", syncConnectionState);
+      window.addEventListener("offline", syncConnectionState);
+      retry?.addEventListener("click", () => window.location.reload());
+      syncConnectionState();
+    })();
+  </script>
   <script>
   if ("serviceWorker" in navigator) {
     window.addEventListener("load", () => {

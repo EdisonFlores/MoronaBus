@@ -1,4 +1,4 @@
-const CACHE_NAME = "touristms-v1";
+const CACHE_NAME = "moronabus-shell-v2";
 
 const STATIC_ASSETS = [
   "/",
@@ -36,20 +36,25 @@ self.addEventListener("fetch", event => {
 
   if (request.url.includes("/api/")) {
     event.respondWith(
-      fetch(request)
-        .then(response => {
-          const copy = response.clone();
-          caches.open(CACHE_NAME).then(cache => cache.put(request, copy));
-          return response;
-        })
-        .catch(() => caches.match(request))
+      fetch(request).catch(() => new Response(
+        JSON.stringify({ ok: false, error: "Se requiere internet para consultar datos actualizados" }),
+        {
+          status: 503,
+          headers: { "Content-Type": "application/json" }
+        }
+      ))
+    );
+    return;
+  }
+
+  if (request.mode === "navigate") {
+    event.respondWith(
+      fetch(request).catch(() => caches.match("/index.html"))
     );
     return;
   }
 
   event.respondWith(
-    caches.match(request).then(cached => {
-      return cached || fetch(request);
-    })
+    caches.match(request).then(cached => cached || fetch(request))
   );
 });
