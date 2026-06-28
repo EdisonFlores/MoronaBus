@@ -589,9 +589,22 @@ main.container-fluid > .row > section {
   white-space: nowrap;
 }
 
+.tm-tutorial-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
 .tm-voice-chip.active {
   background: var(--primary);
   border-color: var(--primary);
+  color: #fff;
+}
+
+.tm-tutorial-chip.active {
+  background: #198754;
+  border-color: #198754;
   color: #fff;
 }
 
@@ -599,8 +612,122 @@ main.container-fluid > .row > section {
   font-size: 1rem;
 }
 
+.tm-tutorial-chip i {
+  font-size: 1rem;
+}
+
+.tm-tutorial {
+  position: fixed;
+  inset: 0;
+  z-index: 2600;
+  display: none;
+  pointer-events: none;
+}
+
+.tm-tutorial.is-open {
+  display: block;
+  pointer-events: auto;
+}
+
+.tm-tutorial__shade {
+  position: absolute;
+  inset: 0;
+  background: rgba(5, 10, 20, 0.58);
+}
+
+.tm-tutorial__spotlight {
+  position: fixed;
+  z-index: 2601;
+  display: none;
+  border: 3px solid #ffc107;
+  border-radius: 10px;
+  box-shadow: 0 0 0 9999px rgba(5, 10, 20, 0.56), 0 0 28px rgba(255, 193, 7, 0.75);
+  pointer-events: none;
+  transition: left 0.2s ease, top 0.2s ease, width 0.2s ease, height 0.2s ease;
+}
+
+.tm-tutorial__card {
+  position: fixed;
+  z-index: 2602;
+  width: min(380px, calc(100vw - 28px));
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--card);
+  color: var(--text);
+  box-shadow: 0 20px 54px rgba(0, 0, 0, 0.35);
+}
+
+.tm-tutorial__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.tm-tutorial__eyebrow {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-transform: uppercase;
+}
+
+.tm-tutorial__title {
+  margin: 2px 0 0;
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+
+.tm-tutorial__body {
+  margin: 12px 0;
+  color: var(--text);
+  line-height: 1.42;
+}
+
+.tm-tutorial__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  background: transparent;
+}
+
+.tm-tutorial__progress {
+  display: flex;
+  gap: 5px;
+  margin: 12px 0;
+}
+
+.tm-tutorial__progress span {
+  flex: 1;
+  height: 5px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--text) 16%, transparent);
+}
+
+.tm-tutorial__progress span.active {
+  background: var(--primary);
+}
+
+.tm-tutorial__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
 @media (max-width: 576px) {
+  .tm-tutorial-chip span,
   .tm-voice-chip span {
     display: none;
+  }
+
+  .tm-tutorial__card {
+    max-height: 54vh;
+    overflow: auto;
   }
 }

@@ -1,4 +1,4 @@
-const CACHE_NAME = "moronabus-shell-v17";
+const CACHE_NAME = "moronabus-shell-v18";
 
 const STATIC_ASSETS = [
   "/",
@@ -6,6 +6,7 @@ const STATIC_ASSETS = [
   "/css/styles.css",
   "/js/script.js",
   "/js/app/i18n.js",
+  "/js/app/tutorial.js",
   "/js/app/voice_assistant.js",
   "/assets/icons/favicon.svg",
   "/manifest.json"

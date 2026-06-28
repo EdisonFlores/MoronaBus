@@ -42,6 +42,7 @@ import { applyThemeUI, toggleTheme } from "./app/theme.js";
 import { updateWeatherBadge, startWeatherAutoRefresh } from "./services/weather.js";
 import { initWeatherPopup } from "./app/weather_popup.js";
 import { initVoiceReader } from "./app/voice_assistant.js";
+import { initInteractiveTutorial } from "./app/tutorial.js";
 
 import {
   getProvinciasFS,
@@ -539,6 +540,7 @@ function showModal(title, html) {
 }
 
 initVoiceReader();
+initInteractiveTutorial();
 
 /* ================= Map: marker de usuario ================= */
 function setUserMarker(loc, open = false) {
