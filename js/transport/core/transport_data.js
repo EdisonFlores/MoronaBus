@@ -42,6 +42,15 @@ function toNormArrayKey(v) {
   return s ? [s] : [];
 }
 
+function isSevillaMoronaCanton(value) {
+  const v = normKey(value);
+  return v === "morona" || v === "sevilla don bosco" || v.includes("sevilla");
+}
+
+function hasSevillaMoronaCanton(values = []) {
+  return values.some(isSevillaMoronaCanton);
+}
+
 /* ==========================
    HELPERS HORARIO
 ========================== */
@@ -381,6 +390,7 @@ export async function getLineasByTipo(tipo, ctx = {}) {
 
   const cantonSel = normKey(ctx?.canton);
   const parroquiaSel = normKey(ctx?.parroquia);
+  const sharedSevillaMorona = ctx?.specialSevilla === true || isSevillaMoronaCanton(ctx?.canton);
 
   const out = [];
 
@@ -390,14 +400,24 @@ export async function getLineasByTipo(tipo, ctx = {}) {
 
     if (cantonSel) {
       const cantones = toNormArrayKey(l.cantonpasa);
+      const lineCantons = [
+        ...cantones,
+        normKey(l.canton),
+        normKey(l.cantonorigen)
+      ].filter(Boolean);
+
       const ok =
-        cantones.includes(cantonSel) ||
-        normKey(l.canton) === cantonSel ||
-        normKey(l.cantonorigen) === cantonSel;
+        sharedSevillaMorona
+          ? hasSevillaMoronaCanton(lineCantons)
+          : (
+              cantones.includes(cantonSel) ||
+              normKey(l.canton) === cantonSel ||
+              normKey(l.cantonorigen) === cantonSel
+            );
       if (!ok) return;
     }
 
-    if (parroquiaSel) {
+    if (parroquiaSel && !sharedSevillaMorona) {
       const parroquias = toNormArrayKey(l.ciudadpasa);
       const ok =
         parroquias.includes(parroquiaSel) ||

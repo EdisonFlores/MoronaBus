@@ -43,10 +43,16 @@ function normLite(s) {
   return String(s || "").trim().toLowerCase();
 }
 
+function isSevillaMoronaCanton(value) {
+  const v = normLite(value);
+  return v === "morona" || v === "sevilla don bosco" || v.includes("sevilla");
+}
+
 function geoMatches(ctx = {}, place = {}) {
   const pCtx = normLite(ctx.provincia);
   const cCtx = normLite(ctx.canton);
   const paCtx = normLite(ctx.parroquia);
+  const sharedSevillaMorona = ctx?.specialSevilla === true || isSevillaMoronaCanton(ctx.canton);
 
   if (!pCtx && !cCtx && !paCtx) return true;
 
@@ -57,8 +63,10 @@ function geoMatches(ctx = {}, place = {}) {
   if ((pCtx && !pPl) || (cCtx && !cPl) || (paCtx && !paPl)) return true;
 
   if (pCtx && pPl && pCtx !== pPl) return false;
-  if (cCtx && cPl && cCtx !== cPl) return false;
-  if (paCtx && paPl && paCtx !== paPl) return false;
+  if (cCtx && cPl && cCtx !== cPl) {
+    if (!(sharedSevillaMorona && isSevillaMoronaCanton(cPl))) return false;
+  }
+  if (paCtx && paPl && paCtx !== paPl && !sharedSevillaMorona) return false;
 
   return true;
 }

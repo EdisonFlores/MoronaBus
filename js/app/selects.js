@@ -1,6 +1,20 @@
 // js/app/selects.js
 import { getCollectionCache } from "./cache_db.js";
 
+function normLite(value) {
+  return String(value || "").trim().toLowerCase();
+}
+
+function isSevillaMoronaCanton(value) {
+  const v = normLite(value);
+  return v === "morona" || v === "sevilla don bosco" || v.includes("sevilla");
+}
+
+function matchesSevillaMoronaCanton(value) {
+  const city = String(value || "").trim();
+  return city === "Sevilla Don Bosco" || city === "Morona";
+}
+
 /* =========================
    LEGACY: PROVINCIAS desde "lugares"
 ========================= */
@@ -92,6 +106,7 @@ export async function getTiposComidaFromLugar({ provincia, canton, specialSevill
 
   const provSel = String(provincia || "").trim();
   const cantonSel = String(canton || "").trim();
+  const sharedCoverage = specialSevilla === true || isSevillaMoronaCanton(cantonSel);
 
   const set = new Set();
 
@@ -104,8 +119,8 @@ export async function getTiposComidaFromLugar({ provincia, canton, specialSevill
 
     const ciudad = String(l?.ciudad || "").trim();
 
-    if (specialSevilla) {
-      if (ciudad !== "Sevilla Don Bosco" && ciudad !== "Morona") return;
+    if (sharedCoverage) {
+      if (!matchesSevillaMoronaCanton(ciudad)) return;
     } else {
       if (ciudad !== cantonSel) return;
     }

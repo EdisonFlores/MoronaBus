@@ -18,7 +18,9 @@ export function createManualRouting(deps) {
     getCtxGeo,
     refreshLayersOverlays,
     clearRouteInfo,
-    detectPointContext
+    detectPointContext,
+    onManualDestinationSelected,
+    onManualModeSelected
   } = deps;
 
   let manualDest = null;
@@ -43,11 +45,11 @@ export function createManualRouting(deps) {
     }
   }
 
-  function ensureRouteControlsForManual() {
+  function ensureRouteControlsForManual(force = false) {
     if (!extraEl) return;
 
     const has = document.querySelector("[data-mode]") && document.getElementById("route-info");
-    if (has) return;
+    if (has && !force) return;
 
     extraEl.innerHTML = `
       <div class="btn-group w-100 mb-2">
@@ -58,13 +60,17 @@ export function createManualRouting(deps) {
         <button class="btn btn-outline-primary" data-mode="bus">🚌</button>
       </div>
       <div id="route-info" class="small"></div>
+      <div id="trip-actions" class="mt-2 mb-2"></div>
     `;
 
     document.querySelectorAll("[data-mode]").forEach(btn => {
       btn.onclick = () => {
         setMode(btn.dataset.mode);
-        buildRoute();
-        refreshLayersOverlays?.();
+        onManualModeSelected?.(btn.dataset.mode);
+        Promise.resolve(buildRoute()).finally(() => {
+          onManualModeSelected?.(btn.dataset.mode);
+          refreshLayersOverlays?.();
+        });
       };
     });
   }
@@ -121,14 +127,10 @@ export function createManualRouting(deps) {
     const infoEl = document.getElementById("route-info");
     const activePlace = getActivePlace?.();
 
-    const hasBDPlace = !!activePlace?.ubicacion;
     const hasManualDest = isLatLngArr(manualDest);
+    const hasBDPlace = !hasManualDest && !!activePlace?.ubicacion;
 
     if (!hasBDPlace && !hasManualDest) return;
-
-    clearRoute?.();
-    clearTransportLayers?.();
-    clearRouteInfo?.();
 
     const gpsUserLoc = getUserLoc?.();
     const startLoc = isLatLngArr(manualStart) ? manualStart : gpsUserLoc;
@@ -146,6 +148,10 @@ export function createManualRouting(deps) {
           nombre: "Destino seleccionado",
           ubicacion: { latitude: destLoc[0], longitude: destLoc[1] }
         };
+
+    clearRoute?.();
+    clearTransportLayers?.();
+    clearRouteInfo?.();
 
     const mode = getMode?.() || "walking";
 
@@ -284,7 +290,7 @@ export function createManualRouting(deps) {
       .bindPopup("📍 Origen seleccionado")
       .openPopup();
 
-    ensureRouteControlsForManual();
+    ensureRouteControlsForManual(true);
     buildRoute();
     refreshLayersOverlays?.();
   }
@@ -305,7 +311,11 @@ export function createManualRouting(deps) {
     setActivePlace?.(null);
     clearMarkers?.();
 
-    ensureRouteControlsForManual();
+    ensureRouteControlsForManual(true);
+    onManualDestinationSelected?.({
+      nombre: "Destino seleccionado",
+      ubicacion: { latitude: manualDest[0], longitude: manualDest[1] }
+    });
     buildRoute();
     refreshLayersOverlays?.();
   }

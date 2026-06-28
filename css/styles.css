@@ -163,6 +163,32 @@ main.container-fluid > .row > section {
   transform: scale(1.2);
 }
 
+.tm-footer-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 36px;
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.1;
+  text-decoration: none;
+  transition: border-color 0.2s, color 0.2s, background-color 0.2s;
+}
+
+.tm-footer-download:hover {
+  color: var(--primary);
+  border-color: var(--primary);
+  background: color-mix(in srgb, var(--primary) 10%, transparent);
+}
+
+.tm-footer-download i {
+  font-size: 1.15rem;
+}
+
 .tm-footer-menu{
   background: var(--card);
   color: var(--text);
@@ -211,6 +237,7 @@ main.container-fluid > .row > section {
   .tm-footer-right{
     width: 100%;
     justify-content: flex-start;
+    flex-wrap: wrap;
     margin-top: 6px;
   }
 
@@ -553,4 +580,27 @@ main.container-fluid > .row > section {
   height: 46px;
   color: var(--text);
   opacity: 0.9;
+}
+
+.tm-voice-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.tm-voice-chip.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}
+
+.tm-voice-chip i {
+  font-size: 1rem;
+}
+
+@media (max-width: 576px) {
+  .tm-voice-chip span {
+    display: none;
+  }
 }

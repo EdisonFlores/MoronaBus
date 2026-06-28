@@ -19,6 +19,11 @@ function normLite(s) {
   return String(s || "").trim().toLowerCase();
 }
 
+function isSevillaMoronaSharedCanton(value) {
+  const v = normLite(value);
+  return v === "morona" || v.includes("sevilla");
+}
+
 function llFromDoc(doc) {
   const u = doc?.ubicacion;
   const { latitude, longitude } = u || {};
@@ -210,6 +215,11 @@ export async function detectAdminContextFromLatLng(loc) {
     normLite(admin.canton).includes("sevilla") ||
     normLite(admin.parroquia).includes("sevilla");
 
+  const sharedSevillaMorona =
+    anySevilla ||
+    isSevillaMoronaSharedCanton(admin.canton) ||
+    isSevillaMoronaSharedCanton(admin.parroquia);
+
   let detectedAdmin = { provincia: "", canton: "", parroquia: "" };
   let ctxGeo = {
     provincia: "",
@@ -247,7 +257,7 @@ export async function detectAdminContextFromLatLng(loc) {
     provincia: detectedAdmin.provincia,
     canton: detectedAdmin.canton,
     parroquia: detectedAdmin.parroquia,
-    specialSevilla: false,
+    specialSevilla: sharedSevillaMorona,
     entornoUser: entornoUser || ""
   };
 

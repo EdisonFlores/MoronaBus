@@ -3,7 +3,6 @@
 /* ================= IMPORTS ================= */
 import { findNearest, updateUserLocation, setTravelMode, setActivePlaceAction } from "./app/actions.js";
 import { dataList, getUserLocation, getMode } from "./app/state.js";
-import { translatePage } from "./app/translate.js";
 import {
   map,
   baseLayers,
@@ -38,10 +37,11 @@ import { shouldShowVisitMorona, applyVisitMorona } from "./app/virtual_visit.js"
 import { detectAdminContextFromLatLng, detectPointContext } from "./app/admin_detection.js";
 import { createManualRouting } from "./app/manual_route.js";
 
-import { applyLanguageUI, toggleLanguage } from "./app/i18n.js";
+import { applyLanguageUI, initLanguageObserver, toggleLanguage } from "./app/i18n.js";
 import { applyThemeUI, toggleTheme } from "./app/theme.js";
 import { updateWeatherBadge, startWeatherAutoRefresh } from "./services/weather.js";
 import { initWeatherPopup } from "./app/weather_popup.js";
+import { initVoiceReader } from "./app/voice_assistant.js";
 
 import {
   getProvinciasFS,
@@ -53,6 +53,17 @@ import {
 let activePlace = null;
 let userMarker = null;
 let layersUI = null;
+let tripTracker = {
+  watchId: null,
+  active: false,
+  pending: false,
+  lastLoc: null,
+  lastRouteAt: 0,
+  place: null,
+  source: "",
+  modeSelected: false,
+  completed: false
+};
 
 let detectedAdmin = { provincia: "", canton: "", parroquia: "" };
 
@@ -81,25 +92,15 @@ if (category) {
 /* ================= HEADER INIT ================= */
 applyThemeUI();
 applyLanguageUI();
+initLanguageObserver();
 
 const btnTheme = document.getElementById("btnTheme");
 const btnLang = document.getElementById("btnLang");
 
 if (btnTheme) btnTheme.addEventListener("click", () => toggleTheme());
 
-function isMobileDevice() {
-  const ua = navigator.userAgent || "";
-  const uaMobile = /Android|iPhone|iPad|iPod|Mobile|IEMobile|Opera Mini/i.test(ua);
-  const touch = ("ontouchstart" in window) || (navigator.maxTouchPoints > 0);
-  const small = window.matchMedia?.("(max-width: 768px)")?.matches;
-  return uaMobile || (touch && small);
-}
-
-function getBrowserLang() {
-  return (navigator.language || navigator.userLanguage || "es").toLowerCase();
-}
-
 function showTranslateHelpModal() {
+  return;
   const mobile = isMobileDevice();
   const lang = getBrowserLang();
   const isEnglish = lang.startsWith("en");
@@ -184,20 +185,15 @@ function showTranslateHelpModal() {
   );
 }
 
-if (btnLang) btnLang.addEventListener("click", showTranslateHelpModal);
-
-(function autoHintIfNotSpanish() {
-  const lang = getBrowserLang();
-  if (!lang.startsWith("es")) {
-    const key = "tm_translate_hint_shown";
-    if (sessionStorage.getItem(key)) return;
-    sessionStorage.setItem(key, "1");
-
+if (btnLang) {
+  btnLang.addEventListener("click", () => {
+    toggleLanguage();
     setTimeout(() => {
-      showTranslateHelpModal();
-    }, 1200);
-  }
-})();
+      if (tripTracker.place) renderTripButton();
+      refreshLayersOverlays();
+    }, 0);
+  });
+}
 
 /* ================= WEATHER HELPERS ================= */
 function getMapCenterLatLng() {
@@ -227,16 +223,270 @@ function clearRouteInfo() {
   if (el) el.innerHTML = "";
 }
 
-function clearRoutingArtifacts() {
+function getTripActionsEl() {
+  const routeInfo = document.getElementById("route-info");
+  const host = routeInfo?.parentNode || extra;
+  if (!host) return null;
+
+  let el = document.getElementById("trip-actions");
+  if (el) {
+    if (routeInfo && el.previousElementSibling !== routeInfo) {
+      routeInfo.parentNode.insertBefore(el, routeInfo.nextSibling);
+    } else if (!routeInfo && el.parentNode !== host) {
+      host.appendChild(el);
+    }
+    return el;
+  }
+
+  el = document.createElement("div");
+  el.id = "trip-actions";
+  el.className = "mt-2 mb-2";
+  if (routeInfo?.parentNode) routeInfo.parentNode.insertBefore(el, routeInfo.nextSibling);
+  else host.appendChild(el);
+  return el;
+}
+
+function renderTripButton() {
+  if (!tripTracker.place) return;
+  if (!tripTracker.modeSelected) {
+    const el = document.getElementById("trip-actions");
+    if (el) el.innerHTML = "";
+    return;
+  }
+
+  const el = getTripActionsEl();
+  if (!el) return;
+
+  el.innerHTML = `
+    <button id="btn-trip-toggle" class="btn ${tripTracker.active ? "btn-danger" : "btn-success"} w-100">
+      ${tripTracker.active ? "Detener trayecto" : "Iniciar trayecto"}
+    </button>
+    ${
+      tripTracker.active
+        ? `<div class="small text-muted mt-1">Trayecto activo: tu ubicación avanzará sobre la ruta calculada.</div>`
+        : ""
+    }
+    <div id="trip-live-status" class="small mt-1"></div>
+  `;
+
+  const btn = document.getElementById("btn-trip-toggle");
+  if (btn) btn.onclick = () => {
+    if (tripTracker.active) stopTripTracking(false);
+    else startTripTracking(tripTracker.place);
+  };
+}
+
+function getTripDestinationLoc() {
+  const u = tripTracker.place?.ubicacion || tripTracker.place?.["ubicaci\u00f3n"];
+  const lat = u?.latitude ?? u?.lat;
+  const lng = u?.longitude ?? u?.lng;
+  if (typeof lat !== "number" || typeof lng !== "number") return null;
+  return [lat, lng];
+}
+
+function formatTripDuration(seconds) {
+  const s = Math.max(0, Math.round(Number(seconds) || 0));
+  if (s < 60) return `${s} s`;
+  const mins = Math.round(s / 60);
+  if (mins < 60) return `${mins} min`;
+  const h = Math.floor(mins / 60);
+  const m = mins % 60;
+  return m ? `${h} h ${m} min` : `${h} h`;
+}
+
+function estimateRemainingSeconds(distanceMeters, mode) {
+  const speedKmH = {
+    walking: 5,
+    bicycle: 15,
+    cycling: 15,
+    motorcycle: 35,
+    driving: 30,
+    bus: 20
+  }[mode] || 5;
+
+  return (distanceMeters / 1000 / speedKmH) * 3600;
+}
+
+function updateTripLiveStatus(loc) {
+  const status = document.getElementById("trip-live-status");
+  const dest = getTripDestinationLoc();
+  if (!status || !dest) return;
+
+  const distanceM = map?.distance ? map.distance(loc, dest) : Infinity;
+  if (!Number.isFinite(distanceM)) return;
+
+  const mode = getMode?.() || "walking";
+  const km = distanceM / 1000;
+  const seconds = estimateRemainingSeconds(distanceM, mode);
+
+  if (mode === "bus") {
+    status.innerHTML = `
+      <b>Seguimiento activo</b><br>
+      Se mantiene la ruta de bus calculada arriba.<br>
+      Distancia directa al destino: ${km < 1 ? `${Math.round(distanceM)} m` : `${km.toFixed(2)} km`}
+    `;
+    return;
+  }
+
+  status.innerHTML = `
+    <b>Seguimiento activo</b><br>
+    Distancia directa al destino: ${km < 1 ? `${Math.round(distanceM)} m` : `${km.toFixed(2)} km`}<br>
+    Tiempo aprox. segÃºn modo: ${formatTripDuration(seconds)}
+  `;
+}
+
+function completeTripTracking() {
+  stopTripTracking(false);
+  const status = document.getElementById("trip-live-status");
+  if (status) {
+    status.innerHTML = `<span class="text-success"><b>Trayecto finalizado.</b> Llegaste al destino.</span>`;
+  }
+}
+
+function showTripStartForDropdownSelection(place, source = "list") {
+  const u = place?.ubicacion || place?.["ubicaci\u00f3n"];
+  if (!u) return;
+
+  if (!place.ubicacion) place.ubicacion = u;
+
+  tripTracker.place = place;
+  tripTracker.source = source;
+  tripTracker.modeSelected = false;
+  tripTracker.completed = false;
+  hideTripStart();
+}
+
+function rebuildSelectedRoute({ showTripButton = false } = {}) {
+  const p = manual.buildRoute();
+  if (showTripButton || tripTracker.place) setTimeout(() => renderTripButton(), 80);
+  Promise.resolve(p)
+    .catch(err => console.warn("No se pudo recalcular la ruta:", err))
+    .finally(() => {
+      if (showTripButton || tripTracker.place) renderTripButton();
+      if (showTripButton || tripTracker.place) setTimeout(() => renderTripButton(), 500);
+      refreshLayersOverlays();
+    });
+}
+
+function hideTripStart() {
+  const el = document.getElementById("trip-actions");
+  if (el) el.innerHTML = "";
+}
+
+function stopTripTracking(clearButton = true) {
+  if (tripTracker.watchId !== null) {
+    try { navigator.geolocation.clearWatch(tripTracker.watchId); } catch {}
+  }
+
+  tripTracker.watchId = null;
+  tripTracker.active = false;
+  tripTracker.pending = false;
+  tripTracker.lastLoc = null;
+  tripTracker.lastRouteAt = 0;
+  tripTracker.source = "";
+  tripTracker.modeSelected = false;
+  tripTracker.completed = false;
+
+  if (clearButton) {
+    tripTracker.place = null;
+    hideTripStart();
+  } else {
+    renderTripButton();
+  }
+}
+
+function shouldRebuildTrackedRoute(loc) {
+  const now = Date.now();
+  if (!tripTracker.lastLoc) return true;
+  if ((now - tripTracker.lastRouteAt) >= 2500) return true;
+
+  try {
+    return map.distance(tripTracker.lastLoc, loc) >= 8;
+  } catch {
+    return true;
+  }
+}
+
+async function rebuildTrackedRoute(loc) {
+  if (!tripTracker.active || tripTracker.pending || !tripTracker.place) return;
+  if (!shouldRebuildTrackedRoute(loc)) return;
+
+  tripTracker.pending = true;
+  tripTracker.lastLoc = loc;
+  tripTracker.lastRouteAt = Date.now();
+
+  updateUserLocation(loc);
+  setUserMarker(loc, false);
+  updateTripLiveStatus(loc);
+
+  try {
+    const dest = getTripDestinationLoc();
+    if (dest && map?.distance && map.distance(loc, dest) <= 35) {
+      completeTripTracking();
+      return;
+    }
+    refreshLayersOverlays();
+  } finally {
+    tripTracker.pending = false;
+  }
+}
+
+function startTripTracking(place) {
+  if (!navigator.geolocation) {
+    showModal(
+      "Ubicación no disponible",
+      `<div class="alert alert-warning py-2 mb-0">Tu navegador no permite seguimiento de ubicación.</div>`
+    );
+    return;
+  }
+
+  const u = place?.ubicacion || place?.["ubicaci\u00f3n"];
+  if (!u) return;
+  if (!place.ubicacion) place.ubicacion = u;
+
+  stopTripTracking(false);
+  tripTracker.place = place;
+  tripTracker.active = true;
+  tripTracker.modeSelected = true;
+  tripTracker.completed = false;
+  renderTripButton();
+
+  const currentLoc = getUserLocation?.();
+  if (currentLoc) updateTripLiveStatus(currentLoc);
+
+  tripTracker.watchId = navigator.geolocation.watchPosition(
+    pos => {
+      const loc = [pos.coords.latitude, pos.coords.longitude];
+      rebuildTrackedRoute(loc);
+    },
+    () => {
+      showModal(
+        "Ubicación no disponible",
+        `<div class="alert alert-warning py-2 mb-0">No se pudo actualizar tu ubicación para seguir el trayecto.</div>`
+      );
+      stopTripTracking(false);
+    },
+    {
+      enableHighAccuracy: true,
+      maximumAge: 3000,
+      timeout: 10000
+    }
+  );
+}
+
+function clearRoutingArtifacts({ preserveManualDestination = false } = {}) {
   clearRoute();
   clearTransportLayers();
   clearInterprov();
   clearRouteInfo();
-  try { manual.clearManualDest(); } catch {}
-  try { manual.clearManualStart(); } catch {}
+  if (!preserveManualDestination) {
+    try { manual.clearManualDest(); } catch {}
+    try { manual.clearManualStart(); } catch {}
+  }
 }
 
 function resetMap() {
+  stopTripTracking(true);
   clearMarkers();
   clearRoutingArtifacts();
   activePlace = null;
@@ -244,6 +494,7 @@ function resetMap() {
 }
 
 function clearDirections() {
+  stopTripTracking(true);
   try { manual.clearManualDest(); } catch {}
   try { manual.clearManualStart(); } catch {}
 
@@ -286,6 +537,8 @@ function showModal(title, html) {
   const modal = new bootstrap.Modal(document.getElementById("tm-modal"));
   modal.show();
 }
+
+initVoiceReader();
 
 /* ================= Map: marker de usuario ================= */
 function setUserMarker(loc, open = false) {
@@ -414,8 +667,8 @@ function showDetectedFacade() {
     <b>Cantón:</b> ${c}<br>
     <b>Parroquia:</b> ${pa || "(no detectada)"}
     ${
-      ctxGeo?.specialSevilla
-        ? `<div class="small mt-1">⚠️ Caso especial Sevilla activo (Sevilla + Morona)</div>`
+      usesSevillaMoronaSharedCoverage(ctxGeo)
+        ? `<div class="small mt-1">⚠️ Cobertura compartida Sevilla + Morona activa</div>`
         : ""
     }
     ${
@@ -485,7 +738,22 @@ const manual = createManualRouting({
   refreshLayersOverlays,
   clearRouteInfo,
 
-  detectPointContext
+  detectPointContext,
+
+  onManualDestinationSelected: (place) => {
+    stopTripTracking(true);
+    activePlace = null;
+    setActivePlaceAction(null);
+    showTripStartForDropdownSelection(place, "manual");
+  },
+
+  onManualModeSelected: () => {
+    if (!tripTracker.place) return;
+    tripTracker.modeSelected = true;
+    renderTripButton();
+    setTimeout(() => renderTripButton(), 150);
+    setTimeout(() => renderTripButton(), 700);
+  }
 });
 
 /* ================= Layers UI init ================= */
@@ -672,6 +940,22 @@ function normLite(s) {
   return String(s || "").trim().toLowerCase();
 }
 
+const SEVILLA_MORONA_CANTONS = ["Sevilla Don Bosco", "Morona"];
+
+function isSevillaMoronaCanton(value) {
+  const v = normLite(value);
+  return v === "morona" || v === "sevilla don bosco" || v.includes("sevilla");
+}
+
+function usesSevillaMoronaSharedCoverage(ctx = {}) {
+  return ctx?.specialSevilla === true || isSevillaMoronaCanton(ctx?.canton);
+}
+
+function matchesSevillaMoronaCanton(value) {
+  const city = String(value || "").trim();
+  return SEVILLA_MORONA_CANTONS.includes(city);
+}
+
 function llFromGeoPoint(gp) {
   if (!gp) return null;
 
@@ -695,6 +979,7 @@ async function getTerminalForCanton({ provincia, canton, userLoc } = {}) {
 
   const p = String(provincia || "").trim();
   const c = String(canton || "").trim();
+  const sharedCoverage = isSevillaMoronaCanton(c);
 
   const candidates = arr.filter(l => {
     if (l?.activo === false) return false;
@@ -703,7 +988,11 @@ async function getTerminalForCanton({ provincia, canton, userLoc } = {}) {
     if (p && String(l?.provincia || "").trim() !== p) return false;
 
     const city = String(l?.ciudad || "").trim();
-    if (c && city !== c) return false;
+    if (sharedCoverage) {
+      if (!matchesSevillaMoronaCanton(city)) return false;
+    } else if (c && city !== c) {
+      return false;
+    }
 
     return true;
   });
@@ -767,8 +1056,16 @@ function wireModeButtons({ onModeChange } = {}) {
   document.querySelectorAll("[data-mode]").forEach(btn => {
     btn.onclick = () => {
       const m = btn.dataset.mode;
+      const manualTripActive = tripTracker.source === "manual";
+      const activeTripLoc = manualTripActive
+        ? null
+        : (activePlace?.ubicacion || activePlace?.["ubicaci\u00f3n"]);
+      if (activePlace && activeTripLoc && !activePlace.ubicacion) activePlace.ubicacion = activeTripLoc;
+      const placeForTrip = manualTripActive
+        ? tripTracker.place
+        : (activeTripLoc ? activePlace : tripTracker.place);
 
-      clearRoutingArtifacts();
+      clearRoutingArtifacts({ preserveManualDestination: manualTripActive });
 
       if (m === "bus" && ctxGeo.busEnabled !== true) {
         showModal(
@@ -786,7 +1083,15 @@ function wireModeButtons({ onModeChange } = {}) {
       }
 
       setTravelMode(m);
+      if (placeForTrip?.ubicacion || placeForTrip?.["ubicaci\u00f3n"]) {
+        if (!placeForTrip.ubicacion) placeForTrip.ubicacion = placeForTrip["ubicaci\u00f3n"];
+        tripTracker.place = placeForTrip;
+        tripTracker.modeSelected = true;
+      }
       onModeChange?.(m);
+      renderTripButton();
+      setTimeout(() => renderTripButton(), 120);
+      setTimeout(() => renderTripButton(), 700);
     };
   });
 }
@@ -889,6 +1194,7 @@ category.onchange = async () => {
 
       ${buildModesHTML(ctxGeo.busEnabled)}
       <div id="route-info" class="small"></div>
+      <div id="trip-actions" class="mt-2 mb-2"></div>
     `;
 
     const selProv = document.getElementById("sel-prov-dest");
@@ -1022,6 +1328,7 @@ category.onchange = async () => {
 
       ${buildModesHTML(ctxGeo.busEnabled)}
       <div id="route-info" class="small"></div>
+      <div id="trip-actions" class="mt-2 mb-2"></div>
     `;
 
     const selCanton = document.getElementById("sel-canton-dest");
@@ -1176,7 +1483,7 @@ category.onchange = async () => {
     const tipos = await getTiposComidaFromLugar({
       provincia: ctxGeo.provincia,
       canton: ctxGeo.canton,
-      specialSevilla: ctxGeo.specialSevilla
+      specialSevilla: usesSevillaMoronaSharedCoverage(ctxGeo)
     });
 
     extra.innerHTML = `
@@ -1194,6 +1501,7 @@ category.onchange = async () => {
 
       ${buildModesHTML(ctxGeo.busEnabled)}
       <div id="route-info" class="small"></div>
+      <div id="trip-actions" class="mt-2 mb-2"></div>
     `;
 
     const selTipo = document.getElementById("sel-tipo-comida");
@@ -1235,10 +1543,10 @@ category.onchange = async () => {
 
       const filtered = [];
 
-      if (ctxGeo.specialSevilla) {
+      if (usesSevillaMoronaSharedCoverage(ctxGeo)) {
         base.forEach(l => {
           const ciudad = String(l.ciudad || "");
-          if (ciudad === "Sevilla Don Bosco" || ciudad === "Morona") filtered.push(l);
+          if (matchesSevillaMoronaCanton(ciudad)) filtered.push(l);
         });
       } else {
         base.forEach(l => {
@@ -1278,40 +1586,40 @@ category.onchange = async () => {
       btnNear.disabled = false;
 
       renderMarkers(dataList, place => {
+        stopTripTracking(true);
         clearRoutingArtifacts();
         activePlace = place;
         setActivePlaceAction(place);
         hideDetectedFacadeOnPlaceSelection();
-        manual.buildRoute();
-        refreshLayersOverlays();
+        rebuildSelectedRoute();
       });
 
       selLug.onchange = () => {
+        stopTripTracking(true);
         clearRoutingArtifacts();
         activePlace = dataList[selLug.value];
         setActivePlaceAction(activePlace);
         if (!activePlace) return;
         hideDetectedFacadeOnPlaceSelection();
-        manual.buildRoute();
-        refreshLayersOverlays();
+        showTripStartForDropdownSelection(activePlace);
+        rebuildSelectedRoute({ showTripButton: true });
       };
 
       btnNear.onclick = () => {
+        stopTripTracking(true);
         clearRoutingArtifacts();
         activePlace = findNearest(dataList);
         setActivePlaceAction(activePlace);
         if (!activePlace) return;
         hideDetectedFacadeOnPlaceSelection();
-        manual.buildRoute();
-        refreshLayersOverlays();
+        rebuildSelectedRoute();
       };
 
       wireModeButtons({
         onModeChange: () => {
-          if (activePlace) {
-            manual.buildRoute();
-            refreshLayersOverlays();
-          }
+        if (activePlace) {
+            rebuildSelectedRoute();
+        }
         }
       });
     };
@@ -1321,8 +1629,7 @@ category.onchange = async () => {
     wireModeButtons({
       onModeChange: () => {
         if (activePlace) {
-          manual.buildRoute();
-          refreshLayersOverlays();
+          rebuildSelectedRoute();
         }
       }
     });
@@ -1342,9 +1649,9 @@ category.onchange = async () => {
       if (!ev?.ubicacion) return false;
       if (String(ev.provincia || "") !== provSel) return false;
 
-      if (ctxGeo.specialSevilla) {
+      if (usesSevillaMoronaSharedCoverage(ctxGeo)) {
         const c = String(ev.canton || ev.ciudad || "");
-        if (c !== "Sevilla Don Bosco" && c !== "Morona") return false;
+        if (!matchesSevillaMoronaCanton(c)) return false;
       } else {
         const c = String(ev.canton || ev.ciudad || "");
         if (c !== cantonSel) return false;
@@ -1415,6 +1722,7 @@ category.onchange = async () => {
       </div>
 
       <div id="route-info" class="small"></div>
+      <div id="trip-actions" class="mt-2 mb-2"></div>
     `;
 
     const sel = document.getElementById("lugares");
@@ -1425,40 +1733,40 @@ category.onchange = async () => {
     });
 
     renderEventMarkers(dataList, (ev) => {
+      stopTripTracking(true);
       clearRoutingArtifacts();
       activePlace = ev;
       setActivePlaceAction(activePlace);
       hideDetectedFacadeOnPlaceSelection();
-      manual.buildRoute();
-      refreshLayersOverlays();
+      rebuildSelectedRoute();
     });
 
     sel.onchange = () => {
+      stopTripTracking(true);
       clearRoutingArtifacts();
       activePlace = dataList[sel.value];
       setActivePlaceAction(activePlace);
       if (!activePlace) return;
       hideDetectedFacadeOnPlaceSelection();
-      manual.buildRoute();
-      refreshLayersOverlays();
+      showTripStartForDropdownSelection(activePlace);
+      rebuildSelectedRoute({ showTripButton: true });
     };
 
     document.getElementById("near").onclick = () => {
+      stopTripTracking(true);
       clearRoutingArtifacts();
       activePlace = findNearest(dataList);
       setActivePlaceAction(activePlace);
       if (!activePlace) return;
       hideDetectedFacadeOnPlaceSelection();
-      manual.buildRoute();
-      refreshLayersOverlays();
+      rebuildSelectedRoute();
     };
 
     wireModeButtons({
       onModeChange: () => {
-        if (activePlace) {
-          manual.buildRoute();
-          refreshLayersOverlays();
-        }
+      if (activePlace) {
+          rebuildSelectedRoute();
+      }
       }
     });
 
@@ -1492,7 +1800,8 @@ category.onchange = async () => {
         provincia: ctxGeo.provincia,
         canton: ctxGeo.canton,
         parroquia: ctxGeo.parroquia,
-        ignoreGeoFilter: (tipo === "rural" && ctxGeo.specialSevilla)
+        specialSevilla: usesSevillaMoronaSharedCoverage(ctxGeo),
+        ignoreGeoFilter: (tipo === "rural" && usesSevillaMoronaSharedCoverage(ctxGeo))
       });
 
       const fuera = allLineas
@@ -1520,8 +1829,8 @@ category.onchange = async () => {
         provincia: ctxGeo.provincia,
         canton: ctxGeo.canton,
         parroquia: ctxGeo.parroquia,
-        specialSevilla: ctxGeo.specialSevilla,
-        ignoreGeoFilter: (tipo === "rural" && ctxGeo.specialSevilla),
+        specialSevilla: usesSevillaMoronaSharedCoverage(ctxGeo),
+        ignoreGeoFilter: (tipo === "rural" && usesSevillaMoronaSharedCoverage(ctxGeo)),
         now
       });
 
@@ -1546,10 +1855,10 @@ category.onchange = async () => {
     return true;
   });
 
-  if (ctxGeo.specialSevilla) {
+  if (usesSevillaMoronaSharedCoverage(ctxGeo)) {
     base.forEach(l => {
       const ciudad = String(l.ciudad || "");
-      if (ciudad === "Sevilla Don Bosco" || ciudad === "Morona") all.push(l);
+      if (matchesSevillaMoronaCanton(ciudad)) all.push(l);
     });
   } else {
     base.forEach(l => {
@@ -1578,7 +1887,7 @@ category.onchange = async () => {
     const aCity = String(a.ciudad || "");
     const bCity = String(b.ciudad || "");
 
-    if (ctxGeo.specialSevilla) {
+    if (usesSevillaMoronaSharedCoverage(ctxGeo)) {
       const aKey = (aCity === "Sevilla Don Bosco") ? 0 : 1;
       const bKey = (bCity === "Sevilla Don Bosco") ? 0 : 1;
       if (aKey !== bKey) return aKey - bKey;
@@ -1623,6 +1932,7 @@ category.onchange = async () => {
     </div>
 
     <div id="route-info" class="small"></div>
+    <div id="trip-actions" class="mt-2 mb-2"></div>
   `;
 
   const sel = document.getElementById("lugares");
@@ -1632,44 +1942,45 @@ category.onchange = async () => {
   });
 
   renderMarkers(dataList, place => {
+    stopTripTracking(true);
     clearRoutingArtifacts();
     activePlace = place;
     setActivePlaceAction(place);
     hideDetectedFacadeOnPlaceSelection();
-    manual.buildRoute();
-    refreshLayersOverlays();
+    rebuildSelectedRoute();
   });
 
   sel.onchange = () => {
+    stopTripTracking(true);
     clearRoutingArtifacts();
     activePlace = dataList[sel.value];
     setActivePlaceAction(activePlace);
     if (!activePlace) return;
     hideDetectedFacadeOnPlaceSelection();
-    manual.buildRoute();
-    refreshLayersOverlays();
+    showTripStartForDropdownSelection(activePlace);
+    rebuildSelectedRoute({ showTripButton: true });
   };
 
   document.getElementById("near").onclick = () => {
+    stopTripTracking(true);
     clearRoutingArtifacts();
     activePlace = findNearest(dataList);
     setActivePlaceAction(activePlace);
     if (!activePlace) return;
     hideDetectedFacadeOnPlaceSelection();
-    manual.buildRoute();
-    refreshLayersOverlays();
+    rebuildSelectedRoute();
   };
 
   wireModeButtons({
     onModeChange: () => {
-      if (activePlace) {
-        manual.buildRoute();
-        refreshLayersOverlays();
-      }
+    if (activePlace) {
+        rebuildSelectedRoute();
+    }
     }
   });
 };
 function clearFullMapAndPanel() {
+  stopTripTracking(true);
   try { clearMarkers(); } catch {}
   try { clearRoutingArtifacts(); } catch {}
   try { clearInterprov(); } catch {}
