@@ -4,6 +4,9 @@ import { fetchOsrmRoute } from "../services/api.js";
 
 let routeLayer = null;
 
+/**
+ * Limpia clear route layer para dejar la vista o el estado listo para otro flujo.
+ */
 function clearRouteLayer() {
   if (routeLayer) {
     try { map.removeLayer(routeLayer); } catch {}
@@ -11,6 +14,9 @@ function clearRouteLayer() {
   }
 }
 
+/**
+ * Dibuja o resalta draw route sobre el mapa o la interfaz.
+ */
 export async function drawRoute(userLoc, place, mode = "walking", infoEl = null) {
   if (!userLoc || !place?.ubicacion) return;
 
@@ -112,6 +118,9 @@ export async function drawRoute(userLoc, place, mode = "walking", infoEl = null)
   }
 }
 
+/**
+ * Limpia clear route para dejar la vista o el estado listo para otro flujo.
+ */
 export function clearRoute() {
   clearRouteLayer();
 }

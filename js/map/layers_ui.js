@@ -29,6 +29,9 @@ export function initLayersUI({
   const myLocCtrl = new MyLoc();
   myLocCtrl.addTo(map);
 
+  /**
+   * Actualiza update overlays y sincroniza la interfaz con el estado actual.
+   */
   function updateOverlays(newOverlays = {}) {
     Object.keys(overlays).forEach(name => {
       try { lc.removeLayer(overlays[name]); } catch {}

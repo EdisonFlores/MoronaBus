@@ -3,18 +3,30 @@ import { setActivePlace, getUserLocation, setMode, setUserLocation } from "./sta
 import { drawRoute, clearMarkers, renderMarkers, clearRoute } from "../map/map.js";
 import { clearTransportLayers, planAndShowBusStops } from "../transport/transport_controller.js";
 
+/**
+ * Actualiza update user location y sincroniza la interfaz con el estado actual.
+ */
 export function updateUserLocation(loc) {
   setUserLocation(loc);
 }
 
+/**
+ * Actualiza set travel mode y sincroniza la interfaz con el estado actual.
+ */
 export function setTravelMode(mode) {
   setMode(mode);
 }
 
+/**
+ * Actualiza set active place action y sincroniza la interfaz con el estado actual.
+ */
 export function setActivePlaceAction(place) {
   setActivePlace(place);
 }
 
+/**
+ * Gestiona select place dentro del flujo principal del modulo.
+ */
 export function selectPlace(place, infoBox, ctxGeo = {}) {
   if (!place) return;
 
@@ -94,6 +106,9 @@ export function selectPlace(place, infoBox, ctxGeo = {}) {
   });
 }
 
+/**
+ * Busca find nearest dentro de las colecciones disponibles.
+ */
 export function findNearest(list) {
   const userLoc = getUserLocation();
   if (!userLoc || !Array.isArray(list) || !list.length) return null;

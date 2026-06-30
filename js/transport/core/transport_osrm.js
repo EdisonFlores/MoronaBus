@@ -79,6 +79,9 @@ function chunkArray(arr, size) {
   return out;
 }
 
+/**
+ * Obtiene fetch osrmroute chunk desde el estado local, la API o los datos cacheados.
+ */
 async function fetchOSRMRouteChunk(latlngs, profile = "car") {
   const coordinates = latlngs.map(p => `${p[1]},${p[0]}`).join(";");
 
@@ -111,6 +114,9 @@ async function fetchOSRMRouteChunk(latlngs, profile = "car") {
   }
 }
 
+/**
+ * Gestiona strip near duplicates dentro del flujo principal del modulo.
+ */
 function stripNearDuplicates(latlngs, epsMeters = 6) {
   if (!Array.isArray(latlngs) || latlngs.length < 2) return latlngs || [];
   const out = [latlngs[0]];
@@ -123,6 +129,9 @@ function stripNearDuplicates(latlngs, epsMeters = 6) {
   return out;
 }
 
+/**
+ * Dibuja o resalta draw line route following streets sobre el mapa o la interfaz.
+ */
 export async function drawLineRouteFollowingStreets(latlngs, color = "#000") {
   if (!latlngs || latlngs.length < 2) return null;
 

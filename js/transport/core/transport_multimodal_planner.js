@@ -39,6 +39,9 @@ function normLite(s) {
   return normKey(s);
 }
 
+/**
+ * Gestiona includes key dentro del flujo principal del modulo.
+ */
 function includesKey(haystack, needle) {
   const h = normLite(haystack);
   const n = normLite(needle);
@@ -46,6 +49,9 @@ function includesKey(haystack, needle) {
   return h.includes(n);
 }
 
+/**
+ * Evalua si is proano or rio blanco para decidir el flujo de la interfaz.
+ */
 function isProanoOrRioBlanco(ctx = {}, destPlace = {}) {
   const p1 = normLite(ctx?.parroquia);
   const p2 = normLite(destPlace?.parroquia);
@@ -61,6 +67,9 @@ function isProanoOrRioBlanco(ctx = {}, destPlace = {}) {
   return hayProano || hayRioBlanco;
 }
 
+/**
+ * Evalua si is macas context para decidir el flujo de la interfaz.
+ */
 function isMacasContext(ctx = {}, destPlace = {}) {
   const c1 = normLite(ctx?.canton);
   const c2 = normLite(destPlace?.canton || destPlace?.ciudad);
@@ -74,6 +83,9 @@ function isMacasContext(ctx = {}, destPlace = {}) {
   );
 }
 
+/**
+ * Gestiona ll from stop dentro del flujo principal del modulo.
+ */
 function llFromStop(p) {
   const u = p?.ubicacion;
   const { latitude, longitude } = u || {};
@@ -81,14 +93,23 @@ function llFromStop(p) {
   return [latitude, longitude];
 }
 
+/**
+ * Gestiona dist dentro del flujo principal del modulo.
+ */
 function dist(a, b) {
   return map.distance(a, b);
 }
 
+/**
+ * Evalua si is rural visible stop para decidir el flujo de la interfaz.
+ */
 function isRuralVisibleStop(p) {
   return String(p?.denominacion || "").toLowerCase().trim() === "parada";
 }
 
+/**
+ * Busca nearest kstops dentro de las colecciones disponibles.
+ */
 function nearestKStops(stops, point, k = 15) {
   const out = [];
   for (const s of stops) {
@@ -100,12 +121,18 @@ function nearestKStops(stops, point, k = 15) {
   return out.slice(0, Math.max(1, k));
 }
 
+/**
+ * Calcula score from walk and stops para escoger la mejor opcion disponible.
+ */
 function scoreFromWalkAndStops({ walk_m, transfers = 0, stopsCount = 0 }) {
   const walkMin = walk_m * CFG.SCORE.WALK_M_TO_MIN;
   const transferMin = transfers * CFG.SCORE.TRANSFER_PENALTY_MIN;
   return walkMin + transferMin + (stopsCount * 0.05);
 }
 
+/**
+ * Construye make direct plan para mostrar contenido o preparar datos de la interfaz.
+ */
 function makeDirectPlan({ tipo, linea, plan, walkExtra = 0 }) {
   const walk_m = (plan?.metrics?.walk1 || 0) + (plan?.metrics?.walk2 || 0) + walkExtra;
   const stopsCount = plan?.metrics?.stopsCount || 0;
@@ -139,6 +166,9 @@ async function getUrbanoStopsAll() {
     .filter(p => p?.activo && normStr(p?.tipo) === "urbana");
 }
 
+/**
+ * Obtiene get rural stops all desde el estado local, la API o los datos cacheados.
+ */
 async function getRuralStopsAll() {
   const all = await getCollectionCache("paradas-rurales");
   return (Array.isArray(all) ? all : [])
@@ -234,6 +264,9 @@ async function bestUrbanoDirect(userLoc, destLoc, ctx, opts = {}) {
   return best;
 }
 
+/**
+ * Gestiona best rural direct dentro del flujo principal del modulo.
+ */
 async function bestRuralDirect(userLoc, destLoc, ctx, ruralHelpers) {
   const lineas = await getLineasByTipo("rural", ctx);
   if (!lineas?.length) return null;
@@ -302,6 +335,9 @@ function getAllowedUrbanoForTransfer(ctx, destPlace) {
   return new Set(["l1", "l2"]);
 }
 
+/**
+ * Gestiona prioritize terminal first dentro del flujo principal del modulo.
+ */
 function prioritizeTerminalFirst(cands) {
   const a = [];
   const b = [];
@@ -312,6 +348,9 @@ function prioritizeTerminalFirst(cands) {
   return [...a, ...b];
 }
 
+/**
+ * Gestiona best transfer rural to urbano dentro del flujo principal del modulo.
+ */
 async function bestTransfer_RuralToUrbano(userLoc, destLoc, ctx, ruralHelpers, destPlace) {
   const urbanoStops = await getUrbanoStopsAll();
 
@@ -373,6 +412,9 @@ async function bestTransfer_RuralToUrbano(userLoc, destLoc, ctx, ruralHelpers, d
   return best;
 }
 
+/**
+ * Gestiona best transfer urbano to rural dentro del flujo principal del modulo.
+ */
 async function bestTransfer_UrbanoToRural(userLoc, destLoc, ctx, ruralHelpers, destPlace) {
   const ruralStops = (await getRuralStopsAll()).filter(isRuralVisibleStop);
   let candidates = nearestKStops(ruralStops, destLoc, CFG.K_TRANSFER_STOPS)

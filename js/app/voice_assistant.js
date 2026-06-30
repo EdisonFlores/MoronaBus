@@ -1,6 +1,9 @@
 // js/app/voice_assistant.js
 import { getLang, translateText } from "./i18n.js";
 
+/**
+ * Gestiona clean text dentro del flujo principal del modulo.
+ */
 function cleanText(text) {
   return String(text || "")
     .replace(/\s+/g, " ")
@@ -8,6 +11,9 @@ function cleanText(text) {
     .trim();
 }
 
+/**
+ * Evalua si is visible para decidir el flujo de la interfaz.
+ */
 function isVisible(el) {
   if (!el || !(el instanceof Element)) return false;
   if (el.hidden || el.getAttribute("aria-hidden") === "true") return false;
@@ -17,6 +23,9 @@ function isVisible(el) {
   return rect.width > 0 && rect.height > 0;
 }
 
+/**
+ * Gestiona text from dentro del flujo principal del modulo.
+ */
 function textFrom(root) {
   if (!root) return "";
   const clone = root.cloneNode(true);
@@ -24,6 +33,9 @@ function textFrom(root) {
   return cleanText(clone.innerText || clone.textContent || "");
 }
 
+/**
+ * Gestiona element label dentro del flujo principal del modulo.
+ */
 function elementLabel(el) {
   if (!el) return "";
 
@@ -45,6 +57,9 @@ function elementLabel(el) {
   );
 }
 
+/**
+ * Gestiona readable element from dentro del flujo principal del modulo.
+ */
 function readableElementFrom(target) {
   if (!target || !(target instanceof Element)) return null;
   if (target.closest("#btnVoiceReader")) return null;
@@ -54,6 +69,9 @@ function readableElementFrom(target) {
   ) || target;
 }
 
+/**
+ * Inicializa init voice reader y deja sus eventos o elementos listos para usarse.
+ */
 export function initVoiceReader() {
   const btn = document.getElementById("btnVoiceReader");
   if (!btn || btn.dataset.voiceReaderReady === "true") return;
@@ -65,6 +83,9 @@ export function initVoiceReader() {
   let lastText = "";
   let lastAt = 0;
 
+  /**
+   * Gestiona speak dentro del flujo principal del modulo.
+   */
   function speak(text) {
     const finalText = cleanText(translateText(text));
     if (!active || !canSpeak || !finalText) return;
@@ -83,6 +104,9 @@ export function initVoiceReader() {
     window.speechSynthesis.speak(utterance);
   }
 
+  /**
+   * Actualiza sync button y sincroniza la interfaz con el estado actual.
+   */
   function syncButton() {
     btn.classList.toggle("active", active);
     btn.setAttribute("aria-pressed", active ? "true" : "false");
@@ -90,6 +114,9 @@ export function initVoiceReader() {
     btn.setAttribute("aria-label", btn.title);
   }
 
+  /**
+   * Gestiona read target dentro del flujo principal del modulo.
+   */
   function readTarget(target) {
     if (!active) return;
 

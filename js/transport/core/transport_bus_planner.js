@@ -1,6 +1,9 @@
 // js/transport/core/transport_bus_planner.js
 import { map } from "../../map/map.js";
 
+/**
+ * Detiene stop lat lng y libera recursos asociados.
+ */
 function stopLatLng(p) {
   const u = p?.ubicacion;
   if (!u) return null;
@@ -9,16 +12,25 @@ function stopLatLng(p) {
   return [latitude, longitude];
 }
 
+/**
+ * Gestiona dist meters dentro del flujo principal del modulo.
+ */
 function distMeters(a, b) {
   return map.distance(a, b);
 }
 
+/**
+ * Normaliza o formatea normalize stops para usarlo de forma consistente.
+ */
 function normalizeStops(stops) {
   return (Array.isArray(stops) ? stops : [])
     .map(s => ({ s, ll: stopLatLng(s) }))
     .filter(x => x.ll);
 }
 
+/**
+ * Busca nearest k dentro de las colecciones disponibles.
+ */
 function nearestK(stopsNorm, pointLatLng, k = 25, requireSentido = null) {
   const ranked = [];
   for (const x of stopsNorm) {
@@ -30,6 +42,9 @@ function nearestK(stopsNorm, pointLatLng, k = 25, requireSentido = null) {
   return ranked.slice(0, Math.max(1, k));
 }
 
+/**
+ * Gestiona bus distance meters forward dentro del flujo principal del modulo.
+ */
 function busDistanceMetersForward(orderedStops, idxB, idxA, isCircularOneWay) {
   const n = orderedStops.length;
   if (n < 2) return Infinity;
@@ -65,6 +80,9 @@ function busDistanceMetersForward(orderedStops, idxB, idxA, isCircularOneWay) {
   return acc;
 }
 
+/**
+ * Gestiona forward stops count dentro del flujo principal del modulo.
+ */
 function forwardStopsCount(idxB, idxA, n, isCircularOneWay) {
   if (!isCircularOneWay) {
     if (idxA < idxB) return Infinity;
@@ -75,6 +93,9 @@ function forwardStopsCount(idxB, idxA, n, isCircularOneWay) {
   return (n - idxB) + idxA;
 }
 
+/**
+ * Construye build path stops para mostrar contenido o preparar datos de la interfaz.
+ */
 function buildPathStops(ordered, idxB, idxA, isCircularOneWay) {
   const n = ordered.length;
   if (!n) return [];
@@ -98,6 +119,9 @@ function buildPathStops(ordered, idxB, idxA, isCircularOneWay) {
   return path;
 }
 
+/**
+ * Calcula plan line board alight by order para escoger la mejor opcion disponible.
+ */
 export function planLineBoardAlightByOrder({
   userLoc,
   destLoc,

@@ -65,6 +65,9 @@ const STEPS = [
   }
 ];
 
+/**
+ * Evalua si is visible para decidir el flujo de la interfaz.
+ */
 function isVisible(el) {
   if (!el || !(el instanceof Element)) return false;
   const style = window.getComputedStyle(el);
@@ -72,15 +75,24 @@ function isVisible(el) {
   return style.display !== "none" && style.visibility !== "hidden" && rect.width > 0 && rect.height > 0;
 }
 
+/**
+ * Obtiene get target desde el estado local, la API o los datos cacheados.
+ */
 function getTarget(selector) {
   const el = document.querySelector(selector);
   return isVisible(el) ? el : null;
 }
 
+/**
+ * Gestiona clamp dentro del flujo principal del modulo.
+ */
 function clamp(value, min, max) {
   return Math.max(min, Math.min(max, value));
 }
 
+/**
+ * Construye create tutorial dom para mostrar contenido o preparar datos de la interfaz.
+ */
 function createTutorialDOM() {
   const overlay = document.createElement("div");
   overlay.id = "tm-tutorial";
@@ -111,6 +123,9 @@ function createTutorialDOM() {
   return overlay;
 }
 
+/**
+ * Inicializa init interactive tutorial y deja sus eventos o elementos listos para usarse.
+ */
 export function initInteractiveTutorial({ autoOpen = false } = {}) {
   const btn = document.getElementById("btnTutorial");
   if (!btn || btn.dataset.tutorialReady === "true") return;
@@ -131,12 +146,18 @@ export function initInteractiveTutorial({ autoOpen = false } = {}) {
   let index = 0;
   let open = false;
 
+  /**
+   * Construye render progress para mostrar contenido o preparar datos de la interfaz.
+   */
   function renderProgress() {
     progress.innerHTML = STEPS.map((_, i) => (
       `<span class="${i === index ? "active" : ""}" aria-hidden="true"></span>`
     )).join("");
   }
 
+  /**
+   * Gestiona place card dentro del flujo principal del modulo.
+   */
   function placeCard(target) {
     const margin = 14;
     const vw = window.innerWidth;
@@ -164,6 +185,9 @@ export function initInteractiveTutorial({ autoOpen = false } = {}) {
     card.style.bottom = "auto";
   }
 
+  /**
+   * Construye render para mostrar contenido o preparar datos de la interfaz.
+   */
   function render() {
     const step = STEPS[index];
     const target = getTarget(step.selector);
@@ -192,6 +216,9 @@ export function initInteractiveTutorial({ autoOpen = false } = {}) {
     }
   }
 
+  /**
+   * Inicializa start y deja sus eventos o elementos listos para usarse.
+   */
   function start() {
     open = true;
     index = 0;
@@ -202,6 +229,9 @@ export function initInteractiveTutorial({ autoOpen = false } = {}) {
     render();
   }
 
+  /**
+   * Gestiona finish dentro del flujo principal del modulo.
+   */
   function finish() {
     open = false;
     overlay.classList.remove("is-open");

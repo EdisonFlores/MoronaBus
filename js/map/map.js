@@ -22,6 +22,9 @@ export const routeOverlay = L.layerGroup().addTo(map);
 export const transportOverlay = L.layerGroup().addTo(map);
 export const interprovOverlay = L.layerGroup().addTo(map);
 
+/**
+ * Limpia clear interprov para dejar la vista o el estado listo para otro flujo.
+ */
 export function clearInterprov() {
   try { interprovOverlay.clearLayers(); } catch {}
 }
@@ -47,6 +50,9 @@ function buildPopupHTML(p) {
     🕒 ${horario}
   `;
 }
+/**
+ * Dibuja o resalta draw fallback polyline sobre el mapa o la interfaz.
+ */
 function drawFallbackPolyline(points, {
   color = "#ff9800",
   weight = 4,
@@ -76,6 +82,9 @@ export function clearMarkers() {
   markersLayer.clearLayers();
 }
 
+/**
+ * Limpia clear route para dejar la vista o el estado listo para otro flujo.
+ */
 export function clearRoute() {
   if (routeLine) {
     try { routeOverlay.removeLayer(routeLine); } catch {}
@@ -93,6 +102,9 @@ export function clearRoute() {
   }
 }
 
+/**
+ * Limpia clear transport route para dejar la vista o el estado listo para otro flujo.
+ */
 export function clearTransportRoute() {
   if (transportLines.length) {
     transportLines.forEach(l => {
@@ -354,6 +366,9 @@ function modeToProfile(mode) {
   }[mode] || "car");
 }
 
+/**
+ * Obtiene fetch osrmroute desde el estado local, la API o los datos cacheados.
+ */
 async function fetchOSRMRoute(from, to, profile) {
   const coordinates = `${from[1]},${from[0]};${to[1]},${to[0]}`;
 
@@ -374,6 +389,9 @@ async function fetchOSRMRoute(from, to, profile) {
     return null;
   }
 }
+/**
+ * Dibuja o resalta draw route between points sobre el mapa o la interfaz.
+ */
 export async function drawRouteBetweenPoints({
   from,
   to,
@@ -420,6 +438,9 @@ export async function drawRouteBetweenPoints({
     line
   };
 }
+/**
+ * Dibuja o resalta draw two leg osrm sobre el mapa o la interfaz.
+ */
 export async function drawTwoLegOSRM({
   userLoc,
   terminalLoc,

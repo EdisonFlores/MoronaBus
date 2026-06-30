@@ -4,6 +4,9 @@ import { t } from "./i18n.js";
 
 let tmClockInterval = null;
 
+/**
+ * Inicializa ensure weather modal y deja sus eventos o elementos listos para usarse.
+ */
 function ensureWeatherModal() {
   if (document.getElementById("tm-weather-modal")) return;
 
@@ -57,6 +60,9 @@ function ensureWeatherModal() {
   document.body.appendChild(wrap);
 }
 
+/**
+ * Normaliza o formatea fmt date para usarlo de forma consistente.
+ */
 function fmtDate(iso) {
   try {
     const d = new Date(`${iso}T00:00:00`);
@@ -66,6 +72,9 @@ function fmtDate(iso) {
   }
 }
 
+/**
+ * Gestiona weather code to text dentro del flujo principal del modulo.
+ */
 function weatherCodeToText(code) {
   const m = {
     0: "Despejado",
@@ -84,6 +93,9 @@ function weatherCodeToText(code) {
   return (typeof code === "number" && (code in m)) ? m[code] : "Clima";
 }
 
+/**
+ * Gestiona weather code to icon dentro del flujo principal del modulo.
+ */
 function weatherCodeToIcon(code) {
   if (typeof code !== "number") return '<i class="bi bi-cloud"></i>';
   if (code === 0) return '<i class="bi bi-sun-fill"></i>';
@@ -95,6 +107,9 @@ function weatherCodeToIcon(code) {
   return '<i class="bi bi-cloud"></i>';
 }
 
+/**
+ * Inicializa start hourly clock y deja sus eventos o elementos listos para usarse.
+ */
 function startHourlyClock() {
   if (tmClockInterval) clearInterval(tmClockInterval);
 
@@ -121,6 +136,9 @@ function startHourlyClock() {
   }, 1000);
 }
 
+/**
+ * Detiene stop hourly clock y libera recursos asociados.
+ */
 function stopHourlyClock() {
   if (tmClockInterval) {
     clearInterval(tmClockInterval);
@@ -128,6 +146,9 @@ function stopHourlyClock() {
   }
 }
 
+/**
+ * Construye render hourly html para mostrar contenido o preparar datos de la interfaz.
+ */
 function renderHourlyHTML(data) {
   const curTemp = data?.current?.temperature_2m;
   const curCode = data?.current?.weather_code;
@@ -176,6 +197,9 @@ function renderHourlyHTML(data) {
 
    const tempTxt = (typeof temp === "number") ? `${Math.round(temp)}°C` : "--°C";
 
+    /**
+     * Evalua si is night para decidir el flujo de la interfaz.
+     */
     const isNight = (() => {
       const h = x.dt.getHours();
       return (h >= 18 || h < 6);
@@ -232,6 +256,9 @@ function renderHourlyHTML(data) {
   `;
 }
 
+/**
+ * Construye render daily html para mostrar contenido o preparar datos de la interfaz.
+ */
 function renderDailyHTML(data) {
   const days = data?.daily?.time || [];
   const tmax = data?.daily?.temperature_2m_max || [];
@@ -262,6 +289,9 @@ function renderDailyHTML(data) {
   `;
 }
 
+/**
+ * Muestra open weather popup al usuario.
+ */
 export async function openWeatherPopup({ lat, lon }) {
   ensureWeatherModal();
 
@@ -304,6 +334,9 @@ export async function openWeatherPopup({ lat, lon }) {
   }
 }
 
+/**
+ * Inicializa init weather popup y deja sus eventos o elementos listos para usarse.
+ */
 export function initWeatherPopup({ getUserLoc, getMapCenter }) {
   const badge = document.getElementById("weatherBadge");
   if (!badge) return;

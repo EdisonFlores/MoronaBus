@@ -1,15 +1,24 @@
 // js/app/selects.js
 import { getCollectionCache } from "./cache_db.js";
 
+/**
+ * Normaliza o formatea norm lite para usarlo de forma consistente.
+ */
 function normLite(value) {
   return String(value || "").trim().toLowerCase();
 }
 
+/**
+ * Evalua si is sevilla morona canton para decidir el flujo de la interfaz.
+ */
 function isSevillaMoronaCanton(value) {
   const v = normLite(value);
   return v === "morona" || v === "sevilla don bosco" || v.includes("sevilla");
 }
 
+/**
+ * Evalua si matches sevilla morona canton para decidir el flujo de la interfaz.
+ */
 function matchesSevillaMoronaCanton(value) {
   const city = String(value || "").trim();
   return city === "Sevilla Don Bosco" || city === "Morona";

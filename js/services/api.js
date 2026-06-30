@@ -26,11 +26,17 @@ const COLLECTION_TO_ENDPOINT = {
   "paradas-rurales": "paradas-rurales"
 };
 
+/**
+ * Gestiona resolve endpoint dentro del flujo principal del modulo.
+ */
 function resolveEndpoint(name) {
   const key = String(name || "").trim();
   return COLLECTION_TO_ENDPOINT[key] || key;
 }
 
+/**
+ * Construye build query para mostrar contenido o preparar datos de la interfaz.
+ */
 export function buildQuery(params = {}) {
   const sp = new URLSearchParams();
 
@@ -45,6 +51,9 @@ export function buildQuery(params = {}) {
   return q ? `?${q}` : "";
 }
 
+/**
+ * Normaliza o formatea normalize error message para usarlo de forma consistente.
+ */
 function normalizeErrorMessage(json, status) {
   if (!json) return `Error HTTP ${status}`;
   if (typeof json === "string") return json;
@@ -57,6 +66,9 @@ function normalizeErrorMessage(json, status) {
   }
 }
 
+/**
+ * Gestiona api get dentro del flujo principal del modulo.
+ */
 export async function apiGet(path, params = {}, { timeoutMs = 12000 } = {}) {
   const endpoint = String(path || "").trim().replace(/^\/+/, "").replace(/^api\//, "");
   const url = `${API_BASE}/api/${endpoint}${buildQuery(params)}`;
@@ -94,6 +106,9 @@ export async function apiGet(path, params = {}, { timeoutMs = 12000 } = {}) {
   }
 }
 
+/**
+ * Obtiene fetch collection desde el estado local, la API o los datos cacheados.
+ */
 export async function fetchCollection(name, params = {}, options = {}) {
   const endpoint = resolveEndpoint(name);
   return apiGet(endpoint, params, options);

@@ -4,6 +4,9 @@ export function sendJson(res, status, data) {
   res.status(status).json(data);
 }
 
+/**
+ * Gestiona cache until ecuador midnight dentro del flujo principal del modulo.
+ */
 export function cacheUntilEcuadorMidnight(res) {
   const now = new Date();
 
@@ -33,6 +36,9 @@ export function cacheUntilEcuadorMidnight(res) {
   );
 }
 
+/**
+ * Envia ok como respuesta estandar de la API.
+ */
 export function ok(res, data, meta = {}) {
   return sendJson(res, 200, {
     ok: true,
@@ -41,6 +47,9 @@ export function ok(res, data, meta = {}) {
   });
 }
 
+/**
+ * Envia fail como respuesta estandar de la API.
+ */
 export function fail(res, status = 500, message = "Error interno", extra = {}) {
   return sendJson(res, status, {
     ok: false,

@@ -29,6 +29,9 @@ export function createManualRouting(deps) {
   let manualStart = null;
   let manualStartMarker = null;
 
+  /**
+   * Limpia clear manual dest para dejar la vista o el estado listo para otro flujo.
+   */
   function clearManualDest() {
     manualDest = null;
     if (manualDestMarker) {
@@ -37,6 +40,9 @@ export function createManualRouting(deps) {
     }
   }
 
+  /**
+   * Limpia clear manual start para dejar la vista o el estado listo para otro flujo.
+   */
   function clearManualStart() {
     manualStart = null;
     if (manualStartMarker) {
@@ -45,6 +51,9 @@ export function createManualRouting(deps) {
     }
   }
 
+  /**
+   * Inicializa ensure route controls for manual y deja sus eventos o elementos listos para usarse.
+   */
   function ensureRouteControlsForManual(force = false) {
     if (!extraEl) return;
 
@@ -75,18 +84,30 @@ export function createManualRouting(deps) {
     });
   }
 
+  /**
+   * Evalua si is lat lng arr para decidir el flujo de la interfaz.
+   */
   function isLatLngArr(x) {
     return Array.isArray(x) && x.length === 2 && Number.isFinite(x[0]) && Number.isFinite(x[1]);
   }
 
+  /**
+   * Evalua si is entorno para decidir el flujo de la interfaz.
+   */
   function isEntorno(x) {
     return x === "urbano" || x === "rural";
   }
 
+  /**
+   * Normaliza o formatea norm str para usarlo de forma consistente.
+   */
   function normStr(s) {
     return String(s || "").trim().toLowerCase();
   }
 
+  /**
+   * Gestiona same admin dentro del flujo principal del modulo.
+   */
   function sameAdmin(a = {}, b = {}) {
     const ap = normStr(a.provincia);
     const ac = normStr(a.canton);
@@ -104,6 +125,9 @@ export function createManualRouting(deps) {
     return aa === ba;
   }
 
+  /**
+   * Muestra show no coverage al usuario.
+   */
   function showNoCoverage(infoEl, msg = "De momento no hay datos registrados en la zona, pronto habrá cobertura.") {
     if (!infoEl) return;
     infoEl.innerHTML = `
@@ -114,6 +138,9 @@ export function createManualRouting(deps) {
     `;
   }
 
+  /**
+   * Gestiona safe detect point context dentro del flujo principal del modulo.
+   */
   async function safeDetectPointContext(latlng) {
     if (!detectPointContext || !isLatLngArr(latlng)) return null;
     try {
@@ -123,6 +150,9 @@ export function createManualRouting(deps) {
     }
   }
 
+  /**
+   * Construye build route para mostrar contenido o preparar datos de la interfaz.
+   */
   async function buildRoute() {
     const infoEl = document.getElementById("route-info");
     const activePlace = getActivePlace?.();
@@ -277,6 +307,9 @@ export function createManualRouting(deps) {
     await drawRouteToPoint?.({ from: startLoc, to: destLoc, mode, infoBox: infoEl, title: "Ruta" });
   }
 
+  /**
+   * Actualiza set manual start point y sincroniza la interfaz con el estado actual.
+   */
   function setManualStartPoint(latlng) {
     if (!latlng) return;
 
@@ -295,6 +328,9 @@ export function createManualRouting(deps) {
     refreshLayersOverlays?.();
   }
 
+  /**
+   * Actualiza set manual destination y sincroniza la interfaz con el estado actual.
+   */
   function setManualDestination(latlng) {
     if (!latlng) return;
 

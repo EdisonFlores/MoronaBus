@@ -43,11 +43,17 @@ function normLite(s) {
   return String(s || "").trim().toLowerCase();
 }
 
+/**
+ * Evalua si is sevilla morona canton para decidir el flujo de la interfaz.
+ */
 function isSevillaMoronaCanton(value) {
   const v = normLite(value);
   return v === "morona" || v === "sevilla don bosco" || v.includes("sevilla");
 }
 
+/**
+ * Gestiona geo matches dentro del flujo principal del modulo.
+ */
 function geoMatches(ctx = {}, place = {}) {
   const pCtx = normLite(ctx.provincia);
   const cCtx = normLite(ctx.canton);
@@ -120,12 +126,18 @@ function ensureTransportModal() {
   return document.getElementById("tm-linea-modal");
 }
 
+/**
+ * Gestiona hhmm now dentro del flujo principal del modulo.
+ */
 function hhmmNow(date = new Date()) {
   const h = String(date.getHours()).padStart(2, "0");
   const m = String(date.getMinutes()).padStart(2, "0");
   return `${h}:${m}`;
 }
 
+/**
+ * Muestra show linea modal al usuario.
+ */
 function showLineaModal(linea, now = new Date()) {
   const modalEl = ensureTransportModal();
   const titleEl = modalEl.querySelector("#tm-linea-modal-title");
@@ -213,6 +225,9 @@ function ensureDeparturesModal() {
   return document.getElementById("tm-dep-modal");
 }
 
+/**
+ * Muestra show departures modal al usuario.
+ */
 function showDeparturesModal(htmlSalidas, htmlRetornos, now = new Date()) {
   const modalEl = ensureDeparturesModal();
   const titleEl = modalEl.querySelector("#tm-dep-modal-title");
@@ -248,14 +263,23 @@ function getParadaLatLng(p) {
   return [latitude, longitude];
 }
 
+/**
+ * Gestiona dist meters dentro del flujo principal del modulo.
+ */
 function distMeters(a, b) {
   return map.distance(a, b);
 }
 
+/**
+ * Obtiene get denom desde el estado local, la API o los datos cacheados.
+ */
 function getDenom(p) {
   return String(p?.denominacion || "").toLowerCase().trim();
 }
 
+/**
+ * Obtiene get marker spec desde el estado local, la API o los datos cacheados.
+ */
 function getMarkerSpec(p, linea) {
   const denom = getDenom(p);
   const color = linea?.color || "#000";
@@ -289,6 +313,9 @@ function getMarkerSpec(p, linea) {
   };
 }
 
+/**
+ * Evalua si is stop candidate for board alight para decidir el flujo de la interfaz.
+ */
 function isStopCandidateForBoardAlight(p) {
   const denom = getDenom(p);
   if (denom === "referencial") return false;
@@ -296,6 +323,9 @@ function isStopCandidateForBoardAlight(p) {
   return denom === "parada" || uso === "fija" || uso === "recorrido";
 }
 
+/**
+ * Busca find nearest coord on path dentro de las colecciones disponibles.
+ */
 function findNearestCoordOnPath(point, coords) {
   let best = null;
   let min = Infinity;
@@ -309,6 +339,9 @@ function findNearestCoordOnPath(point, coords) {
   return best ? { ll: best, d: min } : null;
 }
 
+/**
+ * Busca find nearest stop dentro de las colecciones disponibles.
+ */
 function findNearestStop(point, stops) {
   let best = null;
   let min = Infinity;
@@ -324,6 +357,9 @@ function findNearestStop(point, stops) {
   return best ? { stop: best, ll: getParadaLatLng(best), d: min } : null;
 }
 
+/**
+ * Busca find nearest coord index dentro de las colecciones disponibles.
+ */
 function findNearestCoordIndex(coords, targetLL) {
   if (!coords?.length || !targetLL) return -1;
   let bestIdx = -1;
@@ -348,6 +384,9 @@ function parseCodigoParts(codigo) {
   return { prefix: m[1], num: Number(m[2]) };
 }
 
+/**
+ * Obtiene get numeral desde el estado local, la API o los datos cacheados.
+ */
 function getNumeral(p) {
   const n = Number(p?.numeral);
   if (Number.isFinite(n)) return n;
@@ -359,11 +398,17 @@ function getNumeral(p) {
   return Number.isFinite(num) ? num : Infinity;
 }
 
+/**
+ * Obtiene get prefix desde el estado local, la API o los datos cacheados.
+ */
 function getPrefix(p) {
   const { prefix } = parseCodigoParts(p?.codigo);
   return String(prefix || "").toLowerCase().trim();
 }
 
+/**
+ * Gestiona sort by numeral stable dentro del flujo principal del modulo.
+ */
 function sortByNumeralStable(arr) {
   return [...arr].sort((a, b) => {
     const na = getNumeral(a);
@@ -381,6 +426,9 @@ function normCode(x) {
   return s.replace(/\s+/g, "").replace(/[-_]/g, "");
 }
 
+/**
+ * Gestiona extract codes from lineasruralpasan dentro del flujo principal del modulo.
+ */
 function extractCodesFromLineasruralpasan(p) {
   const arr = Array.isArray(p?.lineasruralpasan) ? p.lineasruralpasan : [];
   const out = [];
@@ -398,12 +446,18 @@ function extractCodesFromLineasruralpasan(p) {
   return out.filter(Boolean);
 }
 
+/**
+ * Gestiona belongs to linea by array dentro del flujo principal del modulo.
+ */
 function belongsToLineaByArray(p, codigoLinea) {
   const need = normCode(codigoLinea);
   if (!need) return false;
   return extractCodesFromLineasruralpasan(p).includes(need);
 }
 
+/**
+ * Obtiene get paradas rurales by linea pasan desde el estado local, la API o los datos cacheados.
+ */
 async function getParadasRuralesByLineaPasan(codigoLinea) {
   const code = normCode(codigoLinea);
 
@@ -435,6 +489,9 @@ function usesSevillaSchema(linea) {
   return normLite(linea?.denominacion) === "entra sevilla";
 }
 
+/**
+ * Gestiona dedup by codigo dentro del flujo principal del modulo.
+ */
 function dedupByCodigo(arr) {
   const seen = new Set();
   const out = [];
@@ -448,6 +505,9 @@ function dedupByCodigo(arr) {
   return out;
 }
 
+/**
+ * Construye build ordered stops sevilla para mostrar contenido o preparar datos de la interfaz.
+ */
 function buildOrderedStops_Sevilla(paradasAll, sentidoLower, linea) {
   const s = normStr(sentidoLower);
   const codigoLinea = linea?.codigo;
@@ -456,16 +516,37 @@ function buildOrderedStops_Sevilla(paradasAll, sentidoLower, linea) {
     .filter(p => normStr(p?.sentido) === s)
     .filter(p => belongsToLineaByArray(p, codigoLinea));
 
+  /**
+   * Gestiona pref dentro del flujo principal del modulo.
+   */
   const pref = (p) => getPrefix(p);
   const isFixedByPrefix =
     (p) => pref(p).startsWith("pfi") || pref(p).startsWith("pfis") || pref(p).startsWith("pfv") || pref(p).startsWith("pfvs");
 
+  /**
+   * Evalua si is rec para decidir el flujo de la interfaz.
+   */
   const isRec = (p) => normStr(p?.uso) === "recorrido";
+  /**
+   * Evalua si is fija para decidir el flujo de la interfaz.
+   */
   const isFija = (p) => normStr(p?.uso) === "fija" || isFixedByPrefix(p);
 
+  /**
+   * Evalua si is pfi para decidir el flujo de la interfaz.
+   */
   const isPfi = (p) => pref(p).startsWith("pfi") && !pref(p).startsWith("pfis");
+  /**
+   * Evalua si is pfis para decidir el flujo de la interfaz.
+   */
   const isPfis = (p) => pref(p).startsWith("pfis");
+  /**
+   * Evalua si is pfvs para decidir el flujo de la interfaz.
+   */
   const isPfvs = (p) => pref(p).startsWith("pfvs");
+  /**
+   * Evalua si is pfv para decidir el flujo de la interfaz.
+   */
   const isPfv = (p) => pref(p).startsWith("pfv") && !pref(p).startsWith("pfvs");
 
   const recorrido = sortByNumeralStable(base.filter(isRec));
@@ -486,6 +567,9 @@ function buildOrderedStops_Sevilla(paradasAll, sentidoLower, linea) {
   return dedupByCodigo(sortByNumeralStable(base));
 }
 
+/**
+ * Construye build ordered stops by linea pasan para mostrar contenido o preparar datos de la interfaz.
+ */
 function buildOrderedStops_ByLineaPasan(paradasAll, sentido, codigoLinea) {
   const s = normStr(sentido);
   const code = normCode(codigoLinea);
@@ -496,7 +580,13 @@ function buildOrderedStops_ByLineaPasan(paradasAll, sentido, codigoLinea) {
 
   if (!base.length) return [];
 
+  /**
+   * Evalua si is rec para decidir el flujo de la interfaz.
+   */
   const isRec = (p) => normStr(p?.uso) === "recorrido";
+  /**
+   * Evalua si is fija para decidir el flujo de la interfaz.
+   */
   const isFija = (p) => normStr(p?.uso) === "fija" || (!isRec(p));
 
   let out = [];
@@ -525,6 +615,9 @@ function buildOrderedStops_ByLineaPasan(paradasAll, sentido, codigoLinea) {
   return final;
 }
 
+/**
+ * Construye build ordered stops for linea para mostrar contenido o preparar datos de la interfaz.
+ */
 function buildOrderedStopsForLinea(paradasAll, sentidoLower, linea) {
   const s = normStr(sentidoLower);
 
@@ -649,6 +742,9 @@ function parseHHMM(s) {
   return hh * 60 + mm;
 }
 
+/**
+ * Normaliza o formatea fmt hhmm para usarlo de forma consistente.
+ */
 function fmtHHMM(mins) {
   const m = ((mins % (24 * 60)) + (24 * 60)) % (24 * 60);
   const hh = String(Math.floor(m / 60)).padStart(2, "0");
@@ -656,10 +752,16 @@ function fmtHHMM(mins) {
   return `${hh}:${mm}`;
 }
 
+/**
+ * Gestiona now minutes dentro del flujo principal del modulo.
+ */
 function nowMinutes(now = new Date()) {
   return now.getHours() * 60 + now.getMinutes();
 }
 
+/**
+ * Obtiene get freq min desde el estado local, la API o los datos cacheados.
+ */
 function getFreqMin(linea) {
   const a = Number(linea?.frecuencia_min);
   const b = Number(linea?.frecuencia_max);
@@ -668,6 +770,9 @@ function getFreqMin(linea) {
   return null;
 }
 
+/**
+ * Gestiona departures next hour dentro del flujo principal del modulo.
+ */
 function departuresNextHour(linea, sentidoLower, now = new Date(), windowMin = 60) {
   const start = nowMinutes(now);
   const end = start + windowMin;
@@ -691,6 +796,9 @@ function departuresNextHour(linea, sentidoLower, now = new Date(), windowMin = 6
   if (ini == null || fin == null || !freq) return [];
 
   const out = [];
+  /**
+   * Gestiona in window dentro del flujo principal del modulo.
+   */
   const inWindow = (t) => t >= start && t <= end;
 
   if (ini <= fin) {
@@ -1022,6 +1130,9 @@ function llKey(ll) {
   return `${Number(ll[0]).toFixed(6)},${Number(ll[1]).toFixed(6)}`;
 }
 
+/**
+ * Construye build index by lat lng para mostrar contenido o preparar datos de la interfaz.
+ */
 function buildIndexByLatLng(coords) {
   const m = new Map();
   for (let i = 0; i < coords.length; i++) {
@@ -1031,6 +1142,9 @@ function buildIndexByLatLng(coords) {
   return m;
 }
 
+/**
+ * Gestiona with timeout dentro del flujo principal del modulo.
+ */
 async function withTimeout(promise, ms = 12000) {
   let t = null;
   const timeout = new Promise((_, rej) => {
@@ -1044,6 +1158,9 @@ async function withTimeout(promise, ms = 12000) {
   }
 }
 
+/**
+ * Calcula plan and show bus stops for place para escoger la mejor opcion disponible.
+ */
 export async function planAndShowBusStopsForPlace(userLoc, destPlace, ctx = {}, ui = {}) {
   try {
     return await withTimeout(_planAndShowBusStopsForPlace(userLoc, destPlace, ctx, ui), 12000);
@@ -1059,6 +1176,9 @@ export async function planAndShowBusStopsForPlace(userLoc, destPlace, ctx = {}, 
   }
 }
 
+/**
+ * Gestiona plan and show bus stops for place dentro del flujo principal del modulo.
+ */
 async function _planAndShowBusStopsForPlace(userLoc, destPlace, ctx = {}, ui = {}) {
   if (!userLoc || !destPlace?.ubicacion) return null;
 
@@ -1428,6 +1548,9 @@ async function _planAndShowBusStopsForPlace(userLoc, destPlace, ctx = {}, ui = {
   return { tipo: "rural", linea: best.linea, sentido: titleCase(normStr(best.sentido)), useAuto: best.useAuto, score: best.score };
 }
 
+/**
+ * Dibuja o resalta highlight nearest stop on line sobre el mapa o la interfaz.
+ */
 function highlightNearestStopOnLine(stopMarkers, userLoc) {
   if (!userLoc || !Array.isArray(stopMarkers) || !stopMarkers.length) return;
 

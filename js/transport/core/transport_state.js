@@ -18,50 +18,89 @@ export function setRouteLayer(layer) {
   if (layerLineas) map.removeLayer(layerLineas);
   layerLineas = layer || null;
 }
+/**
+ * Obtiene get route layer desde el estado local, la API o los datos cacheados.
+ */
 export function getRouteLayer() {
   return layerLineas;
 }
 
+/**
+ * Actualiza set stops layer y sincroniza la interfaz con el estado actual.
+ */
 export function setStopsLayer(layerGroup) {
   if (layerParadas) map.removeLayer(layerParadas);
   layerParadas = layerGroup || null;
 }
+/**
+ * Obtiene get stops layer desde el estado local, la API o los datos cacheados.
+ */
 export function getStopsLayer() {
   return layerParadas;
 }
 
+/**
+ * Actualiza set access layer y sincroniza la interfaz con el estado actual.
+ */
 export function setAccessLayer(layer) {
   if (layerAcceso) map.removeLayer(layerAcceso);
   layerAcceso = layer || null;
 }
+/**
+ * Obtiene get access layer desde el estado local, la API o los datos cacheados.
+ */
 export function getAccessLayer() {
   return layerAcceso;
 }
 
+/**
+ * Actualiza set current linea y sincroniza la interfaz con el estado actual.
+ */
 export function setCurrentLinea(linea) {
   currentLinea = linea || null;
 }
+/**
+ * Obtiene get current linea desde el estado local, la API o los datos cacheados.
+ */
 export function getCurrentLinea() {
   return currentLinea;
 }
 
+/**
+ * Actualiza set current paradas y sincroniza la interfaz con el estado actual.
+ */
 export function setCurrentParadas(paradas) {
   currentParadas = Array.isArray(paradas) ? paradas : [];
 }
+/**
+ * Obtiene get current paradas desde el estado local, la API o los datos cacheados.
+ */
 export function getCurrentParadas() {
   return currentParadas;
 }
 
+/**
+ * Actualiza set current stop markers y sincroniza la interfaz con el estado actual.
+ */
 export function setCurrentStopMarkers(markers) {
   currentStopMarkers = Array.isArray(markers) ? markers : [];
 }
+/**
+ * Obtiene get current stop markers desde el estado local, la API o los datos cacheados.
+ */
 export function getCurrentStopMarkers() {
   return currentStopMarkers;
 }
 
+/**
+ * Actualiza set current stop offsets y sincroniza la interfaz con el estado actual.
+ */
 export function setCurrentStopOffsets(offsets) {
   currentStopOffsets = offsets instanceof Map ? offsets : new Map();
 }
+/**
+ * Obtiene get current stop offsets desde el estado local, la API o los datos cacheados.
+ */
 export function getCurrentStopOffsets() {
   return currentStopOffsets;
 }
@@ -75,6 +114,9 @@ export function resetNearestHighlight() {
   nearestStopMarkerOriginalStyle = null;
 }
 
+/**
+ * Actualiza set nearest highlight y sincroniza la interfaz con el estado actual.
+ */
 export function setNearestHighlight(marker) {
   resetNearestHighlight();
   if (!marker) return;

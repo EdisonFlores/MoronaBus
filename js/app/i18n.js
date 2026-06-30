@@ -336,10 +336,16 @@ const ATTRS = ["title", "aria-label", "placeholder", "alt", "label"];
 let observer = null;
 let applying = false;
 
+/**
+ * Normaliza o formatea normalize lang para usarlo de forma consistente.
+ */
 function normalizeLang(lang) {
   return String(lang || "es").toLowerCase().startsWith("en") ? "en" : "es";
 }
 
+/**
+ * Gestiona phrase pairs for dentro del flujo principal del modulo.
+ */
 function phrasePairsFor(lang) {
   const pairs = lang === "en"
     ? PHRASES
@@ -348,6 +354,9 @@ function phrasePairsFor(lang) {
   return [...pairs].sort((a, b) => b[0].length - a[0].length);
 }
 
+/**
+ * Gestiona replace all text dentro del flujo principal del modulo.
+ */
 function replaceAllText(text, lang) {
   if (!text || !String(text).trim()) return text;
   let out = text;
@@ -357,12 +366,18 @@ function replaceAllText(text, lang) {
   return out;
 }
 
+/**
+ * Evalua si should skip node para decidir el flujo de la interfaz.
+ */
 function shouldSkipNode(node) {
   const el = node.nodeType === Node.ELEMENT_NODE ? node : node.parentElement;
   if (!el) return true;
   return !!el.closest("script, style, noscript, code, pre, textarea, input, [data-no-i18n]");
 }
 
+/**
+ * Gestiona translate element attributes dentro del flujo principal del modulo.
+ */
 function translateElementAttributes(el, lang) {
   for (const attr of ATTRS) {
     if (!el.hasAttribute(attr)) continue;
@@ -372,27 +387,45 @@ function translateElementAttributes(el, lang) {
   }
 }
 
+/**
+ * Obtiene get lang desde el estado local, la API o los datos cacheados.
+ */
 export function getLang() {
   return normalizeLang(localStorage.getItem(LS_LANG) || "es");
 }
 
+/**
+ * Actualiza set lang y sincroniza la interfaz con el estado actual.
+ */
 export function setLang(lang) {
   localStorage.setItem(LS_LANG, normalizeLang(lang));
 }
 
+/**
+ * Gestiona t dentro del flujo principal del modulo.
+ */
 export function t(key) {
   const lang = getLang();
   return (I18N[lang] && I18N[lang][key]) || I18N.es[key] || key;
 }
 
+/**
+ * Gestiona translate text dentro del flujo principal del modulo.
+ */
 export function translateText(text) {
   return replaceAllText(text, getLang());
 }
 
+/**
+ * Gestiona translate html dentro del flujo principal del modulo.
+ */
 export function translateHTML(html) {
   return replaceAllText(html, getLang());
 }
 
+/**
+ * Gestiona translate node dentro del flujo principal del modulo.
+ */
 export function translateNode(root = document.body) {
   if (!root || getLang() === "es" && !document.documentElement.dataset.i18nTranslated) {
     return;
@@ -435,6 +468,9 @@ export function translateNode(root = document.body) {
   }
 }
 
+/**
+ * Actualiza apply language ui y sincroniza la interfaz con el estado actual.
+ */
 export function applyLanguageUI() {
   const lang = getLang();
   document.documentElement.lang = lang;
@@ -456,6 +492,9 @@ export function applyLanguageUI() {
   translateNode(document.body);
 }
 
+/**
+ * Inicializa init language observer y deja sus eventos o elementos listos para usarse.
+ */
 export function initLanguageObserver() {
   if (observer || !document.body) return;
 
@@ -482,6 +521,9 @@ export function initLanguageObserver() {
   });
 }
 
+/**
+ * Gestiona toggle language dentro del flujo principal del modulo.
+ */
 export function toggleLanguage() {
   const lang = getLang();
   setLang(lang === "es" ? "en" : "es");

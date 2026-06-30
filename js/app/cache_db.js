@@ -5,11 +5,17 @@ const cache = new Map();        // name -> { data, ts }
 const inflight = new Map();     // name -> Promise
 const TTL_MS = 1000 * 60 * 10;  // 10 min
 
+/**
+ * Evalua si is fresh para decidir el flujo de la interfaz.
+ */
 function isFresh(entry) {
   if (!entry) return false;
   return (Date.now() - entry.ts) < TTL_MS;
 }
 
+/**
+ * Obtiene get collection cache desde el estado local, la API o los datos cacheados.
+ */
 export async function getCollectionCache(name, { force = false, params = {} } = {}) {
   const keyName = String(name || "").trim();
   if (!keyName) return [];
@@ -22,6 +28,9 @@ export async function getCollectionCache(name, { force = false, params = {} } = 
 
   if (inflight.has(cacheKey)) return inflight.get(cacheKey);
 
+  /**
+   * Gestiona p dentro del flujo principal del modulo.
+   */
   const p = (async () => {
     const data = await fetchCollection(keyName, params);
 
@@ -38,6 +47,9 @@ export async function getCollectionCache(name, { force = false, params = {} } = 
   return p;
 }
 
+/**
+ * Limpia clear collection cache para dejar la vista o el estado listo para otro flujo.
+ */
 export function clearCollectionCache(name, params = {}) {
   const keyName = String(name || "").trim();
   const paramsKey = JSON.stringify(params || {});
@@ -45,6 +57,9 @@ export function clearCollectionCache(name, params = {}) {
   cache.delete(cacheKey);
 }
 
+/**
+ * Limpia clear all caches para dejar la vista o el estado listo para otro flujo.
+ */
 export function clearAllCaches() {
   cache.clear();
   inflight.clear();

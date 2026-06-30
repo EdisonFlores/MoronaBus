@@ -40,6 +40,9 @@ export async function reverseGeocodeNominatim(lat, lon) {
   };
 }
 
+/**
+ * Gestiona to title case dentro del flujo principal del modulo.
+ */
 function toTitleCase(str) {
   return String(str || "")
     .toLowerCase()

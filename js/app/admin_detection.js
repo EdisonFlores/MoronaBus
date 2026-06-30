@@ -15,15 +15,24 @@ function titleCaseWords(s) {
     .join(" ");
 }
 
+/**
+ * Normaliza o formatea norm lite para usarlo de forma consistente.
+ */
 function normLite(s) {
   return String(s || "").trim().toLowerCase();
 }
 
+/**
+ * Evalua si is sevilla morona shared canton para decidir el flujo de la interfaz.
+ */
 function isSevillaMoronaSharedCanton(value) {
   const v = normLite(value);
   return v === "morona" || v.includes("sevilla");
 }
 
+/**
+ * Gestiona ll from doc dentro del flujo principal del modulo.
+ */
 function llFromDoc(doc) {
   const u = doc?.ubicacion;
   const { latitude, longitude } = u || {};
@@ -31,6 +40,9 @@ function llFromDoc(doc) {
   return [latitude, longitude];
 }
 
+/**
+ * Gestiona pass type filter dentro del flujo principal del modulo.
+ */
 function passTypeFilter(source, doc) {
   const t = normLite(doc?.tipo);
 
@@ -40,6 +52,9 @@ function passTypeFilter(source, doc) {
   return true;
 }
 
+/**
+ * Normaliza o formatea normalize admin from doc para usarlo de forma consistente.
+ */
 function normalizeAdminFromDoc(source, doc) {
   const s = String(source || "").toLowerCase();
 
@@ -70,6 +85,9 @@ function normalizeAdminFromDoc(source, doc) {
   return { provincia: "", canton: "", parroquia: "" };
 }
 
+/**
+ * Evalua si is admin usable para decidir el flujo de la interfaz.
+ */
 function isAdminUsable(a) {
   const p = String(a?.provincia || "").trim();
   const c = String(a?.canton || "").trim();

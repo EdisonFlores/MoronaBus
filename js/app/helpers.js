@@ -5,17 +5,26 @@ export function hidePlacesUI(extraControls) {
   extraControls.classList.add("d-none");
 }
 
+/**
+ * Limpia reset category para dejar la vista o el estado listo para otro flujo.
+ */
 export function resetCategory(categorySelect) {
   categorySelect.value = "";
   categorySelect.classList.add("d-none");
 }
 
+/**
+ * Limpia reset canton para dejar la vista o el estado listo para otro flujo.
+ */
 export function resetCanton(cantonSelect) {
   cantonSelect.value = "";
   cantonSelect.innerHTML = `<option value="">🏙️ Seleccione cantón</option>`;
   cantonSelect.disabled = true;
 }
 
+/**
+ * Limpia reset parroquia para dejar la vista o el estado listo para otro flujo.
+ */
 export function resetParroquia(parroquiaSelect) {
   parroquiaSelect.value = "";
   parroquiaSelect.innerHTML = `<option value="">🏘️ Seleccione parroquia</option>`;
@@ -23,10 +32,16 @@ export function resetParroquia(parroquiaSelect) {
   parroquiaSelect.disabled = true;
 }
 
+/**
+ * Limpia clear route info para dejar la vista o el estado listo para otro flujo.
+ */
 export function clearRouteInfo(infoBox) {
   infoBox.innerHTML = "";
 }
 
+/**
+ * Limpia reset all ui para dejar la vista o el estado listo para otro flujo.
+ */
 export function resetAllUI({
   cantonSelect,
   parroquiaSelect,
@@ -43,11 +58,17 @@ export function resetAllUI({
   clearRouteInfo(infoBox);
 }
 
+/**
+ * Gestiona time to minutes dentro del flujo principal del modulo.
+ */
 export function timeToMinutes(t) {
   const [h, m] = t.split(":").map(Number);
   return h * 60 + m;
 }
 
+/**
+ * Gestiona minutes to time dentro del flujo principal del modulo.
+ */
 export function minutesToTime(m) {
   const h = Math.floor(m / 60) % 24;
   const min = m % 60;
@@ -95,6 +116,9 @@ export function isWeekend(date = new Date()) {
   return d === 0 || d === 6;
 }
 
+/**
+ * Normaliza o formatea format duration from seconds para usarlo de forma consistente.
+ */
 export function formatDurationFromSeconds(seconds) {
   const s = Math.max(0, Math.round(Number(seconds) || 0));
 

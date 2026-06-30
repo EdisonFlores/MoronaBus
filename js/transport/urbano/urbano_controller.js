@@ -48,11 +48,17 @@ function normLite(s) {
   return String(s || "").trim().toLowerCase();
 }
 
+/**
+ * Evalua si is sevilla morona canton para decidir el flujo de la interfaz.
+ */
 function isSevillaMoronaCanton(value) {
   const v = normLite(value);
   return v === "morona" || v === "sevilla don bosco" || v.includes("sevilla");
 }
 
+/**
+ * Gestiona geo matches dentro del flujo principal del modulo.
+ */
 function geoMatches(ctx = {}, place = {}) {
   const pCtx = normLite(ctx.provincia);
   const cCtx = normLite(ctx.canton);
@@ -115,12 +121,18 @@ function ensureTransportModal() {
   return document.getElementById("tm-linea-modal");
 }
 
+/**
+ * Gestiona hhmm now dentro del flujo principal del modulo.
+ */
 function hhmmNow(date = new Date()) {
   const h = String(date.getHours()).padStart(2, "0");
   const m = String(date.getMinutes()).padStart(2, "0");
   return `${h}:${m}`;
 }
 
+/**
+ * Muestra show linea modal al usuario.
+ */
 function showLineaModal(linea, now = new Date()) {
   const modalEl = ensureTransportModal();
   const titleEl = modalEl.querySelector("#tm-linea-modal-title");
@@ -413,6 +425,9 @@ export async function mostrarRutaLinea(linea, opts = {}, ctx = {}) {
   resaltarYConectarParadaMasCercana(paradas, linea);
 }
 
+/**
+ * Gestiona resaltar yconectar parada mas cercana dentro del flujo principal del modulo.
+ */
 function resaltarYConectarParadaMasCercana(paradas, linea) {
   const user = getUserLocation();
   if (!user) return;
@@ -466,6 +481,9 @@ async function drawWalkOSRM(layerGroup, fromLatLng, toLatLng) {
   return { line, route };
 }
 
+/**
+ * Gestiona path stops to lat lngs dentro del flujo principal del modulo.
+ */
 function pathStopsToLatLngs(pathStops) {
   const out = [];
   for (const s of (Array.isArray(pathStops) ? pathStops : [])) {
@@ -478,6 +496,9 @@ function pathStopsToLatLngs(pathStops) {
   return out;
 }
 
+/**
+ * Calcula plan and show bus stops for place para escoger la mejor opcion disponible.
+ */
 export async function planAndShowBusStopsForPlace(userLoc, destPlace, ctx = {}, ui = {}) {
   if (!userLoc || !destPlace?.ubicacion) return null;
 

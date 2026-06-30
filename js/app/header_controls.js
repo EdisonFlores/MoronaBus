@@ -2,6 +2,9 @@
 import { applyLanguageUI, toggleLanguage } from "./i18n.js";
 import { applyThemeUI, toggleTheme } from "./theme.js";
 
+/**
+ * Inicializa init header controls y deja sus eventos o elementos listos para usarse.
+ */
 export function initHeaderControls({ onLanguageChanged } = {}) {
 
   // aplicar estado inicial

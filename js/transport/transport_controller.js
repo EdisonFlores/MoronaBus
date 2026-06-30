@@ -11,11 +11,17 @@ import { cargarLineasTransporte as cargarRural } from "./rural/rural_controller.
 import { planAndShowBusStopsForPlace as planUrbanoForPlace } from "./urbano/urbano_controller.js";
 import { planAndShowBusStopsForPlace as planRuralForPlace } from "./rural/rural_controller.js";
 
+/**
+ * Limpia clear transport layers para dejar la vista o el estado listo para otro flujo.
+ */
 export function clearTransportLayers() {
   try { clearTransportRoute?.(); } catch {}
   try { clearTransportState?.(); } catch {}
 }
 
+/**
+ * Obtiene cargar lineas transporte desde el estado local, la API o los datos cacheados.
+ */
 export async function cargarLineasTransporte(tipo, container, ctx = {}) {
   const t = String(tipo || "").toLowerCase();
 
@@ -27,6 +33,9 @@ export async function cargarLineasTransporte(tipo, container, ctx = {}) {
   container.innerHTML = `<div class="alert alert-warning py-2">Tipo no soportado</div>`;
 }
 
+/**
+ * Normaliza o formatea norm entorno para usarlo de forma consistente.
+ */
 function normEntorno(v) {
   const s = String(v || "").trim().toLowerCase();
   if (s === "urbano") return "urbano";
@@ -34,6 +43,9 @@ function normEntorno(v) {
   return "";
 }
 
+/**
+ * Calcula decide preferred tipo para escoger la mejor opcion disponible.
+ */
 function decidePreferredTipo(entornoUser, entornoDest) {
   const u = normEntorno(entornoUser);
   const d = normEntorno(entornoDest);
@@ -49,10 +61,16 @@ function llFromStop(p) {
   return [latitude, longitude];
 }
 
+/**
+ * Gestiona dist meters dentro del flujo principal del modulo.
+ */
 function distMeters(map, a, b) {
   try { return map.distance(a, b); } catch { return Infinity; }
 }
 
+/**
+ * Evalua si has bus coverage para decidir el flujo de la interfaz.
+ */
 export async function hasBusCoverage({ map, userLoc, destLoc, radiusUrb = 2200, radiusRur = 4200 } = {}) {
   if (!map || !userLoc || !destLoc) return false;
 
@@ -65,6 +83,9 @@ export async function hasBusCoverage({ map, userLoc, destLoc, radiusUrb = 2200, 
   const rural = (Array.isArray(ruralAll) ? ruralAll : [])
     .filter(p => p?.activo && String(p?.tipo || "").toLowerCase().trim() === "rural");
 
+  /**
+   * Gestiona near any dentro del flujo principal del modulo.
+   */
   const nearAny = (arr, rad) => {
     for (const p of arr) {
       const ll = llFromStop(p);
@@ -94,6 +115,9 @@ async function withTimeout(promise, ms = 12000) {
   }
 }
 
+/**
+ * Calcula plan and show bus stops para escoger la mejor opcion disponible.
+ */
 export async function planAndShowBusStops(userLoc, destPlace, ctx = {}, ui = {}) {
   if (!userLoc || !destPlace?.ubicacion) return null;
 
@@ -125,6 +149,9 @@ export async function planAndShowBusStops(userLoc, destPlace, ctx = {}, ui = {})
     tipo: ctx?.tipo || "auto",
   };
 
+  /**
+   * Gestiona run tipo dentro del flujo principal del modulo.
+   */
   async function runTipo(tipo, { dryRun, preserveLayers }, uiArg) {
     const c = { ...baseCtx, dryRun: !!dryRun, preserveLayers: !!preserveLayers };
 

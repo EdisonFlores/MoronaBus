@@ -78,6 +78,9 @@ let ctxGeo = {
   virtualMorona: false
 };
 
+/**
+ * Obtiene get ctx geo desde el estado local, la API o los datos cacheados.
+ */
 const getCtxGeo = () => ctxGeo;
 let forceVirtualMoronaNext = false;
 
@@ -100,6 +103,9 @@ const btnLang = document.getElementById("btnLang");
 
 if (btnTheme) btnTheme.addEventListener("click", () => toggleTheme());
 
+/**
+ * Muestra show translate help modal al usuario.
+ */
 function showTranslateHelpModal() {
   return;
   const mobile = isMobileDevice();
@@ -203,6 +209,9 @@ function getMapCenterLatLng() {
   return { lat: c.lat, lng: c.lng };
 }
 
+/**
+ * Gestiona refresh weather from center or user dentro del flujo principal del modulo.
+ */
 async function refreshWeatherFromCenterOrUser() {
   const c = getMapCenterLatLng();
   if (c) {
@@ -224,6 +233,9 @@ function clearRouteInfo() {
   if (el) el.innerHTML = "";
 }
 
+/**
+ * Obtiene get trip actions el desde el estado local, la API o los datos cacheados.
+ */
 function getTripActionsEl() {
   const routeInfo = document.getElementById("route-info");
   const host = routeInfo?.parentNode || extra;
@@ -247,6 +259,9 @@ function getTripActionsEl() {
   return el;
 }
 
+/**
+ * Construye render trip button para mostrar contenido o preparar datos de la interfaz.
+ */
 function renderTripButton() {
   if (!tripTracker.place) return;
   if (!tripTracker.modeSelected) {
@@ -277,6 +292,9 @@ function renderTripButton() {
   };
 }
 
+/**
+ * Obtiene get trip destination loc desde el estado local, la API o los datos cacheados.
+ */
 function getTripDestinationLoc() {
   const u = tripTracker.place?.ubicacion || tripTracker.place?.["ubicaci\u00f3n"];
   const lat = u?.latitude ?? u?.lat;
@@ -285,6 +303,9 @@ function getTripDestinationLoc() {
   return [lat, lng];
 }
 
+/**
+ * Normaliza o formatea format trip duration para usarlo de forma consistente.
+ */
 function formatTripDuration(seconds) {
   const s = Math.max(0, Math.round(Number(seconds) || 0));
   if (s < 60) return `${s} s`;
@@ -295,6 +316,9 @@ function formatTripDuration(seconds) {
   return m ? `${h} h ${m} min` : `${h} h`;
 }
 
+/**
+ * Calcula estimate remaining seconds para escoger la mejor opcion disponible.
+ */
 function estimateRemainingSeconds(distanceMeters, mode) {
   const speedKmH = {
     walking: 5,
@@ -308,6 +332,9 @@ function estimateRemainingSeconds(distanceMeters, mode) {
   return (distanceMeters / 1000 / speedKmH) * 3600;
 }
 
+/**
+ * Actualiza update trip live status y sincroniza la interfaz con el estado actual.
+ */
 function updateTripLiveStatus(loc) {
   const status = document.getElementById("trip-live-status");
   const dest = getTripDestinationLoc();
@@ -336,6 +363,9 @@ function updateTripLiveStatus(loc) {
   `;
 }
 
+/**
+ * Gestiona complete trip tracking dentro del flujo principal del modulo.
+ */
 function completeTripTracking() {
   stopTripTracking(false);
   const status = document.getElementById("trip-live-status");
@@ -344,6 +374,9 @@ function completeTripTracking() {
   }
 }
 
+/**
+ * Muestra show trip start for dropdown selection al usuario.
+ */
 function showTripStartForDropdownSelection(place, source = "list") {
   const u = place?.ubicacion || place?.["ubicaci\u00f3n"];
   if (!u) return;
@@ -357,6 +390,9 @@ function showTripStartForDropdownSelection(place, source = "list") {
   hideTripStart();
 }
 
+/**
+ * Gestiona rebuild selected route dentro del flujo principal del modulo.
+ */
 function rebuildSelectedRoute({ showTripButton = false } = {}) {
   const p = manual.buildRoute();
   if (showTripButton || tripTracker.place) setTimeout(() => renderTripButton(), 80);
@@ -369,11 +405,17 @@ function rebuildSelectedRoute({ showTripButton = false } = {}) {
     });
 }
 
+/**
+ * Oculta hide trip start cuando deja de ser necesario.
+ */
 function hideTripStart() {
   const el = document.getElementById("trip-actions");
   if (el) el.innerHTML = "";
 }
 
+/**
+ * Detiene stop trip tracking y libera recursos asociados.
+ */
 function stopTripTracking(clearButton = true) {
   if (tripTracker.watchId !== null) {
     try { navigator.geolocation.clearWatch(tripTracker.watchId); } catch {}
@@ -396,6 +438,9 @@ function stopTripTracking(clearButton = true) {
   }
 }
 
+/**
+ * Evalua si should rebuild tracked route para decidir el flujo de la interfaz.
+ */
 function shouldRebuildTrackedRoute(loc) {
   const now = Date.now();
   if (!tripTracker.lastLoc) return true;
@@ -408,6 +453,9 @@ function shouldRebuildTrackedRoute(loc) {
   }
 }
 
+/**
+ * Gestiona rebuild tracked route dentro del flujo principal del modulo.
+ */
 async function rebuildTrackedRoute(loc) {
   if (!tripTracker.active || tripTracker.pending || !tripTracker.place) return;
   if (!shouldRebuildTrackedRoute(loc)) return;
@@ -432,6 +480,9 @@ async function rebuildTrackedRoute(loc) {
   }
 }
 
+/**
+ * Inicializa start trip tracking y deja sus eventos o elementos listos para usarse.
+ */
 function startTripTracking(place) {
   if (!navigator.geolocation) {
     showModal(
@@ -475,6 +526,9 @@ function startTripTracking(place) {
   );
 }
 
+/**
+ * Limpia clear routing artifacts para dejar la vista o el estado listo para otro flujo.
+ */
 function clearRoutingArtifacts({ preserveManualDestination = false } = {}) {
   clearRoute();
   clearTransportLayers();
@@ -486,6 +540,9 @@ function clearRoutingArtifacts({ preserveManualDestination = false } = {}) {
   }
 }
 
+/**
+ * Limpia reset map para dejar la vista o el estado listo para otro flujo.
+ */
 function resetMap() {
   stopTripTracking(true);
   clearMarkers();
@@ -494,6 +551,9 @@ function resetMap() {
   setActivePlaceAction(null);
 }
 
+/**
+ * Limpia clear directions para dejar la vista o el estado listo para otro flujo.
+ */
 function clearDirections() {
   stopTripTracking(true);
   try { manual.clearManualDest(); } catch {}
@@ -531,6 +591,9 @@ function ensureModal() {
   document.body.appendChild(wrap);
 }
 
+/**
+ * Muestra show modal al usuario.
+ */
 function showModal(title, html) {
   ensureModal();
   document.getElementById("tm-modal-title").textContent = title;
@@ -581,6 +644,9 @@ function showLocatingBanner() {
   `;
 }
 
+/**
+ * Gestiona enable category ui dentro del flujo principal del modulo.
+ */
 function enableCategoryUI() {
   if (!category) return;
   category.disabled = false;
@@ -588,6 +654,9 @@ function enableCategoryUI() {
   category.value = "";
 }
 
+/**
+ * Muestra show detected facade al usuario.
+ */
 function showDetectedFacade() {
   if (!bannerWrap) return;
 
@@ -602,6 +671,9 @@ function showDetectedFacade() {
   const pa = String(detectedAdmin?.parroquia || "").trim();
   const ent = String(ctxGeo?.entornoUser || "").trim();
 
+  /**
+   * Construye render explore morona button para mostrar contenido o preparar datos de la interfaz.
+   */
   const renderExploreMoronaButton = (variant = "primary") => `
     <div class="mt-2 tm-visit-box">
       <div class="small mb-2">Mientras tanto, puedes explorar Morona:</div>
@@ -611,6 +683,9 @@ function showDetectedFacade() {
     </div>
   `;
 
+  /**
+   * Gestiona wire explore morona dentro del flujo principal del modulo.
+   */
   const wireExploreMorona = () => {
     const btn = document.getElementById("btn-explore-morona");
     if (!btn) return;
@@ -700,6 +775,9 @@ function showDetectedFacade() {
   }
 }
 
+/**
+ * Oculta hide detected facade on place selection cuando deja de ser necesario.
+ */
 function hideDetectedFacadeOnPlaceSelection() {
   if (!bannerWrap) return;
   const banner = bannerWrap.querySelector("#loc-banner");
@@ -709,6 +787,9 @@ function hideDetectedFacadeOnPlaceSelection() {
   bannerWrap.innerHTML = "";
 }
 
+/**
+ * Oculta hide detected facade on category change cuando deja de ser necesario.
+ */
 function hideDetectedFacadeOnCategoryChange() {
   if (!bannerWrap) return;
   const banner = bannerWrap.querySelector("#loc-banner");
@@ -796,8 +877,14 @@ initMapControls();
 let lastWeatherCenter = null;
 let weatherMoveTimer = null;
 
+/**
+ * Gestiona distance meters dentro del flujo principal del modulo.
+ */
 function distanceMeters(a, b) {
   const R = 6371000;
+  /**
+   * Gestiona to rad dentro del flujo principal del modulo.
+   */
   const toRad = (d) => (d * Math.PI) / 180;
 
   const lat1 = toRad(a.lat);
@@ -812,9 +899,15 @@ function distanceMeters(a, b) {
   return 2 * R * Math.asin(Math.sqrt(s));
 }
 
+/**
+ * Inicializa install weather on map move y deja sus eventos o elementos listos para usarse.
+ */
 function installWeatherOnMapMove() {
   if (!map) return;
 
+  /**
+   * Gestiona handler dentro del flujo principal del modulo.
+   */
   const handler = () => {
     if (weatherMoveTimer) clearTimeout(weatherMoveTimer);
 
@@ -847,6 +940,9 @@ installWeatherOnMapMove();
 const USE_TEST_LOCATION = false;
 const TEST_LOCATION = [-2.53699, -78.16339];
 
+/**
+ * Gestiona after locate dentro del flujo principal del modulo.
+ */
 async function afterLocate(loc) {
   updateUserLocation(loc);
 
@@ -944,20 +1040,32 @@ function normLite(s) {
 
 const SEVILLA_MORONA_CANTONS = ["Sevilla Don Bosco", "Morona"];
 
+/**
+ * Evalua si is sevilla morona canton para decidir el flujo de la interfaz.
+ */
 function isSevillaMoronaCanton(value) {
   const v = normLite(value);
   return v === "morona" || v === "sevilla don bosco" || v.includes("sevilla");
 }
 
+/**
+ * Evalua si uses sevilla morona shared coverage para decidir el flujo de la interfaz.
+ */
 function usesSevillaMoronaSharedCoverage(ctx = {}) {
   return ctx?.specialSevilla === true || isSevillaMoronaCanton(ctx?.canton);
 }
 
+/**
+ * Evalua si matches sevilla morona canton para decidir el flujo de la interfaz.
+ */
 function matchesSevillaMoronaCanton(value) {
   const city = String(value || "").trim();
   return SEVILLA_MORONA_CANTONS.includes(city);
 }
 
+/**
+ * Gestiona ll from geo point dentro del flujo principal del modulo.
+ */
 function llFromGeoPoint(gp) {
   if (!gp) return null;
 
@@ -968,6 +1076,9 @@ function llFromGeoPoint(gp) {
   return [lat, lng];
 }
 
+/**
+ * Construye make place from lat lng para mostrar contenido o preparar datos de la interfaz.
+ */
 function makePlaceFromLatLng(name, locArr) {
   return {
     nombre: name,
@@ -975,6 +1086,9 @@ function makePlaceFromLatLng(name, locArr) {
   };
 }
 
+/**
+ * Obtiene get terminal for canton desde el estado local, la API o los datos cacheados.
+ */
 async function getTerminalForCanton({ provincia, canton, userLoc } = {}) {
   const lugares = await getCollectionCache("lugares");
   const arr = Array.isArray(lugares) ? lugares : [];
@@ -1011,6 +1125,9 @@ async function getTerminalForCanton({ provincia, canton, userLoc } = {}) {
   return best ? { doc: best.doc, ll: best.ll } : null;
 }
 
+/**
+ * Obtiene get terminal for provincia destino desde el estado local, la API o los datos cacheados.
+ */
 async function getTerminalForProvinciaDestino({ provinciaDestino, userLoc } = {}) {
   const lugares = await getCollectionCache("lugares");
   const arr = Array.isArray(lugares) ? lugares : [];
@@ -1054,6 +1171,9 @@ function buildModesHTML(busEnabled) {
   `;
 }
 
+/**
+ * Gestiona wire mode buttons dentro del flujo principal del modulo.
+ */
 function wireModeButtons({ onModeChange } = {}) {
   document.querySelectorAll("[data-mode]").forEach(btn => {
     btn.onclick = () => {
@@ -1111,12 +1231,18 @@ function parseDDMMYYYY(s) {
   return new Date(yy, mm - 1, dd, 0, 0, 0, 0);
 }
 
+/**
+ * Inicializa start of today y deja sus eventos o elementos listos para usarse.
+ */
 function startOfToday() {
   const d = new Date();
   d.setHours(0, 0, 0, 0);
   return d;
 }
 
+/**
+ * Evalua si is future event para decidir el flujo de la interfaz.
+ */
 function isFutureEvent(ev) {
   const fi = parseDDMMYYYY(ev?.fecha_inicio);
   const ff = parseDDMMYYYY(ev?.fecha_fin);
@@ -1125,6 +1251,9 @@ function isFutureEvent(ev) {
   return end.getTime() >= startOfToday().getTime();
 }
 
+/**
+ * Gestiona event to place dentro del flujo principal del modulo.
+ */
 function eventToPlace(ev) {
   return {
     ...ev,
@@ -1135,6 +1264,9 @@ function eventToPlace(ev) {
   };
 }
 
+/**
+ * Construye build event popup html para mostrar contenido o preparar datos de la interfaz.
+ */
 function buildEventPopupHTML(ev) {
   const nombre = ev?.nombre || "Evento";
   const org = ev?.organizador || "No disponible";
@@ -1152,6 +1284,9 @@ function buildEventPopupHTML(ev) {
   `;
 }
 
+/**
+ * Construye render event markers para mostrar contenido o preparar datos de la interfaz.
+ */
 function renderEventMarkers(list, onSelect) {
   clearMarkers();
 
@@ -1183,7 +1318,13 @@ category.onchange = async () => {
   hideDetectedFacadeOnCategoryChange();
 
 
+  /**
+   * Gestiona current mode dentro del flujo principal del modulo.
+   */
   const currentMode = () => getMode?.() || "walking";
+  /**
+   * Gestiona info box dentro del flujo principal del modulo.
+   */
   const infoBox = () => document.getElementById("route-info");
 
   if (category.value === "ir_provincia") {
@@ -1212,6 +1353,9 @@ category.onchange = async () => {
       selProv.innerHTML += `<option value="${provIndexMap.length - 1}">${name}</option>`;
     });
 
+    /**
+     * Gestiona async dentro del flujo principal del modulo.
+     */
     const buildIrProvinciaRoute = async () => {
       const idxSel = Number(selProv.value);
       if (!Number.isFinite(idxSel)) return;
@@ -1372,6 +1516,9 @@ category.onchange = async () => {
       selCanton.innerHTML += `<option value="${cantonIndexMap.length - 1}">${name}</option>`;
     });
 
+    /**
+     * Gestiona async dentro del flujo principal del modulo.
+     */
     const buildIrCantonRoute = async () => {
       const idxSel = Number(selCanton.value);
       if (!Number.isFinite(idxSel)) return;
@@ -1516,6 +1663,9 @@ category.onchange = async () => {
       selTipo.innerHTML += `<option value="${name}">${name}</option>`;
     });
 
+    /**
+     * Gestiona async dentro del flujo principal del modulo.
+     */
     const renderByTipo = async () => {
       const tipo = String(selTipo.value || "").trim();
       dataList.length = 0;
@@ -1981,6 +2131,9 @@ category.onchange = async () => {
     }
   });
 };
+/**
+ * Limpia clear full map and panel para dejar la vista o el estado listo para otro flujo.
+ */
 function clearFullMapAndPanel() {
   stopTripTracking(true);
   try { clearMarkers(); } catch {}

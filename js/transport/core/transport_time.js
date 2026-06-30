@@ -12,6 +12,9 @@ function parseCodigoParts(codigo) {
   return { prefix: m[1], num: Number(m[2]) };
 }
 
+/**
+ * Obtiene get orden key desde el estado local, la API o los datos cacheados.
+ */
 function getOrdenKey(p) {
   const n = Number(p?.numeral);
   if (Number.isFinite(n)) return `n:${n}`;
@@ -31,6 +34,9 @@ let activePopupTimer = null;
 let activePopupMarker = null;
 let activePopupParada = null;
 
+/**
+ * Detiene stop popup live update y libera recursos asociados.
+ */
 export function stopPopupLiveUpdate() {
   if (activePopupTimer) {
     clearInterval(activePopupTimer);
@@ -40,6 +46,9 @@ export function stopPopupLiveUpdate() {
   activePopupParada = null;
 }
 
+/**
+ * Inicializa start popup live update y deja sus eventos o elementos listos para usarse.
+ */
 export function startPopupLiveUpdate(marker, parada) {
   stopPopupLiveUpdate();
   activePopupMarker = marker;
@@ -49,6 +58,9 @@ export function startPopupLiveUpdate(marker, parada) {
   activePopupTimer = setInterval(tickPopupUpdate, 1000);
 }
 
+/**
+ * Gestiona tick popup update dentro del flujo principal del modulo.
+ */
 function tickPopupUpdate() {
   const linea = getCurrentLinea();
   const paradas = getCurrentParadas();
@@ -95,6 +107,9 @@ function timeToMinutesStrict(t) {
   return h * 60 + mm;
 }
 
+/**
+ * Gestiona minutes to hhmm dentro del flujo principal del modulo.
+ */
 function minutesToHHMM(m) {
   const mmInt = Math.max(0, Math.round(Number(m) || 0));
   const h = Math.floor(mmInt / 60) % 24;
@@ -102,6 +117,9 @@ function minutesToHHMM(m) {
   return `${String(h).padStart(2, "0")}:${String(min).padStart(2, "0")}`;
 }
 
+/**
+ * Normaliza o formatea format countdown para usarlo de forma consistente.
+ */
 export function formatCountdown(sec) {
   const s = Math.max(0, Math.floor(sec));
   const mm = Math.floor(s / 60);
@@ -111,6 +129,9 @@ export function formatCountdown(sec) {
 }
 
 const THRESH_MIN_TO_HOURS = 60;
+/**
+ * Normaliza o formatea format wait human from minutes para usarlo de forma consistente.
+ */
 function formatWaitHumanFromMinutes(minsFloat) {
   const mins = Math.max(0, Math.round(Number(minsFloat) || 0));
   if (mins < THRESH_MIN_TO_HOURS) return `${mins} min`;
@@ -129,6 +150,9 @@ function normDias(s) {
     .trim();
 }
 
+/**
+ * Evalua si is operating today by dias para decidir el flujo de la interfaz.
+ */
 function isOperatingTodayByDias(linea, now = new Date()) {
   const dias = normDias(linea?.dias);
   if (!dias) return true;
@@ -231,6 +255,9 @@ function isWeekend(date = new Date()) {
   return d === 0 || d === 6;
 }
 
+/**
+ * Normaliza o formatea parse window para usarlo de forma consistente.
+ */
 function parseWindow(str) {
   const m = String(str || "").match(/(\d{1,2}:\d{2})\s*(?:a|-|–)\s*(\d{1,2}:\d{2})/i);
   if (!m) return null;
@@ -240,6 +267,9 @@ function parseWindow(str) {
   return { startMin: a, endMin: b };
 }
 
+/**
+ * Obtiene get service windows urbano desde el estado local, la API o los datos cacheados.
+ */
 function getServiceWindowsUrbano(linea, now) {
   if (isWeekend(now) && Array.isArray(linea?.horariofinsem) && linea.horariofinsem.length) {
     const windows = linea.horariofinsem.map(parseWindow).filter(Boolean);
@@ -252,10 +282,16 @@ function getServiceWindowsUrbano(linea, now) {
   }];
 }
 
+/**
+ * Calcula pick active window para escoger la mejor opcion disponible.
+ */
 function pickActiveWindow(windows, nowMin) {
   return windows.find(w => nowMin >= w.startMin && nowMin <= w.endMin) || null;
 }
 
+/**
+ * Calcula compute headway min para escoger la mejor opcion disponible.
+ */
 function computeHeadwayMin(linea, paradasOrdenadas, now) {
   const weekendFreq = Number(linea?.frecuenciafinsem);
   const weekdayFreq = Number(linea?.frecuencia_min);
@@ -282,6 +318,9 @@ function computeHeadwayMin(linea, paradasOrdenadas, now) {
   return Math.max(3, Math.round(headway));
 }
 
+/**
+ * Obtiene get next bus info for stop desde el estado local, la API o los datos cacheados.
+ */
 function getNextBusInfoForStop(linea, paradasOrdenadas, parada, now = new Date()) {
   const tipo = String(linea?.tipo || "").toLowerCase();
   const nowMin = now.getHours() * 60 + now.getMinutes();

@@ -1,11 +1,17 @@
 // api/_lib/firebaseAdmin.js
 import admin from "firebase-admin";
 
+/**
+ * Obtiene get private key desde el estado local, la API o los datos cacheados.
+ */
 function getPrivateKey() {
   const key = process.env.FIREBASE_PRIVATE_KEY || "";
   return key.replace(/\\n/g, "\n");
 }
 
+/**
+ * Obtiene get firebase admin app desde el estado local, la API o los datos cacheados.
+ */
 function getFirebaseAdminApp() {
   if (admin.apps.length) {
     return admin.app();

@@ -44,6 +44,9 @@ function normalizeValue(value) {
   return value;
 }
 
+/**
+ * Gestiona with id dentro del flujo principal del modulo.
+ */
 export function withId(doc) {
   return {
     id: doc.id,
@@ -51,6 +54,9 @@ export function withId(doc) {
   };
 }
 
+/**
+ * Gestiona map snapshot dentro del flujo principal del modulo.
+ */
 export function mapSnapshot(snapshot) {
   return snapshot.docs.map(withId);
 }

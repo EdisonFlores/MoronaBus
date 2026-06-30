@@ -211,6 +211,7 @@
     </div>
   </div>
 
+  <!-- Header principal: concentra marca, clima, tutorial, asistente de voz, idioma y tema. -->
   <header class="main-header">
     <nav class="navbar navbar-expand-lg navbar-dark container">
       <a class="navbar-brand d-flex align-items-center gap-2" href="/" aria-label="Inicio MoronaBus">
@@ -271,6 +272,7 @@
     </nav>
   </header>
 
+  <!-- Contenido principal: panel de busqueda y mapa interactivo. -->
   <main class="container-fluid my-3">
     <div class="row g-3">
       <aside class="col-lg-3">
@@ -395,17 +397,21 @@
             </optgroup>
           </select>
 
-          <div id="loc-banner-wrap" class="mt-2"></div>
-          <div id="extra-controls" class="mt-3"></div>
+          <!-- Banner dinamico: muestra cobertura, ubicacion detectada y acciones contextuales. -->
+  <div id="loc-banner-wrap" class="mt-2"></div>
+          <!-- Controles dinamicos: listas, botones, rutas, modos de transporte y tutorial segun la categoria. -->
+  <div id="extra-controls" class="mt-3"></div>
           <div id="info-box" class="info-box mt-3"></div>
         </div>
       </aside>
 
       <section class="col-lg-9" aria-label="Mapa interactivo de lugares y rutas">
-        <div id="map"></div>
+        <!-- Mapa Leaflet: muestra marcadores, rutas, paradas y menus contextuales. -->
+  <div id="map"></div>
       </section>
     </div>
   </main>
+  <!-- Footer: enlaces de descarga, contacto, formularios, proyectos relacionados e informacion. -->
   <footer class="main-footer mt-4">
     <div class="container-fluid tm-footer">
       <div class="tm-footer-left">

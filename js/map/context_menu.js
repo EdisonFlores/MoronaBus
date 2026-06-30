@@ -35,10 +35,16 @@ export function installMapContextMenu(map, handlers = {}) {
     font-size: 14px;
   `;
 
+  /**
+   * Gestiona item hover dentro del flujo principal del modulo.
+   */
   const itemHover = (btn, on) => {
     btn.style.background = on ? "rgba(0,0,0,.06)" : "transparent";
   };
 
+  /**
+   * Gestiona mk item dentro del flujo principal del modulo.
+   */
   const mkItem = (label, fn) => {
     const btn = document.createElement("button");
     btn.type = "button";
@@ -55,6 +61,9 @@ export function installMapContextMenu(map, handlers = {}) {
     return btn;
   };
 
+  /**
+   * Gestiona sep dentro del flujo principal del modulo.
+   */
   const sep = () => {
     const hr = document.createElement("div");
     hr.style.height = "1px";
@@ -63,6 +72,9 @@ export function installMapContextMenu(map, handlers = {}) {
     return hr;
   };
 
+  /**
+   * Muestra show al usuario.
+   */
   function show(containerPoint, latlng) {
     menu.innerHTML = "";
 
@@ -98,6 +110,9 @@ export function installMapContextMenu(map, handlers = {}) {
     menu.style.display = "block";
   }
 
+  /**
+   * Oculta hide cuando deja de ser necesario.
+   */
   function hide() {
     menu.style.display = "none";
   }

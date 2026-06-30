@@ -8,6 +8,9 @@ export function normStr(s) {
   return String(s ?? "").trim().toLowerCase();
 }
 
+/**
+ * Normaliza o formatea norm key para usarlo de forma consistente.
+ */
 export function normKey(s) {
   const t = String(s ?? "").trim().toLowerCase();
   try {
@@ -21,12 +24,18 @@ export function normKey(s) {
   }
 }
 
+/**
+ * Gestiona title case dentro del flujo principal del modulo.
+ */
 export function titleCase(s) {
   const t = String(s ?? "").trim();
   if (!t) return "";
   return t.charAt(0).toUpperCase() + t.slice(1);
 }
 
+/**
+ * Normaliza o formatea norm cobertura para usarlo de forma consistente.
+ */
 export function normCobertura(v) {
   const s = normStr(v);
   if (s === "normal") return "Normal";
@@ -35,6 +44,9 @@ export function normCobertura(v) {
   return "";
 }
 
+/**
+ * Gestiona to norm array key dentro del flujo principal del modulo.
+ */
 function toNormArrayKey(v) {
   if (Array.isArray(v)) return v.map(normKey).filter(Boolean);
   if (v == null) return [];
@@ -42,11 +54,17 @@ function toNormArrayKey(v) {
   return s ? [s] : [];
 }
 
+/**
+ * Evalua si is sevilla morona canton para decidir el flujo de la interfaz.
+ */
 function isSevillaMoronaCanton(value) {
   const v = normKey(value);
   return v === "morona" || v === "sevilla don bosco" || v.includes("sevilla");
 }
 
+/**
+ * Evalua si has sevilla morona canton para decidir el flujo de la interfaz.
+ */
 function hasSevillaMoronaCanton(values = []) {
   return values.some(isSevillaMoronaCanton);
 }
@@ -59,6 +77,9 @@ function isWeekend(now = new Date()) {
   return d === 0 || d === 6;
 }
 
+/**
+ * Normaliza o formatea parse hhmm para usarlo de forma consistente.
+ */
 function parseHHMM(s) {
   const m = String(s || "").trim().match(/^(\d{1,2}):(\d{2})$/);
   if (!m) return null;
@@ -68,10 +89,16 @@ function parseHHMM(s) {
   return hh * 60 + mm;
 }
 
+/**
+ * Gestiona now minutes dentro del flujo principal del modulo.
+ */
 function nowMinutes(now) {
   return now.getHours() * 60 + now.getMinutes();
 }
 
+/**
+ * Normaliza o formatea parse range es para usarlo de forma consistente.
+ */
 function parseRangeES(s) {
   const t = String(s || "").trim();
   const m = t.match(/(\d{1,2}:\d{2})\s*a\s*(\d{1,2}:\d{2})/i);
@@ -82,6 +109,9 @@ function parseRangeES(s) {
   return { start: a, end: b };
 }
 
+/**
+ * Normaliza o formatea parse range any para usarlo de forma consistente.
+ */
 function parseRangeAny(s) {
   const t = String(s || "").trim();
   const m = t.match(/(\d{1,2}:\d{2})\s*(?:a|-|–)\s*(\d{1,2}:\d{2})/i);
@@ -92,6 +122,9 @@ function parseRangeAny(s) {
   return { start, end };
 }
 
+/**
+ * Normaliza o formatea parse freq range para usarlo de forma consistente.
+ */
 function parseFreqRange(s) {
   const t = String(s || "").toLowerCase();
   const nums = t.match(/\d+/g)?.map(Number).filter(n => Number.isFinite(n)) || [];
@@ -112,6 +145,9 @@ function normDias(s) {
     .trim();
 }
 
+/**
+ * Evalua si is operating today by dias para decidir el flujo de la interfaz.
+ */
 function isOperatingTodayByDias(linea, now = new Date()) {
   const dias = normDias(linea?.dias);
   if (!dias) return true;
@@ -160,6 +196,9 @@ function isMinuteWithinRange(cur, start, end) {
   return cur >= start || cur <= end;
 }
 
+/**
+ * Obtiene get rural trip windows desde el estado local, la API o los datos cacheados.
+ */
 function getRuralTripWindows(linea) {
   const idaRaw = Array.isArray(linea?.horario_ida) ? linea.horario_ida : [];
   const retRaw = Array.isArray(linea?.horario_retorno) ? linea.horario_retorno : [];
@@ -244,6 +283,9 @@ export function isLineOperatingNow(linea, now = new Date()) {
 export function formatLineScheduleHTML(linea) {
   const tipo = normStr(linea?.tipo);
 
+  /**
+   * Gestiona esc dentro del flujo principal del modulo.
+   */
   const esc = (s) =>
     String(s ?? "")
       .replaceAll("&", "&amp;")
@@ -260,6 +302,9 @@ export function formatLineScheduleHTML(linea) {
       ida.some(x => parseHHMM(x) != null) || ret.some(x => parseHHMM(x) != null);
 
     if (hasList) {
+      /**
+       * Normaliza o formatea fmt items para usarlo de forma consistente.
+       */
       const fmtItems = (arr) => {
         const clean = (arr || []).map(x => String(x || "").trim()).filter(Boolean);
         if (!clean.length) return `<li>(sin horarios)</li>`;
@@ -351,6 +396,9 @@ function normCodeLoose(x) {
   return s.replace(/\s+/g, "").replace(/[-_]/g, "");
 }
 
+/**
+ * Gestiona extract rural line codes dentro del flujo principal del modulo.
+ */
 function extractRuralLineCodes(v) {
   const arr = Array.isArray(v) ? v : [];
   const out = [];
@@ -377,6 +425,9 @@ export async function getLineasByTipo(tipo, ctx = {}) {
   const all = await getCollectionCache(collection);
   const arr = (Array.isArray(all) ? all : []);
 
+  /**
+   * Envia ok tipo como respuesta estandar de la API.
+   */
   const okTipo = (l) => {
     const lt = normStr(l?.tipo);
     if (t === "urbano") return lt === "urbano";
@@ -432,6 +483,9 @@ export async function getLineasByTipo(tipo, ctx = {}) {
   return out;
 }
 
+/**
+ * Obtiene get lineas by tipo all desde el estado local, la API o los datos cacheados.
+ */
 export async function getLineasByTipoAll(tipo, ctx = {}) {
   return getLineasByTipo(tipo, ctx);
 }

@@ -13,6 +13,9 @@ function pickWeatherEmoji(code, isNight) {
   return "☁";
 }
 
+/**
+ * Gestiona temp to badge class dentro del flujo principal del modulo.
+ */
 function tempToBadgeClass(t) {
   if (typeof t !== "number") return "tm-wbadge-na";
   if (t <= 14) return "tm-wbadge-cold";
@@ -21,11 +24,17 @@ function tempToBadgeClass(t) {
   return "tm-wbadge-mild";
 }
 
+/**
+ * Evalua si is night now para decidir el flujo de la interfaz.
+ */
 function isNightNow() {
   const h = new Date().getHours();
   return (h >= 18 || h < 6);
 }
 
+/**
+ * Obtiene fetch weather desde el estado local, la API o los datos cacheados.
+ */
 export async function fetchWeather(lat, lon) {
   const url =
     `https://api.open-meteo.com/v1/forecast` +
@@ -50,6 +59,9 @@ export async function fetchWeather(lat, lon) {
   }
 }
 
+/**
+ * Actualiza update weather badge y sincroniza la interfaz con el estado actual.
+ */
 export async function updateWeatherBadge(lat, lon) {
   const tempEl = document.getElementById("weatherTemp");
   const badgeEl = document.getElementById("weatherBadge");
@@ -92,9 +104,15 @@ export async function updateWeatherBadge(lat, lon) {
 
 let weatherInterval = null;
 
+/**
+ * Inicializa start weather auto refresh y deja sus eventos o elementos listos para usarse.
+ */
 export function startWeatherAutoRefresh(getUserLoc, minutes = 5) {
   if (weatherInterval) clearInterval(weatherInterval);
 
+  /**
+   * Gestiona async dentro del flujo principal del modulo.
+   */
   const refresh = async () => {
     const loc = getUserLoc?.();
     if (!loc) return;
@@ -105,6 +123,9 @@ export function startWeatherAutoRefresh(getUserLoc, minutes = 5) {
   weatherInterval = setInterval(refresh, minutes * 60 * 1000);
 }
 
+/**
+ * Detiene stop weather auto refresh y libera recursos asociados.
+ */
 export function stopWeatherAutoRefresh() {
   if (weatherInterval) {
     clearInterval(weatherInterval);
