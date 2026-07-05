@@ -137,6 +137,8 @@ const PHRASES = [
   ["Se requiere internet", "Internet required"],
   ["MoronaBus necesita conexión para cargar el mapa, rutas, paradas, clima y datos actualizados.", "MoronaBus needs an internet connection to load the map, routes, stops, weather, and updated data."],
   ["Reintentar", "Retry"],
+  ["Funcionamiento interrumpido", "Operation interrupted"],
+  ["Lamentablemente ocurrió un problema con el servicio de datos externo. No es culpa de la app; intenta nuevamente en unos minutos.", "Unfortunately, there was a problem with the external data service. It is not the app's fault; please try again in a few minutes."],
   ["Cambiar idioma", "Change language"],
   ["Cambiar tema", "Change theme"],
   ["Clima", "Weather"],

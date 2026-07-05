@@ -61,12 +61,12 @@ export function createManualRouting(deps) {
     if (has && !force) return;
 
     extraEl.innerHTML = `
-      <div class="btn-group w-100 mb-2">
-        <button class="btn btn-outline-primary" data-mode="walking">🚶</button>
-        <button class="btn btn-outline-primary" data-mode="bicycle">🚴</button>
-        <button class="btn btn-outline-primary" data-mode="motorcycle">🏍️</button>
-        <button class="btn btn-outline-primary" data-mode="driving">🚗</button>
-        <button class="btn btn-outline-primary" data-mode="bus">🚌</button>
+      <div class="btn-group w-100 mb-2 tm-mode-group" role="group" aria-label="Modos de transporte">
+        <button class="btn btn-outline-primary tm-mode-btn" data-mode="walking" aria-label="Caminar" title="Caminar"><i class="bi bi-person-walking" aria-hidden="true"></i><span class="tm-mode-label">Caminar</span></button>
+        <button class="btn btn-outline-primary tm-mode-btn" data-mode="bicycle" aria-label="Bicicleta" title="Bicicleta"><i class="bi bi-bicycle" aria-hidden="true"></i><span class="tm-mode-label">Bici</span></button>
+        <button class="btn btn-outline-primary tm-mode-btn" data-mode="motorcycle" aria-label="Moto" title="Moto"><i class="bi bi-scooter" aria-hidden="true"></i><span class="tm-mode-label">Moto</span></button>
+        <button class="btn btn-outline-primary tm-mode-btn" data-mode="driving" aria-label="Auto" title="Auto"><i class="bi bi-car-front-fill" aria-hidden="true"></i><span class="tm-mode-label">Auto</span></button>
+        <button class="btn btn-outline-primary tm-mode-btn" data-mode="bus" aria-label="Bus" title="Bus"><i class="bi bi-bus-front-fill" aria-hidden="true"></i><span class="tm-mode-label">Bus</span></button>
       </div>
       <div id="route-info" class="small"></div>
       <div id="trip-actions" class="mt-2 mb-2"></div>
@@ -74,6 +74,11 @@ export function createManualRouting(deps) {
 
     document.querySelectorAll("[data-mode]").forEach(btn => {
       btn.onclick = () => {
+        document.querySelectorAll("[data-mode]").forEach(other => {
+          const isActive = other === btn;
+          other.classList.toggle("active", isActive);
+          other.setAttribute("aria-pressed", isActive ? "true" : "false");
+        });
         setMode(btn.dataset.mode);
         onManualModeSelected?.(btn.dataset.mode);
         Promise.resolve(buildRoute()).finally(() => {
@@ -138,6 +143,19 @@ export function createManualRouting(deps) {
     `;
   }
 
+  function showRouteLoading(infoEl, title = "Calculando ruta", text = "Consultando el mejor trayecto disponible.") {
+    if (!infoEl) return;
+    infoEl.innerHTML = `
+      <div class="tm-loading" role="status" aria-live="polite">
+        <span class="tm-loading__spinner" aria-hidden="true"></span>
+        <span>
+          <span class="tm-loading__title">${title}</span>
+          <span class="tm-loading__text">${text}</span>
+        </span>
+      </div>
+    `;
+  }
+
   /**
    * Gestiona safe detect point context dentro del flujo principal del modulo.
    */
@@ -186,13 +204,7 @@ export function createManualRouting(deps) {
     const mode = getMode?.() || "walking";
 
     if (mode === "bus") {
-      if (infoEl) {
-        infoEl.innerHTML = `
-          <div class="alert alert-info py-2 mb-2">
-            ⏳ Buscando ruta en bus (urbano/rural)…
-          </div>
-        `;
-      }
+      showRouteLoading(infoEl, "Buscando ruta en bus", "Revisando rutas urbanas, rurales, paradas y caminatas.");
 
       const ctxBase = getCtxGeo?.() || {};
       const startCtx = await safeDetectPointContext(startLoc);
@@ -295,6 +307,7 @@ export function createManualRouting(deps) {
     }
 
     if (hasBDPlace) {
+      showRouteLoading(infoEl);
       const isManualStart = isLatLngArr(manualStart);
       if (isManualStart) {
         await drawRouteToPoint?.({ from: startLoc, to: destLoc, mode, infoBox: infoEl, title: "Ruta" });
@@ -304,6 +317,7 @@ export function createManualRouting(deps) {
       return;
     }
 
+    showRouteLoading(infoEl);
     await drawRouteToPoint?.({ from: startLoc, to: destLoc, mode, infoBox: infoEl, title: "Ruta" });
   }
 

@@ -274,7 +274,7 @@ function renderTripButton() {
   if (!el) return;
 
   el.innerHTML = `
-    <button id="btn-trip-toggle" class="btn ${tripTracker.active ? "btn-danger" : "btn-success"} w-100">
+    <button id="btn-trip-toggle" type="button" class="btn ${tripTracker.active ? "btn-danger" : "btn-success"} w-100" aria-pressed="${tripTracker.active ? "true" : "false"}" aria-label="${tripTracker.active ? "Detener trayecto" : "Iniciar trayecto"}">
       ${tripTracker.active ? "Detener trayecto" : "Iniciar trayecto"}
     </button>
     ${
@@ -359,7 +359,7 @@ function updateTripLiveStatus(loc) {
   status.innerHTML = `
     <b>Seguimiento activo</b><br>
     Distancia directa al destino: ${km < 1 ? `${Math.round(distanceM)} m` : `${km.toFixed(2)} km`}<br>
-    Tiempo aprox. segÃºn modo: ${formatTripDuration(seconds)}
+    Tiempo aprox. según modo: ${formatTripDuration(seconds)}
   `;
 }
 
@@ -1157,18 +1157,66 @@ async function getTerminalForProvinciaDestino({ provinciaDestino, userLoc } = {}
 ===================================================== */
 function buildModesHTML(busEnabled) {
   const busBtnHTML = (busEnabled === true)
-    ? `<button class="btn btn-outline-primary" data-mode="bus">🚌</button>`
+    ? `<button type="button" class="btn btn-outline-primary" data-mode="bus" aria-label="Bus" title="Bus" aria-pressed="false">🚌</button>`
     : "";
 
   return `
-    <div class="btn-group w-100 mb-2">
-      <button class="btn btn-outline-primary" data-mode="walking">🚶</button>
-      <button class="btn btn-outline-primary" data-mode="bicycle">🚴</button>
-      <button class="btn btn-outline-primary" data-mode="motorcycle">🏍️</button>
-      <button class="btn btn-outline-primary" data-mode="driving">🚗</button>
+    <div class="btn-group w-100 mb-2" role="group" aria-label="Modos de transporte">
+      <button type="button" class="btn btn-outline-primary" data-mode="walking" aria-label="Caminar" title="Caminar" aria-pressed="false">🚶</button>
+      <button type="button" class="btn btn-outline-primary" data-mode="bicycle" aria-label="Bicicleta" title="Bicicleta" aria-pressed="false">🚴</button>
+      <button type="button" class="btn btn-outline-primary" data-mode="motorcycle" aria-label="Moto" title="Moto" aria-pressed="false">🏍️</button>
+      <button type="button" class="btn btn-outline-primary" data-mode="driving" aria-label="Auto" title="Auto" aria-pressed="false">🚗</button>
       ${busBtnHTML}
     </div>
   `;
+}
+
+/**
+ * Construye get mode meta para mostrar contenido o preparar datos de la interfaz.
+ */
+function getModeMeta(mode) {
+  return {
+    walking: { icon: "bi-person-walking", label: "Caminar" },
+    bicycle: { icon: "bi-bicycle", label: "Bici" },
+    motorcycle: { icon: "bi-scooter", label: "Moto" },
+    driving: { icon: "bi-car-front-fill", label: "Auto" },
+    bus: { icon: "bi-bus-front-fill", label: "Bus" }
+  }[mode] || { icon: "bi-signpost-2-fill", label: "Ruta" };
+}
+
+/**
+ * Actualiza decorate mode button y sincroniza la interfaz con el estado actual.
+ */
+function decorateModeButton(button) {
+  const meta = getModeMeta(button?.dataset?.mode);
+  if (!button || button.dataset.decoratedMode === "true") return;
+  const group = button.closest(".btn-group");
+  if (group) {
+    group.classList.add("tm-mode-group");
+    group.setAttribute("role", "group");
+    group.setAttribute("aria-label", "Modos de transporte");
+  }
+  button.classList.add("tm-mode-btn");
+  button.type = "button";
+  button.setAttribute("aria-label", meta.label);
+  button.setAttribute("title", meta.label);
+  if (!button.hasAttribute("aria-pressed")) button.setAttribute("aria-pressed", "false");
+  button.innerHTML = `
+    <i class="bi ${meta.icon}" aria-hidden="true"></i>
+    <span class="tm-mode-label">${meta.label}</span>
+  `;
+  button.dataset.decoratedMode = "true";
+}
+
+/**
+ * Actualiza sync mode buttons y sincroniza la interfaz con el estado actual.
+ */
+function syncModeButtons(activeMode) {
+  document.querySelectorAll("[data-mode]").forEach(button => {
+    const isActive = button.dataset.mode === activeMode;
+    button.classList.toggle("active", isActive);
+    button.setAttribute("aria-pressed", isActive ? "true" : "false");
+  });
 }
 
 /**
@@ -1176,6 +1224,7 @@ function buildModesHTML(busEnabled) {
  */
 function wireModeButtons({ onModeChange } = {}) {
   document.querySelectorAll("[data-mode]").forEach(btn => {
+    decorateModeButton(btn);
     btn.onclick = () => {
       const m = btn.dataset.mode;
       const manualTripActive = tripTracker.source === "manual";
@@ -1205,6 +1254,7 @@ function wireModeButtons({ onModeChange } = {}) {
       }
 
       setTravelMode(m);
+      syncModeButtons(m);
       if (placeForTrip?.ubicacion || placeForTrip?.["ubicaci\u00f3n"]) {
         if (!placeForTrip.ubicacion) placeForTrip.ubicacion = placeForTrip["ubicaci\u00f3n"];
         tripTracker.place = placeForTrip;
@@ -1216,6 +1266,7 @@ function wireModeButtons({ onModeChange } = {}) {
       setTimeout(() => renderTripButton(), 700);
     };
   });
+  syncModeButtons(getMode?.() || "walking");
 }
 
 /* =====================================================

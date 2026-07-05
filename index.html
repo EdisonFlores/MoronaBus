@@ -191,6 +191,7 @@
   </style>
 </head>
 <body>
+  <a class="tm-skip-link" href="#mainContent">Saltar al contenido principal</a>
   <!-- Google Tag Manager (noscript) -->
   <noscript>
     <iframe
@@ -244,7 +245,7 @@
           <span>Asistente de voz</span>
         </button>
 
-        <div id="weatherBadge" class="tm-weather" aria-live="polite" title="Clima">
+        <div id="weatherBadge" class="tm-weather" aria-live="polite" role="button" tabindex="0" aria-label="Ver clima" title="Clima">
           <i class="bi bi-cloud-sun"></i>
           <span id="weatherTemp">--°C</span>
         </div>
@@ -273,7 +274,7 @@
   </header>
 
   <!-- Contenido principal: panel de busqueda y mapa interactivo. -->
-  <main class="container-fluid my-3">
+  <main id="mainContent" class="container-fluid my-3" tabindex="-1">
     <div class="row g-3">
       <aside class="col-lg-3">
         <div class="search-panel">
@@ -293,7 +294,7 @@
             <option value="">🏘️ Seleccione parroquia</option>
           </select>
 
-          <select id="category" class="form-select mb-2 d-none" disabled>
+          <select id="category" class="form-select mb-2 d-none" disabled aria-label="Seleccione categoria">
             <option value="">Seleccione categoría</option>
 
             <optgroup label="🚍 Transporte Público">
@@ -445,6 +446,7 @@
             title="Contáctame"
           >
             <i class="bi bi-person-lines-fill"></i>
+            <span class="tm-footer-action-label">Contacto</span>
           </button>
 
           <ul class="dropdown-menu dropdown-menu-end tm-footer-menu">
@@ -498,6 +500,7 @@
             title="Formularios"
           >
             <i class="bi bi-ui-checks-grid"></i>
+            <span class="tm-footer-action-label">Formularios</span>
           </button>
 
           <ul class="dropdown-menu dropdown-menu-end tm-footer-menu">
@@ -539,6 +542,7 @@
             title="Proyectos relacionados"
           >
             <i class="bi bi-grid-3x3-gap-fill"></i>
+            <span class="tm-footer-action-label">Proyectos</span>
           </button>
 
           <ul class="dropdown-menu dropdown-menu-end tm-footer-menu">
@@ -579,6 +583,7 @@
           title="Información del proyecto"
         >
           <i class="bi bi-info-circle"></i>
+          <span class="tm-footer-action-label">Info</span>
         </button>
       </div>
     </div>

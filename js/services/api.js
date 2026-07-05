@@ -1,5 +1,7 @@
 // js/services/api.js
 
+import { hideServiceNotice, showServiceNotice } from "../app/service_status.js";
+
 const API_BASE = "";
 
 const COLLECTION_TO_ENDPOINT = {
@@ -93,14 +95,23 @@ export async function apiGet(path, params = {}, { timeoutMs = 12000 } = {}) {
     }
 
     if (!res.ok) {
-      throw new Error(normalizeErrorMessage(json, res.status));
+      const error = new Error(normalizeErrorMessage(json, res.status));
+      error.status = res.status;
+      throw error;
     }
 
     if (json?.ok === false) {
       throw new Error(normalizeErrorMessage(json, res.status));
     }
 
+    hideServiceNotice();
     return json?.data ?? json;
+  } catch (error) {
+    if (!navigator.onLine) throw error;
+    showServiceNotice({
+      autoHideMs: error?.name === "AbortError" ? 14000 : 12000
+    });
+    throw error;
   } finally {
     clearTimeout(timer);
   }

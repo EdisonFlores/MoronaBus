@@ -198,7 +198,15 @@ export async function cargarLineasTransporte(tipo, container, ctx = {}) {
   const lineas = await getLineasByTipo(tipo, ctx);
 
   if (!lineas.length) {
-    container.innerHTML = "<p>No hay líneas disponibles</p>";
+    container.innerHTML = `
+      <div class="tm-empty-state">
+        <i class="bi bi-exclamation-circle" aria-hidden="true"></i>
+        <div>
+          <b>No hay líneas disponibles</b>
+          <span>No se encontraron rutas urbanas para el filtro actual.</span>
+        </div>
+      </div>
+    `;
     return;
   }
 
@@ -546,7 +554,17 @@ export async function planAndShowBusStopsForPlace(userLoc, destPlace, ctx = {}, 
   }
 
   if (!lineasAll.length) {
-    if (ui?.infoEl && !ctx?.dryRun) ui.infoEl.innerHTML = "❌ No hay líneas urbanas disponibles.";
+    if (ui?.infoEl && !ctx?.dryRun) {
+      ui.infoEl.innerHTML = `
+        <div class="tm-empty-state">
+          <i class="bi bi-exclamation-circle" aria-hidden="true"></i>
+          <div>
+            <b>No hay líneas urbanas disponibles</b>
+            <span>Prueba con otra ubicación o cambia el filtro seleccionado.</span>
+          </div>
+        </div>
+      `;
+    }
     return null;
   }
 
@@ -669,7 +687,17 @@ export async function planAndShowBusStopsForPlace(userLoc, destPlace, ctx = {}, 
   }
 
   if (!best || !bestLinea || !bestParadas) {
-    if (ui?.infoEl && !ctx?.dryRun) ui.infoEl.innerHTML = "❌ No se encontró una línea adecuada (paradas cercanas).";
+    if (ui?.infoEl && !ctx?.dryRun) {
+      ui.infoEl.innerHTML = `
+        <div class="tm-empty-state">
+          <i class="bi bi-signpost-split" aria-hidden="true"></i>
+          <div>
+            <b>No se encontró una línea adecuada</b>
+            <span>No hay paradas cercanas suficientes para calcular una ruta en bus.</span>
+          </div>
+        </div>
+      `;
+    }
     return null;
   }
 
@@ -782,13 +810,37 @@ export async function planAndShowBusStopsForPlace(userLoc, destPlace, ctx = {}, 
       : "";
 
     ui.infoEl.innerHTML = `
-      <b>Ruta (bus)</b><br>
-      🚌 Línea: <b>${bestLinea.codigo}</b> ${bestLinea.nombre ? `- ${bestLinea.nombre}` : ""}<br>
-      🧭 Sentido: ${best.direction}<br>
-      🚶 Camina a subir: ${walk1m} m<br>
-      🚍 Tramo bus (aprox): ${(best.metrics.busDist / 1000).toFixed(2)} km<br>
-      🛑 Paradas aprox.: ${best.metrics.stopsCount}<br>
-      🚶 Camina al destino: ${walk2m} m
+      <div class="tm-route-card">
+        <div class="tm-route-card__header">
+          <span class="tm-route-card__icon"><i class="bi bi-bus-front-fill" aria-hidden="true"></i></span>
+          <div>
+            <div class="tm-route-card__eyebrow">Ruta en bus urbano</div>
+            <div class="tm-route-card__title"><b>${bestLinea.codigo}</b> ${bestLinea.nombre ? `- ${bestLinea.nombre}` : ""}</div>
+          </div>
+        </div>
+        <div class="tm-route-card__grid">
+          <div class="tm-route-metric">
+            <span>Sentido</span>
+            <b>${best.direction}</b>
+          </div>
+          <div class="tm-route-metric">
+            <span>Camina a subir</span>
+            <b>${walk1m} m</b>
+          </div>
+          <div class="tm-route-metric">
+            <span>Tramo bus</span>
+            <b>${(best.metrics.busDist / 1000).toFixed(2)} km</b>
+          </div>
+          <div class="tm-route-metric">
+            <span>Paradas aprox.</span>
+            <b>${best.metrics.stopsCount}</b>
+          </div>
+          <div class="tm-route-metric tm-route-metric--wide">
+            <span>Camina al destino</span>
+            <b>${walk2m} m</b>
+          </div>
+        </div>
+      </div>
       ${warnHTML}
     `;
   }

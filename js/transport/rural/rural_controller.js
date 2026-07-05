@@ -934,7 +934,15 @@ export async function cargarLineasTransporte(tipo, container, ctx = {}) {
   });
 
   if (!lineas.length) {
-    container.innerHTML = "<p>No hay líneas disponibles</p>";
+    container.innerHTML = `
+      <div class="tm-empty-state">
+        <i class="bi bi-exclamation-circle" aria-hidden="true"></i>
+        <div>
+          <b>No hay líneas disponibles</b>
+          <span>No se encontraron rutas rurales para el filtro actual.</span>
+        </div>
+      </div>
+    `;
     return;
   }
 
@@ -1205,7 +1213,17 @@ async function _planAndShowBusStopsForPlace(userLoc, destPlace, ctx = {}, ui = {
   });
 
   if (!lineasAll?.length) {
-    if (ui?.infoEl && !ctx?.dryRun) ui.infoEl.innerHTML = "❌ No hay líneas rurales disponibles.";
+    if (ui?.infoEl && !ctx?.dryRun) {
+      ui.infoEl.innerHTML = `
+        <div class="tm-empty-state">
+          <i class="bi bi-exclamation-circle" aria-hidden="true"></i>
+          <div>
+            <b>No hay líneas rurales disponibles</b>
+            <span>Prueba con otra ubicación o cambia el filtro seleccionado.</span>
+          </div>
+        </div>
+      `;
+    }
     return null;
   }
 
@@ -1530,14 +1548,37 @@ async function _planAndShowBusStopsForPlace(userLoc, destPlace, ctx = {}, ui = {
 
   if (ui?.infoEl) {
     ui.infoEl.innerHTML = `
-      <b>Ruta (bus rural${best.useAuto ? " + auto" : ""})</b><br>
-      🚌 Línea: <b>${best.linea.codigo}</b> - ${best.linea.nombre || ""}<br>
-      🧭 Sentido: <b>${titleCase(normStr(best.sentido))}</b><br>
-      ${op ? "✅ Operativa ahora" : "⛔ Fuera de servicio ahora"}<br>
-      🚶 Camina a subir (${best.boardLabel}): <b>${Math.round(best.boardDist)} m</b><br>
-      ${best.useAuto
-        ? `🏁 Bajar en: <b>${best.alightLabel}</b><br>🚗 Auto al destino.`
-        : `🚶 Camina al destino (${best.alightLabel}): <b>${Math.round(best.walkToDest)} m</b>`}
+      <div class="tm-route-card">
+        <div class="tm-route-card__header">
+          <span class="tm-route-card__icon"><i class="bi bi-bus-front-fill" aria-hidden="true"></i></span>
+          <div>
+            <div class="tm-route-card__eyebrow">Ruta en bus rural${best.useAuto ? " + auto" : ""}</div>
+            <div class="tm-route-card__title"><b>${best.linea.codigo}</b> - ${best.linea.nombre || ""}</div>
+          </div>
+        </div>
+        <div class="tm-route-card__status ${op ? "is-ok" : "is-off"}">
+          ${op ? "Operativa ahora" : "Fuera de servicio ahora"}
+        </div>
+        <div class="tm-route-card__grid">
+          <div class="tm-route-metric">
+            <span>Sentido</span>
+            <b>${titleCase(normStr(best.sentido))}</b>
+          </div>
+          <div class="tm-route-metric">
+            <span>Camina a subir</span>
+            <b>${Math.round(best.boardDist)} m</b>
+            <small>${best.boardLabel}</small>
+          </div>
+          <div class="tm-route-metric">
+            <span>Bajar en</span>
+            <b>${best.alightLabel}</b>
+          </div>
+          <div class="tm-route-metric">
+            <span>${best.useAuto ? "Tramo final" : "Camina al destino"}</span>
+            <b>${best.useAuto ? "Auto" : `${Math.round(best.walkToDest)} m`}</b>
+          </div>
+        </div>
+      </div>
       ${(!best.useAuto && exagerated)
         ? `<div class="alert alert-warning py-2 mt-2 mb-0">⚠️ Se encontró ruta pero requiere caminata grande.</div>`
         : ""}

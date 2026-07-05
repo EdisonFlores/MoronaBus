@@ -4,6 +4,28 @@ import { t } from "./i18n.js";
 
 let tmClockInterval = null;
 
+function renderLoadingBlock(title, text = "") {
+  return `
+    <div class="tm-loading tm-loading--compact" role="status" aria-live="polite">
+      <span class="tm-loading__spinner" aria-hidden="true"></span>
+      <span>
+        <span class="tm-loading__title">${title}</span>
+        ${text ? `<span class="tm-loading__text">${text}</span>` : ""}
+      </span>
+    </div>
+  `;
+}
+
+function renderWeatherSkeleton() {
+  return `
+    <div class="tm-skeleton" aria-hidden="true">
+      <span class="tm-skeleton__line"></span>
+      <span class="tm-skeleton__line"></span>
+      <span class="tm-skeleton__line"></span>
+    </div>
+  `;
+}
+
 /**
  * Inicializa ensure weather modal y deja sus eventos o elementos listos para usarse.
  */
@@ -299,9 +321,9 @@ export async function openWeatherPopup({ lat, lon }) {
   const hourlyEl = document.getElementById("tm-weather-hourly");
   const dailyEl = document.getElementById("tm-weather-daily");
 
-  status.textContent = "Cargando pronóstico…";
-  hourlyEl.innerHTML = "";
-  dailyEl.innerHTML = "";
+  status.innerHTML = renderLoadingBlock("Cargando pronóstico", "Consultando datos actualizados del clima.");
+  hourlyEl.innerHTML = renderWeatherSkeleton();
+  dailyEl.innerHTML = renderWeatherSkeleton();
 
   const modalEl = document.getElementById("tm-weather-modal");
   const modal = new bootstrap.Modal(modalEl);
@@ -341,8 +363,7 @@ export function initWeatherPopup({ getUserLoc, getMapCenter }) {
   const badge = document.getElementById("weatherBadge");
   if (!badge) return;
 
-  badge.style.cursor = "pointer";
-  badge.addEventListener("click", () => {
+  const openFromCurrentContext = () => {
     const c = getMapCenter?.();
     if (c && typeof c.lat === "number" && typeof c.lng === "number") {
       openWeatherPopup({ lat: c.lat, lon: c.lng });
@@ -352,5 +373,12 @@ export function initWeatherPopup({ getUserLoc, getMapCenter }) {
     const loc = getUserLoc?.();
     if (!loc) return;
     openWeatherPopup({ lat: loc[0], lon: loc[1] });
+  };
+
+  badge.addEventListener("click", openFromCurrentContext);
+  badge.addEventListener("keydown", event => {
+    if (event.key !== "Enter" && event.key !== " ") return;
+    event.preventDefault();
+    openFromCurrentContext();
   });
 }
