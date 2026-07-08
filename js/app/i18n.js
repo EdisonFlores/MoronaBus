@@ -232,6 +232,23 @@ const PHRASES = [
 ];
 
 const EXTRA_PHRASES = [
+  ["Ruta en bus urbano", "Urban bus route"],
+  ["Ruta en bus rural", "Rural bus route"],
+  ["Route en bus urban", "Urban bus route"],
+  ["Route en bus rural", "Rural bus route"],
+  ["Caminar", "Walk"],
+  ["Bicicleta", "Bike"],
+  ["Bici", "Bike"],
+  ["Moto", "Motorcycle"],
+  ["Auto", "Car"],
+  ["Camina a subir", "Walk to board"],
+  ["Bajar en", "Get off at"],
+  ["Tramo bus", "Bus segment"],
+  ["Paradas approx.", "Approx. stops"],
+  ["Paradas aprox.", "Approx. stops"],
+  ["Camina al destino", "Walk to destination"],
+  ["Tramo final", "Final segment"],
+  ["Dirección", "Direction"],
   ["Pronóstico", "Forecast"],
   ["Por hora", "Hourly"],
   ["Por días", "Daily"],

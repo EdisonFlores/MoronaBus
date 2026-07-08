@@ -1,4 +1,5 @@
 // js/app/manual_route.js
+import { translateNode } from "./i18n.js";
 
 export function createManualRouting(deps) {
   const {
@@ -71,6 +72,7 @@ export function createManualRouting(deps) {
       <div id="route-info" class="small"></div>
       <div id="trip-actions" class="mt-2 mb-2"></div>
     `;
+    translateNode(extraEl);
 
     document.querySelectorAll("[data-mode]").forEach(btn => {
       btn.onclick = () => {

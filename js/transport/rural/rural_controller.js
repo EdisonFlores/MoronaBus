@@ -1,6 +1,7 @@
 // js/transport/rural/rural_controller.js
 import { map } from "../../map/map.js";
 import { getCollectionCache } from "../../app/cache_db.js";
+import { translateNode } from "../../app/i18n.js";
 
 import { renderLineaExtraControls } from "../core/transport_ui.js";
 import {
@@ -43,6 +44,14 @@ function normLite(s) {
   return String(s || "").trim().toLowerCase();
 }
 
+function normGeoKey(s) {
+  return String(s || "")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .trim()
+    .toLowerCase();
+}
+
 /**
  * Evalua si is sevilla morona canton para decidir el flujo de la interfaz.
  */
@@ -55,6 +64,8 @@ function isSevillaMoronaCanton(value) {
  * Gestiona geo matches dentro del flujo principal del modulo.
  */
 function geoMatches(ctx = {}, place = {}) {
+  if (place?.tipo_territorial === "parroquias") return true;
+
   const pCtx = normLite(ctx.provincia);
   const cCtx = normLite(ctx.canton);
   const paCtx = normLite(ctx.parroquia);
@@ -290,6 +301,39 @@ function distanceToGeometryMeters(pointLatLng, geometry) {
     if (d < best) best = d;
   }
   return best;
+}
+
+function stopParishKey(stop = {}) {
+  return normGeoKey(stop.parroquia || stop.ciudad || stop.sector || stop.barrio || "");
+}
+
+function filterRuralLinesByDestinationParish(lineas = [], stopsByLine = new Map(), destPlace = {}) {
+  if (destPlace?.tipo_territorial !== "parroquias") return lineas;
+  if (Array.isArray(destPlace?.bus_lineas_permitidas?.rural)) return lineas;
+
+  const parishKey = normGeoKey(destPlace.parroquia || destPlace.nombre);
+  const destLoc = destPlace?.ubicacion
+    ? [destPlace.ubicacion.latitude, destPlace.ubicacion.longitude]
+    : null;
+
+  if (!parishKey && !destLoc) return lineas;
+
+  const byParishName = (Array.isArray(lineas) ? lineas : []).filter(linea => {
+    const stops = stopsByLine.get(linea?.codigo) || [];
+    return parishKey && stops.some(stop => stopParishKey(stop) === parishKey);
+  });
+
+  if (byParishName.length) return byParishName;
+
+  if (!destLoc || typeof destLoc[0] !== "number" || typeof destLoc[1] !== "number") return lineas;
+
+  return (Array.isArray(lineas) ? lineas : []).filter(linea => {
+    const stops = stopsByLine.get(linea?.codigo) || [];
+    return stops.some(stop => {
+      const ll = getParadaLatLng(stop);
+      return ll && distMeters(destLoc, ll) <= 6500;
+    });
+  });
 }
 
 /**
@@ -1232,9 +1276,11 @@ async function _planAndShowBusStopsForPlace(userLoc, destPlace, ctx = {}, ui = {
     ? (ll) => distanceToGeometryMeters(ll, destPlace.geometry)
     : (ll) => distMeters(destLoc, ll);
 
-  const lineasAll = await getLineasByTipo("rural", {
+  let lineasAll = await getLineasByTipo("rural", {
     ...ctx,
-    ignoreGeoFilter: ctx?.ignoreGeoFilter === true || ctx?.specialSevilla === true
+    ignoreGeoFilter: ctx?.ignoreGeoFilter === true ||
+      ctx?.specialSevilla === true ||
+      destPlace?.tipo_territorial === "parroquias"
   });
 
   if (!lineasAll?.length) {
@@ -1252,16 +1298,41 @@ async function _planAndShowBusStopsForPlace(userLoc, destPlace, ctx = {}, ui = {
     return null;
   }
 
-  let lineas = [...lineasAll];
+  const stopsCacheByLinea = new Map();
+
+  for (const linea of lineasAll) {
+    if (!linea?.codigo) continue;
+    const stops = await getParadasRuralesByLineaPasan(linea.codigo);
+    stopsCacheByLinea.set(linea.codigo, stops || []);
+  }
+
+  const allowedRuralCodes = destPlace?.bus_lineas_permitidas?.rural;
+  if (Array.isArray(allowedRuralCodes)) {
+    const allowed = new Set(allowedRuralCodes.map(code => normStr(code)));
+    lineasAll = lineasAll.filter(l => allowed.has(normStr(l?.codigo)));
+  }
+
+  let lineas = filterRuralLinesByDestinationParish(lineasAll, stopsCacheByLinea, destPlace);
+
+  if (!lineas.length) {
+    if (ui?.infoEl && !ctx?.dryRun) {
+      ui.infoEl.innerHTML = `
+        <div class="alert alert-warning py-2 mb-0">
+          ❌ No se encontraron líneas rurales con paradas registradas en <b>${destPlace?.nombre || "esta parroquia"}</b>.
+        </div>
+      `;
+    }
+    return null;
+  }
 
   const requireOpNow = (ctx?.requireOperatingNow !== false);
   if (requireOpNow) {
-    const operativas = lineasAll.filter(l => l?.activo && isLineOperatingNow(l, now));
+    const operativas = lineas.filter(l => l?.activo && isLineOperatingNow(l, now));
 
     if (operativas.length) {
       lineas = operativas;
     } else {
-      lineas = [...lineasAll];
+      lineas = filterRuralLinesByDestinationParish(lineasAll, stopsCacheByLinea, destPlace);
 
       if (ui?.infoEl && !ctx?.dryRun) {
         ui.infoEl.innerHTML = `
@@ -1295,11 +1366,15 @@ async function _planAndShowBusStopsForPlace(userLoc, destPlace, ctx = {}, ui = {
   const reqSentido = normStr(ctx?.sentido || "auto");
   const sentidosToTry = (reqSentido === "ida" || reqSentido === "vuelta") ? [reqSentido] : ["ida", "vuelta"];
 
-  const stopsCacheByLinea = new Map();
-
   for (let level = 0; level < LEVELS_RURAL; level++) {
     const maxBoard = RURAL_BOARD_STEPS[Math.min(level, RURAL_BOARD_STEPS.length - 1)];
-    const maxDest = RURAL_DEST_STEPS[Math.min(level, RURAL_DEST_STEPS.length - 1)];
+    const maxDestBase = RURAL_DEST_STEPS[Math.min(level, RURAL_DEST_STEPS.length - 1)];
+    const customMaxDest = Number(destPlace?.bus_max_dest_meters);
+    const maxDest = Number.isFinite(customMaxDest) && customMaxDest > 0
+      ? Math.max(maxDestBase, customMaxDest)
+      : (destPlace?.tipo_territorial === "parroquias"
+        ? Math.max(maxDestBase, 6500)
+        : maxDestBase);
 
     for (const linea of lineas) {
       if (!linea?.activo) continue;
@@ -1503,7 +1578,7 @@ async function _planAndShowBusStopsForPlace(userLoc, destPlace, ctx = {}, ui = {
   if (ctx?.dryRun) {
     const metrics = {
       walk1: best.boardDist || 0,
-      walk2: best.useAuto ? 0 : (best.walkToDest || 0),
+      walk2: best.walkToDest || 0,
       stopsCount: Math.max(0, (best.toIdx - best.fromIdx))
     };
     return {
@@ -1609,6 +1684,8 @@ async function _planAndShowBusStopsForPlace(userLoc, destPlace, ctx = {}, ui = {
         : ""}
     `;
   }
+
+  if (ui?.infoEl) translateNode(ui.infoEl);
 
   map.fitBounds(L.latLngBounds([userLoc, destLoc, best.boardLL, best.alightLL]).pad(0.2));
   return { tipo: "rural", linea: best.linea, sentido: titleCase(normStr(best.sentido)), useAuto: best.useAuto, score: best.score };

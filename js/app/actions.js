@@ -2,6 +2,7 @@
 import { setActivePlace, getUserLocation, setMode, setUserLocation } from "./state.js";
 import { drawRoute, clearMarkers, renderMarkers, clearRoute } from "../map/map.js";
 import { clearTransportLayers, planAndShowBusStops } from "../transport/transport_controller.js";
+import { translateNode, translateText } from "./i18n.js";
 
 const MODE_META = {
   walking: { icon: "bi-person-walking", label: "Caminar" },
@@ -25,14 +26,15 @@ function routeLoadingHTML(title = "Calculando ruta", text = "Consultando el mejo
 
 function decoratePopupModeButton(button) {
   const meta = MODE_META[button?.dataset?.mode] || { icon: "bi-signpost-2-fill", label: "Ruta" };
+  const label = translateText(meta.label);
   button.type = "button";
   button.classList.add("tm-mode-btn");
-  button.setAttribute("aria-label", meta.label);
-  button.setAttribute("title", meta.label);
+  button.setAttribute("aria-label", label);
+  button.setAttribute("title", label);
   button.setAttribute("aria-pressed", "false");
   button.innerHTML = `
     <i class="bi ${meta.icon}" aria-hidden="true"></i>
-    <span class="tm-mode-label">${meta.label}</span>
+    <span class="tm-mode-label">${label}</span>
   `;
 }
 
@@ -97,6 +99,7 @@ export function selectPlace(place, infoBox, ctxGeo = {}) {
 
     <div id="route-info" class="small mt-1"></div>
   `;
+  translateNode(infoBox);
 
   infoBox.querySelectorAll("button[data-mode]").forEach(btn => {
     decoratePopupModeButton(btn);
@@ -112,6 +115,7 @@ export function selectPlace(place, infoBox, ctxGeo = {}) {
               En esta zona no hay datos registrados para transporte en bus.
             </div>
           `;
+          translateNode(infoEl);
         }
         setMode("walking");
         return;
@@ -124,6 +128,7 @@ export function selectPlace(place, infoBox, ctxGeo = {}) {
         infoEl.innerHTML = mode === "bus"
           ? routeLoadingHTML("Buscando ruta en bus", "Revisando rutas urbanas, rurales, paradas y caminatas.")
           : routeLoadingHTML();
+        translateNode(infoEl);
       }
 
       clearRoute();

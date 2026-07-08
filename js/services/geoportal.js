@@ -5,6 +5,7 @@ const TERRITORIAL_FILES = {
 
 const PARISH_ROUTE_POINTS = {
   "GENERAL PROAÑO": { latitude: -2.266385, longitude: -78.130040 },
+  "GENERAL PROANO": { latitude: -2.266385, longitude: -78.130040 },
   "SAN ISIDRO": { latitude: -2.213347, longitude: -78.164358 },
   "SINAÍ": { latitude: -2.094033, longitude: -78.051732 },
   "SINAI": { latitude: -2.094033, longitude: -78.051732 },
@@ -15,6 +16,17 @@ const PARISH_ROUTE_POINTS = {
   "RÍO BLANCO": { latitude: -2.347156, longitude: -78.155118 },
   "RIO BLANCO": { latitude: -2.347156, longitude: -78.155118 },
   "MACAS": { latitude: -2.304614, longitude: -78.117565 }
+};
+
+const PARISH_BUS_RULES = {
+  "MACAS": { urbano: null, rural: [] },
+  "RIO BLANCO": { urbano: ["l5"], rural: [] },
+  "SINAI": { urbano: [], rural: ["lr11", "lr12"] },
+  "CUCHAENTZA": { urbano: [], rural: ["lr13", "lr14"] },
+  "SAN ISIDRO": { urbano: [], rural: ["lr15"] },
+  "GENERAL PROANO": { urbano: ["l5"], rural: ["lr15", "lr16", "lr17", "lr18", "lr19"], maxDestMeters: 1800 },
+  "ALSHI": { urbano: [], rural: ["lr19"] },
+  "ZUNA": { urbano: [], rural: [] }
 };
 
 function normTerritorialName(value) {
@@ -88,16 +100,21 @@ function featureCode(feature, type) {
 
 export function territorialFeatureToPlace(feature, type) {
   const nombre = featureName(feature, type);
+  const nameKey = normTerritorialName(nombre);
   const routePoint = type === "parroquias"
-    ? PARISH_ROUTE_POINTS[nombre] || PARISH_ROUTE_POINTS[normTerritorialName(nombre)]
+    ? PARISH_ROUTE_POINTS[nombre] || PARISH_ROUTE_POINTS[nameKey]
     : null;
   const ubicacion = routePoint || centroidFromGeometry(feature?.geometry);
   if (!ubicacion) return null;
 
   const codigo = featureCode(feature, type);
-  const isMacas = normTerritorialName(nombre) === "MACAS";
-  const entorno = type === "barrios" ? "rural" : (isMacas ? "urbano" : "rural");
-  const busTipoForzado = type === "barrios" ? "rural" : (isMacas ? "urbano" : "rural");
+  const parishBusRule = type === "parroquias" ? PARISH_BUS_RULES[nameKey] : null;
+  const hasUrban = parishBusRule?.urbano === null || (Array.isArray(parishBusRule?.urbano) && parishBusRule.urbano.length > 0);
+  const hasRural = Array.isArray(parishBusRule?.rural) && parishBusRule.rural.length > 0;
+  const entorno = type === "barrios" ? "urbano" : (hasUrban && !hasRural ? "urbano" : "rural");
+  const busTipoForzado = type === "barrios"
+    ? "urbano"
+    : (hasUrban && !hasRural ? "urbano" : (hasRural && !hasUrban ? "rural" : ""));
 
   return {
     nombre,
@@ -110,7 +127,9 @@ export function territorialFeatureToPlace(feature, type) {
     parroquia: type === "parroquias" ? nombre : "",
     entorno,
     bus_tipo_forzado: busTipoForzado,
-    usar_poligono_bus: type === "barrios",
+    bus_lineas_permitidas: parishBusRule || null,
+    bus_max_dest_meters: parishBusRule?.maxDestMeters || null,
+    usar_poligono_bus: false,
     telefono: "No aplica",
     horario: "No aplica",
     ubicacion,

@@ -2,6 +2,7 @@
 import { clearTransportRoute, map as leafletMap } from "../map/map.js";
 import { clearTransportState } from "./core/transport_state.js";
 import { getCollectionCache } from "../app/cache_db.js";
+import { isLineOperatingNow } from "./core/transport_data.js";
 
 // Controladores (selector "Líneas de transporte")
 import { cargarLineasTransporte as cargarUrbano } from "./urbano/urbano_controller.js";
@@ -152,7 +153,9 @@ export async function planAndShowBusStops(userLoc, destPlace, ctx = {}, ui = {})
     ? (destPlace?.geometry || null)
     : null;
 
-  const ok = await hasBusCoverage({
+  const fixedLines = destPlace?.bus_lineas_permitidas || null;
+  const hasFixedBusLines = !!fixedLines;
+  const ok = hasFixedBusLines || await hasBusCoverage({
     map: leafletMap,
     userLoc,
     destLoc,
@@ -204,6 +207,68 @@ export async function planAndShowBusStops(userLoc, destPlace, ctx = {}, ui = {})
 
   try {
     return await withTimeout((async () => {
+      if (fixedLines && !forcedTipo) {
+        const allowedTypes = [];
+        if (fixedLines.urbano === null || (Array.isArray(fixedLines.urbano) && fixedLines.urbano.length)) allowedTypes.push("urbano");
+        if (Array.isArray(fixedLines.rural) && fixedLines.rural.length) allowedTypes.push("rural");
+
+        if (!allowedTypes.length) {
+          if (ui?.infoEl) {
+            ui.infoEl.innerHTML = `
+              <div class="alert alert-warning py-2 mb-0">
+                ❌ No hay líneas de bus registradas para este destino.
+              </div>
+            `;
+          }
+          return null;
+        }
+
+        const evaluations = [];
+        for (const tipo of allowedTypes) {
+          try {
+            const evalResult = await runTipo(tipo, { dryRun: true, preserveLayers: true }, { infoEl: null });
+            if (!evalResult) continue;
+
+            const lineOperating = isLineOperatingNow(evalResult.linea, now);
+            const baseScore = Number.isFinite(evalResult.score) ? evalResult.score : Infinity;
+            const alightMeters = Number(evalResult?.metrics?.walk2);
+            evaluations.push({
+              tipo,
+              score: baseScore + (lineOperating ? 0 : 1000000),
+              alightMeters: Number.isFinite(alightMeters) ? alightMeters : Infinity,
+              lineOperating
+            });
+          } catch (e) {
+            console.warn(`Eval ${tipo} falló:`, e);
+          }
+        }
+
+        if (destPlace?.tipo_territorial === "parroquias") {
+          evaluations.sort((a, b) =>
+            Number(b.lineOperating) - Number(a.lineOperating) ||
+            a.alightMeters - b.alightMeters ||
+            a.score - b.score
+          );
+        } else {
+          evaluations.sort((a, b) => a.score - b.score);
+        }
+        const winner = evaluations[0]?.tipo || null;
+
+        if (!winner) {
+          if (ui?.infoEl) {
+            ui.infoEl.innerHTML = `
+              <div class="alert alert-warning py-2 mb-0">
+                ❌ No se encontró una ruta en bus para llegar a este destino.
+              </div>
+            `;
+          }
+          return null;
+        }
+
+        clearTransportLayers();
+        return runTipo(winner, { dryRun: false, preserveLayers: false }, ui);
+      }
+
       if (forcedTipo) {
         let evalForced = null;
         try {

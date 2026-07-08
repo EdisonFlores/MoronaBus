@@ -1,6 +1,7 @@
 // js/transport/urbano/urbano_controller.js
 import { getUserLocation } from "../../app/state.js";
 import { map } from "../../map/map.js";
+import { translateNode } from "../../app/i18n.js";
 
 import { renderLineaExtraControls } from "../core/transport_ui.js";
 import {
@@ -60,6 +61,8 @@ function isSevillaMoronaCanton(value) {
  * Gestiona geo matches dentro del flujo principal del modulo.
  */
 function geoMatches(ctx = {}, place = {}) {
+  if (place?.tipo_territorial === "parroquias") return true;
+
   const pCtx = normLite(ctx.provincia);
   const cCtx = normLite(ctx.canton);
   const paCtx = normLite(ctx.parroquia);
@@ -531,26 +534,16 @@ export async function planAndShowBusStopsForPlace(userLoc, destPlace, ctx = {}, 
   const destLoc = [destPlace.ubicacion.latitude, destPlace.ubicacion.longitude];
 
   // ====== 1) Cargar líneas urbanas ======
-  let lineasAll = await getLineasByTipo("urbano", ctx);
+  let lineasAll = await getLineasByTipo("urbano", {
+    ...ctx,
+    ignoreGeoFilter: ctx?.ignoreGeoFilter === true || destPlace?.tipo_territorial === "parroquias"
+  });
   lineasAll = Array.isArray(lineasAll) ? lineasAll : [];
 
-  // ✅ Proaño / Río Blanco => SOLO Línea 5
-  const isProanoOrRioBlanco = () => {
-    const pCtx = normLite(ctx?.parroquia);
-    const pDest = normLite(destPlace?.parroquia);
-    const cCtx = normLite(ctx?.canton);
-    const cDest = normLite(destPlace?.canton || destPlace?.ciudad);
-
-    const hayProano = (pCtx.includes("proa") || pDest.includes("proa") || cCtx.includes("proa") || cDest.includes("proa"));
-    const hayRioBlanco =
-      (pCtx.includes("rio blanco") || pDest.includes("rio blanco") || cCtx.includes("rio blanco") || cDest.includes("rio blanco")) ||
-      (pCtx.includes("río blanco") || pDest.includes("río blanco") || cCtx.includes("río blanco") || cDest.includes("río blanco"));
-
-    return hayProano || hayRioBlanco;
-  };
-
-  if (isProanoOrRioBlanco()) {
-    lineasAll = lineasAll.filter(l => normStr(l?.codigo) === "l5");
+  const allowedUrbanCodes = destPlace?.bus_lineas_permitidas?.urbano;
+  if (Array.isArray(allowedUrbanCodes)) {
+    const allowed = new Set(allowedUrbanCodes.map(code => normStr(code)));
+    lineasAll = lineasAll.filter(l => allowed.has(normStr(l?.codigo)));
   }
 
   if (!lineasAll.length) {
@@ -609,7 +602,13 @@ export async function planAndShowBusStopsForPlace(userLoc, destPlace, ctx = {}, 
 
   for (let level = 0; level < LEVELS; level++) {
     const maxWalkToBoard = BOARD_STEPS[Math.min(level, BOARD_STEPS.length - 1)];
-    const maxWalkToDest  = DEST_STEPS[Math.min(level, DEST_STEPS.length - 1)];
+    const maxWalkToDestBase = DEST_STEPS[Math.min(level, DEST_STEPS.length - 1)];
+    const customMaxDest = Number(destPlace?.bus_max_dest_meters);
+    const maxWalkToDest = Number.isFinite(customMaxDest) && customMaxDest > 0
+      ? Math.max(maxWalkToDestBase, customMaxDest)
+      : (destPlace?.tipo_territorial === "parroquias"
+        ? Math.max(maxWalkToDestBase, 6500)
+        : maxWalkToDestBase);
 
     let levelBest = null;
     let levelBestLinea = null;
@@ -844,6 +843,7 @@ export async function planAndShowBusStopsForPlace(userLoc, destPlace, ctx = {}, 
       </div>
       ${warnHTML}
     `;
+    translateNode(ui.infoEl);
   }
 
   map.fitBounds(L.latLngBounds([userLoc, destLoc, boardLL, alightLL]).pad(0.2));
