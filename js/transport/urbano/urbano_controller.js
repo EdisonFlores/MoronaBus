@@ -631,6 +631,7 @@ export async function planAndShowBusStopsForPlace(userLoc, destPlace, ctx = {}, 
       const plan = planLineBoardAlightByOrder({
         userLoc,
         destLoc,
+        destGeometry: destPlace?.usar_poligono_bus === true ? (destPlace?.geometry || null) : null,
         stops: paradasAll,
         isCircularOneWay,
 

@@ -68,10 +68,32 @@ function distMeters(map, a, b) {
   try { return map.distance(a, b); } catch { return Infinity; }
 }
 
+function collectGeometryLatLngs(input, output = []) {
+  if (!Array.isArray(input)) return output;
+  if (typeof input[0] === "number" && typeof input[1] === "number") {
+    output.push([input[1], input[0]]);
+    return output;
+  }
+  input.forEach(item => collectGeometryLatLngs(item, output));
+  return output;
+}
+
+function distanceToGeometryMeters(map, pointLatLng, geometry) {
+  const points = collectGeometryLatLngs(geometry?.coordinates);
+  if (!points.length) return Infinity;
+
+  let best = Infinity;
+  for (const p of points) {
+    const d = distMeters(map, pointLatLng, p);
+    if (d < best) best = d;
+  }
+  return best;
+}
+
 /**
  * Evalua si has bus coverage para decidir el flujo de la interfaz.
  */
-export async function hasBusCoverage({ map, userLoc, destLoc, radiusUrb = 2200, radiusRur = 4200 } = {}) {
+export async function hasBusCoverage({ map, userLoc, destLoc, destGeometry = null, radiusUrb = 2200, radiusRur = 4200 } = {}) {
   if (!map || !userLoc || !destLoc) return false;
 
   const urbanoAll = await getCollectionCache("paradas_transporte");
@@ -91,7 +113,9 @@ export async function hasBusCoverage({ map, userLoc, destLoc, radiusUrb = 2200, 
       const ll = llFromStop(p);
       if (!ll) continue;
       const d1 = distMeters(map, userLoc, ll);
-      const d2 = distMeters(map, destLoc, ll);
+      const d2 = destGeometry
+        ? distanceToGeometryMeters(map, ll, destGeometry)
+        : distMeters(map, destLoc, ll);
       if (d1 <= rad || d2 <= rad) return true;
     }
     return false;
@@ -124,7 +148,16 @@ export async function planAndShowBusStops(userLoc, destPlace, ctx = {}, ui = {})
   const now = (ctx?.now instanceof Date) ? ctx.now : new Date();
 
   const destLoc = [destPlace.ubicacion.latitude, destPlace.ubicacion.longitude];
-  const ok = await hasBusCoverage({ map: leafletMap, userLoc, destLoc });
+  const busDestGeometry = destPlace?.usar_poligono_bus === true
+    ? (destPlace?.geometry || null)
+    : null;
+
+  const ok = await hasBusCoverage({
+    map: leafletMap,
+    userLoc,
+    destLoc,
+    destGeometry: busDestGeometry
+  });
 
   if (!ok) {
     if (ui?.infoEl) {
@@ -141,7 +174,9 @@ export async function planAndShowBusStops(userLoc, destPlace, ctx = {}, ui = {})
 
   const entornoUser = ctx?.entornoUser;
   const entornoDest = destPlace?.entorno;
-  const preferred = decidePreferredTipo(entornoUser, entornoDest);
+  const forcedTipoRaw = String(destPlace?.bus_tipo_forzado || "").toLowerCase().trim();
+  const forcedTipo = (forcedTipoRaw === "urbano" || forcedTipoRaw === "rural") ? forcedTipoRaw : "";
+  const preferred = forcedTipo || decidePreferredTipo(entornoUser, entornoDest);
 
   const baseCtx = {
     ...ctx,
@@ -169,6 +204,29 @@ export async function planAndShowBusStops(userLoc, destPlace, ctx = {}, ui = {})
 
   try {
     return await withTimeout((async () => {
+      if (forcedTipo) {
+        let evalForced = null;
+        try {
+          evalForced = await runTipo(forcedTipo, { dryRun: true, preserveLayers: true }, { infoEl: null });
+        } catch (e) {
+          console.warn(`Eval ${forcedTipo} falló:`, e);
+        }
+
+        if (evalForced) {
+          clearTransportLayers();
+          return runTipo(forcedTipo, { dryRun: false, preserveLayers: false }, ui);
+        }
+
+        if (ui?.infoEl) {
+          ui.infoEl.innerHTML = `
+            <div class="alert alert-warning py-2 mb-0">
+              ❌ No se encontró una ruta en bus ${forcedTipo} para llegar a este destino.
+            </div>
+          `;
+        }
+        return null;
+      }
+
       if (preferred) {
         let evalPreferred = null;
         try {

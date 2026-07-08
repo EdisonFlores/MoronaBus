@@ -44,5 +44,14 @@ export function initLayersUI({
     });
   }
 
-  return { layersControl: lc, updateOverlays };
+  function syncOverlayStates() {
+    const inputs = lc?._form?.querySelectorAll?.("input.leaflet-control-layers-selector") || [];
+    inputs.forEach(input => {
+      const entry = (lc?._layers || []).find(item => String(item?.layer?._leaflet_id) === String(input.layerId));
+      if (!entry?.overlay) return;
+      input.checked = map.hasLayer(entry.layer);
+    });
+  }
+
+  return { layersControl: lc, updateOverlays, syncOverlayStates };
 }

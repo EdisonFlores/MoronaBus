@@ -7,16 +7,19 @@ import {
   map,
   baseLayers,
   markersLayer,
-  routeOverlay,
   interprovOverlay,
+  barriosOverlay,
+  parroquiasOverlay,
   renderMarkers,
   clearMarkers,
   clearRoute,
+  clearTerritorialLayer,
   drawRoute,
   drawRouteToPoint,
   drawRouteBetweenPoints,
   clearInterprov,
-  drawTwoLegOSRM
+  drawTwoLegOSRM,
+  renderTerritorialLayer
 } from "./map/map.js";
 
 import {
@@ -28,7 +31,6 @@ import {
 
 import { getLineasByTipoAll, isLineOperatingNow } from "./transport/core/transport_data.js";
 import { getCollectionCache } from "./app/cache_db.js";
-import { getStopsLayer, getRouteLayer, getAccessLayer } from "./transport/core/transport_state.js";
 
 import { installMapContextMenu } from "./map/context_menu.js";
 import { initLayersUI } from "./map/layers_ui.js";
@@ -40,6 +42,7 @@ import { createManualRouting } from "./app/manual_route.js";
 import { applyLanguageUI, initLanguageObserver, toggleLanguage } from "./app/i18n.js";
 import { applyThemeUI, toggleTheme } from "./app/theme.js";
 import { updateWeatherBadge, startWeatherAutoRefresh } from "./services/weather.js";
+import { getTerritorialLayer, territorialFeatureToPlace } from "./services/geoportal.js";
 import { initWeatherPopup } from "./app/weather_popup.js";
 import { initVoiceReader } from "./app/voice_assistant.js";
 import { initInteractiveTutorial } from "./app/tutorial.js";
@@ -612,23 +615,85 @@ function setUserMarker(loc, open = false) {
   if (open) userMarker.openPopup();
 }
 
+function firstEmojiFromText(text) {
+  const value = String(text || "").trim();
+  if (!value) return "";
+  const match = value.match(/^(\p{Extended_Pictographic}(?:\uFE0F|\u200D\p{Extended_Pictographic})*)/u);
+  if (match?.[1]) return match[1];
+  const firstToken = value.split(/\s+/)[0] || "";
+  return /[^\p{L}\p{N}]/u.test(firstToken) ? firstToken : "";
+}
+
+function getCategoryOptionEmoji(value = category?.value) {
+  if (!category || !value) return "";
+  const option = Array.from(category.options || []).find(opt => String(opt.value) === String(value));
+  return firstEmojiFromText(option?.textContent || "");
+}
+
+function withMarkerEmoji(list, emoji) {
+  return (Array.isArray(list) ? list : []).map(item => ({
+    ...item,
+    markerEmoji: item?.markerEmoji || emoji || "\uD83D\uDCCD"
+  }));
+}
+
+const territorialVisualCache = new Map();
+let territorialSelectionState = null;
+
+async function loadTerritorialVisualData(type) {
+  if (territorialVisualCache.has(type)) return territorialVisualCache.get(type);
+  const data = await getTerritorialLayer(type);
+  territorialVisualCache.set(type, data);
+  return data;
+}
+
+async function showVisualTerritorialOverlay(type) {
+  const targetOverlay = type === "parroquias" ? parroquiasOverlay : barriosOverlay;
+  const otherOverlay = type === "parroquias" ? barriosOverlay : parroquiasOverlay;
+
+  try {
+    otherOverlay.clearLayers();
+    map.removeLayer(otherOverlay);
+  } catch {}
+
+  const data = await loadTerritorialVisualData(type);
+  try { targetOverlay.addTo(map); } catch {}
+  renderTerritorialLayer(data.geojson, {
+    type,
+    fit: false,
+    onFeatureClick: (feature) => {
+      if (territorialSelectionState?.type !== type) return;
+      territorialSelectionState.onFeatureClick?.(feature);
+    }
+  });
+  setTimeout(() => layersUI?.syncOverlayStates?.(), 0);
+}
+
+function initTerritorialOverlayEvents() {
+  map.on("overlayadd", event => {
+    const name = String(event?.name || "");
+    if (name === "Barrios") {
+      showVisualTerritorialOverlay("barrios").catch(error => {
+        console.error("No se pudo mostrar Barrios:", error);
+      });
+    }
+    if (name === "Parroquias") {
+      showVisualTerritorialOverlay("parroquias").catch(error => {
+        console.error("No se pudo mostrar Parroquias:", error);
+      });
+    }
+  });
+}
+
 /* ================= Capas: overlays dinámicos ================= */
 function refreshLayersOverlays() {
   if (!layersUI) return;
 
   const overlays = {
     "📌 Lugares": markersLayer,
-    "🧭 Ruta": routeOverlay,
-    "🧭 Interprov": interprovOverlay
+    "Barrios": barriosOverlay,
+    "Parroquias": parroquiasOverlay
   };
-
-  const tStops = getStopsLayer?.();
-  const tRoute = getRouteLayer?.();
-  const tAcc = getAccessLayer?.();
-
-  if (tStops) overlays["🚌 Paradas (bus)"] = tStops;
-  if (tRoute) overlays["🚌 Ruta (bus)"] = tRoute;
-  if (tAcc) overlays["🚶 Accesos (bus)"] = tAcc;
 
   layersUI.updateOverlays(overlays);
 }
@@ -848,8 +913,8 @@ function initMapControls() {
     baseLayers,
     overlays: {
       "📌 Lugares": markersLayer,
-      "🧭 Ruta": routeOverlay,
-      "🧭 Interprov": interprovOverlay
+      "Barrios": barriosOverlay,
+      "Parroquias": parroquiasOverlay
     },
     onMyLocation: () => {
       const loc = getUserLocation();
@@ -859,6 +924,7 @@ function initMapControls() {
     }
   });
 
+  initTerritorialOverlayEvents();
   refreshLayersOverlays();
 
   installMapContextMenu(map, {
@@ -1311,7 +1377,8 @@ function eventToPlace(ev) {
     nombre: ev?.nombre || "Evento",
     telefono: ev?.organizador ? `Organizador: ${ev.organizador}` : "No disponible",
     horario: `${ev?.fecha_inicio || ""} ${ev?.hora_inicio || ""} → ${ev?.fecha_fin || ""} ${ev?.hora_fin || ""}`.trim(),
-    ubicacion: ev?.ubicacion
+    ubicacion: ev?.ubicacion,
+    popupHTML: buildEventPopupHTML(ev)
   };
 }
 
@@ -1339,27 +1406,14 @@ function buildEventPopupHTML(ev) {
  * Construye render event markers para mostrar contenido o preparar datos de la interfaz.
  */
 function renderEventMarkers(list, onSelect) {
-  clearMarkers();
-
-  (Array.isArray(list) ? list : []).forEach(ev => {
-    const u = ev?.ubicacion;
-    const lat = u?.latitude;
-    const lon = u?.longitude;
-    if (typeof lat !== "number" || typeof lon !== "number") return;
-
-    const marker = L.marker([lat, lon]).addTo(markersLayer);
-
-    marker.bindPopup(buildEventPopupHTML(ev));
-    marker.on("mouseover", () => marker.openPopup());
-    marker.on("mouseout", () => marker.closePopup());
-    marker.on("click", () => onSelect(ev));
-  });
+  renderMarkers(list, onSelect);
 }
 
 /* ================= EVENTO CATEGORÍA ================= */
 category.onchange = async () => {
   resetMap();
   dataList.length = 0;
+  territorialSelectionState = null;
 
   if (!category.value) {
     showDetectedFacade();
@@ -1679,6 +1733,139 @@ category.onchange = async () => {
     return;
   }
 
+  if (category.value === "barrios" || category.value === "parroquias_geoportal") {
+    const territorialType = category.value === "barrios" ? "barrios" : "parroquias";
+    const label = territorialType === "barrios" ? "barrio" : "parroquia";
+    const labelPlural = territorialType === "barrios" ? "barrios" : "parroquias";
+    const icon = territorialType === "barrios" ? "🗺️" : "🏘️";
+
+    extra.innerHTML = `
+      <div class="tm-loading mb-2" role="status" aria-live="polite">
+        <span class="tm-loading__spinner" aria-hidden="true"></span>
+        <span>
+          <span class="tm-loading__title">Cargando ${labelPlural}</span>
+          <span class="tm-loading__text">Consultando capa territorial del Geoportal Morona.</span>
+        </span>
+      </div>
+    `;
+
+    let territorialData = null;
+    try {
+      territorialData = await getTerritorialLayer(territorialType);
+    } catch (error) {
+      console.error(`No se pudo cargar ${labelPlural}:`, error);
+      showModal(
+        "Capa no disponible",
+        `
+          <div class="alert alert-warning py-2 mb-0">
+            No se pudo cargar la capa de <b>${labelPlural}</b> desde el Geoportal Morona.
+            Intenta nuevamente en unos minutos.
+          </div>
+        `
+      );
+      extra.innerHTML = "";
+      return;
+    }
+
+    const places = territorialData.places || [];
+    if (!places.length) {
+      showModal(
+        "Sin datos territoriales",
+        `
+          <div class="alert alert-info py-2 mb-0">
+            La capa de <b>${labelPlural}</b> no devolvió elementos para mostrar.
+          </div>
+        `
+      );
+      extra.innerHTML = "";
+      return;
+    }
+
+    dataList.push(...withMarkerEmoji(places, icon));
+
+    const selectTerritorialPlace = (place, { showTripButton = true } = {}) => {
+      if (!place?.ubicacion) return;
+      stopTripTracking(true);
+      clearRoutingArtifacts();
+      activePlace = place;
+      setActivePlaceAction(activePlace);
+      hideDetectedFacadeOnPlaceSelection();
+      showTripStartForDropdownSelection(activePlace, "territorial");
+      rebuildSelectedRoute({ showTripButton });
+    };
+
+    const otherOverlay = territorialType === "barrios" ? parroquiasOverlay : barriosOverlay;
+    try {
+      otherOverlay.clearLayers();
+      map.removeLayer(otherOverlay);
+    } catch {}
+
+    const selectTerritorialFeature = (feature) => {
+      const place = territorialFeatureToPlace(feature, territorialType);
+      if (!place) return;
+
+      const code = String(place.codigo_territorial || "");
+      const idx = dataList.findIndex(item => String(item.codigo_territorial || "") === code);
+      const sel = document.getElementById("lugares");
+      if (sel && idx >= 0) sel.value = String(idx);
+
+      selectTerritorialPlace(idx >= 0 ? dataList[idx] : place);
+    };
+
+    territorialSelectionState = {
+      type: territorialType,
+      onFeatureClick: selectTerritorialFeature
+    };
+
+    renderTerritorialLayer(territorialData.geojson, {
+      type: territorialType,
+      onFeatureClick: selectTerritorialFeature
+    });
+    setTimeout(() => layersUI?.syncOverlayStates?.(), 0);
+
+    extra.innerHTML = `
+      <select id="lugares" class="form-select mb-2">
+        <option value="">${icon} Seleccione ${label}</option>
+      </select>
+
+      <button id="near" class="btn btn-primary w-100 mb-2">
+        📏 ${label.charAt(0).toUpperCase() + label.slice(1)} más cercano
+      </button>
+
+      ${buildModesHTML(true)}
+      <div id="route-info" class="small"></div>
+      <div id="trip-actions" class="mt-2 mb-2"></div>
+    `;
+
+    const sel = document.getElementById("lugares");
+    dataList.forEach((place, index) => {
+      sel.innerHTML += `<option value="${index}">${place.nombre || label}</option>`;
+    });
+
+    sel.onchange = () => {
+      const place = dataList[sel.value];
+      if (!place) return;
+      selectTerritorialPlace(place, { showTripButton: true });
+    };
+
+    document.getElementById("near").onclick = () => {
+      const place = findNearest(dataList);
+      if (!place) return;
+      const idx = dataList.indexOf(place);
+      if (idx >= 0) sel.value = String(idx);
+      selectTerritorialPlace(place);
+    };
+
+    wireModeButtons({
+      onModeChange: () => {
+        if (activePlace) rebuildSelectedRoute();
+      }
+    });
+
+    refreshLayersOverlays();
+    return;
+  }
+
   if (category.value === "Alimentacion") {
     const tipos = await getTiposComidaFromLugar({
       provincia: ctxGeo.provincia,
@@ -1778,7 +1965,7 @@ category.onchange = async () => {
         return String(a.nombre || "").localeCompare(String(b.nombre || ""));
       });
 
-      dataList.push(...filtered);
+      dataList.push(...withMarkerEmoji(filtered, getCategoryOptionEmoji("Alimentacion") || "??"));
 
       dataList.forEach((l, i) => {
         const par = l.parroquia ? `(${l.parroquia})` : "(sin parroquia)";
@@ -1901,7 +2088,7 @@ category.onchange = async () => {
     });
 
     const places = filtered.map(eventToPlace);
-    dataList.push(...places);
+    dataList.push(...withMarkerEmoji(places, "\uD83D\uDCC5"));
 
     const busBtnHTML = (ctxGeo.busEnabled === true)
       ? `<button class="btn btn-outline-primary" data-mode="bus">🚌</button>`
@@ -2111,7 +2298,7 @@ category.onchange = async () => {
     return String(a.nombre || "").localeCompare(String(b.nombre || ""));
   });
 
-  dataList.push(...all);
+  dataList.push(...withMarkerEmoji(all, getCategoryOptionEmoji(category.value)));
 
   const busBtnHTML = (ctxGeo.busEnabled === true)
     ? `<button class="btn btn-outline-primary" data-mode="bus">🚌</button>`
@@ -2188,6 +2375,7 @@ category.onchange = async () => {
 function clearFullMapAndPanel() {
   stopTripTracking(true);
   try { clearMarkers(); } catch {}
+  try { clearTerritorialLayer(); } catch {}
   try { clearRoutingArtifacts(); } catch {}
   try { clearInterprov(); } catch {}
   try { manual.clearManualDest(); } catch {}
@@ -2207,3 +2395,4 @@ function clearFullMapAndPanel() {
   showDetectedFacade();
   refreshLayersOverlays();
 }
+

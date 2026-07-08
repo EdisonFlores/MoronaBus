@@ -19,6 +19,28 @@ function distMeters(a, b) {
   return map.distance(a, b);
 }
 
+function collectGeometryLatLngs(input, output = []) {
+  if (!Array.isArray(input)) return output;
+  if (typeof input[0] === "number" && typeof input[1] === "number") {
+    output.push([input[1], input[0]]);
+    return output;
+  }
+  input.forEach(item => collectGeometryLatLngs(item, output));
+  return output;
+}
+
+function distanceToGeometryMeters(pointLatLng, geometry) {
+  const points = collectGeometryLatLngs(geometry?.coordinates);
+  if (!points.length) return Infinity;
+
+  let best = Infinity;
+  for (const p of points) {
+    const d = distMeters(pointLatLng, p);
+    if (d < best) best = d;
+  }
+  return best;
+}
+
 /**
  * Normaliza o formatea normalize stops para usarlo de forma consistente.
  */
@@ -31,12 +53,15 @@ function normalizeStops(stops) {
 /**
  * Busca nearest k dentro de las colecciones disponibles.
  */
-function nearestK(stopsNorm, pointLatLng, k = 25, requireSentido = null) {
+function nearestK(stopsNorm, pointLatLng, k = 25, requireSentido = null, distanceFn = null) {
   const ranked = [];
   for (const x of stopsNorm) {
     const s = x.s;
     if (requireSentido && s?.sentido && String(s.sentido) !== String(requireSentido)) continue;
-    ranked.push({ stop: s, ll: x.ll, d: distMeters(pointLatLng, x.ll) });
+    const d = typeof distanceFn === "function"
+      ? distanceFn(x.ll)
+      : distMeters(pointLatLng, x.ll);
+    ranked.push({ stop: s, ll: x.ll, d });
   }
   ranked.sort((a, b) => a.d - b.d);
   return ranked.slice(0, Math.max(1, k));
@@ -125,6 +150,7 @@ function buildPathStops(ordered, idxB, idxA, isCircularOneWay) {
 export function planLineBoardAlightByOrder({
   userLoc,
   destLoc,
+  destGeometry = null,
   stops,
   isCircularOneWay = false,
 
@@ -152,7 +178,10 @@ export function planLineBoardAlightByOrder({
   const stopsNorm = normalizeStops(ordered);
 
   const boards = nearestK(stopsNorm, userLoc, kBoard);
-  const dests = nearestK(stopsNorm, destLoc, kDest);
+  const destDistanceFn = destGeometry
+    ? (ll) => distanceToGeometryMeters(ll, destGeometry)
+    : null;
+  const dests = nearestK(stopsNorm, destLoc, kDest, null, destDistanceFn);
 
   let best = null;
 

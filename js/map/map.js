@@ -21,12 +21,29 @@ export const markersLayer = L.layerGroup().addTo(map);
 export const routeOverlay = L.layerGroup().addTo(map);
 export const transportOverlay = L.layerGroup().addTo(map);
 export const interprovOverlay = L.layerGroup().addTo(map);
+export const barriosOverlay = L.layerGroup();
+export const parroquiasOverlay = L.layerGroup();
 
 /**
  * Limpia clear interprov para dejar la vista o el estado listo para otro flujo.
  */
 export function clearInterprov() {
   try { interprovOverlay.clearLayers(); } catch {}
+}
+
+export function clearTerritorialLayer() {
+  try {
+    barriosOverlay.clearLayers();
+    map.removeLayer(barriosOverlay);
+  } catch {}
+  try {
+    parroquiasOverlay.clearLayers();
+    map.removeLayer(parroquiasOverlay);
+  } catch {}
+}
+
+function getTerritorialOverlay(type) {
+  return type === "parroquias" ? parroquiasOverlay : barriosOverlay;
 }
 
 let routeLine = null;
@@ -116,6 +133,21 @@ export function clearTransportRoute() {
 }
 
 /* ================= MARKERS ================= */
+function markerEmoji(place) {
+  const emoji = String(place?.markerEmoji || place?.emoji || place?.icono || "📍").trim();
+  return emoji || "📍";
+}
+
+function emojiMarkerIcon(emoji) {
+  return L.divIcon({
+    className: "tm-emoji-marker",
+    html: `<span>${emoji}</span>`,
+    iconSize: [34, 34],
+    iconAnchor: [17, 30],
+    popupAnchor: [0, -28]
+  });
+}
+
 export function renderMarkers(list, onSelect) {
   clearMarkers();
 
@@ -126,11 +158,122 @@ export function renderMarkers(list, onSelect) {
 
     if (typeof lat !== "number" || typeof lng !== "number") return;
 
-    L.marker([lat, lng])
+    L.marker([lat, lng], { icon: emojiMarkerIcon(markerEmoji(p)) })
       .addTo(markersLayer)
       .bindPopup(buildPopupHTML(p))
       .on("click", () => onSelect(p));
   });
+}
+
+const TERRITORIAL_COLORS = [
+  "#0d6efd",
+  "#dc3545",
+  "#198754",
+  "#fd7e14",
+  "#6f42c1",
+  "#20c997",
+  "#d63384",
+  "#0dcaf0",
+  "#ffc107",
+  "#6610f2",
+  "#2f9e44",
+  "#e03131",
+  "#1971c2",
+  "#f08c00",
+  "#5f3dc4",
+  "#087f5b"
+];
+
+function featureColor(feature, type) {
+  const props = feature?.properties || {};
+  const key = type === "barrios"
+    ? String(props.cod_barrio || props.des_barrio || "")
+    : String(props.dpa_parroq || props.dpa_despar || "");
+
+  let hash = 0;
+  for (let i = 0; i < key.length; i++) {
+    hash = ((hash << 5) - hash) + key.charCodeAt(i);
+    hash |= 0;
+  }
+
+  return TERRITORIAL_COLORS[Math.abs(hash) % TERRITORIAL_COLORS.length];
+}
+
+function territorialStyle(feature, type) {
+  const color = featureColor(feature, type);
+
+  return {
+    color,
+    weight: 2,
+    opacity: 0.95,
+    fillColor: color,
+    fillOpacity: type === "barrios" ? 0.2 : 0.14
+  };
+}
+
+function territorialPopupHTML(feature, type) {
+  const props = feature?.properties || {};
+  if (type === "barrios") {
+    const name = props.des_barrio || "Barrio";
+    return `<b>${name}</b>`;
+  }
+
+  const name = props.dpa_despar || "Parroquia";
+  return `<b>${name}</b>`;
+}
+
+function territorialName(feature, type) {
+  const props = feature?.properties || {};
+  return type === "barrios"
+    ? String(props.des_barrio || "Barrio").trim()
+    : String(props.dpa_despar || "Parroquia").trim();
+}
+
+export function renderTerritorialLayer(geojson, {
+  type = "barrios",
+  onFeatureClick = null,
+  fit = true
+} = {}) {
+  const overlay = getTerritorialOverlay(type);
+  try {
+    overlay.clearLayers();
+    overlay.addTo(map);
+  } catch {}
+
+  const layer = L.geoJSON(geojson, {
+    style: feature => territorialStyle(feature, type),
+    onEachFeature(feature, polygon) {
+      const name = territorialName(feature, type);
+      polygon.bindPopup(territorialPopupHTML(feature, type));
+      polygon.bindTooltip(name, {
+        permanent: true,
+        direction: "center",
+        className: "tm-territorial-label"
+      });
+      polygon.on("mouseover", () => {
+        polygon.setStyle({
+          weight: 4,
+          fillOpacity: 0.24
+        });
+      });
+      polygon.on("mouseout", () => {
+        polygon.setStyle(territorialStyle(feature, type));
+      });
+      polygon.on("click", () => {
+        polygon.openPopup();
+        if (typeof onFeatureClick === "function") onFeatureClick(feature);
+      });
+    }
+  }).addTo(overlay);
+
+  if (fit) {
+    try {
+      const bounds = layer.getBounds();
+      if (bounds?.isValid?.()) map.fitBounds(bounds.pad(0.08));
+    } catch {}
+  }
+
+  return layer;
 }
 
 /* ================= RUTAS (1 tramo - normal) ================= */
@@ -142,7 +285,10 @@ export async function drawRoute(userLoc, place, mode, infoBox) {
   const { latitude, longitude } = place.ubicacion;
   const dest = [latitude, longitude];
 
-  markerSelected = L.marker(dest)
+  markerSelected = L.marker(dest, {
+    icon: emojiMarkerIcon(markerEmoji(place)),
+    zIndexOffset: 900
+  })
     .addTo(routeOverlay)
     .bindPopup(buildPopupHTML(place))
     .openPopup();

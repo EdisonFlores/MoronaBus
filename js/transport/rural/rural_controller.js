@@ -270,6 +270,28 @@ function distMeters(a, b) {
   return map.distance(a, b);
 }
 
+function collectGeometryLatLngs(input, output = []) {
+  if (!Array.isArray(input)) return output;
+  if (typeof input[0] === "number" && typeof input[1] === "number") {
+    output.push([input[1], input[0]]);
+    return output;
+  }
+  input.forEach(item => collectGeometryLatLngs(item, output));
+  return output;
+}
+
+function distanceToGeometryMeters(pointLatLng, geometry) {
+  const points = collectGeometryLatLngs(geometry?.coordinates);
+  if (!points.length) return Infinity;
+
+  let best = Infinity;
+  for (const p of points) {
+    const d = distMeters(pointLatLng, p);
+    if (d < best) best = d;
+  }
+  return best;
+}
+
 /**
  * Obtiene get denom desde el estado local, la API o los datos cacheados.
  */
@@ -326,11 +348,11 @@ function isStopCandidateForBoardAlight(p) {
 /**
  * Busca find nearest coord on path dentro de las colecciones disponibles.
  */
-function findNearestCoordOnPath(point, coords) {
+function findNearestCoordOnPath(point, coords, distanceFn = null) {
   let best = null;
   let min = Infinity;
   for (const ll of coords) {
-    const d = distMeters(point, ll);
+    const d = typeof distanceFn === "function" ? distanceFn(ll) : distMeters(point, ll);
     if (d < min) {
       min = d;
       best = ll;
@@ -1206,6 +1228,9 @@ async function _planAndShowBusStopsForPlace(userLoc, destPlace, ctx = {}, ui = {
 
   const now = (ctx?.now instanceof Date) ? ctx.now : new Date();
   const destLoc = [destPlace.ubicacion.latitude, destPlace.ubicacion.longitude];
+  const destDistance = destPlace?.usar_poligono_bus === true && destPlace?.geometry
+    ? (ll) => distanceToGeometryMeters(ll, destPlace.geometry)
+    : (ll) => distMeters(destLoc, ll);
 
   const lineasAll = await getLineasByTipo("rural", {
     ...ctx,
@@ -1328,14 +1353,14 @@ async function _planAndShowBusStopsForPlace(userLoc, destPlace, ctx = {}, ui = {
           const ll = getParadaLatLng(pStop);
           if (!ll) continue;
 
-          const dLine = distMeters(destLoc, ll);
+          const dLine = destDistance(ll);
           if (dLine <= maxDest) {
             candidates.push({ idx: i, ll, dLine, stop: pStop });
           }
         }
 
         if (!candidates.length) {
-          const nearestCoordDest = findNearestCoordOnPath(destLoc, coords.slice(idxBoard + 1));
+          const nearestCoordDest = findNearestCoordOnPath(destLoc, coords.slice(idxBoard + 1), destDistance);
           if (!nearestCoordDest || nearestCoordDest.d > maxDest) continue;
 
           const alightLL = nearestCoordDest.ll;

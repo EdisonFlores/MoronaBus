@@ -599,6 +599,67 @@ main.container-fluid > .row > section {
 .tm-dot-access{ background: #444; }
 .tm-dot-stops{ background: #2e7d32; }
 
+.tm-territorial-label{
+  border: 0;
+  background: transparent;
+  color: #111827;
+  box-shadow: none;
+  font-size: 10px;
+  font-weight: 900;
+  line-height: 1.15;
+  padding: 0;
+  text-transform: uppercase;
+  white-space: normal;
+  text-align: center;
+  letter-spacing: 0;
+  max-width: 132px;
+  text-shadow:
+    -1px -1px 0 rgba(255,255,255,0.95),
+    1px -1px 0 rgba(255,255,255,0.95),
+    -1px 1px 0 rgba(255,255,255,0.95),
+    1px 1px 0 rgba(255,255,255,0.95),
+    0 2px 5px rgba(255,255,255,0.9);
+  pointer-events: none;
+}
+
+.tm-territorial-label::before{
+  display: none;
+}
+
+.tm-emoji-marker{
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  background: rgba(255,255,255,0.96);
+  border: 2px solid rgba(13,110,253,0.72);
+  border-radius: 999px;
+  box-shadow: 0 8px 18px rgba(15,23,42,0.28);
+}
+
+.tm-emoji-marker span{
+  display: block;
+  font-size: 18px;
+  line-height: 1;
+  transform: translateY(-1px);
+}
+
+[data-theme="dark"] .tm-territorial-label{
+  color: #f8fafc;
+  text-shadow:
+    -1px -1px 0 rgba(15,23,42,0.95),
+    1px -1px 0 rgba(15,23,42,0.95),
+    -1px 1px 0 rgba(15,23,42,0.95),
+    1px 1px 0 rgba(15,23,42,0.95),
+    0 2px 6px rgba(15,23,42,0.9);
+}
+
+[data-theme="dark"] .tm-emoji-marker{
+  background: rgba(15,23,42,0.94);
+  border-color: rgba(125,211,252,0.78);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.42);
+}
+
 .tm-visit-box{
   background: var(--card);
   border: 1px dashed rgba(0,0,0,0.25);
