@@ -1,0 +1,3716 @@
+[
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-01-22T14:54:56.227Z",
+    "entorno": "Urbano",
+    "horario": "24 Horas",
+    "id": "0OnK9Vptzpg7rOtITtPL",
+    "nombre": " Compañía de Taxis Trans.Proaño S.A",
+    "parroquia": "General Proaño",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Taxis",
+    "telefono": "0960089545",
+    "ubicacion": {
+      "latitude": -2.266738611716859,
+      "longitude": -78.1299312195118
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-14T20:59:14.540Z",
+    "entorno": "Urbano",
+    "horario": "11:00-23:00",
+    "id": "1ec77dsGPVw6b7KmAevF",
+    "nombre": "Chifa Pekin",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Alimentacion",
+    "telefono": "0960967080",
+    "tipocomida": "Comida China",
+    "ubicacion": {
+      "latitude": -2.304231,
+      "longitude": -78.118007
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T18:31:23.331Z",
+    "entorno": "Urbano",
+    "horario": "09:00-20:00",
+    "id": "1Hy3qZIPGZOxmp6p8sFw",
+    "nombre": "Apolo11 Tecnología",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Tecnología (ventas)",
+    "telefono": "0960000799",
+    "ubicacion": {
+      "latitude": -2.308442,
+      "longitude": -78.11849
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T18:58:03.352Z",
+    "entorno": "Urbano",
+    "horario": "08:00-16:30",
+    "id": "1kX3b4HEEf6Nd11f5fOI",
+    "nombre": "Secretaría de Derechos Humanos",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Instituciones",
+    "telefono": "0959465209",
+    "ubicacion": {
+      "latitude": -2.294643,
+      "longitude": -78.117333
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-15T21:29:37.971Z",
+    "entorno": "Urbano",
+    "horario": "06:00–23:00",
+    "id": "290EnnV29BjJ1kz6ZALV",
+    "nombre": "Parque Central de la Amazonia",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Parques",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.304633,
+      "longitude": -78.117608
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T22:09:36.838Z",
+    "entorno": "Urbano",
+    "horario": "No Disponible",
+    "id": "2HmruU5jdQUfYQ6IaxF3",
+    "nombre": "Escuela 29 de Mayo",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Escuelas",
+    "telefono": "072700477",
+    "ubicacion": {
+      "latitude": -2.30998,
+      "longitude": -78.126348
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T21:55:22.732Z",
+    "entorno": "Urbano",
+    "horario": "24 Horas",
+    "id": "2I867CVfY9arBofHPWIu",
+    "nombre": "Cajero Pichincha",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Cajeros",
+    "telefono": "022999999",
+    "ubicacion": {
+      "latitude": -2.305412,
+      "longitude": -78.118991
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T18:03:21.802Z",
+    "entorno": "Urbano",
+    "horario": "07:00-21:00",
+    "id": "2Urwruki1vR1DmNW050Z",
+    "nombre": "Supermercado El Emperador",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Supermercados",
+    "telefono": "072703738",
+    "ubicacion": {
+      "latitude": -2.295503,
+      "longitude": -78.118157
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-01-22T14:26:24.114Z",
+    "entorno": "Urbano",
+    "horario": "24 Horas",
+    "id": "2yMaTBxuyyAZ2xEkm6K4",
+    "nombre": "Estacion De Servicio Macas",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Gasolineras",
+    "telefono": "0968416294",
+    "ubicacion": {
+      "latitude": -2.3151879370020425,
+      "longitude": -78.12720170146221
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T18:04:53.675Z",
+    "entorno": "Urbano",
+    "horario": "07:30-22:00",
+    "id": "2yRt1kkq2niZGaiyEXR4",
+    "nombre": "SUPER MARKET-MACAS",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Supermercados",
+    "telefono": "0994533080",
+    "ubicacion": {
+      "latitude": -2.301637,
+      "longitude": -78.117264
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-14T01:33:33.501Z",
+    "entorno": "Urbano",
+    "horario": "08:00 - 18:30",
+    "id": "354O6ixNMjBjTedhegjI",
+    "nombre": "Auto Center Servicio Automotriz",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Mecanicas",
+    "telefono": "0988190547",
+    "ubicacion": {
+      "latitude": -2.320398,
+      "longitude": -78.132212
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T22:21:07.292Z",
+    "entorno": "Urbano",
+    "horario": "No Disponible",
+    "id": "3cpk3sMStuaQZgNNvvat",
+    "nombre": "UE Don Bosco Escuela",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Escuelas",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.306402,
+      "longitude": -78.115161
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-17T23:40:49.426Z",
+    "entorno": "Urbano",
+    "horario": "08:00–19:00",
+    "id": "3WUOaf7yVx888WqzjXqF",
+    "nombre": "Belleza+Estética RG",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Centrosbelleza",
+    "telefono": "0958816748",
+    "ubicacion": {
+      "latitude": -2.309422,
+      "longitude": -78.120603
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T18:11:45.709Z",
+    "entorno": "Urbano",
+    "horario": "No Disponible",
+    "id": "3yYl7YPo6uyBQZ93O3Jb",
+    "nombre": "CENTRO COMERCIAL ISAMA 1",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Supermercados",
+    "telefono": "0980604274",
+    "ubicacion": {
+      "latitude": -2.305426,
+      "longitude": -78.120789
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T21:22:20.760Z",
+    "entorno": "Urbano",
+    "horario": "08.30-17:00",
+    "id": "42mgpKQGBz04IiePHlHR",
+    "nombre": "Coop. de Ahorro y credito Cooperco",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Cooperativas",
+    "telefono": "072703406",
+    "ubicacion": {
+      "latitude": -2.306,
+      "longitude": -78.119206
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T22:44:01.571Z",
+    "entorno": "Urbano",
+    "horario": "08:12-14:00-18:00",
+    "id": "51hweIjPx3HbG1eUqREQ",
+    "nombre": "Universidad Politécnica Salesiana - UPS",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Universidades",
+    "telefono": "0989592306",
+    "ubicacion": {
+      "latitude": -2.296068,
+      "longitude": -78.117174
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T17:57:27.483Z",
+    "entorno": "Urbano",
+    "horario": "06:00-20:00",
+    "id": "5F41YWTqyx7A04Y9RhOJ",
+    "nombre": "Mini Market Punto Norte",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Tiendas de abarrotes",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.284453,
+      "longitude": -78.120637
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-14T20:30:14.726Z",
+    "entorno": "Urbano",
+    "horario": "08:00 - 18:00",
+    "id": "5fPmaAetijOxQ8z4rPYc",
+    "nombre": "Servicar",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Mecanicas",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.309121,
+      "longitude": -78.124959
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-01-22T14:30:30.466Z",
+    "entorno": "Urbano",
+    "horario": "24 Horas",
+    "id": "67VCfxwEmHvEddoN3piI",
+    "nombre": "Estacion de servicio Hmnos Reinoso",
+    "parroquia": "General Proaño",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Gasolineras",
+    "telefono": "No disponible",
+    "ubicacion": {
+      "latitude": -2.2703987020787775,
+      "longitude": -78.12728239251045
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T18:22:52.734Z",
+    "entorno": "Urbano",
+    "horario": "No Disponible",
+    "id": "6stW6Gx7iqKB823By1HC",
+    "nombre": "Mercado Privado Macas",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Mercados",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.305564,
+      "longitude": -78.12165
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-14T20:57:26.063Z",
+    "entorno": "Urbano",
+    "horario": "07:15 –10:00",
+    "id": "8eAXOpRP97kJaPK0brsJ",
+    "nombre": "La Estancia Restaurant Macas",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Alimentacion",
+    "telefono": "0991451821",
+    "tipocomida": "Comida típica de la zona / local",
+    "ubicacion": {
+      "latitude": -2.303934,
+      "longitude": -78.119078
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T18:14:17.662Z",
+    "entorno": "Urbano",
+    "horario": "08:00-21:00",
+    "id": "8HJMkpwHUXPhxrY53uzy",
+    "nombre": "THANI - TIENDA A GRANEL",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Supermercados",
+    "telefono": "0995762551",
+    "ubicacion": {
+      "latitude": -2.306465,
+      "longitude": -78.119126
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T22:42:06.565Z",
+    "entorno": "Urbano",
+    "horario": "No Disponible",
+    "id": "8Kns0CBA432HZxx9gbrH",
+    "nombre": "Universidad Catolica de Cuenca Sede Macas",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Universidades",
+    "telefono": "072700393",
+    "ubicacion": {
+      "latitude": -2.311825,
+      "longitude": -78.122342
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-14T21:05:51.613Z",
+    "entorno": "Urbano",
+    "horario": "17:00–22:00",
+    "id": "8o5hFDuQxakNyvZ1AYYN",
+    "nombre": "Delicias Macabeas",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Alimentacion",
+    "telefono": "0969799352",
+    "tipocomida": "Comida típica de la zona / local",
+    "ubicacion": {
+      "latitude": -2.300899,
+      "longitude": -78.11513
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-01-22T14:23:56.518Z",
+    "entorno": "Urbano",
+    "horario": "24 Horas",
+    "id": "8sPgNV1ILx9g4bMqnbtu",
+    "nombre": "Terminal Terrestre Roberto Villareal V.",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Terminal",
+    "telefono": "No dispone",
+    "ubicacion": {
+      "latitude": -2.315405717446225,
+      "longitude": -78.12442907301623
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T22:23:09.822Z",
+    "entorno": "Urbano",
+    "horario": "No Disponible",
+    "id": "8TUww6xcpnpYsi71TzuV",
+    "nombre": "Colegio María Auxiliadora",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Colegios",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.304211,
+      "longitude": -78.116712
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T17:45:07.808Z",
+    "entorno": "Urbano",
+    "horario": "No Disponible",
+    "id": "8XVgJjWqmmOTy7h1SGJf",
+    "nombre": "Minimercado Mary",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Tiendas de abarrotes",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.309779,
+      "longitude": -78.125094
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-17T23:10:11.492Z",
+    "entorno": "Urbano",
+    "horario": "No Disponible",
+    "id": "91XUH73mLc6b3gdAh18y",
+    "nombre": "Canchas El Vecino El naranjal",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Centros recreativos",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.319733,
+      "longitude": -78.134529
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T15:02:28.881Z",
+    "entorno": "Urbano",
+    "horario": "08:00-22:00",
+    "id": "9uvc1IwXstMhpR7rareF",
+    "nombre": "Farmacia Santa Cecilia",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Farmacias",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.2822,
+      "longitude": -78.125822
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T15:37:53.363Z",
+    "entorno": "Urbano",
+    "horario": "08:00-20:00",
+    "id": "A5GGxNaGHAGSwwT373lU",
+    "nombre": "Lavaexpress # 2",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Lavanderías",
+    "telefono": "0987596029",
+    "ubicacion": {
+      "latitude": -2.311482,
+      "longitude": -78.124628
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-17T22:38:18.853Z",
+    "entorno": "Urbano",
+    "horario": "24 Horas",
+    "id": "aEEpeioJRv7XNg0X2G8O",
+    "nombre": "Mirador de la virgen",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Miradores",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.306347,
+      "longitude": -78.112698
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T21:51:07.953Z",
+    "entorno": "Urbano",
+    "horario": "24 Horas",
+    "id": "akMdhnPOOw8f1N3ZmDyr",
+    "nombre": "Cajero JEP TERMINAL MACAS",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Cajeros",
+    "telefono": "074135000",
+    "ubicacion": {
+      "latitude": -2.316076,
+      "longitude": -78.124556
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-16T22:12:29.723Z",
+    "entorno": "Urbano",
+    "horario": "No Disponible",
+    "id": "aL6NcrRxRcO5LWrMIxLO",
+    "nombre": "Parque General Proaño",
+    "parroquia": "General Proaño",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Parques",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.266432,
+      "longitude": -78.130046
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T22:24:39.439Z",
+    "entorno": "Urbano",
+    "horario": "No Disponible",
+    "id": "aLZtFmVhhSen3B0DV3Aq",
+    "nombre": "Escuela especial Espirutu Santo",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Escuelas",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.311695,
+      "longitude": -78.115533
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T14:58:58.489Z",
+    "entorno": "Urbano",
+    "horario": "24 Horas",
+    "id": "b01feiXgIfPy4orsjXDM",
+    "nombre": "Farmacia Oriental",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Farmacias",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.305515,
+      "longitude": -78.119234
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T14:36:55.261Z",
+    "entorno": "Urbano",
+    "horario": "08:00-17:00",
+    "id": "B1DKZzPfDTUFrqZLOcce",
+    "nombre": "Centro de salud Luxemburgo",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "SubCentros",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.300148,
+      "longitude": -78.119703
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-01-22T14:29:03.939Z",
+    "entorno": "Urbano",
+    "horario": "24 Horas",
+    "id": "b6qXmU9G32WU5XN10Y57",
+    "nombre": "Gasolinera Petroecuador",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Gasolineras",
+    "telefono": "No dispone ",
+    "ubicacion": {
+      "latitude": -2.313224653470209,
+      "longitude": -78.12509267316524
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T15:23:31.646Z",
+    "entorno": "Urbano",
+    "horario": "08:0012:45&13:30-19:00",
+    "id": "BaM7r0Hl8FwK4AeXUvpu",
+    "nombre": "HelpComp",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Tecnología / Servicio técnico",
+    "telefono": "0991084349",
+    "ubicacion": {
+      "latitude": -2.302503,
+      "longitude": -78.11784
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-17T23:42:26.682Z",
+    "entorno": "Urbano",
+    "horario": "08:30–19:00",
+    "id": "Be0WNusJG6DnS7ju5Qj4",
+    "nombre": "Spa Genesis",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Spa",
+    "telefono": "0992423722",
+    "ubicacion": {
+      "latitude": -2.310048,
+      "longitude": -78.119531
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-15T01:45:46.082Z",
+    "entorno": "Urbano",
+    "horario": "No Disponible",
+    "id": "BI3wQmbV5h5BXggp0IEr",
+    "nombre": "Hotel Heliconia",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Hospedaje",
+    "telefono": "072525458",
+    "ubicacion": {
+      "latitude": -2.305774,
+      "longitude": -78.11925
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T15:16:20.745Z",
+    "entorno": "Urbano",
+    "horario": "08:30-18:30",
+    "id": "bnuNlbwCFWKxu4sS3HGP",
+    "nombre": "Angye Bustos odontologa",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Odontologos",
+    "telefono": "0991196812",
+    "ubicacion": {
+      "latitude": -2.306903,
+      "longitude": -78.119344
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-15T21:20:04.301Z",
+    "entorno": "Urbano",
+    "horario": "No Disponible",
+    "id": "bPC2uNeYdFE7wys0U80f",
+    "nombre": "Suite Vista hermosa Macas",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Airbnb",
+    "telefono": "0981725262",
+    "ubicacion": {
+      "latitude": -2.29459,
+      "longitude": -78.114933
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T21:39:26.222Z",
+    "entorno": "Urbano",
+    "horario": "No Disponible",
+    "id": "BQghma3zNdXkwou8QSOh",
+    "nombre": "Cooperativa de Ahorro y Crédito Jardín Azuayo",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Cooperativas",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.30353,
+      "longitude": -78.119994
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-15T01:38:27.948Z",
+    "entorno": "Urbano",
+    "horario": "No Disponible",
+    "id": "bUonMluMoQHCQ08uTMwG",
+    "nombre": "Hotel La Liria",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Hospedaje",
+    "telefono": "072701922",
+    "ubicacion": {
+      "latitude": -2.308254,
+      "longitude": -78.124756
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-01-22T14:11:21.231Z",
+    "entorno": "Urbano",
+    "horario": "08:00 a 17:00",
+    "id": "bY5n6L7uczDLimCkEPVS",
+    "nombre": "Gobierno Autonomo Descentralizado de Morona Santiago",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Instituciones",
+    "telefono": "7700116",
+    "ubicacion": {
+      "latitude": -2.304594142012575,
+      "longitude": -78.1180153524109
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-17T22:31:31.935Z",
+    "entorno": "Urbano",
+    "horario": "05:30–22:30",
+    "id": "C59oXaNoHBi1aiM6i9Gg",
+    "nombre": "Panadería y Pastelería MAS PAN Morona",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Panaderias",
+    "telefono": "+525544917329",
+    "ubicacion": {
+      "latitude": -2.30236,
+      "longitude": -78.118959
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-17T23:44:23.142Z",
+    "entorno": "Urbano",
+    "horario": "14:00–21:00",
+    "id": "c5SCQFT5IFubf0ssiPSQ",
+    "nombre": "Spa Savit",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Spa",
+    "telefono": "0994731068",
+    "ubicacion": {
+      "latitude": -2.282784,
+      "longitude": -78.119235
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T15:31:55.252Z",
+    "entorno": "Urbano",
+    "horario": "08:00-18:00",
+    "id": "CJew5a6kQFmOYZqD4Id5",
+    "nombre": "Maxi Home",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Ferreterías",
+    "telefono": "0980651196",
+    "ubicacion": {
+      "latitude": -2.308042,
+      "longitude": -78.124687
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T21:26:41.328Z",
+    "entorno": "Urbano",
+    "horario": "08:30-16:00",
+    "id": "CRoCCO7yqQJp3faOntEY",
+    "nombre": "Coop.de Ahorro y credito 29 de Octubre",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Cooperativas",
+    "telefono": "022640508",
+    "ubicacion": {
+      "latitude": -2.308051,
+      "longitude": -78.119537
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T22:57:31.538Z",
+    "entorno": "Urbano",
+    "horario": "09:00-12:30",
+    "id": "CrwJHctQvhmLl7v6y3E4",
+    "nombre": "Asamblea de Dios Ecuatoriana, Macas",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Iglesias",
+    "telefono": "072703535",
+    "ubicacion": {
+      "latitude": -2.299843,
+      "longitude": -78.116817
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T22:45:22.666Z",
+    "entorno": "Urbano",
+    "horario": "09:00-13:00&14:00-18:00",
+    "id": "CZ8g8kVB9e9Fb4Xnf6Tx",
+    "nombre": "UTPL Centro de Apoyo Macas",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Universidades",
+    "telefono": "072700210",
+    "ubicacion": {
+      "latitude": -2.311995,
+      "longitude": -78.117396
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-15T20:26:28.019Z",
+    "entorno": "Urbano",
+    "horario": "12:00-20:00",
+    "id": "DJf0NVPl3uJ0eHWjGU14",
+    "nombre": "Bogati Macas",
+    "parroquia": "Bogati Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Heladerias",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.308002,
+      "longitude": -78.119464
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T21:47:42.651Z",
+    "entorno": "Urbano",
+    "horario": "24 Horas",
+    "id": "dNjBk0KPhoYpG7Tt6Hpd",
+    "nombre": "Cajero automático JEP Mercado Central",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Cajeros",
+    "telefono": "074135000",
+    "ubicacion": {
+      "latitude": -2.305214,
+      "longitude": -78.119963
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T18:50:44.700Z",
+    "entorno": "Urbano",
+    "horario": "08:00-12:30&13:30-17:00",
+    "id": "e9MPrTsLeAIumvTxicN8",
+    "nombre": "Agrocalidad",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Instituciones",
+    "telefono": "072702031",
+    "ubicacion": {
+      "latitude": -2.298731,
+      "longitude": -78.118353
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T21:34:50.815Z",
+    "entorno": "Urbano",
+    "horario": "08:00-17:00",
+    "id": "ebzzndKxgJW0DTdFvEoY",
+    "nombre": "Cacpe Gualaquiza",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Cooperativas",
+    "telefono": "072700225",
+    "ubicacion": {
+      "latitude": -2.304918,
+      "longitude": -78.119203
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Sevilla Don Bosco",
+    "creado": "2026-01-22T14:31:40.970Z",
+    "entorno": "Rural",
+    "horario": "24 Horas",
+    "id": "Edx5c9Miw2zM3QYO59mm",
+    "nombre": "Estación de servicio Vega",
+    "parroquia": "Sevilla Don Bosco",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Gasolineras",
+    "telefono": "0988751918",
+    "ubicacion": {
+      "latitude": -2.292048317545947,
+      "longitude": -78.09775962357725
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T15:36:26.046Z",
+    "entorno": "Urbano",
+    "horario": "07:30-20:00",
+    "id": "EpuWBGwZm5sWmGiqNBXu",
+    "nombre": "Lavaexpress",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Lavanderías",
+    "telefono": "0987596029",
+    "ubicacion": {
+      "latitude": -2.302672,
+      "longitude": -78.120122
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T18:35:12.764Z",
+    "entorno": "Urbano",
+    "horario": "24 Horas",
+    "id": "EX803ODrgQIGnhGd4vpA",
+    "nombre": "Ecu911",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Instituciones",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.303103,
+      "longitude": -78.123122
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T18:25:12.948Z",
+    "entorno": "Urbano",
+    "horario": "06:00-19:00",
+    "id": "f2X1Dw27RyaC33H4tD4Z",
+    "nombre": "Mercado La Unión",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Mercados",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.299393,
+      "longitude": -78.122034
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T18:08:50.926Z",
+    "entorno": "Urbano",
+    "horario": "No Disponible",
+    "id": "f3CnlCIRe2GVJp5kBse6",
+    "nombre": "Centro Comercial Isama 2",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Supermercados",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.30446,
+      "longitude": -78.120929
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T21:24:55.250Z",
+    "entorno": "Urbano",
+    "horario": "08:00-18:30",
+    "id": "F54tT1kQD5SwE5eQGiK1",
+    "nombre": "CB Cooperativa | Sucursal Macas",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Cooperativas",
+    "telefono": "073702740",
+    "ubicacion": {
+      "latitude": -2.30485,
+      "longitude": -78.118562
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T21:29:17.089Z",
+    "entorno": "Urbano",
+    "horario": "08:30-17:00",
+    "id": "Ft77nFKze5pgZO4thMmX",
+    "nombre": "Cooperativa La Merced Ltda",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Cooperativas",
+    "telefono": "072704194",
+    "ubicacion": {
+      "latitude": -2.304967,
+      "longitude": -78.117264
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-01-22T14:47:00.530Z",
+    "entorno": "Urbano",
+    "horario": "24 Horas",
+    "id": "fycPKSZh3CDRkXiZFZbI",
+    "nombre": "Compañía Taxis Taxtermac",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Taxis",
+    "telefono": "0999601095",
+    "ubicacion": {
+      "latitude": -2.304262779238128,
+      "longitude": -78.11787812883837
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T22:00:40.378Z",
+    "entorno": "Urbano",
+    "horario": "No Disponible",
+    "id": "fz1bEGnwXrrf7jt6cATT",
+    "nombre": "CUERPO DE BOMBEROS DE MACAS",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Bomberos",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.3058,
+      "longitude": -78.117572
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T22:50:47.997Z",
+    "entorno": "Urbano",
+    "horario": "No Disponible",
+    "id": "gdm6zmKsv7IYp3zNhojG",
+    "nombre": "Catedral Santuario Católico Purísima de Macas",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Iglesias",
+    "telefono": "072700354",
+    "ubicacion": {
+      "latitude": -2.304825,
+      "longitude": -78.116277
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-14T20:46:49.781Z",
+    "entorno": "Urbano",
+    "horario": "09:00 a 16:30",
+    "id": "gdTJYh1lRWhkA81aT8Tp",
+    "nombre": "Mancora",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Alimentacion",
+    "telefono": "0999550072",
+    "tipocomida": "Comida Peruana",
+    "ubicacion": {
+      "latitude": -2.326631,
+      "longitude": -78.139207
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T18:58:57.053Z",
+    "entorno": "Urbano",
+    "horario": "No Disponible",
+    "id": "Gh0HLOdwtV9tfqoLrT1B",
+    "nombre": "Cerramiento Municipal",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Instituciones",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.287903,
+      "longitude": -78.120842
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-15T21:27:40.755Z",
+    "entorno": "Urbano",
+    "horario": "24 Horas",
+    "id": "GHhEcJO4mjqC4tTHjwnn",
+    "nombre": "Parque Norte",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Parques",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.292966,
+      "longitude": -78.11806
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T18:20:22.402Z",
+    "entorno": "Urbano",
+    "horario": "07:30-22:00",
+    "id": "gju1Au2LST5ldO6qrUDf",
+    "nombre": "Comisariato La Despensa - Sucursal Macas",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Supermercados",
+    "telefono": "0959854734",
+    "ubicacion": {
+      "latitude": -2.307888,
+      "longitude": -78.119772
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-01-22T14:36:18.394Z",
+    "entorno": "Urbano",
+    "horario": "06:00 a 22:00 ",
+    "id": "GulacArNGjQFlTSkEnSE",
+    "nombre": "Cooperativa de Taxis \"5 de Agosto\"",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Taxis",
+    "telefono": "2701096",
+    "ubicacion": {
+      "latitude": -2.309869654044443,
+      "longitude": -78.12417830444309
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T18:07:24.955Z",
+    "entorno": "Urbano",
+    "horario": "07:00-21:00",
+    "id": "GWISc5b3R8oy5lAv9bgT",
+    "nombre": "Tía Macas",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Supermercados",
+    "telefono": "0986034444",
+    "ubicacion": {
+      "latitude": -2.305128,
+      "longitude": -78.121095
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-17T23:22:24.861Z",
+    "entorno": "Urbano",
+    "horario": "10:00–18:30",
+    "id": "GXSJE1EvVsl4KLLf8j7M",
+    "nombre": "Mirea Beauty",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Belleza",
+    "telefono": "0983393349",
+    "ubicacion": {
+      "latitude": -2.30673,
+      "longitude": -78.118002
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T15:14:07.085Z",
+    "entorno": "Urbano",
+    "horario": "08:30-13:00&14:00-20:00",
+    "id": "GYrG6rgzcWhp1hdZRVJ8",
+    "nombre": "ODONTO EXPERT - Clínicas Dentales en Macas Ecuador",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Odontologos",
+    "telefono": "0995126383",
+    "ubicacion": {
+      "latitude": -2.308026,
+      "longitude": -78.119203
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-17T23:38:15.403Z",
+    "entorno": "Urbano",
+    "horario": "08:00–19:00",
+    "id": "h93GFxtShvWP3Cb5O1MI",
+    "nombre": "SUMBAO CENTRO ESTÉTICO Y SALUD",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Centrosbelleza",
+    "telefono": "0992742061",
+    "ubicacion": {
+      "latitude": -2.311964,
+      "longitude": -78.127279
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-17T18:09:27.296Z",
+    "entorno": "Urbano",
+    "horario": "No Disponible",
+    "id": "HIU1c5zUeUTYpeABnfIl",
+    "nombre": "Piscinas General Proaño",
+    "parroquia": "General Proaño",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Piscinas",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.266024,
+      "longitude": -78.127293
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T14:42:29.483Z",
+    "entorno": "Rural",
+    "horario": "08:00-17:00",
+    "id": "hjKJdmMPg6voWwI0WU6p",
+    "nombre": "Subcentro de la Parroquia 9 de Octubre",
+    "parroquia": "09 de Octubre",
+    "provincia": "Morona Santiago",
+    "subcategoria": "SubCentros",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.222207,
+      "longitude": -78.249397
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-17T23:03:10.919Z",
+    "entorno": "Rural",
+    "horario": "24 Horas",
+    "id": "HOD3Z5XX38R1hi71AZ4j",
+    "nombre": "Balneareo natural en Rio Blanco",
+    "parroquia": "Rio Blanco",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Naturaleza",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.346755,
+      "longitude": -78.159853
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T18:16:06.783Z",
+    "entorno": "Urbano",
+    "horario": "09:00-20:30",
+    "id": "Ht0EFjcv43wu31pDwZaX",
+    "nombre": "Akí Macas",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Supermercados",
+    "telefono": "072528100",
+    "ubicacion": {
+      "latitude": -2.310285,
+      "longitude": -78.1207
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T21:36:24.683Z",
+    "entorno": "Urbano",
+    "horario": "No Disponible",
+    "id": "HZuOVh2yo3Z4U1hTDVGq",
+    "nombre": "Cacpe Pastaza",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Cooperativas",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.303918,
+      "longitude": -78.119084
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T22:32:12.859Z",
+    "entorno": "Urbano",
+    "horario": "No Disponible",
+    "id": "I4fZQVIReFfL7d86Vsl5",
+    "nombre": "Unidad Educativa PCEI Sultana del Oriente",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Colegios",
+    "telefono": "0985089916",
+    "ubicacion": {
+      "latitude": -2.314281,
+      "longitude": -78.123609
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T22:03:49.322Z",
+    "entorno": "Urbano",
+    "horario": "No Disponible",
+    "id": "IEoEmsy67q6vRvbdomuG",
+    "nombre": "CIBV Yumi",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Guarderias",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.287977,
+      "longitude": -78.123667
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T21:49:16.775Z",
+    "entorno": "Urbano",
+    "horario": "24 Horas",
+    "id": "igLBePMnGHiNtkxJ4PNe",
+    "nombre": "CB Cooperativa | Cajero Sucursal Macas",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Cajeros",
+    "telefono": "073702740",
+    "ubicacion": {
+      "latitude": -2.304619,
+      "longitude": -78.119145
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T18:05:56.996Z",
+    "entorno": "Urbano",
+    "horario": "08:00-21:00",
+    "id": "ihnkNtlVZmsu0U1OuvHp",
+    "nombre": "Super Thani",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Supermercados",
+    "telefono": "0987312910",
+    "ubicacion": {
+      "latitude": -2.301942,
+      "longitude": -78.118751
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-17T23:35:19.710Z",
+    "entorno": "Urbano",
+    "horario": "09:00–20:00",
+    "id": "IKVh56kSVo3RRgYjKDYo",
+    "nombre": "CambiArte Peluquería",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Peluquerias",
+    "telefono": "0982680809",
+    "ubicacion": {
+      "latitude": -2.30909,
+      "longitude": -78.119357
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T17:50:34.424Z",
+    "entorno": "Urbano",
+    "horario": "06:30-23:30",
+    "id": "imcdHekIrQwoNd0oWOY6",
+    "nombre": "TitiMarket",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Tiendas de abarrotes",
+    "telefono": "0969472787",
+    "ubicacion": {
+      "latitude": -2.304432,
+      "longitude": -78.119119
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-17T23:50:45.890Z",
+    "entorno": "Urbano",
+    "horario": "24 Horas",
+    "id": "iqd2MP3JGcq66wN35TiH",
+    "nombre": "HOSPITAL DEL DIA IESS MACAS",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Hospitales",
+    "telefono": "072702558",
+    "ubicacion": {
+      "latitude": -2.312037,
+      "longitude": -78.115753
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T15:11:28.730Z",
+    "entorno": "Urbano",
+    "horario": "07:00-23:00",
+    "id": "iqyMfbed7oCNP79mfQtT",
+    "nombre": "Farmacia Cruz Azul Mac Barbacoa",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Farmacias",
+    "telefono": "072701827",
+    "ubicacion": {
+      "latitude": -2.30891,
+      "longitude": -78.118403
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T21:05:34.527Z",
+    "entorno": "Urbano",
+    "horario": "08:00-17:00",
+    "id": "IRDUoVdMIwgTC8zboaHJ",
+    "nombre": "Consejo Nacional Electoral",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Instituciones",
+    "telefono": "072700223",
+    "ubicacion": {
+      "latitude": -2.314646,
+      "longitude": -78.118353
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-17T23:11:30.482Z",
+    "entorno": "Urbano",
+    "horario": "No Disponible",
+    "id": "iXjcoOCyAHceVPdWR1Pg",
+    "nombre": "Canchas Públicas del barrio Yambas",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Canchas deportivas",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.321288,
+      "longitude": -78.127788
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-14T01:39:43.598Z",
+    "entorno": "Urbano",
+    "horario": "No disponible",
+    "id": "Ixl4XRHJrohTfJdYqnPK",
+    "nombre": "Encebollados y Ceviches Familia",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Alimentacion",
+    "telefono": "No disponible",
+    "tipocomida": "Mariscos",
+    "ubicacion": {
+      "latitude": -2.309977,
+      "longitude": -78.121769
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "entorno": "Urbano",
+    "horario": "07:30 a 16:30",
+    "id": "j9U1T2Jk7g8Ir62CDPSk",
+    "nombre": "Gobierno Autónomo Descentralizado Municipal del Cantón Morona",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Instituciones",
+    "telefono": "072700143",
+    "ubicacion": {
+      "latitude": -2.3043447571362052,
+      "longitude": -78.11758389835322
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T18:56:41.166Z",
+    "entorno": "Urbano",
+    "horario": "08:00-17:00",
+    "id": "jAY1iNIZiOO4hkUkKlai",
+    "nombre": "Ministerio de Inclusión Económica y Social",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Instituciones",
+    "telefono": "072703602",
+    "ubicacion": {
+      "latitude": -2.294872,
+      "longitude": -78.116896
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T18:39:48.653Z",
+    "entorno": "Urbano",
+    "horario": "No Disponible",
+    "id": "JEfF30ufGFyhS5eVhhCf",
+    "nombre": "Cementerio Municipal",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Instituciones",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.316882,
+      "longitude": -78.128718
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T14:46:35.744Z",
+    "entorno": "Urbano",
+    "horario": "24 Horas",
+    "id": "JGF30va718VRTse4WZcS",
+    "nombre": "CLINICA DE ESPECIALIDADES SANTA FE - Clinicas en Macas Ecuador",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Clinicas",
+    "telefono": "072700678",
+    "ubicacion": {
+      "latitude": -2.307404,
+      "longitude": -78.119257
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-15T01:46:51.199Z",
+    "entorno": "Urbano",
+    "horario": "No Disponible",
+    "id": "jItRte2QNi0T1WtbTFZF",
+    "nombre": "Centro Macas | Alojamiento en Macas",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Hospedaje",
+    "telefono": "0988087117",
+    "ubicacion": {
+      "latitude": -2.306358,
+      "longitude": -78.120622
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T18:38:42.006Z",
+    "entorno": "Urbano",
+    "horario": "08:00-17:00",
+    "id": "JU3CLKvTg3tkQGNQ1VZL",
+    "nombre": "Agencia Nacional de Tránsito",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Instituciones",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.318474,
+      "longitude": -78.127818
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-15T20:08:34.743Z",
+    "entorno": "Urbano",
+    "horario": "No Disponible",
+    "id": "k1xZDFifow6g4ufwJlFV",
+    "nombre": "Tutto Freddo - Macas",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Heladerias",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.302287,
+      "longitude": -78.118197
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-17T23:17:36.259Z",
+    "entorno": "Rural",
+    "horario": "No Disponible",
+    "id": "k71KBk5k3xYH9gkdqCug",
+    "nombre": "Cancha Sintética San Isidro",
+    "parroquia": "San Isidro",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Canchas deportivas",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.213627,
+      "longitude": -78.164164
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T18:27:20.317Z",
+    "entorno": "Urbano",
+    "horario": "09:30-22:00",
+    "id": "KCiQoPPmEj7SavFu6ofC",
+    "nombre": "BETO STORE Macas",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Vestimenta",
+    "telefono": "0989524591",
+    "ubicacion": {
+      "latitude": -2.307214,
+      "longitude": -78.119709
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-16T22:00:26.655Z",
+    "entorno": "Urbano",
+    "horario": "08:00–12:00 & 14:00–18:00",
+    "id": "kD7jj0SIaI22YIF7f3Tu",
+    "nombre": "TOYORIENTE",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Concesionarias",
+    "telefono": "0997355431",
+    "ubicacion": {
+      "latitude": -2.322009,
+      "longitude": -78.134866
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T14:40:44.674Z",
+    "entorno": "Rural",
+    "horario": "08:00-17:00",
+    "id": "KHCBvW4FZGE7QkFWtMIk",
+    "nombre": "Centro de Salud Rio Blanco",
+    "parroquia": "Rio Blanco",
+    "provincia": "Morona Santiago",
+    "subcategoria": "SubCentros",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.346427,
+      "longitude": -78.155001
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-17T23:45:52.959Z",
+    "entorno": "Urbano",
+    "horario": "05:00–22:30",
+    "id": "kiRuMqupFFZb1lU98vFj",
+    "nombre": "Fitness IRON Gym",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Gimnasios",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.314092,
+      "longitude": -78.125664
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-15T20:26:26.397Z",
+    "entorno": "Urbano",
+    "horario": "12:00-20:00",
+    "id": "kpEjGBLzAcOAKHoqCsRf",
+    "nombre": "Bogati Macas",
+    "parroquia": "Bogati Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Heladerias",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.308002,
+      "longitude": -78.119464
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-14T21:01:54.601Z",
+    "entorno": "Urbano",
+    "horario": "11:30–22:30",
+    "id": "KUmrOFgfOoe5em58V1WA",
+    "nombre": "Chifa Pagoda China",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Alimentacion",
+    "telefono": "072700280",
+    "tipocomida": "Comida China",
+    "ubicacion": {
+      "latitude": -2.304529,
+      "longitude": -78.119885
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T21:16:50.759Z",
+    "entorno": "Urbano",
+    "horario": "No Disponible",
+    "id": "kwqj2z9jMB1P5JQYbAYN",
+    "nombre": "Banco del Austro",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Bancos",
+    "telefono": "1800228787",
+    "ubicacion": {
+      "latitude": -2.308259,
+      "longitude": -78.118034
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-14T01:41:18.192Z",
+    "entorno": "Urbano",
+    "horario": "08:00 - 23:00",
+    "id": "L6VyQ0cUNJp1JxU5YgJg",
+    "nombre": "La Vaca Estriada Parrilla Argentina",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Alimentacion",
+    "telefono": "0984402545",
+    "tipocomida": "Comida Argentina",
+    "ubicacion": {
+      "latitude": -2.310801,
+      "longitude": -78.11836
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T22:27:27.635Z",
+    "entorno": "Urbano",
+    "horario": "No Disponible",
+    "id": "lAcj7OLnByhh0WJrAex7",
+    "nombre": "Escuela Amazonas",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Escuelas",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.31367,
+      "longitude": -78.116215
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T21:52:30.628Z",
+    "entorno": "Urbano",
+    "horario": "24 Horas",
+    "id": "LMs7Z95o5oXiFYxIjnxv",
+    "nombre": "Cajero Jardín Azuayo",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Cajeros",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.303526,
+      "longitude": -78.119995
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T18:41:15.448Z",
+    "entorno": "Urbano",
+    "horario": "08:00-16:30",
+    "id": "LoY8jHfayOW4tBVC7z4Q",
+    "nombre": "Empresa Eléctrica Regional Centro Sur C.A. (Dirección Morona Santiago)",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Instituciones",
+    "telefono": "074135136",
+    "ubicacion": {
+      "latitude": -2.316329,
+      "longitude": -78.128058
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-17T23:25:43.984Z",
+    "entorno": "Urbano",
+    "horario": "09:30–19:00",
+    "id": "LrT5It0Kvg34snIveNfe",
+    "nombre": "Odalis Estudio",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Belleza",
+    "telefono": "0991317352",
+    "ubicacion": {
+      "latitude": -2.308101,
+      "longitude": -78.116777
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-17T23:28:13.946Z",
+    "entorno": "Urbano",
+    "horario": "Abierto las 24 horas",
+    "id": "LSBKfnQFU1UaQWPrZoEB",
+    "nombre": "Barberia Exclusive Style",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Barberias",
+    "telefono": "0981609847",
+    "ubicacion": {
+      "latitude": -2.297386,
+      "longitude": -78.118596
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T18:24:08.124Z",
+    "entorno": "Urbano",
+    "horario": "No Disponible",
+    "id": "ltl7WVs1s96eubPZfDl4",
+    "nombre": "Mercado de Productos de la Zona",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Mercados",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.309274,
+      "longitude": -78.122112
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T18:21:38.642Z",
+    "entorno": "Urbano",
+    "horario": "No Disponible",
+    "id": "LuyBU9ioXNkIs2aUGfR6",
+    "nombre": "Mercado Central Macas",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Mercados",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.305239,
+      "longitude": -78.120498
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-14T01:35:35.899Z",
+    "entorno": "Urbano",
+    "horario": "No disponible",
+    "id": "lvJ5RybZENxr7X8jpeeq",
+    "nombre": "Renta de estacionamiento",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Parqueaderos",
+    "telefono": "No disponible",
+    "ubicacion": {
+      "latitude": -2.306654,
+      "longitude": -78.120842
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T18:28:27.294Z",
+    "entorno": "Urbano",
+    "horario": "08:00-21:00",
+    "id": "M25GeLBDWoNXlF5mmr0J",
+    "nombre": "MAXIMODA Macas Morona Santiago",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Vestimenta",
+    "telefono": "0999570650",
+    "ubicacion": {
+      "latitude": -2.305639,
+      "longitude": -78.120188
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-17T22:44:58.646Z",
+    "entorno": "Urbano",
+    "horario": "24 Horas",
+    "id": "m4WsfjCsiP8PVcpyl98d",
+    "nombre": "Mirador Parque Recreacional",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Miradores",
+    "telefono": "0968206034",
+    "ubicacion": {
+      "latitude": -2.300711,
+      "longitude": -78.113891
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-17T22:58:08.058Z",
+    "entorno": "Rural",
+    "horario": "24 Horas",
+    "id": "mmg9HGMb7ZGROGI8J60V",
+    "nombre": "Cascada MACABEITA",
+    "parroquia": "General Proaño",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Naturaleza",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.269756,
+      "longitude": -78.191196
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T17:47:15.108Z",
+    "entorno": "Urbano",
+    "horario": "07:30-21:00",
+    "id": "mNKEEVB8d1ucOHf6FedO",
+    "nombre": "La Ambateñita",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Tiendas de abarrotes",
+    "telefono": "072701853",
+    "ubicacion": {
+      "latitude": -2.301587,
+      "longitude": -78.118733
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T14:39:21.730Z",
+    "entorno": "Urbano",
+    "horario": "08:00-17:00",
+    "id": "mo4Hez2gFKcMdp2329nl",
+    "nombre": "Centro de Salud INFA",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "SubCentros",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.308415,
+      "longitude": -78.116607
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T22:55:42.444Z",
+    "entorno": "Urbano",
+    "horario": "No Disponible",
+    "id": "mSA5x5fqV2bl2AZexngj",
+    "nombre": "Iglesia Sagrado Corazón de Jesús",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Iglesias",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.311312,
+      "longitude": -78.119299
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-15T21:10:11.078Z",
+    "entorno": "Urbano",
+    "horario": "No Disponible",
+    "id": "MTxvZEcArf4mGJxSYmxB",
+    "nombre": "Casa Upano",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Hospedaje",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.318753,
+      "longitude": -78.117482
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T18:58:01.523Z",
+    "entorno": "Urbano",
+    "horario": "08:00-16:30",
+    "id": "mxU7W9JNrfu1spDR95vG",
+    "nombre": "Secretaría de Derechos Humanos",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Instituciones",
+    "telefono": "0959465209",
+    "ubicacion": {
+      "latitude": -2.294643,
+      "longitude": -78.117333
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T22:47:02.989Z",
+    "entorno": "Urbano",
+    "horario": "08:00-17:00",
+    "id": "n2zxBltbOGG7cs5ixQUu",
+    "nombre": "Fiscalía Provincial de Morona",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Instituciones",
+    "telefono": "072704225",
+    "ubicacion": {
+      "latitude": -2.308645,
+      "longitude": -78.11871
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T15:28:55.732Z",
+    "entorno": "Urbano",
+    "horario": "08:00-22:00",
+    "id": "N33eOcWnP8GPDzgIuSj3",
+    "nombre": "NVT IMPORTEC",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Tecnología / Servicio técnico",
+    "telefono": "0992901538",
+    "ubicacion": {
+      "latitude": -2.302368,
+      "longitude": -78.118363
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T21:43:38.496Z",
+    "entorno": "Urbano",
+    "horario": "24 Horas",
+    "id": "N4NY8Hb60QWl8M0l5pk2",
+    "nombre": "Cajero Banco del Austro Terminal",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Cajeros",
+    "telefono": "1800228787",
+    "ubicacion": {
+      "latitude": -2.316052,
+      "longitude": -78.124464
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T22:39:25.503Z",
+    "entorno": "Urbano",
+    "horario": "No Disponible",
+    "id": "nB1jB8m8BKvN7c2VypEA",
+    "nombre": "Unidad Educativa 27 de Febrero",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Colegios",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.313718,
+      "longitude": -78.128042
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T14:35:29.462Z",
+    "entorno": "Urbano",
+    "horario": "No Disponible",
+    "id": "NiUvfe9gnHbJk3vcsoCr",
+    "nombre": "Centro De Salud 27 De Febrero",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "SubCentros",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.304672,
+      "longitude": -78.124433
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T22:30:10.397Z",
+    "entorno": "Urbano",
+    "horario": "No Disponible",
+    "id": "NksRZFrkg546I3MconzO",
+    "nombre": "Escuela Purísima de Macas",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Escuelas",
+    "telefono": "072322514",
+    "ubicacion": {
+      "latitude": -2.322215,
+      "longitude": -78.129658
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-15T21:24:32.952Z",
+    "entorno": "Urbano",
+    "horario": "09:00-22:00",
+    "id": "noZOdZZEDLODElkJoYrO",
+    "nombre": "Parque Recreacional",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Parques",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.300403,
+      "longitude": -78.11449
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-17T23:06:21.000Z",
+    "entorno": "Urbano",
+    "horario": "20:00–00:00",
+    "id": "NU3uDPCa9vAoDPYNiJS4",
+    "nombre": "Discoteca Los Laureles",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Discotecas",
+    "telefono": "0986644405",
+    "ubicacion": {
+      "latitude": -2.278642,
+      "longitude": -78.134261
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T18:34:14.441Z",
+    "entorno": "Urbano",
+    "horario": "No Disponible",
+    "id": "nxK8MQDavP2zhg0JvVsY",
+    "nombre": "Registro Civil de Macas",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Instituciones",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.29167,
+      "longitude": -78.121065
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-17T22:42:22.419Z",
+    "entorno": "Rural",
+    "horario": "24 Horas",
+    "id": "o45QJ1QW1VcQtGR8HW7k",
+    "nombre": "Mirador del Quilamo",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Miradores",
+    "telefono": "0986111985",
+    "ubicacion": {
+      "latitude": -2.300392,
+      "longitude": -78.139269
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-15T01:55:46.952Z",
+    "entorno": "Urbano",
+    "horario": "No Disponible",
+    "id": "O5DJfCqmql7oHvpTXXtz",
+    "nombre": "Hostal Canela",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Hospedaje",
+    "telefono": "0961614995",
+    "ubicacion": {
+      "latitude": -2.31512,
+      "longitude": -78.122875
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T21:06:55.570Z",
+    "entorno": "Urbano",
+    "horario": "24 Horas",
+    "id": "oiCuQGGB9IrRSmBUDdta",
+    "nombre": "Contraloría General del Estado Macas",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Instituciones",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.311566,
+      "longitude": -78.119926
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T21:57:34.658Z",
+    "entorno": "Urbano",
+    "horario": "No Disponible",
+    "id": "oJKTsOlMpkod0PO5qIUT",
+    "nombre": "Subzona de Policia de Morona Santiago N°14",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Policía",
+    "telefono": "072322405",
+    "ubicacion": {
+      "latitude": -2.317562,
+      "longitude": -78.129614
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-14T01:28:33.781Z",
+    "entorno": "Urbano",
+    "horario": "08:00 - 17:00",
+    "id": "oOxA2oVyCnXN3ZISbV6B",
+    "nombre": "Electromecánica Gavilánez",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Mecanicas",
+    "telefono": "0994934708",
+    "ubicacion": {
+      "latitude": -2.318003,
+      "longitude": -78.125719
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-17T23:07:34.039Z",
+    "entorno": "Urbano",
+    "horario": "No Disponible",
+    "id": "oPsOSW2Xj1FV4oqS9QHj",
+    "nombre": "Arazha discoteca",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Discotecas",
+    "telefono": "0979136598",
+    "ubicacion": {
+      "latitude": -2.3207,
+      "longitude": -78.133573
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T21:33:19.850Z",
+    "entorno": "Urbano",
+    "horario": "08:00-17:30",
+    "id": "OQI3eumDon97kVrbUa9O",
+    "nombre": "Cooperativa Credi Ya Macas",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Cooperativas",
+    "telefono": "0997195917",
+    "ubicacion": {
+      "latitude": -2.304202,
+      "longitude": -78.119334
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T23:01:28.522Z",
+    "entorno": "Urbano",
+    "horario": "24 Horas",
+    "id": "ougMUkY0JU8naBWjUA8e",
+    "nombre": "Policia Judicial de Morona Santiago",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Policía",
+    "telefono": "072702259",
+    "ubicacion": {
+      "latitude": -2.311382,
+      "longitude": -78.114674
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T21:37:49.690Z",
+    "entorno": "Urbano",
+    "horario": "08:00-17:00",
+    "id": "PMjqux3RbvOsHOhZD7dk",
+    "nombre": "Cooperativa Jep",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Cooperativas",
+    "telefono": "074135000",
+    "ubicacion": {
+      "latitude": -2.308341,
+      "longitude": -78.120389
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T18:13:07.162Z",
+    "entorno": "Urbano",
+    "horario": "07:00-20:30",
+    "id": "pndJyl5hxhS8eGo843g3",
+    "nombre": "Comisariato la Despensa - Macas Mercado Privado",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Supermercados",
+    "telefono": "0982687578",
+    "ubicacion": {
+      "latitude": -2.305559,
+      "longitude": -78.121574
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T15:30:30.488Z",
+    "entorno": "Urbano",
+    "horario": "07:00-19:00",
+    "id": "pPvLXeFisErsCbQDy0oC",
+    "nombre": "FERRETERIA \"CHUÑIR\"",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Ferreterías",
+    "telefono": "0995905340",
+    "ubicacion": {
+      "latitude": -2.309124,
+      "longitude": -78.124068
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T22:35:13.761Z",
+    "entorno": "Urbano",
+    "horario": "07:00-14:00",
+    "id": "pqlMKNm30hNcpWcDElOf",
+    "nombre": "Colegio de Bachillerato Macas",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Colegios",
+    "telefono": "0991670010",
+    "ubicacion": {
+      "latitude": -2.291302,
+      "longitude": -78.116701
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T21:09:15.761Z",
+    "entorno": "Urbano",
+    "horario": "No Disponible",
+    "id": "Pt6vvO7M3Tv9dbifEPTm",
+    "nombre": "Ministerio del Trabajo",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Instituciones",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.312303,
+      "longitude": -78.121483
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T18:55:37.819Z",
+    "entorno": "Urbano",
+    "horario": "08:00-17:00",
+    "id": "PuAWr9zzJ0yrh8m5Ql0r",
+    "nombre": "CNT EP",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Instituciones",
+    "telefono": "072700104",
+    "ubicacion": {
+      "latitude": -2.302641,
+      "longitude": -78.118088
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T22:19:44.900Z",
+    "entorno": "Urbano",
+    "horario": "07:00-15:30",
+    "id": "qqsB5CHDbTN5SdbqBuSy",
+    "nombre": "Unidad Educativa Fiscomisional \"Don Bosco\"",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Colegios",
+    "telefono": "072702886",
+    "ubicacion": {
+      "latitude": -2.305725,
+      "longitude": -78.116355
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T22:59:36.772Z",
+    "entorno": "Urbano",
+    "horario": "No Disponible",
+    "id": "QUs4wVt8vZo1XJwp8uBC",
+    "nombre": "Iglesia Bautista Bethel",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Iglesias",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.299153,
+      "longitude": -78.11874
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-17T22:55:49.117Z",
+    "entorno": "Urbano",
+    "horario": "11:30-21:00",
+    "id": "qW9QUd0VI55AMzbnJbLY",
+    "nombre": "Laberinto Macabeo",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Naturaleza",
+    "telefono": "0982394080",
+    "ubicacion": {
+      "latitude": -2.278969,
+      "longitude": -78.127621
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-17T22:59:34.398Z",
+    "entorno": "Rural",
+    "horario": "No Disponible",
+    "id": "qXYiV2cGmGJBHSVYbo6X",
+    "nombre": "Alto Upano",
+    "parroquia": "San Isidro",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Naturaleza",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.131237,
+      "longitude": -78.12877
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-17T23:29:30.203Z",
+    "entorno": "Urbano",
+    "horario": "7:31–20:31",
+    "id": "qzq1K65ToLySDvJddd6a",
+    "nombre": "Josue Barber shop y estudio de tatuajes",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Barberias",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.29784,
+      "longitude": -78.11845
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T22:16:13.718Z",
+    "entorno": "Urbano",
+    "horario": "No Disponible",
+    "id": "qzrVfbEAdtTknaDVeTnt",
+    "nombre": "Escuela Fiscomisional Don Bosco Sede Norte",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Escuelas",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.295859,
+      "longitude": -78.117148
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T18:53:42.579Z",
+    "entorno": "Urbano",
+    "horario": "08:00-17:00",
+    "id": "r97Dt0ndQMpc2P912FxL",
+    "nombre": "Distrito de Salud 14D01",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Instituciones",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.311917,
+      "longitude": -78.114501
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-17T23:04:29.971Z",
+    "entorno": "Rural",
+    "horario": "24 Horas",
+    "id": "RcZHP4JwOxBWK7K5NO35",
+    "nombre": "Balneareo Natural San Andres",
+    "parroquia": "Rio Blanco",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Naturaleza",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.335567,
+      "longitude": -78.165079
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T18:47:46.549Z",
+    "entorno": "Urbano",
+    "horario": "08:00-17:00",
+    "id": "rxgB8wXUL9H5vG4fsanV",
+    "nombre": "Ministerio de Agricultura y Ganadería",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Instituciones",
+    "telefono": "072700140",
+    "ubicacion": {
+      "latitude": -2.307603,
+      "longitude": -78.121023
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-16T22:17:47.633Z",
+    "entorno": "Urbano",
+    "horario": "Abierto las 24 horas",
+    "id": "SBgKHFsQnDmpnEkvAXys",
+    "nombre": "Parque Central San Isidro",
+    "parroquia": "San Isidro",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Parques",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.213573,
+      "longitude": -78.164429
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-17T23:19:34.309Z",
+    "entorno": "Urbano",
+    "horario": "No Disponible",
+    "id": "sioIsqqY3Cnaq7qTNcWG",
+    "nombre": "Cancha sintetica Rio Blanco",
+    "parroquia": "Rio Blanco",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Canchas deportivas",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.349166,
+      "longitude": -78.153417
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-17T18:05:12.311Z",
+    "entorno": "Urbano",
+    "horario": "08:00.–17:00",
+    "id": "soiJl2Cpadkm4LLaRJKC",
+    "nombre": "Piscinas Municipales",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Piscinas",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.312785,
+      "longitude": -78.118405
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T22:53:31.151Z",
+    "entorno": "Urbano",
+    "horario": "No Disponible",
+    "id": "Sp4hOlxJKdMFnrJimegm",
+    "nombre": "Iglesia Maria Auxiliadora",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Iglesias",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.30519,
+      "longitude": -78.124129
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T22:13:28.713Z",
+    "entorno": "Urbano",
+    "horario": "07:15-13:00",
+    "id": "ST5y3a5LwWIkKeE9En5E",
+    "nombre": "Escuela de Educación Básica \"Eloy Alfaro\" Norte",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Escuelas",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.291555,
+      "longitude": -78.117515
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-15T20:35:28.110Z",
+    "entorno": "Rural",
+    "horario": "09:00 –02:00",
+    "id": "SyX8Rvs3C056quIEwvpr",
+    "nombre": "San Andrés",
+    "parroquia": "Rio Blanco",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Hosterías",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.337248,
+      "longitude": -78.164194
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-15T01:41:50.669Z",
+    "entorno": "Urbano",
+    "horario": "No Disponible",
+    "id": "t6frC1X4jCtzNONnZDjm",
+    "nombre": "Hotel La Jungla/ Casa Blanca",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Hospedaje",
+    "telefono": "072700195",
+    "ubicacion": {
+      "latitude": -2.303312,
+      "longitude": -78.119068
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T18:17:53.503Z",
+    "entorno": "Urbano",
+    "horario": "No Disponible",
+    "id": "TAjw8Owga0lsu3DPNgYu",
+    "nombre": "Comisariato",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Supermercados",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.313853,
+      "longitude": -78.118745
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T22:18:25.984Z",
+    "entorno": "Urbano",
+    "horario": "No Disponible",
+    "id": "tqODPyoffvENPtaFrZyN",
+    "nombre": "Unidad Educativa Fiscomisional María Auxiliadora - Macas",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Escuelas",
+    "telefono": "072702329",
+    "ubicacion": {
+      "latitude": -2.304388,
+      "longitude": -78.116771
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-15T20:40:46.382Z",
+    "entorno": "Rural",
+    "horario": "07:30–21:00",
+    "id": "TtSDncHW9CSGDBLQ6shO",
+    "nombre": "Complejo turístico- tigrillo COZAR",
+    "parroquia": "General Proaño",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Hosterías",
+    "telefono": "0986123906",
+    "ubicacion": {
+      "latitude": -2.271058,
+      "longitude": -78.10493
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-17T22:48:57.996Z",
+    "entorno": "Rural",
+    "horario": "09:00–17:00",
+    "id": "TYALGPc81CUXtHKOuA4u",
+    "nombre": "Museo Arqueologico",
+    "parroquia": "Rio Blanco",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Museos",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.379552,
+      "longitude": -78.163272
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-01-22T14:43:21.539Z",
+    "entorno": "Urbano",
+    "horario": "09:00 H a 17:00 H",
+    "id": "U8IF1onLjpAg5V1vpSi3",
+    "nombre": "Cooperativa de Taxis Oro y Canela",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Taxis",
+    "telefono": "2702345",
+    "ubicacion": {
+      "latitude": -2.313696358293472,
+      "longitude": -78.12537768846663
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-17T22:43:44.295Z",
+    "entorno": "Urbano",
+    "horario": "24 Horas",
+    "id": "ucpZxpQ8WlKii2Jypo94",
+    "nombre": "Mirador La Randimpa",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Miradores",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.301965,
+      "longitude": -78.115254
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-14T01:47:40.721Z",
+    "entorno": "Urbano",
+    "horario": "11:00 - 23:30",
+    "id": "UIc2ZM6v41zRXog6CJNZ",
+    "nombre": "Pizzeria La italiana",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Alimentacion",
+    "telefono": "0983308556",
+    "tipocomida": "Comida Italiana",
+    "ubicacion": {
+      "latitude": -2.303128,
+      "longitude": -78.118875
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-17T23:47:05.714Z",
+    "entorno": "Urbano",
+    "horario": "No Disponible",
+    "id": "uIcvZqvmaSxqa89jymjo",
+    "nombre": "SOHO SPORTMed. GYM",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Gimnasios",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.312211,
+      "longitude": -78.120715
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-01-22T14:50:19.914Z",
+    "entorno": "Urbano",
+    "horario": "24 Horas",
+    "id": "UIh1sxRPp3M89DbFpMoa",
+    "nombre": "Cooperativa de Taxis Serviflash",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Taxis",
+    "telefono": "0982887045",
+    "ubicacion": {
+      "latitude": -2.283578158186527,
+      "longitude": -78.12113561104736
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T22:17:21.474Z",
+    "entorno": "Urbano",
+    "horario": "No Disponible",
+    "id": "urL2zcxQu97E93UlqPEC",
+    "nombre": "Escuela Eloy Alfaro Centro",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Escuelas",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.303547,
+      "longitude": -78.11774
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-02T18:17:20.547Z",
+    "entorno": "Urbano",
+    "horario": "08:00 - 18:00",
+    "id": "uzjej6mtwcSpbsuvXJGr",
+    "nombre": "Picantería del Pacifico",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Alimentacion",
+    "telefono": "No disponible",
+    "tipocomida": "Mariscos",
+    "ubicacion": {
+      "latitude": -2.309912,
+      "longitude": -78.12449
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-16T22:20:05.009Z",
+    "entorno": "Urbano",
+    "horario": "24 Horas",
+    "id": "UZr5CK83Qfs6KDfkjCse",
+    "nombre": "Parque Del Niño",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Parques",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.313433,
+      "longitude": -78.121534
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T21:28:03.137Z",
+    "entorno": "Urbano",
+    "horario": "08:00-17:00",
+    "id": "uZUMMoAou12W12dR82DH",
+    "nombre": "Cooperativa de Ahorro y Crédito San Francisco",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Cooperativas",
+    "telefono": "072703902",
+    "ubicacion": {
+      "latitude": -2.304191,
+      "longitude": -78.120054
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T18:52:09.924Z",
+    "entorno": "Urbano",
+    "horario": "08:00-17:00",
+    "id": "V0YBqaSfQBochB0czq1U",
+    "nombre": "Dirección Provincial Morona Santiago BIESS",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Instituciones",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.312368,
+      "longitude": -78.115125
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T21:46:22.180Z",
+    "entorno": "Urbano",
+    "horario": "24 Horas",
+    "id": "V3XNBBCO44H3XJUwzGX3",
+    "nombre": "Cajero Banco del Austro Centro",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Cajeros",
+    "telefono": "1800228787",
+    "ubicacion": {
+      "latitude": -2.308272,
+      "longitude": -78.11801
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T18:02:02.276Z",
+    "entorno": "Urbano",
+    "horario": "08:00-21:00",
+    "id": "Ve5LCcBttjrNxkUm16oR",
+    "nombre": "Super Más",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Supermercados",
+    "telefono": "0981834229",
+    "ubicacion": {
+      "latitude": -2.282017,
+      "longitude": -78.12197
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-16T22:23:49.794Z",
+    "entorno": "Urbano",
+    "horario": "24 Horas",
+    "id": "VmzH8UNquv8RihUptVi8",
+    "nombre": "Parque de las Piscinas",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Parques",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.31322,
+      "longitude": -78.118126
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-14T21:12:14.999Z",
+    "entorno": "Urbano",
+    "horario": "No disponible",
+    "id": "vSa40A9CmCwTmMeEwhr2",
+    "nombre": "Terra cafeteria",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Cafeterías",
+    "telefono": "No disponible",
+    "ubicacion": {
+      "latitude": -2.304128,
+      "longitude": -78.118866
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T22:52:25.702Z",
+    "entorno": "Urbano",
+    "horario": "No Disponible",
+    "id": "vU1BqYVoKUDmQ4pGJsYo",
+    "nombre": "Iglesia Católica El Buen Maestro - Salesianos",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Iglesias",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.296141,
+      "longitude": -78.117164
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-15T21:08:42.404Z",
+    "entorno": "Urbano",
+    "horario": "No Disponible",
+    "id": "W2ICbqf8GgTLv7NmTi1z",
+    "nombre": "ConteNido Glamping",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Glamping",
+    "telefono": "0959647285",
+    "ubicacion": {
+      "latitude": -2.317214,
+      "longitude": -78.115691
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T14:51:38.241Z",
+    "entorno": "Urbano",
+    "horario": "No Disponible",
+    "id": "wCPYBY9Lps5TqYHfvr9w",
+    "nombre": "Farmacias Suiza",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Farmacias",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.302734198207034,
+      "longitude": -78.11902170833474
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T21:23:35.884Z",
+    "entorno": "Urbano",
+    "horario": "08:00-17:00",
+    "id": "WhHW1trNK6DtqmExRoUt",
+    "nombre": "Cooperativa de Ahorro y Crédito Coopac Austro: Agencia Macas",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Cooperativas",
+    "telefono": "072704160",
+    "ubicacion": {
+      "latitude": -2.305534,
+      "longitude": -78.117476
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-14T21:08:13.221Z",
+    "entorno": "Urbano",
+    "horario": "08:00–12:00 & 16:00–21:00",
+    "id": "whQsiya0d8ppz5rSZTG9",
+    "nombre": "Arak Cafetería",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Cafeterías",
+    "telefono": "0982203672",
+    "ubicacion": {
+      "latitude": -2.303124,
+      "longitude": -78.118519
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T22:48:59.396Z",
+    "entorno": "Urbano",
+    "horario": "No Disponible",
+    "id": "WL9MDaaggrqcE4VxxHeJ",
+    "nombre": "Iglesia del Nazareno Macas",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Iglesias",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.308956,
+      "longitude": -78.120957
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-17T23:13:40.199Z",
+    "entorno": "Urbano",
+    "horario": "08:00–23:00",
+    "id": "WLf2IKoDyEDjd0GnzMoO",
+    "nombre": "La Caldera, Cancha Sintetica Cubierta",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Canchas deportivas",
+    "telefono": "0990016705",
+    "ubicacion": {
+      "latitude": -2.279947,
+      "longitude": -78.126618
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-17T23:48:57.447Z",
+    "entorno": "Urbano",
+    "horario": "24 Horas",
+    "id": "Wu6DFODfi4j4lXM8RwtS",
+    "nombre": "Hospital General Macas",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Hospitales",
+    "telefono": "073703800",
+    "ubicacion": {
+      "latitude": -2.281741,
+      "longitude": -78.12499
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "entorno": "Urbano",
+    "horario": "08:00 a 19:00",
+    "id": "wULNEcHfysYR3u6obu2q",
+    "nombre": "Cecy Flores Look&Lashes",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Belleza",
+    "telefono": "0995479009",
+    "ubicacion": {
+      "latitude": -2.309948,
+      "longitude": -78.124482
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T22:12:03.564Z",
+    "entorno": "Urbano",
+    "horario": "No Disponible",
+    "id": "WUX2yrENC8WCsRWpt7FI",
+    "nombre": "Escuela Jaime Roldos Aguilera",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Escuelas",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.289625,
+      "longitude": -78.124407
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T21:19:26.424Z",
+    "entorno": "Urbano",
+    "horario": "08:00-16:00",
+    "id": "wwUEJ5BV7XSCegngag3i",
+    "nombre": "BAN Ecuador",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Bancos",
+    "telefono": "072700126",
+    "ubicacion": {
+      "latitude": -2.304576,
+      "longitude": -78.118551
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-15T01:11:20.314Z",
+    "entorno": "Urbano",
+    "horario": "14:30–23:00",
+    "id": "x470BKZ86zVdaIQhEOEq",
+    "nombre": "Café La Julieta",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Cafeterías",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.306128,
+      "longitude": -78.118296
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T18:32:40.286Z",
+    "entorno": "Urbano",
+    "horario": "09:00-17:30",
+    "id": "XEiTX5J4tJqqsUMQIoVv",
+    "nombre": "MY-CELL",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Tecnología (ventas)",
+    "telefono": "0981009919",
+    "ubicacion": {
+      "latitude": -2.305461,
+      "longitude": -78.119801
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T22:01:46.266Z",
+    "entorno": "Urbano",
+    "horario": "No Disponible",
+    "id": "XHMj9QdpWML8LI7yFTm4",
+    "nombre": "CRUZ ROJA ECUATORIANA",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Bomberos",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.307223,
+      "longitude": -78.118814
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T17:39:31.087Z",
+    "entorno": "Urbano",
+    "horario": "No Disponible",
+    "id": "XHUDYi8KWgSoqQpiotcV",
+    "nombre": "Lavanderia Primavera",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Lavanderías",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.310961,
+      "longitude": -78.118364
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-15T20:14:27.951Z",
+    "entorno": "Urbano",
+    "horario": "08:00–19:30",
+    "id": "xj2n6YElRrFRaAlyTWL3",
+    "nombre": "Helados Don Pancho",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Heladerias",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.303885,
+      "longitude": -78.118839
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T15:19:40.950Z",
+    "entorno": "Urbano",
+    "horario": "08:00-13:00&14:30-19:00",
+    "id": "XKTSzm6FsRceADuOnQ1M",
+    "nombre": "First Dental",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Odontologos",
+    "telefono": "0982718013",
+    "ubicacion": {
+      "latitude": -2.308015,
+      "longitude": -78.121546
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T22:06:06.655Z",
+    "entorno": "Urbano",
+    "horario": "No Disponible",
+    "id": "XmGEHwuLM5N4fSeMJ640",
+    "nombre": "Jardín de Infantes Dolores Vintimilla de Galindo",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Jardín",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.306607,
+      "longitude": -78.116647
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-17T23:15:49.291Z",
+    "entorno": "Rural",
+    "horario": "No Disponible",
+    "id": "xMXNslhz6ej6fuNZopDK",
+    "nombre": "Cancha Sintética de Gral. Proaño",
+    "parroquia": "General Proaño",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Canchas deportivas",
+    "telefono": "0996631608",
+    "ubicacion": {
+      "latitude": -2.266172,
+      "longitude": -78.127443
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-16T22:26:22.832Z",
+    "entorno": "Rural",
+    "horario": "24 Horas",
+    "id": "XppeItGLl86gfwQrGwna",
+    "nombre": "Parque Central Rio Blanco",
+    "parroquia": "Rio Blanco",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Parques",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.347093,
+      "longitude": -78.155157
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-17T22:52:45.146Z",
+    "entorno": "Rural",
+    "horario": "08:00-17:00",
+    "id": "XVyqwXu691G5bKfRz796",
+    "nombre": "Zoológico Huerto de Edén",
+    "parroquia": "General Proaño",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Naturaleza",
+    "telefono": "0989133975",
+    "ubicacion": {
+      "latitude": -2.261919,
+      "longitude": -78.126847
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-15T20:44:53.284Z",
+    "entorno": "Urbano",
+    "horario": "No Disponible",
+    "id": "xwmq8opR6HWBIGvLp9Zq",
+    "nombre": "Quinta Fernando's",
+    "parroquia": "General Proaño",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Hosterías",
+    "telefono": "0997543807",
+    "ubicacion": {
+      "latitude": -2.243107,
+      "longitude": -78.135467
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T18:44:10.670Z",
+    "entorno": "Urbano",
+    "horario": "08:00-17:00",
+    "id": "XWt7DygkV7yu1iJykSu5",
+    "nombre": "Gobernación De Morona Santiago",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Instituciones",
+    "telefono": "0980436360",
+    "ubicacion": {
+      "latitude": -2.308813,
+      "longitude": -78.121362
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T18:53:34.425Z",
+    "entorno": "Urbano",
+    "horario": "08:00-17:00",
+    "id": "xyEydZGNvuNoKnqULQFF",
+    "nombre": "Distrito de Salud 14D01",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Instituciones",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.311917,
+      "longitude": -78.114501
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-14T01:23:08.654Z",
+    "entorno": "Urbano",
+    "horario": "08:00 - 18:00",
+    "id": "y2s50LqMkSIrsHImEttt",
+    "nombre": "AUTOLUJOS TOTAL",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Autolujos",
+    "telefono": "0969342292",
+    "ubicacion": {
+      "latitude": -2.313763,
+      "longitude": -78.125523
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T22:40:44.853Z",
+    "entorno": "Urbano",
+    "horario": "08:00-18:00",
+    "id": "yXKS0ABzvtYnx5qMoxAX",
+    "nombre": "Escuela Superior Politécnica de Chimborazo - Sede Morona Santiago",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Universidades",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.291441,
+      "longitude": -78.114251
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T14:55:18.111Z",
+    "entorno": "Urbano",
+    "horario": "08:00-22:00",
+    "id": "Zal8TZQ2OfIycJNcwYIX",
+    "nombre": "Farmacia Económica Macas Soasti",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Farmacias",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.306141,
+      "longitude": -78.120027
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T18:42:52.422Z",
+    "entorno": "Urbano",
+    "horario": "No Disponible",
+    "id": "zc3JQCPRnQJVojVn4sHg",
+    "nombre": "Jefatura de Tránsito Macas",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Instituciones",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.321708,
+      "longitude": -78.117492
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-14T01:30:49.805Z",
+    "entorno": "Urbano",
+    "horario": "08:00 - 17:00",
+    "id": "zcgb2UDYaW6sdx92b1QV",
+    "nombre": "Talleres Patiño",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Mecanicas",
+    "telefono": "0997504912",
+    "ubicacion": {
+      "latitude": -2.320281,
+      "longitude": -78.135794
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-01-22T14:45:54.370Z",
+    "entorno": "Urbano",
+    "horario": "24 HORAS",
+    "id": "zFhoLH6oXBGm8JnhLDPo",
+    "nombre": "Cooperativa de Taxis Esmeralda Oriental",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Taxis",
+    "telefono": "072701220",
+    "ubicacion": {
+      "latitude": -2.3053070388850943,
+      "longitude": -78.11974589099539
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-15T20:19:07.641Z",
+    "entorno": "Urbano",
+    "horario": "09:30–20:00",
+    "id": "zHBqXsDpRQLkeBP7JC8F",
+    "nombre": "Divino Pecado Macas",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Heladerias",
+    "telefono": "0986393261",
+    "ubicacion": {
+      "latitude": -2.306695,
+      "longitude": -78.119986
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-15T01:28:31.938Z",
+    "entorno": "Urbano",
+    "horario": "17:00–03:00",
+    "id": "zPcQcr0pqbz13jQhG2so",
+    "nombre": "La Bohemia~Lounge & Karaoke",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Bares",
+    "telefono": "0939814662",
+    "ubicacion": {
+      "latitude": -2.307599,
+      "longitude": -78.122038
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T21:14:34.378Z",
+    "entorno": "Urbano",
+    "horario": "08:30-16:00",
+    "id": "zpn1FmwM5AmCPXIR7WHV",
+    "nombre": "Banco Pichincha",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Bancos",
+    "telefono": "022999999",
+    "ubicacion": {
+      "latitude": -2.305368,
+      "longitude": -78.118949
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T15:33:54.485Z",
+    "entorno": "Urbano",
+    "horario": "07:00-19:00",
+    "id": "Zpu2awLUSGG7AT6WkOkj",
+    "nombre": "MULTIFERRETERIA OBRERO - Ferreterías en Macas Ecuador",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Ferreterías",
+    "telefono": "0983653214",
+    "ubicacion": {
+      "latitude": -2.311139,
+      "longitude": -78.125665
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-17T23:12:28.069Z",
+    "entorno": "Urbano",
+    "horario": "No Disponible",
+    "id": "ZSdj8w6xEExJIUEEkTCo",
+    "nombre": "Cancha SIntetica Barrio Sangay",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Canchas deportivas",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.287778846594641,
+      "longitude": -78.1241159105815
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T21:59:00.540Z",
+    "entorno": "Urbano",
+    "horario": "No Disponible",
+    "id": "zteN0o9K5hEjwhx0ICbq",
+    "nombre": "UPC DISTRITO MORONA",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Policía",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.305379,
+      "longitude": -78.121127
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Sevilla Don Bosco",
+    "creado": "2026-02-22T02:09:46.085Z",
+    "entorno": "Rural",
+    "horario": "06:30 a 21:00",
+    "id": "zV6KypelWe2kU18y7Fo5",
+    "nombre": "Mini Market Karlita",
+    "parroquia": "Sevilla Don Bosco",
+    "parroquia ": "Sevilla Don Bosco",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Tiendas de abarrotes",
+    "telefono": "No Disponible",
+    "ubicacion": {
+      "latitude": -2.389128,
+      "longitude": -78.120963
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-15T01:49:50.327Z",
+    "entorno": "Urbano",
+    "horario": "No Disponible",
+    "id": "ZXLftOkZQg4b50QrM6qG",
+    "nombre": "Hotel Manzana Real",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Hospedaje",
+    "telefono": "0992235234",
+    "ubicacion": {
+      "latitude": -2.312284,
+      "longitude": -78.12354
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
+    "creado": "2026-03-18T22:22:13.669Z",
+    "entorno": "Urbano",
+    "horario": "No Disponible",
+    "id": "zYBpvwxnSyhs39BOkotX",
+    "nombre": "Unidad Educativa PCEI Fiscomisional Dr. Camilo Gallegos Dominguez",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Colegios",
+    "telefono": "072700029",
+    "ubicacion": {
+      "latitude": -2.306231,
+      "longitude": -78.11496
+    }
+  }
+]

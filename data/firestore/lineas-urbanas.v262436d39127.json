@@ -1,0 +1,139 @@
+[
+  {
+    "activo": true,
+    "canton": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "ciudadpasa": [
+      "Macas",
+      "General Proaño",
+      "Rio Blanco"
+    ],
+    "codigo": "L5",
+    "color": "#FA120A",
+    "create": "2026-01-26T19:41:38.336Z",
+    "cupo": 9,
+    "frecuencia_min": 10,
+    "horario_fin": "20:00",
+    "horario_inicio": "06:00",
+    "id": "2zR5Zsg9K6Vw2OcTCUiZ",
+    "nombre": "Línea 5-Jimbitono-Arapicos",
+    "orden": 5,
+    "origen": "ida-vuelta-cobertura",
+    "provincia": "Morona Santiago",
+    "tipo": "urbano",
+    "velocidad_promedio": 40
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "ciudad": "Macas",
+    "ciudadpasa": [
+      "Macas"
+    ],
+    "codigo": "L2",
+    "color": "#21DB3A",
+    "create": "2026-01-26T18:34:20.626Z",
+    "cupo": 4,
+    "frecuencia_min": 12,
+    "frecuenciafinsem": 24,
+    "horario_fin": "21:36",
+    "horario_inicio": "06:00",
+    "id": "CebE2G7A1gfKD5uh8i3D",
+    "nombre": "Línea 2- 27  de Febrero-Norte",
+    "orden": 2,
+    "origen": "circulación",
+    "provincia": "Morona Santiago",
+    "tipo": "urbano",
+    "velocidad_promedio": 40
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "ciudad": "Macas",
+    "ciudadpasa": [
+      "Macas"
+    ],
+    "codigo": "L1",
+    "color": "#1e88e5",
+    "create": "2026-01-26T18:19:35.779Z",
+    "cupo": 4,
+    "frecuencia_min": 12,
+    "frecuenciafinsem": 24,
+    "horario_fin": "21:36",
+    "horario_inicio": "06:00",
+    "id": "G93ksIyKBFQG7qrefbZP",
+    "nombre": "Línea 1- 27 de Febrero-Sur",
+    "orden": 1,
+    "origen": "circulación",
+    "provincia": "Morona Santiago",
+    "tipo": "urbano",
+    "velocidad_promedio": 40
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "ciudad": "Macas",
+    "ciudadpasa": [
+      "Macas"
+    ],
+    "codigo": "L3",
+    "color": "#D95C1C",
+    "create": "2026-01-31T02:41:15.912Z",
+    "cupo": 3,
+    "frecuencia_min": 15,
+    "horario_fin": "19:00",
+    "horario_inicio": "06:00",
+    "horariofinsem": [
+      "06:00 a 08:00",
+      "12:00 a 14:00",
+      "17:00 a 19:00"
+    ],
+    "id": "HezkIS1yYaQCSXBpNSBk",
+    "nombre": "Línea 3- La Alborada-Hospital General",
+    "orden": 3,
+    "origen": "ida-vuelta",
+    "provincia": "Morona Santiago",
+    "tipo": "urbano",
+    "velocidad_promedio": 40
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "ciudadpasa": [
+      "Macas"
+    ],
+    "codigo": "L4",
+    "color": "#F3FA0A",
+    "create": "2026-01-26T19:26:12.144Z",
+    "cupo": 5,
+    "frecuencia_min": 15,
+    "horario_fin": "19:30",
+    "horario_inicio": "06:00",
+    "horariofinsem": [
+      "06:00 a 08:00",
+      "12:00 a 14:00",
+      "17:00 a 19:00"
+    ],
+    "id": "IXqSQwHOIwsArxtomUWH",
+    "nombre": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 4,
+    "origen": "ida-vuelta",
+    "provincia": "Morona Santiago",
+    "tipo": "urbano",
+    "velocidad_promedio": 40
+  }
+]

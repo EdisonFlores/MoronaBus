@@ -1,0 +1,7354 @@
+[
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "lr12i6",
+    "create": "2026-02-28T02:11:22.962Z",
+    "denominacion": "referencial",
+    "finderuta": false,
+    "id": "0aAyhR9f82IfCCXdf1o5",
+    "lineasruralpasan": [
+      "lr12"
+    ],
+    "numeral": 6,
+    "orden": null,
+    "parroquiaorigen": "Sinaí",
+    "parroquiapasa": [
+      "Sinaí"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.110158,
+      "longitude": -78.063395
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfv21",
+    "create": "2026-03-12T20:13:05.768Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "1pEeJLfxGTdhlmjhQAaY",
+    "lineasruralpasan": [
+      "lr15",
+      "lr16",
+      "lr17",
+      "lr18",
+      "lr19"
+    ],
+    "numeral": 21,
+    "orden": 17,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.308717,
+      "longitude": -78.12176
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfv13",
+    "create": "2026-03-12T20:01:20.896Z",
+    "denominacion": "referencial",
+    "finderuta": false,
+    "id": "1PXFABkKeuke0zOi8vMp",
+    "lineasruralpasan": [
+      "lr15",
+      "lr16",
+      "lr17",
+      "lr18",
+      "lr19"
+    ],
+    "numeral": 13,
+    "orden": null,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.295397,
+      "longitude": -78.119043
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Sevilla Don Bosco",
+    "cantonpasa": [
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "lr8i6",
+    "create": "2026-03-09T01:10:30.836Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "1Qk8L1ZfQFaeEZwqle8h",
+    "lineasruralpasan": [
+      "lr8"
+    ],
+    "numeral": 6,
+    "orden": 6,
+    "parroquiaorigen": "Sevilla Don Bosco",
+    "parroquiapasa": [
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.235261,
+      "longitude": -78.035905
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Sevilla Don Bosco",
+    "cantonpasa": [
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "lpri7",
+    "create": "2026-02-28T15:12:55.336Z",
+    "denominacion": "referencial",
+    "finderuta": false,
+    "id": "1ssX6FtZ1CScmIEStStb",
+    "lineasruralpasan": [
+      "lr10",
+      "lr11",
+      "lr13",
+      "lr14"
+    ],
+    "numeral": 7,
+    "orden": null,
+    "parroquiaorigen": "Sevilla Don Bosco",
+    "parroquiapasa": [
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.15206,
+      "longitude": -78.04128
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfv5",
+    "create": "2026-03-12T19:46:50.456Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "27kK4Z5EDBhYjptt6bZv",
+    "lineasruralpasan": [
+      "lr15",
+      "lr16",
+      "lr17",
+      "lr18",
+      "lr19"
+    ],
+    "numeral": 5,
+    "orden": 5,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.282823,
+      "longitude": -78.121441
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Sevilla Don Bosco",
+    "cantonpasa": [
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "pfis1",
+    "create": "2026-02-16T20:07:40.267Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "2plhpBlB61oeY4HMVNZK",
+    "lineasruralpasan": [
+      "lr1",
+      "lr2",
+      "lr4",
+      "lr5"
+    ],
+    "numeral": 1,
+    "orden": 1,
+    "parroquiaorigen": "Sevilla Don Bosco",
+    "parroquiapasa": [
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.315535,
+      "longitude": -78.103513
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona ",
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "pfi16",
+    "create": "2026-02-16T18:12:00.393Z",
+    "denominacion": "referencial",
+    "finderuta": false,
+    "id": "2tKngIKMEJpXDDhIQgJn",
+    "lineasruralpasan": [
+      "lr1",
+      "lr2",
+      "lr3",
+      "lr4",
+      "lr5",
+      "lr6",
+      "lr7",
+      "lr8",
+      "lr9",
+      "lr10",
+      "lr11",
+      "lr12",
+      "lr13",
+      "lr14"
+    ],
+    "numeral": 16,
+    "orden": null,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas",
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.294606,
+      "longitude": -78.098848
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfv7",
+    "create": "2026-03-12T19:50:23.570Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "3MkCmL0hxfk3iObpqWYd",
+    "lineasruralpasan": [
+      "lr15",
+      "lr16",
+      "lr17",
+      "lr18",
+      "lr19"
+    ],
+    "numeral": 7,
+    "orden": 7,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.286437,
+      "longitude": -78.117712
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Huamboya",
+    "cantonpasa": [
+      "Huamboya"
+    ],
+    "codigo": "l13v1",
+    "create": "2026-03-09T18:51:07.478Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "3ptzL4q6SDB0CT341hTk",
+    "lineasruralpasan": [
+      "lr13"
+    ],
+    "numeral": 1,
+    "orden": 1,
+    "parroquiaorigen": "Chiguaza",
+    "parroquiapasa": [
+      "Chiguaza"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.105243,
+      "longitude": -78.024012
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "lr12v1",
+    "create": "2026-02-28T02:17:39.802Z",
+    "denominacion": "referencial",
+    "finderuta": false,
+    "id": "3YUqTGqhxC0wXZztuyUr",
+    "lineasruralpasan": [
+      "lr12"
+    ],
+    "numeral": 1,
+    "orden": null,
+    "parroquiaorigen": "Sinaí",
+    "parroquiapasa": [
+      "Sinaí"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.110979,
+      "longitude": -78.063869
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "lrdi0",
+    "create": "2026-03-13T19:23:52.140Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "4T7uyLYXRl3bb9aeAXTR",
+    "lineasruralpasan": [
+      "lr16",
+      "lr17"
+    ],
+    "numeral": 0,
+    "orden": 0,
+    "parroquiaorigen": "General Proaño",
+    "parroquiapasa": [
+      "General Proaño"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.244931,
+      "longitude": -78.136965
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "lr13v0",
+    "create": "2026-03-09T18:48:52.498Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "5c8fEGKFHUaG08T5CC5O",
+    "lineasruralpasan": [
+      "lr13"
+    ],
+    "numeral": 0,
+    "orden": 0,
+    "parroquiaorigen": "Cuchaentza",
+    "parroquiapasa": [
+      "Cuchaentza"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.121446,
+      "longitude": -77.862009
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Sevilla Don Bosco",
+    "cantonpasa": [
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "plr4i5",
+    "create": "2026-02-27T17:49:16.562Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "5Ftu7sns4ysUHHZATtUY",
+    "lineasruralpasan": [
+      "lr4"
+    ],
+    "numeral": 5,
+    "orden": 5,
+    "parroquiaorigen": "Sevilla Don Bosco",
+    "parroquiapasa": [
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.377045,
+      "longitude": -78.124782
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Sevilla Don Bosco",
+    "cantonpasa": [
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "plr4v2",
+    "create": "2026-02-27T17:58:55.833Z",
+    "denominacion": "referencial",
+    "finderuta": false,
+    "id": "5H2F2Q4jXwoGDFUeyn7d",
+    "lineasruralpasan": [
+      "lr4"
+    ],
+    "numeral": 2,
+    "orden": null,
+    "parroquiaorigen": "Sevilla Don Bosco",
+    "parroquiapasa": [
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.385179,
+      "longitude": -78.130874
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfv15",
+    "create": "2026-03-12T20:04:11.208Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "6Bvg0jJqxd5g4arerDas",
+    "lineasruralpasan": [
+      "lr15",
+      "lr16",
+      "lr17",
+      "lr18",
+      "lr19"
+    ],
+    "numeral": 15,
+    "orden": 13,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.299873,
+      "longitude": -78.119579
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "lr12i7",
+    "create": "2026-02-28T02:13:41.151Z",
+    "denominacion": "parada",
+    "finderuta": true,
+    "id": "6ftGGWPbrdp2BYsx9sEh",
+    "lineasruralpasan": [
+      "lr12"
+    ],
+    "numeral": 7,
+    "orden": 7,
+    "parroquiaorigen": "Sinaí",
+    "parroquiapasa": [
+      "Sinaí"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.094081,
+      "longitude": -78.050786
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Sevilla Don Bosco",
+    "cantonpasa": [
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "plr6i1",
+    "create": "2026-02-27T18:27:18.049Z",
+    "denominacion": "parada",
+    "finderuta": true,
+    "id": "6u0Yf6tyuE7xvvRgOOow",
+    "lineasruralpasan": [
+      "lr6"
+    ],
+    "numeral": 1,
+    "orden": 1,
+    "parroquiaorigen": "Sevilla Don Bosco",
+    "parroquiapasa": [
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.341233,
+      "longitude": -78.069851
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona ",
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "pfv0",
+    "create": "2026-02-16T18:30:59.243Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "7j5iCep9sZtg5D1XcaAl",
+    "lineasruralpasan": [
+      "lr1",
+      "lr2",
+      "lr3",
+      "lr4",
+      "lr5",
+      "lr6",
+      "lr7",
+      "lr8",
+      "lr9",
+      "lr10",
+      "lr11",
+      "lr12",
+      "lr13",
+      "lr14"
+    ],
+    "numeral": 0,
+    "orden": 0,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas",
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.294622,
+      "longitude": -78.098955
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Sevilla Don Bosco",
+    "cantonpasa": [
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "lpri1",
+    "create": "2026-02-28T00:59:10.460Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "7mkplImp9fXk2tlz0AkQ",
+    "lineasruralpasan": [
+      "lr7",
+      "lr8",
+      "lr9",
+      "lr10",
+      "lr11",
+      "lr12",
+      "lr13",
+      "lr14"
+    ],
+    "numeral": 1,
+    "orden": 1,
+    "parroquiaorigen": "Sevilla Don Bosco",
+    "parroquiapasa": [
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.249066,
+      "longitude": -78.08331
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfi14",
+    "create": "2026-02-15T22:09:29.246Z",
+    "denominacion": "referencial",
+    "finderuta": false,
+    "id": "7sK5FZLwYtZVxlJVrqIe",
+    "lineasruralpasan": [
+      "lr1",
+      "lr2",
+      "lr3",
+      "lr4",
+      "lr5",
+      "lr6",
+      "lr7",
+      "lr8",
+      "lr9",
+      "lr10",
+      "lr11",
+      "lr12",
+      "lr13",
+      "lr14"
+    ],
+    "numeral": 14,
+    "orden": null,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas",
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.300669,
+      "longitude": -78.105143
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfv22",
+    "create": "2026-03-12T20:14:28.713Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "80lCyxTLby2aE9lMGnHc",
+    "lineasruralpasan": [
+      "lr15",
+      "lr16",
+      "lr17",
+      "lr18",
+      "lr19"
+    ],
+    "numeral": 22,
+    "orden": 18,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.309992,
+      "longitude": -78.122832
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "lr18i1",
+    "create": "2026-03-13T18:45:03.011Z",
+    "denominacion": "parada",
+    "finderuta": true,
+    "id": "8CTVL8oPaH3b4e6Tg9Lb",
+    "lineasruralpasan": [
+      "lr18"
+    ],
+    "numeral": 1,
+    "orden": 1,
+    "parroquiaorigen": "General Proaño",
+    "parroquiapasa": [
+      "General Proaño"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.246697,
+      "longitude": -78.107839
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfv8",
+    "create": "2026-03-12T19:52:29.516Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "8D8wDHca343IXIsDns0t",
+    "lineasruralpasan": [
+      "lr15",
+      "lr16",
+      "lr17",
+      "lr18",
+      "lr19"
+    ],
+    "numeral": 8,
+    "orden": 8,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.288155,
+      "longitude": -78.116822
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "lr14i1",
+    "create": "2026-03-09T18:59:49.920Z",
+    "denominacion": "parada",
+    "finderuta": true,
+    "id": "8ekZQ2ZpzlkqHSGqrpu6",
+    "lineasruralpasan": [
+      "lr14"
+    ],
+    "numeral": 1,
+    "orden": 1,
+    "parroquiaorigen": "Cuchaentza",
+    "parroquiapasa": [
+      "Cuchaentza"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.186984,
+      "longitude": -77.856947
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "lr16i1",
+    "create": "2026-03-13T19:50:42.196Z",
+    "denominacion": "parada",
+    "finderuta": true,
+    "id": "8UmzYjgpAmWdHEeRVpOC",
+    "lineasruralpasan": [
+      "lr16"
+    ],
+    "numeral": 1,
+    "orden": 1,
+    "parroquiaorigen": "San Isidro",
+    "parroquiapasa": [
+      "San Isidro"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.181099,
+      "longitude": -78.123205
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "lr11v0",
+    "create": "2026-03-09T15:27:55.055Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "9bZbz9FeLpP2OHVVJSaz",
+    "lineasruralpasan": [
+      "lr11"
+    ],
+    "numeral": 0,
+    "orden": 0,
+    "parroquiaorigen": "Sinaí",
+    "parroquiapasa": [
+      "Sinaí"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.09304,
+      "longitude": -78.050803
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Sevilla Don Bosco",
+    "cantonpasa": [
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "plr6v0",
+    "create": "2026-02-27T18:28:09.381Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "9C2BjXGIpCNDf5VZhSsy",
+    "lineasruralpasan": [
+      "lr6"
+    ],
+    "numeral": 0,
+    "orden": 0,
+    "parroquiaorigen": "Sevilla Don Bosco",
+    "parroquiapasa": [
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.341163,
+      "longitude": -78.069845
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "lr16v0",
+    "create": "2026-03-13T19:52:11.105Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "9MhpdbSKUy4Yx7HpTTwA",
+    "lineasruralpasan": [
+      "lr16"
+    ],
+    "numeral": 0,
+    "orden": 0,
+    "parroquiaorigen": "San Isidro",
+    "parroquiapasa": [
+      "San Isidro"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.181056,
+      "longitude": -78.123288
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfi23",
+    "create": "2026-03-12T18:56:54.630Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "9qqpUxUtKXwKdjKpxiF0",
+    "lineasruralpasan": [
+      "lr15",
+      "lr16",
+      "lr17",
+      "lr18",
+      "lr19"
+    ],
+    "numeral": 23,
+    "orden": 18,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.282023,
+      "longitude": -78.121803
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Sevilla Don Bosco",
+    "cantonpasa": [
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "plr4v0",
+    "create": "2026-02-27T17:55:55.615Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "A6XBkUo6vVIebLtpOFH9",
+    "lineasruralpasan": [
+      "lr4"
+    ],
+    "numeral": 0,
+    "orden": 0,
+    "parroquiaorigen": "Sevilla Don Bosco",
+    "parroquiapasa": [
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.387556,
+      "longitude": -78.130308
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "lr19i0",
+    "create": "2026-03-13T19:59:41.246Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "ad8kCRCzHPJqehxgSkMj",
+    "lineasruralpasan": [
+      "lr19"
+    ],
+    "numeral": 0,
+    "orden": 0,
+    "parroquiaorigen": "General Proaño",
+    "parroquiapasa": [
+      "General Proaño"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.266728,
+      "longitude": -78.129981
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfi9",
+    "create": "2026-02-15T21:30:26.378Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "ahCpVytNW9T4FOGSNS4x",
+    "lineasruralpasan": [
+      "lr1",
+      "lr2",
+      "lr3",
+      "lr4",
+      "lr5",
+      "lr6",
+      "lr7",
+      "lr8",
+      "lr9",
+      "lr10",
+      "lr11",
+      "lr12",
+      "lr13",
+      "lr14"
+    ],
+    "numeral": 9,
+    "orden": 6,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.30903,
+      "longitude": -78.120054
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Sevilla Don Bosco",
+    "cantonpasa": [
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "lr8i1",
+    "create": "2026-03-09T00:58:32.770Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "AL85R4Q8Cdka37Vrmpdm",
+    "lineasruralpasan": [
+      "lr8"
+    ],
+    "numeral": 1,
+    "orden": 1,
+    "parroquiaorigen": "Sevilla Don Bosco",
+    "parroquiapasa": [
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.209759,
+      "longitude": -78.057459
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfv2",
+    "create": "2026-02-16T18:40:04.656Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "AmOWrSKktRkM10KQulRV",
+    "lineasruralpasan": [
+      "lr1",
+      "lr2",
+      "lr3",
+      "lr4",
+      "lr5",
+      "lr6",
+      "lr7",
+      "lr8",
+      "lr9",
+      "lr10",
+      "lr11",
+      "lr12",
+      "lr13",
+      "lr14"
+    ],
+    "numeral": 2,
+    "orden": 1,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.309982,
+      "longitude": -78.115505
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Sevilla Don Bosco",
+    "cantonpasa": [
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "lr8v3",
+    "create": "2026-03-09T01:21:37.982Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "aOIkEo7OcLri7gwAa56n",
+    "lineasruralpasan": [
+      "lr8"
+    ],
+    "numeral": 3,
+    "orden": 3,
+    "parroquiaorigen": "Sevilla Don Bosco",
+    "parroquiapasa": [
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.196596,
+      "longitude": -78.069542
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfi12",
+    "create": "2026-03-12T18:18:58.954Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "AxwMvuTeE27HT5Zg9OLr",
+    "lineasruralpasan": [
+      "lr15",
+      "lr16",
+      "lr17",
+      "lr18",
+      "lr19"
+    ],
+    "numeral": 12,
+    "orden": 10,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.29771,
+      "longitude": -78.118452
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfv28",
+    "create": "2026-03-12T20:25:36.298Z",
+    "denominacion": "referencial",
+    "finderuta": false,
+    "id": "b7fmVkPy1Ppugy1wnJHa",
+    "lineasruralpasan": [
+      "lr15",
+      "lr16",
+      "lr17",
+      "lr18",
+      "lr19"
+    ],
+    "numeral": 28,
+    "orden": null,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.316686,
+      "longitude": -78.125971
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfv23",
+    "create": "2026-03-12T20:15:26.635Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "bajxHgNc2dx3Eu8xcfqN",
+    "lineasruralpasan": [
+      "lr15",
+      "lr16",
+      "lr17",
+      "lr18",
+      "lr19"
+    ],
+    "numeral": 23,
+    "orden": 19,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.312024,
+      "longitude": -78.124632
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "lr15i0",
+    "create": "2026-03-13T19:06:48.032Z",
+    "denominacion": "parada",
+    "finderuta": true,
+    "id": "BcDmjUUTsiGG38ObVfxJ",
+    "lineasruralpasan": [
+      "lr15"
+    ],
+    "numeral": 0,
+    "orden": 0,
+    "parroquiaorigen": "San Isidro",
+    "parroquiapasa": [
+      "San Isidro"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.211766,
+      "longitude": -78.165203
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfv24",
+    "create": "2026-03-12T20:17:10.645Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "be8H4y6xorABUmZbl2vy",
+    "lineasruralpasan": [
+      "lr15",
+      "lr16",
+      "lr17",
+      "lr18",
+      "lr19"
+    ],
+    "numeral": 24,
+    "orden": 20,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.314101,
+      "longitude": -78.12629
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Huamboya",
+    "cantonpasa": [
+      "Huamboya"
+    ],
+    "codigo": "lr13i0",
+    "create": "2026-03-09T18:39:38.069Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "BFIxX3sJiI7MHJzS2c9A",
+    "lineasruralpasan": [
+      "lr13"
+    ],
+    "numeral": 0,
+    "orden": 0,
+    "parroquiaorigen": "Chiguaza",
+    "parroquiapasa": [
+      "Chiguaza"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.105336,
+      "longitude": -78.024087
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Sevilla Don Bosco",
+    "cantonpasa": [
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "plr4i7",
+    "create": "2026-02-27T17:51:32.816Z",
+    "denominacion": "parada",
+    "finderuta": true,
+    "id": "BHJsA15u8fmed6PxsrFs",
+    "lineasruralpasan": [
+      "lr4"
+    ],
+    "numeral": 7,
+    "orden": 7,
+    "parroquiaorigen": "Sevilla Don Bosco",
+    "parroquiapasa": [
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.387569,
+      "longitude": -78.130265
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Sevilla Don Bosco",
+    "cantonpasa": [
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "lpri4",
+    "create": "2026-02-28T01:46:29.422Z",
+    "denominacion": "referencial",
+    "finderuta": false,
+    "id": "BijczE74eXgfxrci1jTs",
+    "lineasruralpasan": [
+      "lr8",
+      "lr9",
+      "lr10",
+      "lr11",
+      "lr12",
+      "lr13",
+      "lr14"
+    ],
+    "numeral": 4,
+    "orden": null,
+    "parroquiaorigen": "Sevilla Don Bosco",
+    "parroquiapasa": [
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.201077,
+      "longitude": -78.072917
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfv3",
+    "create": "2026-02-16T18:41:50.941Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "bKDWocFxBeg585uNZuHX",
+    "lineasruralpasan": [
+      "lr1",
+      "lr2",
+      "lr3",
+      "lr4",
+      "lr5",
+      "lr6",
+      "lr7",
+      "lr8",
+      "lr9",
+      "lr10",
+      "lr11",
+      "lr12",
+      "lr13",
+      "lr14"
+    ],
+    "numeral": 3,
+    "orden": 2,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.312236,
+      "longitude": -78.1161
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfi13",
+    "create": "2026-02-15T22:07:54.716Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "bMae7SpKQkga0S0PBK0V",
+    "lineasruralpasan": [
+      "lr1",
+      "lr2",
+      "lr3",
+      "lr4",
+      "lr5",
+      "lr6",
+      "lr7",
+      "lr8",
+      "lr9",
+      "lr10",
+      "lr11",
+      "lr12",
+      "lr13",
+      "lr14"
+    ],
+    "numeral": 13,
+    "orden": 8,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.309928,
+      "longitude": -78.115258
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "lr19i1",
+    "create": "2026-03-13T20:01:37.110Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "BRTwZDn3QxtZFaLGDn1o",
+    "lineasruralpasan": [
+      "lr19"
+    ],
+    "numeral": 1,
+    "orden": 1,
+    "parroquiaorigen": "General Proaño",
+    "parroquiapasa": [
+      "General Proaño"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.265932,
+      "longitude": -78.13189
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Sevilla Don Bosco",
+    "cantonpasa": [
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "lr9v0",
+    "create": "2026-03-09T02:07:07.957Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "BSSNCVH1lqw2XPpfS7Ju",
+    "lineasruralpasan": [
+      "lr9"
+    ],
+    "numeral": 0,
+    "orden": 0,
+    "parroquiaorigen": "Sevilla Don Bosco",
+    "parroquiapasa": [
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.217301,
+      "longitude": -77.98604
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Sevilla Don Bosco",
+    "cantonpasa": [
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "lr7v0",
+    "create": "2026-02-28T01:33:03.831Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "BTsuOrrxD2T8JjWpfwpR",
+    "lineasruralpasan": [
+      "lr7"
+    ],
+    "numeral": 0,
+    "orden": 0,
+    "parroquiaorigen": "Sevilla Don Bosco",
+    "parroquiapasa": [
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.24105,
+      "longitude": -78.068445
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Sevilla Don Bosco",
+    "cantonpasa": [
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "lprpi0",
+    "create": "2026-02-27T16:53:08.433Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "c5j36EEAITtyG6tv26ec",
+    "lineasruralpasan": [
+      "lr4"
+    ],
+    "numeral": 0,
+    "orden": 0,
+    "parroquiaorigen": "Sevilla Don Bosco",
+    "parroquiapasa": [
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.377032,
+      "longitude": -78.124887
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfv13",
+    "create": "2026-02-16T19:35:49.167Z",
+    "denominacion": "referencial",
+    "id": "c68mVd2ajtV3dGcMS5FS",
+    "lineasruralpasan": [
+      "lr1",
+      "lr2",
+      "lr3",
+      "lr4",
+      "lr5",
+      "lr6",
+      "lr7",
+      "lr8",
+      "lr9",
+      "lr10",
+      "lr11",
+      "lr12",
+      "lr13",
+      "lr14"
+    ],
+    "numeral": 13,
+    "orden": null,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.307645,
+      "longitude": -78.121454
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfi2",
+    "create": "2026-02-15T20:32:34.728Z",
+    "denominacion": "referencial",
+    "finderuta": false,
+    "id": "CAukbAImSRFTJgoq0oFg",
+    "lineasruralpasan": [
+      "lr1",
+      "lr2",
+      "lr3",
+      "lr4",
+      "lr5",
+      "lr6",
+      "lr7",
+      "lr8",
+      "lr9",
+      "lr10",
+      "lr11",
+      "lr12",
+      "lr13",
+      "lr14",
+      "lr15",
+      "lr16",
+      "lr17",
+      "lr18",
+      "lr19",
+      "lr20"
+    ],
+    "numeral": 2,
+    "orden": null,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.315586,
+      "longitude": -78.123034
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Sevilla Don Bosco",
+    "cantonpasa": [
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "lpri6",
+    "create": "2026-02-28T15:08:48.968Z",
+    "denominacion": "referencial",
+    "finderuta": false,
+    "id": "CtUrMZZRJBOqEQvy3eIG",
+    "lineasruralpasan": [
+      "lr9",
+      "lr10",
+      "lr11",
+      "lr13",
+      "lr14"
+    ],
+    "numeral": 6,
+    "orden": null,
+    "parroquiaorigen": "Sevilla Don Bosco",
+    "parroquiapasa": [
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.182932,
+      "longitude": -78.057902
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Sevilla Don Bosco",
+    "cantonpasa": [
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "lr9i0",
+    "create": "2026-03-09T01:53:25.004Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "CVF5c4kTzlEoPVwaPjxo",
+    "lineasruralpasan": [
+      "lr9"
+    ],
+    "numeral": 0,
+    "orden": 0,
+    "parroquiaorigen": "Sevilla Don Bosco",
+    "parroquiapasa": [
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.182884,
+      "longitude": -78.057859
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Sevilla Don Bosco",
+    "cantonpasa": [
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "lr9v1",
+    "create": "2026-03-09T02:11:43.345Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "CX5dxEd4A0WACzBm4Ezf",
+    "lineasruralpasan": [
+      "lr9"
+    ],
+    "numeral": 1,
+    "orden": 1,
+    "parroquiaorigen": "Sevilla Don Bosco",
+    "parroquiapasa": [
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.21436,
+      "longitude": -78.002203
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Sevilla Don Bosco",
+    "cantonpasa": [
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "plr4i3",
+    "create": "2026-02-27T17:43:46.759Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "CyffBsClNIRDIgv0jraE",
+    "lineasruralpasan": [
+      "lr4"
+    ],
+    "numeral": 3,
+    "orden": 3,
+    "parroquiaorigen": "Sevilla Don Bosco",
+    "parroquiapasa": [
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.389528,
+      "longitude": -78.121872
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Sevilla Don Bosco",
+    "cantonpasa": [
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "lr9i3",
+    "create": "2026-03-09T02:06:15.301Z",
+    "denominacion": "parada",
+    "finderuta": true,
+    "id": "CYKJwL8UhsXTYi0ThKKo",
+    "lineasruralpasan": [
+      "lr9"
+    ],
+    "numeral": 3,
+    "orden": 3,
+    "parroquiaorigen": "Sevilla Don Bosco",
+    "parroquiapasa": [
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.217394,
+      "longitude": -77.986013
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfi8",
+    "create": "2026-03-09T20:32:10.812Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "D9DHeXy9mRuUyjc00Bx4",
+    "lineasruralpasan": [
+      "lr15",
+      "lr16",
+      "lr17",
+      "lr18",
+      "lr19"
+    ],
+    "numeral": 8,
+    "orden": 5,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.307387,
+      "longitude": -78.120169
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Sevilla Don Bosco",
+    "cantonpasa": [
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "lr8i7",
+    "create": "2026-03-09T01:12:12.513Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "DfXRYLnkO2cTjhTxCMAr",
+    "lineasruralpasan": [
+      "lr8"
+    ],
+    "numeral": 7,
+    "orden": 7,
+    "parroquiaorigen": "Sevilla Don Bosco",
+    "parroquiapasa": [
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.242966,
+      "longitude": -78.009844
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfi9",
+    "create": "2026-03-12T17:56:01.273Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "djh1Y837voyL3KAropOL",
+    "lineasruralpasan": [
+      "lr15",
+      "lr16",
+      "lr17",
+      "lr18",
+      "lr19"
+    ],
+    "numeral": 9,
+    "orden": 6,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.306581,
+      "longitude": -78.119093
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfi17",
+    "create": "2026-03-12T18:37:20.692Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "dldQqYrjtZ8bpM0ClUtY",
+    "lineasruralpasan": [
+      "lr15",
+      "lr16",
+      "lr17",
+      "lr18",
+      "lr19"
+    ],
+    "numeral": 17,
+    "orden": 14,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.294451,
+      "longitude": -78.117296
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfv17",
+    "create": "2026-03-12T20:07:59.545Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "do0DNTrkrZRp6w87jwZ8",
+    "lineasruralpasan": [
+      "lr15",
+      "lr16",
+      "lr17",
+      "lr18",
+      "lr19"
+    ],
+    "numeral": 17,
+    "orden": 15,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.304718,
+      "longitude": -78.120022
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfv26",
+    "create": "2026-03-12T20:19:59.573Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "DoEgR5WOpLf3sgMXMoTZ",
+    "lineasruralpasan": [
+      "lr15",
+      "lr16",
+      "lr17",
+      "lr18",
+      "lr19"
+    ],
+    "numeral": 26,
+    "orden": 21,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.316379,
+      "longitude": -78.12832
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "lr12v2",
+    "create": "2026-02-28T02:19:08.996Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "DuaerUG4Pj115ZFsLAen",
+    "lineasruralpasan": [
+      "lr12"
+    ],
+    "numeral": 2,
+    "orden": 2,
+    "parroquiaorigen": "Sinaí",
+    "parroquiapasa": [
+      "Sinaí"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.127557,
+      "longitude": -78.066726
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfv29",
+    "create": "2026-03-12T20:30:06.106Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "DzFA9QoThEeSQOSsBm9m",
+    "lineasruralpasan": [
+      "lr15",
+      "lr16",
+      "lr17",
+      "lr18",
+      "lr19"
+    ],
+    "numeral": 29,
+    "orden": 23,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.315224,
+      "longitude": -78.123895
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Sevilla Don Bosco",
+    "cantonpasa": [
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "plr3v0",
+    "create": "2026-02-26T19:24:21.121Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "ecozFvmC5gVvKTEPYzAg",
+    "lineasruralpasan": [
+      "lr3"
+    ],
+    "numeral": 0,
+    "orden": 0,
+    "parroquiaorigen": "Sevilla Don Bosco",
+    "parroquiapasa": [
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.318845,
+      "longitude": -78.074955
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfi7",
+    "create": "2026-02-15T21:18:31.196Z",
+    "denominacion": "referencial",
+    "finderuta": false,
+    "id": "EdUq8m7CXyBtwq0eM5Kn",
+    "lineasruralpasan": [
+      "lr1",
+      "lr2",
+      "lr3",
+      "lr4",
+      "lr5",
+      "lr6",
+      "lr7",
+      "lr8",
+      "lr9",
+      "lr10",
+      "lr11",
+      "lr12",
+      "lr13",
+      "lr14",
+      "lr15",
+      "lr16",
+      "lr17",
+      "lr18",
+      "lr19"
+    ],
+    "numeral": 7,
+    "orden": null,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.308703,
+      "longitude": -78.121604
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Sevilla Don Bosco",
+    "cantonpasa": [
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "plr1i0",
+    "create": "2026-02-16T20:18:49.564Z",
+    "denominacion": "parada",
+    "finderuta": true,
+    "id": "EeGDNXh96u9mGBQY9dyy",
+    "lineasruralpasan": [
+      "lr1"
+    ],
+    "numeral": 0,
+    "orden": 0,
+    "parroquiaorigen": "Sevilla Don Bosco",
+    "parroquiapasa": [
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.37161,
+      "longitude": -78.099441
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Sevilla Don Bosco",
+    "cantonpasa": [
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "lr10v1",
+    "create": "2026-03-09T02:30:19.237Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "EgD0DZY4w3UFOfwIOAMX",
+    "lineasruralpasan": [
+      "lr10"
+    ],
+    "numeral": 1,
+    "orden": 1,
+    "parroquiaorigen": "Sevilla Don Bosco",
+    "parroquiapasa": [
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.155998,
+      "longitude": -78.007677
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Sevilla Don Bosco",
+    "cantonpasa": [
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "lr7i0",
+    "create": "2026-02-28T01:28:28.392Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "eH7sEEnJEotxVzBaIDnQ",
+    "lineasruralpasan": [
+      "lr7"
+    ],
+    "numeral": 0,
+    "orden": 0,
+    "parroquiaorigen": "Sevilla Don Bosco",
+    "parroquiapasa": [
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.245796,
+      "longitude": -78.082776
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Sevilla Don Bosco",
+    "cantonpasa": [
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "pfvs1",
+    "create": "2026-02-16T20:15:34.966Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "ejRRSPsZsw4iNsMENC0n",
+    "lineasruralpasan": [
+      "lr1",
+      "lr2",
+      "lr4",
+      "lr5"
+    ],
+    "numeral": 1,
+    "orden": 1,
+    "parroquiaorigen": "Sevilla Don Bosco",
+    "parroquiapasa": [
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.294636,
+      "longitude": -78.098671
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Sevilla Don Bosco",
+    "cantonpasa": [
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "plr5v0",
+    "create": "2026-02-27T18:09:56.070Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "f2bpi8G1usJjVOQ77jq2",
+    "lineasruralpasan": [
+      "lr5"
+    ],
+    "numeral": 0,
+    "orden": 0,
+    "parroquiaorigen": "Sevilla Don Bosco",
+    "parroquiapasa": [
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.388355,
+      "longitude": -78.104161
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfv11",
+    "create": "2026-03-12T19:56:57.670Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "frtaX2wh0ah0cgR317jh",
+    "lineasruralpasan": [
+      "lr15",
+      "lr16",
+      "lr17",
+      "lr18",
+      "lr19"
+    ],
+    "numeral": 11,
+    "orden": 10,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.294858,
+      "longitude": -78.117296
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "lr19v1",
+    "create": "2026-03-13T20:21:16.415Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "Fv0DhGTptHfUnPkOts6h",
+    "lineasruralpasan": [
+      "lr19"
+    ],
+    "numeral": 1,
+    "orden": 1,
+    "parroquiaorigen": "General Proaño",
+    "parroquiapasa": [
+      "General Proaño"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.255949,
+      "longitude": -78.162095
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "lr19i3",
+    "create": "2026-03-13T20:04:18.758Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "FxTXoJxCyFphnhRsG19m",
+    "lineasruralpasan": [
+      "lr19"
+    ],
+    "numeral": 3,
+    "orden": 3,
+    "parroquiaorigen": "General Proaño",
+    "parroquiapasa": [
+      "General Proaño"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.264211,
+      "longitude": -78.135133
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Sevilla Don Bosco",
+    "cantonpasa": [
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "lr8i3",
+    "create": "2026-03-09T01:01:43.086Z",
+    "denominacion": "referencial",
+    "finderuta": false,
+    "id": "FYpOuiPsLvKMagiwPBsu",
+    "lineasruralpasan": [
+      "lr8"
+    ],
+    "numeral": 3,
+    "orden": null,
+    "parroquiaorigen": "Sevilla Don Bosco",
+    "parroquiapasa": [
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.221726,
+      "longitude": -78.041012
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfi24",
+    "create": "2026-03-12T19:00:57.768Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "fZDpSFlKUDTT9W2dtZGV",
+    "lineasruralpasan": [
+      "lr15",
+      "lr16",
+      "lr17",
+      "lr18",
+      "lr19"
+    ],
+    "numeral": 24,
+    "orden": 19,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.280539,
+      "longitude": -78.122693
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Sevilla Don Bosco",
+    "cantonpasa": [
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "lprv5",
+    "create": "2026-02-28T16:29:34.846Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "GfuzFfRrEMjiJdUTYTlo",
+    "lineasruralpasan": [
+      "lr8",
+      "lr9",
+      "lr10",
+      "lr11",
+      "lr13",
+      "lr14"
+    ],
+    "numeral": 5,
+    "orden": 5,
+    "parroquiaorigen": "Sevilla Don Bosco",
+    "parroquiapasa": [
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.198839,
+      "longitude": -78.071366
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pvf18",
+    "create": "2026-02-16T19:46:30.067Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "ghhbcX8wXQepDe0xs3Dz",
+    "lineasruralpasan": [
+      "lr1",
+      "lr2",
+      "lr3",
+      "lr4",
+      "lr5",
+      "lr6",
+      "lr7",
+      "lr8",
+      "lr9",
+      "lr10",
+      "lr11",
+      "lr12",
+      "lr13",
+      "lr14",
+      "lr15",
+      "lr16",
+      "lr17",
+      "lr18",
+      "lr19",
+      "lr20"
+    ],
+    "orden": 10,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.316457,
+      "longitude": -78.128275
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Huamboya",
+    "cantonpasa": [
+      "Huamboya"
+    ],
+    "codigo": "lpri8",
+    "create": "2026-02-28T15:46:13.226Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "GvOsgMNoVNr1WfGvhfUG",
+    "lineasruralpasan": [
+      "lr11",
+      "lr13",
+      "lr14"
+    ],
+    "numeral": 8,
+    "orden": 8,
+    "parroquiaorigen": "Chiguaza",
+    "parroquiapasa": [
+      "Chiguaza"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.116822,
+      "longitude": -78.031275
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Huamboya",
+    "cantonpasa": [
+      "Huamboya"
+    ],
+    "codigo": "lr14v1",
+    "create": "2026-03-09T19:02:01.931Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "h1fgd5ODeQyVpxtAb55B",
+    "lineasruralpasan": [
+      "lr14"
+    ],
+    "numeral": 1,
+    "orden": 1,
+    "parroquiaorigen": "Chiguaza",
+    "parroquiapasa": [
+      "Chiguaza"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.105248,
+      "longitude": -78.024001
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Sevilla Don Bosco",
+    "cantonpasa": [
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "lr8v1",
+    "create": "2026-03-09T01:19:33.244Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "Hb2pSWHi3Zl51gks9TO5",
+    "lineasruralpasan": [
+      "lr8"
+    ],
+    "numeral": 1,
+    "orden": 1,
+    "parroquiaorigen": "Sevilla Don Bosco",
+    "parroquiapasa": [
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.234368,
+      "longitude": -78.037718
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "lr12i5",
+    "create": "2026-02-28T02:10:22.810Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "hBPHLmrxRcwvfoNMxFwM",
+    "lineasruralpasan": [
+      "lr12"
+    ],
+    "numeral": 5,
+    "orden": 5,
+    "parroquiaorigen": "Sinaí",
+    "parroquiapasa": [
+      "Sinaí"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.127581,
+      "longitude": -78.0666
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Sevilla Don Bosco",
+    "cantonpasa": [
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "plr2v0",
+    "create": "2026-02-26T19:09:38.212Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "HEGXClGCxFt9uIfAcPNu",
+    "lineasruralpasan": [
+      "lr2"
+    ],
+    "numeral": 0,
+    "orden": 0,
+    "parroquiaorigen": "Sevilla Don Bosco",
+    "parroquiapasa": [
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.359277,
+      "longitude": -78.133722
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Sevilla Don Bosco",
+    "cantonpasa": [
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "plr3i0",
+    "create": "2026-02-26T19:16:07.552Z",
+    "denominacion": "parada",
+    "finderuta": true,
+    "id": "HMcWB7MXXh9ithJ9MjA1",
+    "lineasruralpasan": [
+      "lr3"
+    ],
+    "numeral": 0,
+    "orden": 0,
+    "parroquiaorigen": "Sevilla Don Bosco",
+    "parroquiapasa": [
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.318941,
+      "longitude": -78.075113
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfv6",
+    "create": "2026-03-12T19:49:19.200Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "hMRvLTdgxIiqBEcIqtjv",
+    "lineasruralpasan": [
+      "lr15",
+      "lr16",
+      "lr17",
+      "lr18",
+      "lr19"
+    ],
+    "numeral": 6,
+    "orden": 6,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.284446,
+      "longitude": -78.120161
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfv12",
+    "create": "2026-02-16T19:35:00.311Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "Hv8ib201xc4i3nQ7umF4",
+    "lineasruralpasan": [
+      "lr1",
+      "lr2",
+      "lr3",
+      "lr4",
+      "lr5",
+      "lr6",
+      "lr7",
+      "lr8",
+      "lr9",
+      "lr10",
+      "lr11",
+      "lr12",
+      "lr13",
+      "lr14"
+    ],
+    "numeral": 12,
+    "orden": 7,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.307629,
+      "longitude": -78.121006
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Sevilla Don Bosco",
+    "cantonpasa": [
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "plr4i2",
+    "create": "2026-02-27T17:34:47.169Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "HY3pCouq1rbIDdrhQAY1",
+    "lineasruralpasan": [
+      "lr4"
+    ],
+    "numeral": 2,
+    "orden": 2,
+    "parroquiaorigen": "Sevilla Don Bosco",
+    "parroquiapasa": [
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.389464,
+      "longitude": -78.121886
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Sevilla Don Bosco",
+    "cantonpasa": [
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "lprv6",
+    "create": "2026-02-28T16:41:11.685Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "i0i91WMB8wws24cfzUXN",
+    "lineasruralpasan": [
+      "lr7",
+      "lr8",
+      "lr9",
+      "lr10",
+      "lr11",
+      "lr12",
+      "lr13",
+      "lr14"
+    ],
+    "numeral": 6,
+    "orden": 6,
+    "parroquiaorigen": "Sevilla Don Bosco",
+    "parroquiapasa": [
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.245807,
+      "longitude": -78.082964
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Sevilla Don Bosco",
+    "cantonpasa": [
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "lr7v1",
+    "create": "2026-02-28T01:34:03.057Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "i6S0KM85juafCdiAKbCk",
+    "lineasruralpasan": [
+      "lr7"
+    ],
+    "numeral": 1,
+    "orden": 1,
+    "parroquiaorigen": "Sevilla Don Bosco",
+    "parroquiapasa": [
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.245708,
+      "longitude": -78.082819
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfv22",
+    "create": "2026-02-17T00:14:04.123Z",
+    "denominacion": "parada",
+    "finderuta": true,
+    "id": "iFHVEhNIIYb6zLHeiGDR",
+    "lineasruralpasan": [
+      "lr1",
+      "lr2",
+      "lr3",
+      "lr4",
+      "lr5",
+      "lr6",
+      "lr7",
+      "lr8",
+      "lr9",
+      "lr10",
+      "lr11",
+      "lr12",
+      "lr13",
+      "lr14",
+      "lr20"
+    ],
+    "numeral": 22,
+    "orden": 12,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.315996,
+      "longitude": -78.123889
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "pfvs0",
+    "create": "2026-02-16T20:13:22.328Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "Im70WUzHbuTmOZdMCFNd",
+    "lineasruralpasan": [
+      "lr1",
+      "lr2",
+      "lr4",
+      "lr5"
+    ],
+    "numeral": 0,
+    "orden": 0,
+    "parroquiaorigen": "Sevilla Don Bosco",
+    "parroquiapasa": [
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.315545,
+      "longitude": -78.103424
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Sevilla Don Bosco",
+    "cantonpasa": [
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "lr8i4",
+    "create": "2026-03-09T01:03:01.325Z",
+    "denominacion": "referencial",
+    "finderuta": false,
+    "id": "IsNVT3e7GygmsZUPPd5B",
+    "lineasruralpasan": [
+      "lr8"
+    ],
+    "numeral": 4,
+    "orden": null,
+    "parroquiaorigen": "Sevilla Don Bosco",
+    "parroquiapasa": [
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.221852,
+      "longitude": -78.040819
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "lr19v0",
+    "create": "2026-03-13T20:18:14.409Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "iuvok7T1DjBQSvfaiXV3",
+    "lineasruralpasan": [
+      "lr19"
+    ],
+    "numeral": 0,
+    "orden": 0,
+    "parroquiaorigen": "9 de Octubre",
+    "parroquiapasa": [
+      "9 de Octubre"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.220747,
+      "longitude": -78.248596
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfv0",
+    "create": "2026-03-12T19:18:19.924Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "j2dRrkV6tyEnBEYtGAOo",
+    "lineasruralpasan": [
+      "lr15",
+      "lr16",
+      "lr17",
+      "lr18",
+      "lr19"
+    ],
+    "numeral": 0,
+    "orden": 0,
+    "parroquiaorigen": "General Proaño",
+    "parroquiapasa": [
+      "General Proaño"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.266926,
+      "longitude": -78.129889
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "lr19v3",
+    "create": "2026-03-13T20:26:17.100Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "J5SrHA2ZhdEOLWpScEB3",
+    "lineasruralpasan": [
+      "lr19"
+    ],
+    "numeral": 3,
+    "orden": 3,
+    "parroquiaorigen": "General Proaño",
+    "parroquiapasa": [
+      "General Proaño"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.264592,
+      "longitude": -78.134607
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona",
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "pfi15",
+    "create": "2026-02-16T18:11:16.634Z",
+    "denominacion": "referencial",
+    "finderuta": false,
+    "id": "J8NXp4Vj9hsMB6ouKBE2",
+    "lineasruralpasan": [
+      "lr1",
+      "lr2",
+      "lr3",
+      "lr4",
+      "lr5",
+      "lr6",
+      "lr7",
+      "lr8",
+      "lr9",
+      "lr10",
+      "lr11",
+      "lr12",
+      "lr13",
+      "lr14"
+    ],
+    "numeral": 15,
+    "orden": null,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas",
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.30084,
+      "longitude": -78.10472
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfv11",
+    "create": "2026-02-16T19:33:51.303Z",
+    "denominacion": "referencial",
+    "finderuta": false,
+    "id": "jacVDRjkhMWYC8aDAQZ5",
+    "lineasruralpasan": [
+      "lr1",
+      "lr2",
+      "lr3",
+      "lr4",
+      "lr5",
+      "lr6",
+      "lr7",
+      "lr8",
+      "lr9",
+      "lr10",
+      "lr11",
+      "lr12",
+      "lr13",
+      "lr14"
+    ],
+    "numeral": 11,
+    "orden": null,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.308832,
+      "longitude": -78.120317
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfv17",
+    "create": "2026-02-16T19:45:48.704Z",
+    "denominacion": "referencial",
+    "finderuta": false,
+    "id": "jAnDd4KjsfhhU3RXyYpm",
+    "lineasruralpasan": [
+      "lr1",
+      "lr2",
+      "lr3",
+      "lr4",
+      "lr5",
+      "lr6",
+      "lr7",
+      "lr8",
+      "lr9",
+      "lr10",
+      "lr11",
+      "lr12",
+      "lr13",
+      "lr14"
+    ],
+    "numeral": 17,
+    "orden": null,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.316025,
+      "longitude": -78.128385
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "lr19v4",
+    "create": "2026-03-13T20:27:12.459Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "jK6ine6dRsqIKTPTIE9M",
+    "lineasruralpasan": [
+      "lr19"
+    ],
+    "numeral": 4,
+    "orden": 4,
+    "parroquiaorigen": "General Proaño",
+    "parroquiapasa": [
+      "General Proaño"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.265573,
+      "longitude": -78.132649
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Sevilla Don Bosco",
+    "cantonpasa": [
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "lr7i1",
+    "create": "2026-02-28T01:30:20.644Z",
+    "denominacion": "parada",
+    "finderuta": true,
+    "id": "jKaP7UZZNr5UOzPoWAou",
+    "lineasruralpasan": [
+      "lr7"
+    ],
+    "numeral": 1,
+    "orden": 1,
+    "parroquiaorigen": "Sevilla Don Bosco",
+    "parroquiapasa": [
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.241138,
+      "longitude": -78.068472
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfi0",
+    "create": "2026-02-12T20:49:24.883Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "Jmh8Ig2DKfbERTdGNRgU",
+    "lineasruralpasan": [
+      "lr1",
+      "lr2",
+      "lr3",
+      "lr4",
+      "lr5",
+      "lr6",
+      "lr7",
+      "lr8",
+      "lr9",
+      "lr10",
+      "lr11",
+      "lr12",
+      "lr13",
+      "lr14",
+      "lr15",
+      "lr16",
+      "lr17",
+      "lr18",
+      "lr19",
+      "lr20"
+    ],
+    "numeral": 0,
+    "orden": 0,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "provincia": "Morona Santiago",
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.315714,
+      "longitude": -78.124715
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfv4",
+    "create": "2026-02-16T19:10:56.673Z",
+    "denominacion": "referencial",
+    "finderuta": false,
+    "id": "jz3eclOCRhiOepXvlzO9",
+    "lineasruralpasan": [
+      "lr1",
+      "lr2",
+      "lr3",
+      "lr4",
+      "lr5",
+      "lr6",
+      "lr7",
+      "lr8",
+      "lr9",
+      "lr10",
+      "lr11",
+      "lr12",
+      "lr13",
+      "lr14"
+    ],
+    "numeral": 4,
+    "orden": null,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.319281,
+      "longitude": -78.117991
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Sevilla Don Bosco",
+    "cantonpasa": [
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "lr12i0",
+    "create": "2026-02-28T01:49:12.029Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "K2cxgok5zjerCT10lWvX",
+    "lineasruralpasan": [
+      "lr12"
+    ],
+    "numeral": 0,
+    "orden": 0,
+    "parroquiaorigen": "Sevilla Don Bosco",
+    "parroquiapasa": [
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.200986,
+      "longitude": -78.073069
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfv10",
+    "create": "2026-02-16T19:31:56.880Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "kCJltoIlVQAZI9j8O5ea",
+    "lineasruralpasan": [
+      "lr1",
+      "lr2",
+      "lr3",
+      "lr4",
+      "lr5",
+      "lr6",
+      "lr7",
+      "lr8",
+      "lr9",
+      "lr10",
+      "lr11",
+      "lr12",
+      "lr13",
+      "lr14"
+    ],
+    "numeral": 10,
+    "orden": 6,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.311646,
+      "longitude": -78.120526
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "lr16i0",
+    "create": "2026-03-13T19:30:06.294Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "KmOd9ZAzlLyLMl9C4F3o",
+    "lineasruralpasan": [
+      "lr16"
+    ],
+    "numeral": 0,
+    "orden": 0,
+    "parroquiaorigen": "General Proaño",
+    "parroquiapasa": [
+      "General Proaño"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.215344,
+      "longitude": -78.11039
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Sevilla Don Bosco",
+    "cantonpasa": [
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "lr8v0",
+    "create": "2026-03-09T01:16:43.575Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "kqLOn3dCWicHKag2U7wl",
+    "lineasruralpasan": [
+      "lr8"
+    ],
+    "numeral": 0,
+    "orden": 0,
+    "parroquiaorigen": "Sevilla Don Bosco",
+    "parroquiapasa": [
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.24236,
+      "longitude": -78.008179
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfv18",
+    "create": "2026-03-12T20:09:02.978Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "L2x9eI69HQXmcg1NLj47",
+    "lineasruralpasan": [
+      "lr15",
+      "lr16",
+      "lr17",
+      "lr18",
+      "lr19"
+    ],
+    "numeral": 18,
+    "orden": 16,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.306299,
+      "longitude": -78.12014
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "lr15v0",
+    "create": "2026-03-13T19:13:59.415Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "l37tVAF8srtzeQP8F0lZ",
+    "lineasruralpasan": [
+      "lr15"
+    ],
+    "numeral": 0,
+    "orden": 0,
+    "parroquiaorigen": "San Isidro",
+    "parroquiapasa": [
+      "San Isidro"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.211779,
+      "longitude": -78.16526
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfv3",
+    "create": "2026-03-12T19:35:44.931Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "L7ubjYPWd757d0B2MAXy",
+    "lineasruralpasan": [
+      "lr15",
+      "lr16",
+      "lr17",
+      "lr18",
+      "lr19"
+    ],
+    "numeral": 3,
+    "orden": 3,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.27907,
+      "longitude": -78.123549
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Sevilla Don Bosco",
+    "cantonpasa": [
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "plr6i0",
+    "create": "2026-02-27T18:22:16.646Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "LANU0SRmb0qnhkrs8tU3",
+    "lineasruralpasan": [
+      "lr6"
+    ],
+    "numeral": 0,
+    "orden": 0,
+    "parroquiaorigen": "Sevilla Don Bosco",
+    "parroquiapasa": [
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.345856,
+      "longitude": -78.092979
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfv6",
+    "create": "2026-02-16T19:20:57.250Z",
+    "denominacion": "referencial",
+    "finderuta": false,
+    "id": "LCCIYRoa1chJoii4gbq6",
+    "lineasruralpasan": [
+      "lr1",
+      "lr2",
+      "lr3",
+      "lr4",
+      "lr5",
+      "lr6",
+      "lr7",
+      "lr8",
+      "lr9",
+      "lr10",
+      "lr11",
+      "lr12",
+      "lr13",
+      "lr14"
+    ],
+    "numeral": 6,
+    "orden": null,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.316593,
+      "longitude": -78.125802
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfi28",
+    "create": "2026-03-12T19:11:05.594Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "lFGr0uRnSVhFOebM3yu2",
+    "lineasruralpasan": [
+      "lr15",
+      "lr16",
+      "lr17"
+    ],
+    "numeral": 28,
+    "orden": 23,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.266691,
+      "longitude": -78.12975
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Sevilla Don Bosco",
+    "cantonpasa": [
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "lr10v0",
+    "create": "2026-03-09T02:29:24.761Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "Lgn4Qj1uUuHhbx4muzTC",
+    "lineasruralpasan": [
+      "lr10"
+    ],
+    "numeral": 0,
+    "orden": 0,
+    "parroquiaorigen": "Sevilla Don Bosco",
+    "parroquiapasa": [
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.174977,
+      "longitude": -77.962348
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "lr12v3",
+    "create": "2026-02-28T02:20:20.017Z",
+    "denominacion": "referencial",
+    "finderuta": false,
+    "id": "liA3apr1r7mPUnarNSSJ",
+    "lineasruralpasan": [
+      "lr12"
+    ],
+    "numeral": 3,
+    "orden": null,
+    "parroquiaorigen": "Sinaí",
+    "parroquiapasa": [
+      "Sinaí"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.13749,
+      "longitude": -78.073651
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfi16",
+    "create": "2026-03-12T18:34:48.954Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "Lpog6tMiseuhuUWTiZU1",
+    "lineasruralpasan": [
+      "lr15",
+      "lr16",
+      "lr17",
+      "lr18",
+      "lr19"
+    ],
+    "numeral": 16,
+    "orden": 13,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.294451,
+      "longitude": -78.117296
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfv30",
+    "create": "2026-03-12T20:36:45.222Z",
+    "denominacion": "parada",
+    "finderuta": true,
+    "id": "LRP3akyHQAia5BldM3A8",
+    "lineasruralpasan": [
+      "lr15",
+      "lr16",
+      "lr17",
+      "lr18",
+      "lr19"
+    ],
+    "numeral": 30,
+    "orden": 23,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.316081,
+      "longitude": -78.124015
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "lr19i5",
+    "create": "2026-03-13T20:07:07.994Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "LsE1UmEAsWxiryrBlyGb",
+    "lineasruralpasan": [
+      "lr19"
+    ],
+    "numeral": 5,
+    "orden": 5,
+    "parroquiaorigen": "General Proaño",
+    "parroquiapasa": [
+      "General Proaño"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.255892,
+      "longitude": -78.162148
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfi8",
+    "create": "2026-02-15T21:25:56.406Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "lUsuXh20jOhsI5UU76Xd",
+    "lineasruralpasan": [
+      "lr1",
+      "lr2",
+      "lr3",
+      "lr4",
+      "lr5",
+      "lr6",
+      "lr7",
+      "lr8",
+      "lr9",
+      "lr10",
+      "lr11",
+      "lr12",
+      "lr13",
+      "lr14"
+    ],
+    "numeral": 8,
+    "orden": 5,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.308832,
+      "longitude": -78.121062
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfv20",
+    "create": "2026-03-12T20:12:02.510Z",
+    "denominacion": "referencial",
+    "finderuta": false,
+    "id": "lwzcDobG3RfP7gTAmQTi",
+    "lineasruralpasan": [
+      "lr15",
+      "lr16",
+      "lr17",
+      "lr18",
+      "lr19"
+    ],
+    "numeral": 20,
+    "orden": null,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.308202,
+      "longitude": -78.121183
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Sevilla Don Bosco",
+    "cantonpasa": [
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "lr8i8",
+    "create": "2026-03-09T01:13:01.659Z",
+    "denominacion": "parada",
+    "finderuta": true,
+    "id": "M1KrzjmKOcTTrSZpAHj9",
+    "lineasruralpasan": [
+      "lr8"
+    ],
+    "numeral": 8,
+    "orden": 8,
+    "parroquiaorigen": "Sevilla Don Bosco",
+    "parroquiapasa": [
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.242451,
+      "longitude": -78.008139
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "plr20i0",
+    "create": "2026-02-27T18:51:48.146Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "M69wCZ8XNSGMUE6wsEoQ",
+    "lineasruralpasan": [
+      "lr20"
+    ],
+    "numeral": 0,
+    "orden": 0,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas",
+      "Rio Blanco"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.316207,
+      "longitude": -78.12854
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfi19",
+    "create": "2026-03-12T18:45:51.079Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "meZNJ2ijlv3zWC3458V8",
+    "lineasruralpasan": [
+      "lr15",
+      "lr16",
+      "lr17",
+      "lr18",
+      "lr19"
+    ],
+    "numeral": 19,
+    "orden": 15,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.290857,
+      "longitude": -78.116867
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfv7",
+    "create": "2026-02-16T19:22:51.121Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "miQQh4pLmgVcREXO3S0Z",
+    "lineasruralpasan": [
+      "lr1",
+      "lr2",
+      "lr3",
+      "lr4",
+      "lr5",
+      "lr6",
+      "lr7",
+      "lr8",
+      "lr9",
+      "lr10",
+      "lr11",
+      "lr12",
+      "lr13",
+      "lr14"
+    ],
+    "numeral": 7,
+    "orden": 4,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.315256,
+      "longitude": -78.123782
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfi26",
+    "create": "2026-03-12T19:05:28.703Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "ML5ag5ZyalVvk10Z28Fx",
+    "lineasruralpasan": [
+      "lr15",
+      "lr16",
+      "lr17",
+      "lr18",
+      "lr19"
+    ],
+    "numeral": 26,
+    "orden": 21,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.276572,
+      "longitude": -78.124361
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfi10",
+    "create": "2026-02-15T21:37:23.930Z",
+    "denominacion": "referencial",
+    "finderuta": false,
+    "id": "mReOZmfR7miGXoEAvtQZ",
+    "lineasruralpasan": [
+      "lr1",
+      "lr2",
+      "lr3",
+      "lr4",
+      "lr5",
+      "lr6",
+      "lr7",
+      "lr8",
+      "lr9",
+      "lr10",
+      "lr11",
+      "lr12",
+      "lr13",
+      "lr14"
+    ],
+    "numeral": 10,
+    "orden": null,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.309352,
+      "longitude": -78.118469
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfv27",
+    "create": "2026-03-12T20:21:09.117Z",
+    "denominacion": "referencial",
+    "finderuta": false,
+    "id": "mujsGkE7SPsedtq14wtM",
+    "lineasruralpasan": [
+      "lr15",
+      "lr16",
+      "lr17",
+      "lr18",
+      "lr19"
+    ],
+    "numeral": 27,
+    "orden": null,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.317679,
+      "longitude": -78.127097
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Sevilla Don Bosco",
+    "cantonpasa": [
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "pfis0",
+    "create": "2026-02-16T19:56:32.439Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "mv16CKahd7GpwJC5WlBK",
+    "lineasruralpasan": [
+      "lr1",
+      "lr2",
+      "lr3",
+      "lr4",
+      "lr5",
+      "lr6"
+    ],
+    "numeral": 0,
+    "orden": 0,
+    "parroquiaorigen": "Sevilla Don Bosco",
+    "parroquiapasa": [
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.294692,
+      "longitude": -78.098792
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "lr18i0",
+    "create": "2026-03-13T18:41:55.404Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "mwXKTAge1MbFBMkwJ11T",
+    "lineasruralpasan": [
+      "lr18"
+    ],
+    "numeral": 0,
+    "orden": 0,
+    "parroquiaorigen": "General Proaño",
+    "parroquiapasa": [
+      "General Proaño"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.266867,
+      "longitude": -78.129718
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Sevilla Don Bosco",
+    "cantonpasa": [
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "plr6v1",
+    "create": "2026-02-27T18:26:18.227Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "mXiiuy09ycOhSkga7io9",
+    "lineasruralpasan": [
+      "lr6"
+    ],
+    "numeral": 1,
+    "orden": 1,
+    "parroquiaorigen": "Sevilla Don Bosco",
+    "parroquiapasa": [
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.345856,
+      "longitude": -78.092979
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfv21",
+    "create": "2026-02-17T01:26:08.432Z",
+    "denominacion": "referencial",
+    "finderuta": false,
+    "id": "n1yGMiFLYHHPWHb1vPvJ",
+    "lineasruralpasan": [
+      "lr1",
+      "lr2",
+      "lr3",
+      "lr4",
+      "lr5",
+      "lr6",
+      "lr7",
+      "lr8",
+      "lr9",
+      "lr10",
+      "lr11",
+      "lr12",
+      "lr13",
+      "lr14",
+      "lr20"
+    ],
+    "numeral": 21,
+    "orden": null,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.315248,
+      "longitude": -78.123758
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfv18",
+    "create": "2026-02-16T19:50:36.803Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "N27xPeDsSpbVdCaw13Hn",
+    "lineasruralpasan": [
+      "lr1",
+      "lr2",
+      "lr3",
+      "lr4",
+      "lr5",
+      "lr6",
+      "lr7",
+      "lr8",
+      "lr9",
+      "lr10",
+      "lr11",
+      "lr12",
+      "lr13",
+      "lr14",
+      "lr20"
+    ],
+    "numeral": 18,
+    "orden": 10,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.316457,
+      "longitude": -78.128275
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Huamboya",
+    "cantonpasa": [
+      "Huamboya"
+    ],
+    "codigo": "lpri9",
+    "create": "2026-02-28T15:48:35.267Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "n7NEjyMma0upC3hYdF7w",
+    "lineasruralpasan": [
+      "lr13",
+      "lr14"
+    ],
+    "numeral": 9,
+    "orden": 9,
+    "parroquiaorigen": "Chiguaza",
+    "parroquiapasa": [
+      "Chiguaza"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.105385,
+      "longitude": -78.024133
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Sevilla Don Bosco",
+    "cantonpasa": [
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "lr12i1",
+    "create": "2026-02-28T01:51:24.322Z",
+    "denominacion": "referencial",
+    "finderuta": false,
+    "id": "NftQhOIhUWdVZxTm6HPu",
+    "lineasruralpasan": [
+      "lr12"
+    ],
+    "numeral": 1,
+    "orden": null,
+    "parroquiaorigen": "Sevilla Don Bosco",
+    "parroquiapasa": [
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.1971,
+      "longitude": -78.081585
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfv20",
+    "create": "2026-02-17T01:49:00.614Z",
+    "denominacion": "referencial",
+    "finderuta": false,
+    "id": "NICwlEIugWgjqKfVZkIN",
+    "lineasruralpasan": [
+      "lr1",
+      "lr2",
+      "lr3",
+      "lr4",
+      "lr5",
+      "lr6",
+      "lr7",
+      "lr8",
+      "lr9",
+      "lr10",
+      "lr11",
+      "lr12",
+      "lr13",
+      "lr14",
+      "lr20"
+    ],
+    "numeral": 20,
+    "orden": null,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.316205,
+      "longitude": -78.125499
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfi15",
+    "create": "2026-03-12T18:27:31.984Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "NvCYJEAXgIcyvLHOj1VY",
+    "lineasruralpasan": [
+      "lr15",
+      "lr16",
+      "lr17",
+      "lr18",
+      "lr19"
+    ],
+    "numeral": 15,
+    "orden": 12,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.294387,
+      "longitude": -78.118254
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "lr12i3",
+    "create": "2026-02-28T01:57:50.614Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "NynylLICWUCUpihut34t",
+    "lineasruralpasan": [
+      "lr12"
+    ],
+    "numeral": 3,
+    "orden": 3,
+    "parroquiaorigen": "Sinaí",
+    "parroquiapasa": [
+      "Sinaí"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.15102,
+      "longitude": -78.084482
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "lr12v4",
+    "create": "2026-02-28T02:21:34.975Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "O6BplxnTYTAU6vnLA0Vy",
+    "lineasruralpasan": [
+      "lr12"
+    ],
+    "numeral": 4,
+    "orden": 4,
+    "parroquiaorigen": "Sinaí",
+    "parroquiapasa": [
+      "Sinaí"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.151278,
+      "longitude": -78.084439
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfi18",
+    "create": "2026-03-12T18:43:19.314Z",
+    "denominacion": "referencial",
+    "finderuta": false,
+    "id": "OCiqKFVfPxVm896SjLk3",
+    "lineasruralpasan": [
+      "lr15",
+      "lr16",
+      "lr17",
+      "lr18",
+      "lr19"
+    ],
+    "numeral": 18,
+    "orden": null,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.292505,
+      "longitude": -78.116996
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfv9",
+    "create": "2026-02-16T19:30:15.650Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "ODowfBxeSIhQNhOtlifJ",
+    "lineasruralpasan": [
+      "lr1",
+      "lr2",
+      "lr3",
+      "lr4",
+      "lr5",
+      "lr6",
+      "lr7",
+      "lr8",
+      "lr9",
+      "lr10",
+      "lr11",
+      "lr12",
+      "lr13",
+      "lr14"
+    ],
+    "numeral": 9,
+    "orden": 5,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.313412,
+      "longitude": -78.120663
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "lr14v0",
+    "create": "2026-03-09T19:01:01.691Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "ojZmGe310b4zV3S7zLeF",
+    "lineasruralpasan": [
+      "lr14"
+    ],
+    "numeral": 0,
+    "orden": 0,
+    "parroquiaorigen": "Cuchaentza",
+    "parroquiapasa": [
+      "Cuchaentza"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.186942,
+      "longitude": -77.857001
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Sevilla Don Bosco",
+    "cantonpasa": [
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "lr9v3",
+    "create": "2026-03-09T02:15:27.494Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "oP25toPkvvlBb7AL2F2H",
+    "lineasruralpasan": [
+      "lr9"
+    ],
+    "numeral": 3,
+    "orden": 3,
+    "parroquiaorigen": "Sevilla Don Bosco",
+    "parroquiapasa": [
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.182862,
+      "longitude": -78.057784
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Sevilla Don Bosco",
+    "cantonpasa": [
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "lprv3",
+    "create": "2026-02-28T16:21:12.866Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "oXJ95PPdKjyQJxJljLol",
+    "lineasruralpasan": [
+      "lr10",
+      "lr11",
+      "lr13",
+      "lr14"
+    ],
+    "numeral": 3,
+    "orden": 3,
+    "parroquiaorigen": "Sevilla Don Bosco",
+    "parroquiapasa": [
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.151942,
+      "longitude": -78.041309
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfvb4",
+    "create": "2026-03-12T19:40:24.052Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "OyB6DpB8jShzzRJQ46Zp",
+    "lineasruralpasan": [
+      "lr15",
+      "lr16",
+      "lr17",
+      "lr18",
+      "lr19"
+    ],
+    "numeral": 4,
+    "orden": 4,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.280464,
+      "longitude": -78.122822
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "lr11i1",
+    "create": "2026-03-09T15:24:35.048Z",
+    "denominacion": "parada",
+    "finderuta": true,
+    "id": "OycovaQK6742ID9tCz1P",
+    "lineasruralpasan": [
+      "lr11"
+    ],
+    "numeral": 1,
+    "orden": 1,
+    "parroquiaorigen": "Sinaí",
+    "parroquiapasa": [
+      "Sinaí"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.093039,
+      "longitude": -78.050668
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "lrdv1",
+    "create": "2026-03-13T19:32:30.503Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "P4jxlIGbpCLsTuNvWfFr",
+    "lineasruralpasan": [
+      "lr15",
+      "lr16"
+    ],
+    "numeral": 1,
+    "orden": 1,
+    "parroquiaorigen": "General Proaño",
+    "parroquiapasa": [
+      "General Proaño"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.244888,
+      "longitude": -78.136978
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Sevilla Don Bosco",
+    "cantonpasa": [
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "lr8i2",
+    "create": "2026-03-09T01:00:33.783Z",
+    "denominacion": "referencial",
+    "finderuta": false,
+    "id": "p52IVdCYfbX8F0Xk089t",
+    "lineasruralpasan": [
+      "lr8"
+    ],
+    "numeral": 2,
+    "orden": null,
+    "parroquiaorigen": "Sevilla Don Bosco",
+    "parroquiapasa": [
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.213224,
+      "longitude": -78.052408
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Huamboya",
+    "cantonpasa": [
+      "Huamboya"
+    ],
+    "codigo": "lprv1",
+    "create": "2026-02-28T16:06:11.172Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "P9Qd21Nm2ry1yA09tdtZ",
+    "lineasruralpasan": [
+      "lr11",
+      "lr13",
+      "lr14"
+    ],
+    "numeral": 1,
+    "orden": 1,
+    "parroquiaorigen": "Chiguaza",
+    "parroquiapasa": [
+      "Chiguaza"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.116795,
+      "longitude": -78.031393
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Sevilla Don Bosco",
+    "cantonpasa": [
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "lr9v2",
+    "create": "2026-03-09T02:14:01.676Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "PfE0sYJ8ddQT5IrUGMZ4",
+    "lineasruralpasan": [
+      "lr9"
+    ],
+    "numeral": 2,
+    "orden": 2,
+    "parroquiaorigen": "Sevilla Don Bosco",
+    "parroquiapasa": [
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.192399,
+      "longitude": -78.037938
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfi20",
+    "create": "2026-03-12T18:48:27.315Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "pFm43gatgo0TRueZlSeu",
+    "lineasruralpasan": [
+      "lr15",
+      "lr16",
+      "lr17",
+      "lr18",
+      "lr19"
+    ],
+    "numeral": 20,
+    "orden": 16,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.288134,
+      "longitude": -78.116682
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "lr12v0",
+    "create": "2026-02-28T02:16:39.858Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "PHrJyWJHISPjXsZsYkBK",
+    "lineasruralpasan": [
+      "lr12"
+    ],
+    "numeral": 0,
+    "orden": 0,
+    "parroquiaorigen": "Sinaí",
+    "parroquiapasa": [
+      "Sinaí"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.093998,
+      "longitude": -78.050786
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfv19",
+    "create": "2026-03-12T20:10:33.482Z",
+    "denominacion": "referencial",
+    "finderuta": false,
+    "id": "plGEDr8EaD1DvWiYayZH",
+    "lineasruralpasan": [
+      "lr15",
+      "lr16",
+      "lr17",
+      "lr18",
+      "lr19"
+    ],
+    "numeral": 19,
+    "orden": null,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.30742,
+      "longitude": -78.120354
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "lr19v2",
+    "create": "2026-03-13T20:24:27.435Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "q7tsJ4ySg9DXqQlvcbLD",
+    "lineasruralpasan": [
+      "lr19"
+    ],
+    "numeral": 2,
+    "orden": 2,
+    "parroquiaorigen": "General Proaño",
+    "parroquiapasa": [
+      "General Proaño"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.264605,
+      "longitude": -78.134599
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfv10",
+    "create": "2026-03-12T19:55:26.243Z",
+    "denominacion": "referencial",
+    "finderuta": false,
+    "id": "qb0l3elAWIrD7ubpZqNI",
+    "lineasruralpasan": [
+      "lr15",
+      "lr16",
+      "lr17",
+      "lr18",
+      "lr19"
+    ],
+    "numeral": 10,
+    "orden": null,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.293867,
+      "longitude": -78.11724
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Sevilla Don Bosco",
+    "cantonpasa": [
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "lr12v6",
+    "create": "2026-02-28T02:24:13.774Z",
+    "denominacion": "referencial",
+    "finderuta": false,
+    "id": "qDGvVBk35Wt4RwRrrljP",
+    "lineasruralpasan": [
+      "lr12"
+    ],
+    "numeral": 6,
+    "orden": null,
+    "parroquiaorigen": "Sevilla Don Bosco",
+    "parroquiapasa": [
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.197153,
+      "longitude": -78.081663
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfi13",
+    "create": "2026-03-12T18:21:33.858Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "qKdBPcl58ENUZLcE577M",
+    "lineasruralpasan": [
+      "lr15",
+      "lr16",
+      "lr17",
+      "lr18",
+      "lr19"
+    ],
+    "numeral": 13,
+    "orden": 11,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.295453,
+      "longitude": -78.1183
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Sevilla Don Bosco",
+    "cantonpasa": [
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "plr4i1",
+    "create": "2026-02-27T17:09:54.596Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "qyi1A95EJ8O8Mx7GKkUa",
+    "lineasruralpasan": [
+      "lr4"
+    ],
+    "numeral": 1,
+    "orden": 1,
+    "parroquiaorigen": "Sevilla Don Bosco",
+    "parroquiapasa": [
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.385967,
+      "longitude": -78.116626
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Sevilla Don Bosco",
+    "cantonpasa": [
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "lr8i5",
+    "create": "2026-03-09T01:04:50.674Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "R1qHHZVqhJJXNCmD063i",
+    "lineasruralpasan": [
+      "lr8"
+    ],
+    "numeral": 5,
+    "orden": 5,
+    "parroquiaorigen": "Sevilla Don Bosco",
+    "parroquiapasa": [
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.234146,
+      "longitude": -78.037898
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "lr13i1",
+    "create": "2026-03-09T18:44:03.808Z",
+    "denominacion": "parada",
+    "finderuta": true,
+    "id": "ReUIDJ96tTLVYZkRMocB",
+    "lineasruralpasan": [
+      "lr13"
+    ],
+    "numeral": 1,
+    "orden": 1,
+    "parroquiaorigen": "Cuchaentza",
+    "parroquiapasa": [
+      "Cuchaentza"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.121518,
+      "longitude": -77.862052
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Sevilla Don Bosco",
+    "cantonpasa": [
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "plr5i0",
+    "create": "2026-02-27T18:08:20.473Z",
+    "denominacion": "parada",
+    "finderuta": true,
+    "id": "rGvZYf7y97ikweVkieXv",
+    "lineasruralpasan": [
+      "lr5"
+    ],
+    "numeral": 0,
+    "orden": 0,
+    "parroquiaorigen": "Sevilla Don Bosco",
+    "parroquiapasa": [
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.388336,
+      "longitude": -78.103995
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Huamboya",
+    "cantonpasa": [
+      "Huamboya"
+    ],
+    "codigo": "lr14i0",
+    "create": "2026-03-09T18:58:09.146Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "Rwt4S72jgjJCgTRKZ1YR",
+    "lineasruralpasan": [
+      "lr14"
+    ],
+    "numeral": 0,
+    "orden": 0,
+    "parroquiaorigen": "Chiguaza",
+    "parroquiapasa": [
+      "Chiguaza"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.105336,
+      "longitude": -78.024052
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Sevilla Don Bosco",
+    "cantonpasa": [
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "lpri5",
+    "create": "2026-02-28T15:01:14.401Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "S79eskkCwqR11IWqSJOe",
+    "lineasruralpasan": [
+      "lr8",
+      "lr9",
+      "lr10",
+      "lr11",
+      "lr13",
+      "lr14"
+    ],
+    "numeral": 5,
+    "orden": 5,
+    "parroquiaorigen": "Sevilla Don Bosco",
+    "parroquiapasa": [
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.198839,
+      "longitude": -78.071219
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfi5",
+    "create": "2026-02-15T21:15:01.510Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "saPcYu1PDkvss6iMVULX",
+    "lineasruralpasan": [
+      "lr1",
+      "lr2",
+      "lr3",
+      "lr4",
+      "lr5",
+      "lr6",
+      "lr7",
+      "lr8",
+      "lr9",
+      "lr10",
+      "lr11",
+      "lr12",
+      "lr13",
+      "lr14",
+      "lr15",
+      "lr16",
+      "lr17",
+      "lr18",
+      "lr19"
+    ],
+    "numeral": 5,
+    "orden": 3,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.312142,
+      "longitude": -78.124385
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Sevilla Don Bosco",
+    "cantonpasa": [
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "lr8i0",
+    "create": "2026-03-09T00:55:55.397Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "sbx3cJkRwRBDWmEKU6Zk",
+    "lineasruralpasan": [
+      "lr8"
+    ],
+    "numeral": 0,
+    "orden": 0,
+    "parroquiaorigen": "Sevilla Don Bosco",
+    "parroquiapasa": [
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.196644,
+      "longitude": -78.069566
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfi10",
+    "create": "2026-03-12T18:09:44.544Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "SEwCoMWV0jwQPGy8jzv2",
+    "lineasruralpasan": [
+      "lr15",
+      "lr16",
+      "lr17",
+      "lr18",
+      "lr19"
+    ],
+    "numeral": 10,
+    "orden": 8,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.302277,
+      "longitude": -78.118796
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfv12",
+    "create": "2026-03-12T19:59:02.804Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "sgrbCeFXm93KMmPQKEhr",
+    "lineasruralpasan": [
+      "lr15",
+      "lr16",
+      "lr17",
+      "lr18",
+      "lr19"
+    ],
+    "numeral": 11,
+    "orden": 11,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.295413,
+      "longitude": -78.117715
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfi22",
+    "create": "2026-03-12T18:54:52.705Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "Sh8yW3Gqt4SIFg1JeQFB",
+    "lineasruralpasan": [
+      "lr15",
+      "lr16",
+      "lr17",
+      "lr18",
+      "lr19"
+    ],
+    "numeral": 22,
+    "orden": 17,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.284237,
+      "longitude": -78.120105
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "plr20v0",
+    "create": "2026-02-27T18:56:26.846Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "SHIsaX87rRFlVCw2Vlvh",
+    "lineasruralpasan": [
+      "lr20"
+    ],
+    "numeral": 0,
+    "orden": 0,
+    "parroquiaorigen": "Rio Blanco",
+    "parroquiapasa": [
+      "Rio Blanco",
+      "Macas"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.336895,
+      "longitude": -78.174192
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Sevilla Don Bosco",
+    "cantonpasa": [
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "lr12v7",
+    "create": "2026-02-28T02:26:33.713Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "sLwB7liqxPCty3LJA6q3",
+    "lineasruralpasan": [
+      "lr12"
+    ],
+    "numeral": 7,
+    "orden": 7,
+    "parroquiaorigen": "Sevilla Don Bosco",
+    "parroquiapasa": [
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.201072,
+      "longitude": -78.073118
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona",
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "pfv1",
+    "create": "2026-02-16T18:37:42.451Z",
+    "denominacion": "referencial",
+    "finderuta": false,
+    "id": "SnAncbEYVgZZSIbVSFgT",
+    "lineasruralpasan": [
+      "lr1",
+      "lr2",
+      "lr3",
+      "lr4",
+      "lr5",
+      "lr6",
+      "lr7",
+      "lr8",
+      "lr9",
+      "lr10",
+      "lr11",
+      "lr12",
+      "lr13",
+      "lr14"
+    ],
+    "numeral": 1,
+    "orden": null,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas",
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.300717,
+      "longitude": -78.104958
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfv14",
+    "create": "2026-02-16T19:36:39.289Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "SSkcShNgp1xQ1tL8d4zF",
+    "lineasruralpasan": [
+      "lr1",
+      "lr2",
+      "lr3",
+      "lr4",
+      "lr5",
+      "lr6",
+      "lr7",
+      "lr8",
+      "lr9",
+      "lr10",
+      "lr11",
+      "lr12",
+      "lr13",
+      "lr14"
+    ],
+    "numeral": 14,
+    "orden": 8,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.308899,
+      "longitude": -78.122025
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "lr19v5",
+    "create": "2026-03-13T20:30:29.567Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "ssUD2a3bz11po2KWTKic",
+    "lineasruralpasan": [
+      "lr19"
+    ],
+    "numeral": 5,
+    "orden": 5,
+    "parroquiaorigen": "General Proaño",
+    "parroquiapasa": [
+      "General Proaño"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.266286,
+      "longitude": -78.131228
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Sevilla Don Bosco",
+    "cantonpasa": [
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "lr9i2",
+    "create": "2026-03-09T02:00:36.990Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "suDo8PZN1BnWPDioaRM6",
+    "lineasruralpasan": [
+      "lr9"
+    ],
+    "numeral": 2,
+    "orden": 2,
+    "parroquiaorigen": "Sevilla Don Bosco",
+    "parroquiapasa": [
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.214417,
+      "longitude": -78.002141
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfv15",
+    "create": "2026-02-16T19:37:50.713Z",
+    "denominacion": "referencial",
+    "finderuta": false,
+    "id": "Sv8sSVtx6hdsFhZVLSY2",
+    "lineasruralpasan": [
+      "lr1",
+      "lr2",
+      "lr3",
+      "lr4",
+      "lr5",
+      "lr6",
+      "lr7",
+      "lr8",
+      "lr9",
+      "lr10",
+      "lr11",
+      "lr12",
+      "lr13",
+      "lr14"
+    ],
+    "numeral": 15,
+    "orden": null,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.31029,
+      "longitude": -78.122929
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "lr16v1",
+    "create": "2026-03-13T19:53:24.407Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "SyU0kumx6pPDIJvJtylW",
+    "lineasruralpasan": [
+      "lr16"
+    ],
+    "numeral": 1,
+    "orden": 1,
+    "parroquiaorigen": "General Proaño",
+    "parroquiapasa": [
+      "General Proaño"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.215248,
+      "longitude": -78.110408
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfi12",
+    "create": "2026-02-15T22:05:32.951Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "sZTWgAe5DCHKt28H9vcO",
+    "lineasruralpasan": [
+      "lr1",
+      "lr2",
+      "lr3",
+      "lr4",
+      "lr5",
+      "lr6",
+      "lr7",
+      "lr8",
+      "lr9",
+      "lr10",
+      "lr11",
+      "lr12",
+      "lr13",
+      "lr14"
+    ],
+    "numeral": 12,
+    "orden": 7,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.308835,
+      "longitude": -78.117822
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Huamboya",
+    "cantonpasa": [
+      "Huamboya"
+    ],
+    "codigo": "lr11i0",
+    "create": "2026-03-09T15:18:07.514Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "t1XyfY6chxxBjZi0iH31",
+    "lineasruralpasan": [
+      "lr11"
+    ],
+    "numeral": 0,
+    "orden": 0,
+    "parroquiaorigen": "Chiguaza",
+    "parroquiapasa": [
+      "Chiguaza"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.116688,
+      "longitude": -78.03138
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfv16",
+    "create": "2026-02-16T19:44:05.091Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "T2M7lKfnV3Cld5OAS8mw",
+    "lineasruralpasan": [
+      "lr1",
+      "lr2",
+      "lr3",
+      "lr4",
+      "lr5",
+      "lr6",
+      "lr7",
+      "lr8",
+      "lr9",
+      "lr10",
+      "lr11",
+      "lr12",
+      "lr13",
+      "lr14"
+    ],
+    "numeral": 16,
+    "orden": 9,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.312059,
+      "longitude": -78.124672
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Sevilla Don Bosco",
+    "cantonpasa": [
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "lr10i2",
+    "create": "2026-03-09T02:27:37.905Z",
+    "denominacion": "parada",
+    "finderuta": true,
+    "id": "tnAISlo827ymZBOjs11A",
+    "lineasruralpasan": [
+      "lr10"
+    ],
+    "numeral": 2,
+    "orden": 2,
+    "parroquiaorigen": "Sevilla Don Bosco",
+    "parroquiapasa": [
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.17502,
+      "longitude": -77.962294
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Sevilla Don Bosco",
+    "cantonpasa": [
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "lpri3",
+    "create": "2026-02-28T01:26:56.025Z",
+    "denominacion": "referencial",
+    "finderuta": false,
+    "id": "tPHDUdbvYNfFpozQU9B1",
+    "lineasruralpasan": [
+      "lr7",
+      "lr8",
+      "lr9",
+      "lr10",
+      "lr11",
+      "lr12",
+      "lr13",
+      "lr14"
+    ],
+    "numeral": 3,
+    "orden": null,
+    "parroquiaorigen": "Sevilla Don Bosco",
+    "parroquiapasa": [
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.245796,
+      "longitude": -78.08287
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Sevilla Don Bosco",
+    "cantonpasa": [
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "lprv7",
+    "create": "2026-02-28T16:43:07.791Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "tt9Id3ksHWEoXQXyc1wN",
+    "lineasruralpasan": [
+      "lr7",
+      "lr8",
+      "lr9",
+      "lr10",
+      "lr11",
+      "lr12",
+      "lr13",
+      "lr14"
+    ],
+    "numeral": 7,
+    "orden": 7,
+    "parroquiaorigen": "Sevilla Don Bosco",
+    "parroquiapasa": [
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.277781,
+      "longitude": -78.092473
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "lr19i2",
+    "create": "2026-03-13T20:03:09.263Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "TUFg7xPbTrbSg6awYWVu",
+    "lineasruralpasan": [
+      "lr19"
+    ],
+    "numeral": 2,
+    "orden": 2,
+    "parroquiaorigen": "General Proaño",
+    "parroquiapasa": [
+      "General Proaño"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.26505,
+      "longitude": -78.133494
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfi4",
+    "create": "2026-02-15T20:40:49.651Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "TXHmoZxOdrfkK7VDEkFw",
+    "lineasruralpasan": [
+      "lr1",
+      "lr2",
+      "lr3",
+      "lr4",
+      "lr5",
+      "lr6",
+      "lr7",
+      "lr8",
+      "lr9",
+      "lr10",
+      "lr11",
+      "lr12",
+      "lr13",
+      "lr14",
+      "lr15",
+      "lr16",
+      "lr17",
+      "lr18",
+      "lr19",
+      "lr20"
+    ],
+    "numeral": 4,
+    "orden": 2,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.31632,
+      "longitude": -78.128264
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Sevilla Don Bosco",
+    "cantonpasa": [
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "plr4v1",
+    "create": "2026-02-27T17:57:04.296Z",
+    "denominacion": "referencial",
+    "finderuta": false,
+    "id": "tYYCRvawNhBNtLRQl7m3",
+    "lineasruralpasan": [
+      "lr4"
+    ],
+    "numeral": 1,
+    "orden": null,
+    "parroquiaorigen": "Sevilla Don Bosco",
+    "parroquiapasa": [
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.386615,
+      "longitude": -78.131888
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "lrdi1",
+    "create": "2026-03-13T19:27:27.046Z",
+    "denominacion": "parada",
+    "finderuta": true,
+    "id": "U2fNE5HStqcdjeibQa9V",
+    "lineasruralpasan": [
+      "lr16",
+      "lr17"
+    ],
+    "numeral": 1,
+    "orden": 1,
+    "parroquiaorigen": "General Proaño",
+    "parroquiapasa": [
+      "General Proaño"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.215344,
+      "longitude": -78.11039
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfi14",
+    "create": "2026-03-12T18:24:22.952Z",
+    "denominacion": "referencial",
+    "finderuta": false,
+    "id": "U2qpI6l2DlOl00TRORhu",
+    "lineasruralpasan": [
+      "lr15",
+      "lr16",
+      "lr17",
+      "lr18",
+      "lr19"
+    ],
+    "numeral": 14,
+    "orden": null,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.294387,
+      "longitude": -78.118254
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfv25",
+    "create": "2026-03-12T20:18:43.396Z",
+    "denominacion": "referencial",
+    "finderuta": false,
+    "id": "U88w08bEmaP9zLQ26i57",
+    "lineasruralpasan": [
+      "lr15",
+      "lr16",
+      "lr17",
+      "lr18",
+      "lr19"
+    ],
+    "numeral": 25,
+    "orden": null,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.316116,
+      "longitude": -78.128454
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfi11",
+    "create": "2026-03-12T18:11:07.810Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "UB4My8rh6MUlZP5Ukh2g",
+    "lineasruralpasan": [
+      "lr15",
+      "lr16",
+      "lr17",
+      "lr18",
+      "lr19"
+    ],
+    "numeral": 11,
+    "orden": 9,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.30021,
+      "longitude": -78.11864
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Sevilla Don Bosco",
+    "cantonpasa": [
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "lr12v5",
+    "create": "2026-02-28T02:22:58.460Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "udYWePSvspVsAmIW3ooV",
+    "lineasruralpasan": [
+      "lr12"
+    ],
+    "numeral": 5,
+    "orden": 5,
+    "parroquiaorigen": "Sevilla Don Bosco",
+    "parroquiapasa": [
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.166333,
+      "longitude": -78.079595
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Sevilla Don Bosco",
+    "cantonpasa": [
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "plr4i6",
+    "create": "2026-02-27T17:50:25.696Z",
+    "denominacion": "referencial",
+    "finderuta": false,
+    "id": "UELlqY1eSx1XPfNcdx5g",
+    "lineasruralpasan": [
+      "lr4"
+    ],
+    "numeral": 6,
+    "orden": null,
+    "parroquiaorigen": "Sevilla Don Bosco",
+    "parroquiapasa": [
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.377134,
+      "longitude": -78.124919
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfi6",
+    "create": "2026-02-15T21:16:25.243Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "uQIdcdqC4GxRjXqOuWqP",
+    "lineasruralpasan": [
+      "lr1",
+      "lr2",
+      "lr3",
+      "lr4",
+      "lr5",
+      "lr6",
+      "lr7",
+      "lr8",
+      "lr9",
+      "lr10",
+      "lr11",
+      "lr12",
+      "lr13",
+      "lr14",
+      "lr15",
+      "lr16",
+      "lr17",
+      "lr18",
+      "lr19"
+    ],
+    "numeral": 6,
+    "orden": 4,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.311815,
+      "longitude": -78.123133
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfi27",
+    "create": "2026-03-12T19:08:18.955Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "UqvkYR1OShkRAcz12mji",
+    "lineasruralpasan": [
+      "lr15",
+      "lr16",
+      "lr17",
+      "lr18",
+      "lr19"
+    ],
+    "numeral": 27,
+    "orden": 22,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.270665,
+      "longitude": -78.127647
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Sevilla Don Bosco",
+    "cantonpasa": [
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "lr8v2",
+    "create": "2026-03-09T01:20:40.611Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "UR3vLcaO648ZIX1te1ZA",
+    "lineasruralpasan": [
+      "lr8"
+    ],
+    "numeral": 2,
+    "orden": 2,
+    "parroquiaorigen": "Sevilla Don Bosco",
+    "parroquiapasa": [
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.209576,
+      "longitude": -78.057668
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfv2",
+    "create": "2026-03-12T19:22:45.785Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "uxMBQqhOdTf7CZtt3EFQ",
+    "lineasruralpasan": [
+      "lr15",
+      "lr16",
+      "lr17",
+      "lr18",
+      "lr19"
+    ],
+    "numeral": 2,
+    "orden": 2,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.276744,
+      "longitude": -78.124402
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Sevilla Don Bosco",
+    "cantonpasa": [
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "lpri5",
+    "create": "2026-02-28T16:39:22.097Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "v7byFcZKCdaVjVQkFTzX",
+    "lineasruralpasan": [
+      "lr8",
+      "lr9",
+      "lr10",
+      "lr11",
+      "lr12",
+      "lr13",
+      "lr14"
+    ],
+    "numeral": 5,
+    "orden": 5,
+    "parroquiaorigen": "Sevilla Don Bosco",
+    "parroquiapasa": [
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.201107,
+      "longitude": -78.073072
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfv16",
+    "create": "2026-03-12T20:06:33.221Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "veWtjCLSYrStLc1ruPYB",
+    "lineasruralpasan": [
+      "lr15",
+      "lr16",
+      "lr17",
+      "lr18",
+      "lr19"
+    ],
+    "numeral": 16,
+    "orden": 14,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.302754,
+      "longitude": -78.119844
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "lr18v0",
+    "create": "2026-03-13T18:49:59.698Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "ViT5pi52E4NXoQmIsDFv",
+    "lineasruralpasan": [
+      "lr18"
+    ],
+    "numeral": 0,
+    "orden": 0,
+    "parroquiaorigen": "General Proaño",
+    "parroquiapasa": [
+      "General Proaño"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.246657,
+      "longitude": -78.107887
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfv19",
+    "create": "2026-02-16T19:52:02.028Z",
+    "denominacion": "referencial",
+    "finderuta": false,
+    "id": "VNUGMDkv3bhvYqa7LRE1",
+    "lineasruralpasan": [
+      "lr1",
+      "lr2",
+      "lr3",
+      "lr4",
+      "lr5",
+      "lr6",
+      "lr7",
+      "lr8",
+      "lr9",
+      "lr10",
+      "lr11",
+      "lr12",
+      "lr13",
+      "lr14",
+      "lr20"
+    ],
+    "numeral": 19,
+    "orden": null,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.317636,
+      "longitude": -78.126979
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "plr20i1",
+    "create": "2026-02-27T18:53:32.678Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "WABznehctbIPh2TCWIZ2",
+    "lineasruralpasan": [
+      "lr20"
+    ],
+    "numeral": 1,
+    "orden": 1,
+    "parroquiaorigen": "Rio Blanco",
+    "parroquiapasa": [
+      "Macas",
+      "Rio Blanco"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.336895,
+      "longitude": -78.174192
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Sevilla Don Bosco",
+    "cantonpasa": [
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "lpri2",
+    "create": "2026-02-28T01:24:21.448Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "WbMZQncTzdYlqqz50oai",
+    "lineasruralpasan": [
+      "lr7",
+      "lr8",
+      "lr9",
+      "lr10",
+      "lr11",
+      "lr12",
+      "lr13",
+      "lr14"
+    ],
+    "numeral": 2,
+    "orden": 2,
+    "parroquiaorigen": "Sevilla Don Bosco",
+    "parroquiapasa": [
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.249066,
+      "longitude": -78.08331
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Sevilla Don Bosco",
+    "cantonpasa": [
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "lr12i2",
+    "create": "2026-02-28T01:54:31.983Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "wk8QtcZDmcmxkNMcbA6d",
+    "lineasruralpasan": [
+      "lr12"
+    ],
+    "numeral": 2,
+    "orden": 0,
+    "parroquiaorigen": "Sevilla Don Bosco",
+    "parroquiapasa": [
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.166523,
+      "longitude": -78.079461
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Sevilla Don Bosco",
+    "cantonpasa": [
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "lpri0",
+    "create": "2026-02-28T00:57:44.682Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "wQuHfz8ADUpG7wSGB6E1",
+    "lineasruralpasan": [
+      "lr7",
+      "lr8",
+      "lr9",
+      "lr10",
+      "lr11",
+      "lr12",
+      "lr13",
+      "lr14"
+    ],
+    "numeral": 0,
+    "orden": 0,
+    "parroquiaorigen": "Sevilla Don Bosco",
+    "parroquiapasa": [
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.277829,
+      "longitude": -78.092365
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Sevilla Don Bosco",
+    "cantonpasa": [
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "lr10v2",
+    "create": "2026-03-09T02:37:21.066Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "wrlh5Y6M2Xit8pZmzshF",
+    "lineasruralpasan": [
+      "lr10"
+    ],
+    "numeral": 2,
+    "orden": 2,
+    "parroquiaorigen": "Sevilla Don Bosco",
+    "parroquiapasa": [
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.151929,
+      "longitude": -78.041151
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Sevilla Don Bosco",
+    "cantonpasa": [
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "lr10i1",
+    "create": "2026-03-09T02:25:47.128Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "wtDEig2U49lW92WHZROx",
+    "lineasruralpasan": [
+      "lr10"
+    ],
+    "numeral": 1,
+    "orden": 1,
+    "parroquiaorigen": "Sevilla Don Bosco",
+    "parroquiapasa": [
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.15618,
+      "longitude": -78.007602
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "lr19v6",
+    "create": "2026-03-13T20:31:22.602Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "WWSg2WUnxaxaJAjNn6Mk",
+    "lineasruralpasan": [
+      "lr19"
+    ],
+    "numeral": 6,
+    "orden": 6,
+    "parroquiaorigen": "General Proaño",
+    "parroquiapasa": [
+      "General Proaño"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.266838,
+      "longitude": -78.129908
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Sevilla Don Bosco",
+    "cantonpasa": [
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "lprv4",
+    "create": "2026-02-28T16:25:27.211Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "X0g2StCHU6DIoZS2ocdx",
+    "lineasruralpasan": [
+      "lr8",
+      "lr9",
+      "lr10",
+      "lr11",
+      "lr13",
+      "lr14"
+    ],
+    "numeral": 4,
+    "orden": 4,
+    "parroquiaorigen": "Sevilla Don Bosco",
+    "parroquiapasa": [
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.19665,
+      "longitude": -78.069722
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Sevilla Don Bosco",
+    "cantonpasa": [
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "plr2i0",
+    "create": "2026-02-26T18:53:48.224Z",
+    "denominacion": "parada",
+    "finderuta": true,
+    "id": "X5e5EMu46EPYVk5bKP3V",
+    "lineasruralpasan": [
+      "lr2"
+    ],
+    "numeral": 0,
+    "orden": 0,
+    "parroquiaorigen": "Sevilla Don Bosco",
+    "parroquiapasa": [
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.3595,
+      "longitude": -78.13365
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "lr18v1",
+    "create": "2026-03-13T18:52:27.639Z",
+    "denominacion": "referencial",
+    "finderuta": false,
+    "id": "X9PfvhMffNNGI86nrUYr",
+    "lineasruralpasan": [
+      "lr18"
+    ],
+    "numeral": 1,
+    "orden": null,
+    "parroquiaorigen": "General Proaño",
+    "parroquiapasa": [
+      "General Proaño"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.266798,
+      "longitude": -78.12975
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "lr11v1",
+    "create": "2026-03-09T15:29:07.876Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "xARYQfi02sn57X09YAJu",
+    "lineasruralpasan": [
+      "lr11"
+    ],
+    "numeral": 1,
+    "orden": 1,
+    "parroquiaorigen": "Sinaí",
+    "parroquiapasa": [
+      "Sinaí"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.116731,
+      "longitude": -78.031399
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfv1",
+    "create": "2026-03-12T19:21:36.996Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "Xg0V9F6ybOpsCwqWmKYG",
+    "lineasruralpasan": [
+      "lr15",
+      "lr16",
+      "lr17",
+      "lr18",
+      "lr19"
+    ],
+    "numeral": 1,
+    "orden": 1,
+    "parroquiaorigen": "General Proaño",
+    "parroquiapasa": [
+      "General Proaño"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.270807,
+      "longitude": -78.127666
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfi3",
+    "create": "2026-02-15T20:39:24.572Z",
+    "denominacion": "referencial",
+    "finderuta": false,
+    "id": "xim2uila1IAMhpdmVd4S",
+    "lineasruralpasan": [
+      "lr1",
+      "lr2",
+      "lr3",
+      "lr4",
+      "lr5",
+      "lr6",
+      "lr7",
+      "lr8",
+      "lr9",
+      "lr10",
+      "lr11",
+      "lr12",
+      "lr13",
+      "lr14",
+      "lr15",
+      "lr16",
+      "lr17",
+      "lr18",
+      "lr19",
+      "lr20"
+    ],
+    "numeral": 3,
+    "orden": null,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.318381,
+      "longitude": -78.126271
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfi11",
+    "create": "2026-02-15T22:04:22.888Z",
+    "denominacion": "referencial",
+    "finderuta": false,
+    "id": "XMjpkxAo0yDPH0fuNNeY",
+    "lineasruralpasan": [
+      "lr1",
+      "lr2",
+      "lr3",
+      "lr4",
+      "lr5",
+      "lr6",
+      "lr7",
+      "lr8",
+      "lr9",
+      "lr10",
+      "lr11",
+      "lr12",
+      "lr13",
+      "lr14"
+    ],
+    "numeral": 11,
+    "orden": null,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.308754,
+      "longitude": -78.118249
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "lr19i6",
+    "create": "2026-03-13T20:09:31.773Z",
+    "denominacion": "parada",
+    "finderuta": true,
+    "id": "Xtne3UEtnrXSOpIVvTKu",
+    "lineasruralpasan": [
+      "lr19"
+    ],
+    "numeral": 6,
+    "orden": 6,
+    "parroquiaorigen": "9 de Octubre",
+    "parroquiapasa": [
+      "9 de Octubre"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.220675,
+      "longitude": -78.248644
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "lr12i4",
+    "create": "2026-02-28T02:05:16.901Z",
+    "denominacion": "referencial",
+    "finderuta": false,
+    "id": "xtR1CrAHpTTZKn1Ilqk6",
+    "lineasruralpasan": [
+      "lr12"
+    ],
+    "numeral": 4,
+    "orden": null,
+    "parroquiaorigen": "Sinaí",
+    "parroquiapasa": [
+      "Sinaí"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.13821,
+      "longitude": -78.07395
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Huamboya",
+    "cantonpasa": [
+      "Huamboya"
+    ],
+    "codigo": "lprv0",
+    "create": "2026-02-28T15:56:10.423Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "Y5Z4vi2yDtD10TyGIPMm",
+    "lineasruralpasan": [
+      "lr13",
+      "lr14"
+    ],
+    "numeral": 0,
+    "orden": 0,
+    "parroquiaorigen": "Chiguaza",
+    "parroquiapasa": [
+      "Chiguaza"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.105352,
+      "longitude": -78.024267
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Sevilla Don Bosco",
+    "cantonpasa": [
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "plr1v0",
+    "create": "2026-02-16T20:23:17.604Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "yA9hMBO2KCbCrjusPweE",
+    "lineasruralpasan": [
+      "lr1"
+    ],
+    "numeral": 1,
+    "orden": 0,
+    "parroquiaorigen": "Sevilla Don Bosco",
+    "parroquiapasa": [
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.371514,
+      "longitude": -78.099403
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Sevilla Don Bosco",
+    "cantonpasa": [
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "lprv2",
+    "create": "2026-02-28T16:13:25.766Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "YBEafv0pWRbGwfHxVsnU",
+    "lineasruralpasan": [
+      "lr10",
+      "lr11",
+      "lr13",
+      "lr14"
+    ],
+    "numeral": 2,
+    "orden": 2,
+    "parroquiaorigen": "Sevilla Don Bosco",
+    "parroquiapasa": [
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.151942,
+      "longitude": -78.041309
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Sevilla Don Bosco",
+    "cantonpasa": [
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "plr4i0",
+    "create": "2026-02-27T17:08:51.454Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "YCM1XlTm8mjj8LnnEw1r",
+    "lineasruralpasan": [
+      "lr4"
+    ],
+    "numeral": 0,
+    "orden": 0,
+    "parroquiaorigen": "Sevilla Don Bosco",
+    "parroquiapasa": [
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.376941,
+      "longitude": -78.124884
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Sevilla Don Bosco",
+    "cantonpasa": [
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "plr4i4",
+    "create": "2026-02-27T17:47:39.727Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "yjljw75h7KzxemdvkQDv",
+    "lineasruralpasan": [
+      "lr4"
+    ],
+    "numeral": 4,
+    "orden": 4,
+    "parroquiaorigen": "Sevilla Don Bosco",
+    "parroquiapasa": [
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.386106,
+      "longitude": -78.116602
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "lr19i4",
+    "create": "2026-03-13T20:05:36.021Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "YmwRUfQjScwohgN2pClW",
+    "lineasruralpasan": [
+      "lr19"
+    ],
+    "numeral": 4,
+    "orden": 4,
+    "parroquiaorigen": "General Proaño",
+    "parroquiapasa": [
+      "General Proaño"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.263088,
+      "longitude": -78.13744
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfi1",
+    "create": "2026-02-12T21:13:52.220Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "YokXANtBrWsy1a3ty4K8",
+    "lineasruralpasan": [
+      "lr1",
+      "lr2",
+      "lr3",
+      "lr4",
+      "lr5",
+      "lr6",
+      "lr7",
+      "lr8",
+      "lr9",
+      "lr10",
+      "lr11",
+      "lr12",
+      "lr13",
+      "lr14",
+      "lr15",
+      "lr16",
+      "lr17",
+      "lr18",
+      "lr19",
+      "lr20"
+    ],
+    "numeral": 1,
+    "orden": 1,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.315243,
+      "longitude": -78.123755
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfv8",
+    "create": "2026-02-16T19:29:12.495Z",
+    "denominacion": "referencial",
+    "finderuta": false,
+    "id": "YOMtdCIcZsAfhJVTYEPh",
+    "lineasruralpasan": [
+      "lr1",
+      "lr2",
+      "lr3",
+      "lr4",
+      "lr5",
+      "lr6",
+      "lr7",
+      "lr8",
+      "lr9",
+      "lr10",
+      "lr11",
+      "lr12",
+      "lr13",
+      "lr14"
+    ],
+    "numeral": 8,
+    "orden": null,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.313905,
+      "longitude": -78.121768
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "lrdv0",
+    "create": "2026-03-13T19:31:39.189Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "Yp4VC4Z1KGHrDnGpqjyp",
+    "lineasruralpasan": [
+      "lr16",
+      "lr17"
+    ],
+    "numeral": 0,
+    "orden": 0,
+    "parroquiaorigen": "General Proaño",
+    "parroquiapasa": [
+      "General Proaño"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.215317,
+      "longitude": -78.110473
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfv14",
+    "create": "2026-03-12T20:02:53.384Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "YuzXis3nczKbIYdhf9Fc",
+    "lineasruralpasan": [
+      "lr15",
+      "lr16",
+      "lr17",
+      "lr18",
+      "lr19"
+    ],
+    "numeral": 14,
+    "orden": 12,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.297426,
+      "longitude": -78.11934
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfi21",
+    "create": "2026-03-12T18:51:35.881Z",
+    "denominacion": "referencial",
+    "finderuta": false,
+    "id": "zGKJQymBE7Tdo3ztBQLs",
+    "lineasruralpasan": [
+      "lr15",
+      "lr16",
+      "lr17",
+      "lr18",
+      "lr19"
+    ],
+    "numeral": 21,
+    "orden": null,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.286076,
+      "longitude": -78.117865
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Sevilla Don Bosco",
+    "cantonpasa": [
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "lr10i0",
+    "create": "2026-03-09T02:24:39.579Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "ZioETPBzS4mLzPLQ4cu0",
+    "lineasruralpasan": [
+      "lr10"
+    ],
+    "numeral": 0,
+    "orden": 0,
+    "parroquiaorigen": "Sevilla Don Bosco",
+    "parroquiapasa": [
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.151983,
+      "longitude": -78.041175
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfi25",
+    "create": "2026-03-12T19:02:43.372Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "zjaYRn2I5GUMg6dI633B",
+    "lineasruralpasan": [
+      "lr15",
+      "lr16",
+      "lr17",
+      "lr18",
+      "lr19"
+    ],
+    "numeral": 25,
+    "orden": 20,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.27915,
+      "longitude": -78.12342
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Sevilla Don Bosco",
+    "cantonpasa": [
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "lr9i1",
+    "create": "2026-03-09T01:56:43.127Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "zXj0vkI6hPMmZF5kYvmQ",
+    "lineasruralpasan": [
+      "lr9"
+    ],
+    "numeral": 1,
+    "orden": 1,
+    "parroquiaorigen": "Sevilla Don Bosco",
+    "parroquiapasa": [
+      "Sevilla Don Bosco"
+    ],
+    "sentido": "ida",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.192474,
+      "longitude": -78.037938
+    },
+    "uso": "recorrido"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfv9",
+    "create": "2026-03-12T19:54:00.111Z",
+    "denominacion": "parada",
+    "finderuta": false,
+    "id": "zy7BEFsXgIHPiZAJSJXW",
+    "lineasruralpasan": [
+      "lr15",
+      "lr16",
+      "lr17",
+      "lr18",
+      "lr19"
+    ],
+    "numeral": 9,
+    "orden": 9,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.292017,
+      "longitude": -78.117103
+    },
+    "uso": "fija"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "codigo": "pfv5",
+    "create": "2026-02-16T19:19:11.482Z",
+    "denominacion": "referencial",
+    "finderuta": false,
+    "id": "ZZ9GnoHWemjY6dbXHhVf",
+    "lineasruralpasan": [
+      "lr1",
+      "lr2",
+      "lr3",
+      "lr4",
+      "lr5",
+      "lr6",
+      "lr7",
+      "lr8",
+      "lr9",
+      "lr10",
+      "lr11",
+      "lr12",
+      "lr13",
+      "lr14"
+    ],
+    "numeral": 5,
+    "orden": null,
+    "parroquiaorigen": "Macas",
+    "parroquiapasa": [
+      "Macas"
+    ],
+    "sentido": "vuelta",
+    "tipo": "rural",
+    "ubicacion": {
+      "latitude": -2.31748,
+      "longitude": -78.124876
+    },
+    "uso": "fija"
+  }
+]

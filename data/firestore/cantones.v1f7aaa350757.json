@@ -1,0 +1,38 @@
+[
+  {
+    "#parroquias": 2,
+    "codigo": "hu",
+    "codigo_provincia": "ms",
+    "denominacion": "cantón",
+    "id": "AUQTIyQGUcudy77IKCN1",
+    "nombre": "Huamboya",
+    "ubicación": {
+      "latitude": -1.946039,
+      "longitude": -77.990023
+    }
+  },
+  {
+    "#parroquias": 6,
+    "codigo": "suc",
+    "codigo_provincia": "ms",
+    "denominacion": "Cantón",
+    "id": "QGhxjmT9qDO180ChMigU",
+    "nombre": "Sucúa",
+    "ubicación": {
+      "latitude": -2.45028,
+      "longitude": -78.170487
+    }
+  },
+  {
+    "#parroquias": 8,
+    "codigo": "mor",
+    "codigo_provincia": "ms",
+    "denominacion": "Cabecera Provincial",
+    "id": "z7Qb847ahVckIZO9hcUr",
+    "nombre": "Morona",
+    "ubicación": {
+      "latitude": -2.316181,
+      "longitude": -78.12464
+    }
+  }
+]

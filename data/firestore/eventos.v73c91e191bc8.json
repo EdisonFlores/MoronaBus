@@ -1,0 +1,363 @@
+[
+  {
+    "canton": "Morona",
+    "creado": "2026-05-14T01:26:23.829Z",
+    "entorno": "Urbano",
+    "entrada": ".",
+    "fecha_fin": "16/05/2026",
+    "fecha_inicio": "16/05/2026",
+    "hora_fin": "17:00",
+    "hora_inicio": "14:00",
+    "id": "6LQwH5fMQn9L1PvI8jJF",
+    "nombre": "Macas Extremo",
+    "organizador": "Federación Ecuatoriana de Ciclismo",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "ubicacion": {
+      "latitude": -2.313292,
+      "longitude": -78.121282
+    }
+  },
+  {
+    "canton": "Morona",
+    "creado": "2026-05-14T00:57:46.805Z",
+    "entorno": "Urbano",
+    "entrada": ".",
+    "fecha_fin": "16/05/2026",
+    "fecha_inicio": "16/05/2026",
+    "hora_fin": "22:00",
+    "hora_inicio": "19:30",
+    "id": "7422Imo2Dk1nZEdXre5b",
+    "nombre": "BALONCESTO 2026",
+    "organizador": "Club Deportivo ICCAN",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "ubicacion": {
+      "latitude": -2.296121,
+      "longitude": -78.117626
+    }
+  },
+  {
+    "canton": "Morona",
+    "creado": "2026-05-14T01:00:36.013Z",
+    "entorno": "Urbano",
+    "entrada": ".",
+    "fecha_fin": "19/05/2026",
+    "fecha_inicio": "19/05/2026",
+    "hora_fin": "22:00",
+    "hora_inicio": "19:30",
+    "id": "7e9iZimVah0XEG4F1RHi",
+    "nombre": "BALONCESTO 2026",
+    "organizador": "Club Deportivo ICCAN",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "ubicacion": {
+      "latitude": -2.296121,
+      "longitude": -78.117626
+    }
+  },
+  {
+    "canton": "Morona",
+    "creado": "2026-05-25T23:40:23.808Z",
+    "entorno": "Urbano",
+    "entrada": ".",
+    "fecha_fin": "13/06/2026",
+    "fecha_inicio": "13/06/2026",
+    "hora_fin": "23:59",
+    "hora_inicio": "20:00",
+    "id": "7LU4R5gySVcOqRuX5fBj",
+    "nombre": "Alberto Plaza Tour Esencial",
+    "organizador": "Christian Raúl Tomala Figueroa S.A. ENTRETEIMENT Y BEIRUTH GROUP",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "ubicacion": {
+      "latitude": -2.296147,
+      "longitude": -78.11757
+    }
+  },
+  {
+    "canton": "Morona",
+    "creado": "2026-05-25T23:30:20.757Z",
+    "entorno": "Urbano",
+    "entrada": ".",
+    "fecha_fin": "31/05/2026",
+    "fecha_inicio": "28/05/2026",
+    "hora_fin": "21:00",
+    "hora_inicio": "07:30",
+    "id": "c6kUGFbEpKEXUxf5FIet",
+    "nombre": "Juegos Deportivos Nacionales Barriales de BALONCESTO SEÑIOR Masculino",
+    "organizador": "FEDENALIGAS",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "ubicacion": {
+      "latitude": -2.296102,
+      "longitude": -78.117642
+    }
+  },
+  {
+    "canton": "Morona",
+    "creado": "2026-05-25T23:35:31.826Z",
+    "entorno": "Urbano",
+    "entrada": "Gratis",
+    "fecha_fin": "29/05/2026",
+    "fecha_inicio": "29/05/2026",
+    "hora_fin": "17:00",
+    "hora_inicio": "14:00",
+    "id": "ed2gcN6vyjewrM4uInMV",
+    "nombre": "Final de Campeonato de Futbol Inter-Parroquial Maculino y Femenino",
+    "organizador": "Municipio de Morona",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "ubicacion": {
+      "latitude": -2.304305,
+      "longitude": -78.117675
+    }
+  },
+  {
+    "canton": "Morona",
+    "creado": "2026-05-25T23:28:29.084Z",
+    "entorno": "Urbano",
+    "entrada": ".",
+    "fecha_fin": "31/05/2026",
+    "fecha_inicio": "28/05/2026",
+    "hora_fin": "00:00",
+    "hora_inicio": "09:00",
+    "id": "FlHY77T9uk1PKjJfW5UE",
+    "nombre": "Feria Artesanal y de Negocios",
+    "organizador": "David Villacres",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "ubicacion": {
+      "latitude": -2.313522,
+      "longitude": -78.118549
+    }
+  },
+  {
+    "canton": "Morona",
+    "creado": "2026-05-25T23:23:34.992Z",
+    "entorno": "Urbano",
+    "entrada": "Gratis",
+    "fecha_fin": "27/05/2026",
+    "fecha_inicio": "27/05/2026",
+    "hora_fin": "22:00",
+    "hora_inicio": "19:00",
+    "id": "fxfkuPQKYWBtlrtQQmRP",
+    "nombre": "Festival de Danzas Siempre en Nuestros Corazones",
+    "organizador": "Casa de la Cultura Ecuatoriana",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "ubicacion": {
+      "latitude": -2.302917,
+      "longitude": -78.117994
+    }
+  },
+  {
+    "canton": "Morona",
+    "creado": "2026-05-25T23:33:42.609Z",
+    "entorno": "Urbano",
+    "entrada": "Gratis",
+    "fecha_fin": "29/05/2026",
+    "fecha_inicio": "29/05/2026",
+    "hora_fin": "13:00",
+    "hora_inicio": "11:00",
+    "id": "GmRjLy9tBPju1vq6LsVs",
+    "nombre": "Sesión Solemne",
+    "organizador": "Municipio de Morona",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "ubicacion": {
+      "latitude": -2.302947,
+      "longitude": -78.118058
+    }
+  },
+  {
+    "canton": "Morona",
+    "creado": "2026-05-25T23:21:58.962Z",
+    "entorno": "Urbano",
+    "entrada": "Gratis",
+    "fecha_fin": "27/05/2026",
+    "fecha_inicio": "27/05/2026",
+    "hora_fin": "12:00",
+    "hora_inicio": "09:00",
+    "id": "HVuJRv5hS5ZKwXhVFHoL",
+    "nombre": "Sangay Fest QUIEN SABE SABE.2026",
+    "organizador": "Municipio de Morona",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "ubicacion": {
+      "latitude": -2.302917,
+      "longitude": -78.117994
+    }
+  },
+  {
+    "canton": "Morona",
+    "creado": "2026-05-14T00:50:17.401Z",
+    "entorno": "Urbano",
+    "entrada": "Gratis",
+    "fecha_fin": "16/05/2026",
+    "fecha_inicio": "16/05/2026",
+    "hora_fin": "12:00",
+    "hora_inicio": "08:00",
+    "id": "kG3K089r9U3VDT63GQza",
+    "nombre": "PERRO CROSS 2026 VI EDICIÓN MORONA",
+    "organizador": "Municipio de Morona",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "ubicacion": {
+      "latitude": -2.300283,
+      "longitude": -78.114448
+    }
+  },
+  {
+    "canton": "Morona",
+    "creado": "2026-05-14T01:23:57.509Z",
+    "entorno": "Rural",
+    "entrada": "Gratis",
+    "fecha_fin": "16/05/2026",
+    "fecha_inicio": "16/05/2026",
+    "hora_fin": "15:00",
+    "hora_inicio": "10:00",
+    "id": "lG7nhNsT1OrA1UwJ4jCK",
+    "nombre": "Motocross-Race Days Xtreme Morona",
+    "organizador": "Sr.Daniel Vinicio Zabala",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "ubicacion": {
+      "latitude": -2.347031,
+      "longitude": -78.155051
+    }
+  },
+  {
+    "canton": "Morona",
+    "creado": "2026-05-25T23:37:34.022Z",
+    "entorno": "Urbano",
+    "entrada": ".",
+    "fecha_fin": "30/05/2026",
+    "fecha_inicio": "30/05/2026",
+    "hora_fin": "17:00",
+    "hora_inicio": "12:00",
+    "id": "ngwbPFIEBdDpvoSckwvs",
+    "nombre": "Barkeeper Station & Grill",
+    "organizador": "Sr.Patricio Ramos y Sr.Pablo Cabrera",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "ubicacion": {
+      "latitude": -2.306589,
+      "longitude": -78.11658
+    }
+  },
+  {
+    "canton": "Morona",
+    "creado": "2026-05-25T23:25:07.500Z",
+    "entorno": "Urbano",
+    "entrada": ".",
+    "fecha_fin": "28/05/2026",
+    "fecha_inicio": "28/05/2026",
+    "hora_fin": "10:00",
+    "hora_inicio": "08:00",
+    "id": "NPbK3bqfzKkokDkZfIMu",
+    "nombre": "Sangay Fest Festival de Murales",
+    "organizador": "Municipio de Morona",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "ubicacion": {
+      "latitude": -2.304262,
+      "longitude": -78.117607
+    }
+  },
+  {
+    "canton": "Morona",
+    "creado": "2026-05-14T01:18:56.361Z",
+    "entorno": "Urbano",
+    "entrada": ".",
+    "fecha_fin": "16/05/2026",
+    "fecha_inicio": "16/05/2026",
+    "hora_fin": "11:00",
+    "hora_inicio": "09:00",
+    "id": "QETOtqq4oebkoewg5sgz",
+    "nombre": "Seminario:Familia y Bienestar Integral",
+    "organizador": "MGS.Rosa Lucero Sarmiento INTRA ESPACIO TERAPEUTICO",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "ubicacion": {
+      "latitude": -2.302906,
+      "longitude": -78.118144
+    }
+  },
+  {
+    "canton": "Morona",
+    "creado": "2026-05-25T23:26:47.872Z",
+    "entorno": "Urbano",
+    "entrada": ".",
+    "fecha_fin": "28/05/2026",
+    "fecha_inicio": "28/05/2026",
+    "hora_fin": "18:00",
+    "hora_inicio": "16:00",
+    "id": "QV2BO6ODxFNNcebwRqeN",
+    "nombre": "Lanzamiento del libro de la biografia del Prof.Joaquín Estrella",
+    "organizador": "Familia Estrella Velin",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "ubicacion": {
+      "latitude": -2.304544,
+      "longitude": -78.117954
+    }
+  },
+  {
+    "canton": "Morona",
+    "creado": "2026-05-14T01:41:44.489Z",
+    "entorno": "Urbano",
+    "entrada": "Gratis",
+    "fecha_fin": "17/05/2026",
+    "fecha_inicio": "17/05/2026",
+    "hora_fin": "12:00",
+    "hora_inicio": "08:00",
+    "id": "wkyQv8igkIzc6dHqmXQn",
+    "nombre": "Festival de Emprendedores del Barrio El Mirador",
+    "organizador": "Barrio El Mirado Sra.Rosario Vélez Presidenta",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "ubicacion": {
+      "latitude": -2.302617,
+      "longitude": -78.115821
+    }
+  },
+  {
+    "canton": "Morona",
+    "creado": "2026-05-25T23:32:28.704Z",
+    "entorno": "Urbano",
+    "entrada": "Gratis",
+    "fecha_fin": "29/05/2026",
+    "fecha_inicio": "29/05/2026",
+    "hora_fin": "12:00",
+    "hora_inicio": "08:00",
+    "id": "YRevYTKnAhrpustmObt7",
+    "nombre": "Desfile Cívico",
+    "organizador": "Municipio de Morona",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "ubicacion": {
+      "latitude": -2.305486,
+      "longitude": -78.119058
+    }
+  },
+  {
+    "canton": "Morona",
+    "creado": "2026-05-14T01:28:37.720Z",
+    "entorno": "Urbano",
+    "entrada": "Gratis",
+    "fecha_fin": "17/05/2026",
+    "fecha_inicio": "17/05/2026",
+    "hora_fin": "13:00",
+    "hora_inicio": "10:00",
+    "id": "ZU2YMJbt06OAYp6ov1uG",
+    "nombre": "Macabea Bonita",
+    "organizador": "Club Rotario Morona Macas",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "ubicacion": {
+      "latitude": -2.300267,
+      "longitude": -78.11444
+    }
+  }
+]

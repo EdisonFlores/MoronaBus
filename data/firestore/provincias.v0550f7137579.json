@@ -1,0 +1,22 @@
+[
+  {
+    "#Cantones": 4,
+    "Nombre": "Puyo",
+    "codigo": "py",
+    "id": "DSuR55vIVoWnXh7G9LnH",
+    "ubicación": {
+      "latitude": -1.490083,
+      "longitude": -78.006044
+    }
+  },
+  {
+    "#Cantones": 13,
+    "Nombre": "Morona Santiago",
+    "codigo": "ms",
+    "id": "HhedzWpw9VCuozkQoJkt",
+    "ubicación": {
+      "latitude": -2.316181,
+      "longitude": -78.12464
+    }
+  }
+]
