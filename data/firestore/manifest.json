@@ -1,0 +1,61 @@
+{
+  "datasets": {
+    "cantones": {
+      "collection": "cantones",
+      "documents": 3,
+      "file": "cantones.v1f7aaa350757.json",
+      "version": "1f7aaa350757"
+    },
+    "eventos": {
+      "collection": "eventosms",
+      "documents": 19,
+      "file": "eventos.v73c91e191bc8.json",
+      "version": "73c91e191bc8"
+    },
+    "lineas-rurales": {
+      "collection": "lineas_rurales",
+      "documents": 20,
+      "file": "lineas-rurales.v403e2b7ebb43.json",
+      "version": "403e2b7ebb43"
+    },
+    "lineas-urbanas": {
+      "collection": "lineas_transporte",
+      "documents": 5,
+      "file": "lineas-urbanas.v262436d39127.json",
+      "version": "262436d39127"
+    },
+    "lugares": {
+      "collection": "lugar",
+      "documents": 218,
+      "file": "lugares.v7a71485f7eee.json",
+      "version": "7a71485f7eee"
+    },
+    "paradas-rurales": {
+      "collection": "paradas_rurales",
+      "documents": 230,
+      "file": "paradas-rurales.vdcf8c4b7d9c3.json",
+      "version": "dcf8c4b7d9c3"
+    },
+    "paradas-urbanas": {
+      "collection": "paradas_transporte",
+      "documents": 303,
+      "file": "paradas-urbanas.v18bf0c449dc9.json",
+      "version": "18bf0c449dc9"
+    },
+    "parroquias": {
+      "collection": "parroquias",
+      "documents": 0,
+      "file": "parroquias.v37517e5f3dc6.json",
+      "version": "37517e5f3dc6"
+    },
+    "provincias": {
+      "collection": "provincias",
+      "documents": 2,
+      "file": "provincias.v0550f7137579.json",
+      "version": "0550f7137579"
+    }
+  },
+  "exportedGroup": "todas",
+  "generatedAt": "2026-07-11T02:18:06.313Z",
+  "schemaVersion": 1
+}

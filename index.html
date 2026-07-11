@@ -101,7 +101,7 @@
         "name": "¿Cómo consultar las rutas de buses en Macas?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "En MoronaBus puedes seleccionar transporte público, consultar líneas urbanas y rurales, revisar sus paradas y calcular una ruta hacia tu destino."
+          "text": "Selecciona la categoría de transporte público, elige una línea urbana o rural y consulta su recorrido y sus paradas en el mapa de MoronaBus."
         }
       },
       {
@@ -109,7 +109,7 @@
         "name": "¿MoronaBus muestra turismo en Macas, Morona y Sevilla Don Bosco?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sí. El mapa permite buscar lugares turísticos, naturaleza, hospedaje, restaurantes, eventos y otros servicios en Macas, Morona y Sevilla Don Bosco."
+          "text": "Sí. MoronaBus permite buscar atractivos turísticos, naturaleza, hospedaje, restaurantes, eventos y otros servicios en Macas, Morona y Sevilla Don Bosco."
         }
       },
       {
@@ -117,7 +117,7 @@
         "name": "¿Los horarios de buses son en tiempo real?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No. Los horarios y frecuencias publicados son referenciales y pueden variar por tránsito, clima, estado vial u operación del transporte."
+          "text": "No. Los horarios, frecuencias y tiempos de recorrido son referenciales y pueden variar por tránsito, clima, estado vial u operación del transporte."
         }
       }
     ]
@@ -309,13 +309,7 @@
 
   <!-- Contenido principal: panel de busqueda y mapa interactivo. -->
   <main id="mainContent" class="container-fluid my-3" tabindex="-1">
-    <section class="tm-seo-intro mb-3" aria-labelledby="main-title">
-      <h1 id="main-title">MoronaBus: rutas de buses y turismo en Macas y Morona</h1>
-      <p>
-        Consulta el <strong>transporte público de Macas</strong>, sus líneas, paradas y rutas de buses urbanos y rurales.
-        Usa el mapa para planificar cómo llegar y descubrir opciones de <strong>turismo en Macas, turismo en Morona y turismo en Sevilla Don Bosco</strong>.
-      </p>
-    </section>
+    <h1 class="visually-hidden">MoronaBus: rutas de buses y turismo en Macas y Morona</h1>
     <div class="row g-3">
       <aside class="col-lg-3">
         <div class="search-panel">
@@ -458,26 +452,6 @@
       </section>
     </div>
 
-    <section class="tm-seo-content mt-3" aria-labelledby="guide-title">
-      <h2 id="guide-title">Transporte público y lugares turísticos de Morona Santiago</h2>
-      <div class="row g-3">
-        <article class="col-md-4">
-          <h3>Rutas y paradas de buses en Macas</h3>
-          <p>Consulta qué línea de bus tomar, revisa recorridos, paradas y frecuencias referenciales, y calcula cómo llegar a un destino en Macas.</p>
-        </article>
-        <article class="col-md-4">
-          <h3>Buses rurales de Morona y Sevilla</h3>
-          <p>Explora información de transporte del cantón Morona y rutas hacia sectores como Sevilla Don Bosco, General Proaño, San Isidro, Río Blanco y Sinaí.</p>
-        </article>
-        <article class="col-md-4">
-          <h3>Turismo en Macas, Morona y Sevilla</h3>
-          <p>Encuentra atractivos turísticos, naturaleza, parques, miradores, hospedaje, restaurantes, eventos y servicios cercanos en el mapa interactivo.</p>
-        </article>
-      </div>
-      <div class="tm-seo-note" role="note">
-        <strong>Importante:</strong> los horarios, frecuencias y tiempos de recorrido son referenciales; pueden variar por tránsito, clima, estado vial y operación del transporte.
-      </div>
-    </section>
   </main>
   <!-- Footer: enlaces de descarga, contacto, formularios, proyectos relacionados e informacion. -->
   <footer class="main-footer mt-4">
@@ -657,7 +631,7 @@
   </footer>
 
   <div class="modal fade" id="tmInfoModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
       <div class="modal-content">
         <div class="modal-header">
           <h2 class="h5 modal-title mb-0">
@@ -673,17 +647,81 @@
         </div>
 
         <div class="modal-body">
-          <p class="mb-2">
-            Esta plataforma tiene como objetivo facilitar la consulta de
-            información turística y de servicios mediante un mapa interactivo.
+          <p class="mb-3">
+            <strong>MoronaBus</strong> es una plataforma para consultar rutas de
+            buses, líneas de transporte, paradas y lugares de interés mediante
+            un mapa interactivo de Macas, el cantón Morona, Sevilla Don Bosco y
+            Morona Santiago.
           </p>
 
-          <p class="mb-2">
-            Parte de la información consultada pertenece al siguiente documento
-            público:
-          </p>
+          <div class="row g-3 mb-3">
+            <section class="col-md-6" aria-labelledby="info-transporte-title">
+              <h3 id="info-transporte-title" class="h6">
+                <i class="bi bi-bus-front me-1"></i>Transporte público en Macas y Morona
+              </h3>
+              <p class="small mb-0">
+                Consulta rutas de buses urbanos y rurales, recorridos, paradas y
+                frecuencias referenciales. También puedes calcular cómo llegar
+                en bus, caminando, bicicleta, moto o automóvil.
+              </p>
+            </section>
 
-          <p class="mb-2">
+            <section class="col-md-6" aria-labelledby="info-turismo-title">
+              <h3 id="info-turismo-title" class="h6">
+                <i class="bi bi-geo-alt me-1"></i>Turismo en Macas, Morona y Sevilla
+              </h3>
+              <p class="small mb-0">
+                Encuentra atractivos turísticos, naturaleza, parques, miradores,
+                hospedaje, restaurantes, eventos y servicios cercanos en Macas,
+                Morona y Sevilla Don Bosco.
+              </p>
+            </section>
+          </div>
+
+          <h3 class="h6 mb-2">Preguntas frecuentes</h3>
+          <div class="accordion accordion-flush mb-3" id="tmInfoFaq">
+            <div class="accordion-item">
+              <h4 class="accordion-header">
+                <button class="accordion-button collapsed px-0" type="button" data-bs-toggle="collapse" data-bs-target="#tmFaqRoutes" aria-expanded="false" aria-controls="tmFaqRoutes">
+                  ¿Cómo consultar las rutas de buses en Macas?
+                </button>
+              </h4>
+              <div id="tmFaqRoutes" class="accordion-collapse collapse" data-bs-parent="#tmInfoFaq">
+                <div class="accordion-body px-0 pt-0">
+                  Selecciona la categoría de transporte público, elige una línea urbana o rural y consulta su recorrido y sus paradas en el mapa de MoronaBus.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h4 class="accordion-header">
+                <button class="accordion-button collapsed px-0" type="button" data-bs-toggle="collapse" data-bs-target="#tmFaqTourism" aria-expanded="false" aria-controls="tmFaqTourism">
+                  ¿MoronaBus muestra turismo en Macas, Morona y Sevilla Don Bosco?
+                </button>
+              </h4>
+              <div id="tmFaqTourism" class="accordion-collapse collapse" data-bs-parent="#tmInfoFaq">
+                <div class="accordion-body px-0 pt-0">
+                  Sí. Puedes buscar atractivos turísticos, naturaleza, hospedaje, restaurantes, eventos y otros servicios en esas zonas.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h4 class="accordion-header">
+                <button class="accordion-button collapsed px-0" type="button" data-bs-toggle="collapse" data-bs-target="#tmFaqSchedules" aria-expanded="false" aria-controls="tmFaqSchedules">
+                  ¿Los horarios de buses son en tiempo real?
+                </button>
+              </h4>
+              <div id="tmFaqSchedules" class="accordion-collapse collapse" data-bs-parent="#tmInfoFaq">
+                <div class="accordion-body px-0 pt-0">
+                  No. Los horarios, frecuencias y tiempos de recorrido son referenciales y pueden variar por tránsito, clima, estado vial u operación del transporte.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p class="small mb-2">
+            Parte de la información de transporte se basa en el siguiente documento público:
             <a
               href="https://www.morona.gob.ec/wp-content/uploads/2024/12/ORDENANZA-SUSTITUTIVA-DE-RUTAS-Y-FRECUENCIAS-MORONA-18-12-24-signed-signed-signed-signed-signed.pdf"
               target="_blank"
@@ -693,9 +731,8 @@
             </a>
           </p>
 
-          <p class="mb-0">
-            Esta es información pública. Próximamente se añadirá una guía de uso
-            de la plataforma.
+          <p class="small text-body-secondary mb-0">
+            La información se ofrece como apoyo para planificar recorridos y puede estar sujeta a cambios.
           </p>
         </div>
       </div>

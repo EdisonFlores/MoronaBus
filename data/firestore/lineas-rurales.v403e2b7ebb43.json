@@ -1,0 +1,765 @@
+[
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona",
+      "Sevilla Don Bosco"
+    ],
+    "ciudadpasa": [
+      "Macas",
+      "Sevilla Don Bosco",
+      "Sinaí",
+      "Cuchaentza"
+    ],
+    "codigo": "lr14",
+    "color": "#2a8dbf",
+    "create": "2026-02-12T19:21:03.840Z",
+    "denominacion": "Morona Norte",
+    "dias": "Lunes a Domingo",
+    "horario_ida": [
+      "05:10",
+      "13:00"
+    ],
+    "horario_retorno": [
+      "06:45",
+      "14:45"
+    ],
+    "id": "1z3SPR6JdcEgEKGs4Oyi",
+    "nombre": "Macas,Chiquichiquentza",
+    "orden": 14,
+    "origen": "Ida-Retorno",
+    "provincia": "Morona Santiago",
+    "tipo": "rural"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "ciudadpasa": [
+      "Macas",
+      "Rio Blanco"
+    ],
+    "codigo": "lr20",
+    "color": "#2a8dbf",
+    "create": "2026-02-12T19:38:18.844Z",
+    "denominacion": "Morona Oeste",
+    "dias": "Lunes a Viernes",
+    "horario_ida": [
+      "05:50"
+    ],
+    "horario_retorno": [
+      "06:20"
+    ],
+    "id": "2asDSchqjvWTvNSiXdZu",
+    "nombre": "Macas-Padre Carolo",
+    "orden": 20,
+    "origen": "Ida-Retorno",
+    "provincia": "Morona Santiago",
+    "tipo": "rural"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "ciudadpasa": [
+      "Macas",
+      "Proaño",
+      "San Isidro"
+    ],
+    "codigo": "lr16",
+    "color": "#2a8dbf",
+    "create": "2026-02-12T19:27:24.732Z",
+    "denominacion": "Morona Oeste",
+    "dias": "Lunes a Domingo",
+    "horario_ida": [
+      "05:00",
+      "13:40"
+    ],
+    "horario_retorno": [
+      "05:55",
+      "14:40"
+    ],
+    "id": "2WFrn3btZUGZ7DOiUXso",
+    "nombre": "Macas-Domono-Edén",
+    "orden": 16,
+    "origen": "Ida-Retorno",
+    "provincia": "Morona Santiago",
+    "tipo": "rural"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona",
+      "Sevilla Don Bosco"
+    ],
+    "ciudadpasa": [
+      "Macas",
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "lr5",
+    "color": "#fa0000",
+    "create": "2026-02-12T18:25:51.112Z",
+    "denominacion": "Entra Sevilla",
+    "dias": "Lunes a Domingo",
+    "horario_ida": [
+      "04:50"
+    ],
+    "horario_retorno": [
+      "05:30"
+    ],
+    "id": "DzvmK5ISdcxwizFvZnGo",
+    "nombre": "Macas-Y de San Luis-Palmeras",
+    "orden": 5,
+    "origen": "Ida-Retorno",
+    "provincia": "Morona Santiago",
+    "tipo": "rural"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona",
+      "Sevilla Don Bosco"
+    ],
+    "ciudadpasa": [
+      "Macas",
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "lr10",
+    "color": "#2a8dbf",
+    "create": "2026-02-12T18:52:24.677Z",
+    "denominacion": "Sevilla Norte",
+    "dias": "Lunes a Domingo",
+    "horario_ida": [
+      "05:30",
+      "07:00",
+      "13:40",
+      "17:40"
+    ],
+    "horario_retorno": [
+      "06:20",
+      "07:50",
+      "14:45",
+      "18:30"
+    ],
+    "id": "EFEqaUuVnmM2zvbJwLiw",
+    "nombre": "Macas-Wichimi-Mutinza",
+    "orden": 10,
+    "origen": "Ida-Retorno",
+    "provincia": "Morona Santiago",
+    "tipo": "rural"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona",
+      "Sevilla Don Bosco"
+    ],
+    "ciudadpasa": [
+      "Macas",
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "lr11",
+    "color": "#2a8dbf",
+    "denominacion": "Morona Norte",
+    "dias": "Lunes a Domingo",
+    "horario_ida": [
+      "10:30",
+      "17:10",
+      "19:15"
+    ],
+    "horario_retorno": [
+      "12:00",
+      "17:10",
+      "No retorna"
+    ],
+    "id": "GqiQQ38ebowB4mNWh5q2",
+    "nombre": "Macas – Veracruz – Sinaí",
+    "orden": 11,
+    "origen": "Ida-Retorno",
+    "provincia": "Morona Santiago",
+    "tipo": "rural"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona",
+      "Sevilla Don Bosco",
+      "Sinaí",
+      "Cuchaentza"
+    ],
+    "ciudadpasa": [
+      "Macas"
+    ],
+    "codigo": "lr13",
+    "color": "#2a8dbf",
+    "create": "2026-02-12T19:16:02.122Z",
+    "denominacion": "Morona Norte",
+    "dias": "Lunes a Domingo",
+    "horario_ida": [
+      "11:15",
+      "15:10"
+    ],
+    "horario_retorno": [
+      "12:50",
+      "16:40"
+    ],
+    "id": "HG3FFD0wgGJ556yl0EU4",
+    "nombre": "Macas-Cuchaentza-Río Macuma",
+    "orden": 13,
+    "origen": "Ida-Retorno",
+    "provincia": "Morona Santiago",
+    "tipo": "rural"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona",
+      "Sevilla Don Bosco"
+    ],
+    "ciudadpasa": [
+      "Macas",
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "lr3",
+    "color": "#f50000",
+    "create": "2026-02-12T00:09:57.811Z",
+    "denominacion": "Entra Sevilla",
+    "dias": "Lunes a Domingo",
+    "horario_ida": [
+      "05:45",
+      "06:30",
+      "07:00",
+      "07:30",
+      "08:00",
+      "11:30",
+      "12:00",
+      "12:30"
+    ],
+    "horario_retorno": [
+      "06:15",
+      "07:00",
+      "07:30",
+      "08:00",
+      "08:30",
+      "12:00",
+      "12:30",
+      "13:00"
+    ],
+    "id": "J2cWF4JwG0hXzDmsSdXJ",
+    "nombre": "Macas-Sevilla-Barrio Palmeras",
+    "orden": 3,
+    "origen": "Ida-Retorno",
+    "provincia": "Morona Santiago",
+    "tipo": "rural"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona",
+      "Sevilla Don Bosco"
+    ],
+    "ciudadpasa": [
+      "Macas",
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "lr2",
+    "color": "#f90101",
+    "create": "2026-02-11T21:00:22.503Z",
+    "denominacion": "Entra Sevilla",
+    "dias": "Lunes a Domingo",
+    "horario_ida": [
+      "05:00",
+      "11:15",
+      "14:20",
+      "17:30"
+    ],
+    "horario_retorno": [
+      "05:50",
+      "12:00",
+      "15:00",
+      "18:20"
+    ],
+    "id": "j5QhtvIDMzLlnfKKM9nu",
+    "nombre": "Macas-Barranco",
+    "orden": 2,
+    "origen": "Ida-Retorno",
+    "provincia": "Morona Santiago",
+    "tipo": "rural"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "ciudadpasa": [
+      "Macas",
+      "Proaño",
+      "9 de Octubre"
+    ],
+    "codigo": "lr19",
+    "color": "#2a8dbf",
+    "create": "2026-02-12T19:36:23.287Z",
+    "denominacion": "Morona Oeste",
+    "dias": "Lunes a Domingo",
+    "horario_ida": [
+      "04:50",
+      "14:40",
+      "16:50"
+    ],
+    "horario_retorno": [
+      "06:10",
+      "15:40",
+      "17:50"
+    ],
+    "id": "Jp2AndHLULYPGZd1vCFS",
+    "nombre": "Macas-9 de Octubre",
+    "orden": 19,
+    "origen": "Ida-Retorno",
+    "provincia": "Morona Santiago",
+    "tipo": "rural"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona",
+      "Sevilla Don Bosco",
+      "Sinaí"
+    ],
+    "ciudadpasa": [
+      "Macas"
+    ],
+    "codigo": "lr12",
+    "color": "#2a8dbf",
+    "create": "2026-02-12T19:05:30.858Z",
+    "denominacion": "Morona Norte",
+    "dias": "Lunes a Domingo",
+    "horario_ida": [
+      "06:15",
+      "13:00"
+    ],
+    "horario_retorno": [
+      "07:10",
+      "14:00"
+    ],
+    "id": "kadyPwSLsxLslsZocb2A",
+    "nombre": "Macas-Santa Rosa-Wapula-Santa María-Sinaí",
+    "orden": 12,
+    "origen": "Ida-Retorno",
+    "provincia": "Morona Santiago",
+    "tipo": "rural"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "ciudadpasa": [
+      "Macas",
+      "Proaño"
+    ],
+    "codigo": "lr18",
+    "color": "#2a8dbf",
+    "create": "2026-02-12T19:34:51.003Z",
+    "denominacion": "Morona Oeste",
+    "dias": "Lunes a Viernes",
+    "horario_ida": [
+      "05:50",
+      "07:30",
+      "13:15",
+      "17:30"
+    ],
+    "horario_retorno": [
+      "06:20",
+      "08:16",
+      "13:50",
+      "18:15"
+    ],
+    "id": "L6n6kCN6S0kLpxHMT2Hu",
+    "nombre": "Macas-Proaño-Paccha-Pitajaya",
+    "orden": 18,
+    "origen": "Ida-Retorno",
+    "provincia": "Morona Santiago",
+    "tipo": "rural"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona",
+      "Sevilla Don Bosco"
+    ],
+    "ciudadpasa": [
+      "Macas",
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "lr6",
+    "color": "#f51000",
+    "create": "2026-02-12T18:34:41.707Z",
+    "denominacion": "Entra Sevilla",
+    "dias": "Lunes a Domingo",
+    "horario_ida": [
+      "05:3",
+      "06:20",
+      "10:10",
+      "13:30",
+      "17:45",
+      "19:00"
+    ],
+    "horario_retorno": [
+      "06:10",
+      "07:20",
+      "11:00",
+      "14:30",
+      "18:15",
+      "19:40"
+    ],
+    "id": "n1BMqCiK62LtOPJOTPDb",
+    "nombre": "Macas-Ángel Rouby",
+    "orden": 6,
+    "origen": "Ida-Retorno",
+    "provincia": "Morona Santiago",
+    "tipo": "rural"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona",
+      "Sevilla Don Bosco"
+    ],
+    "ciudadpasa": [
+      "Macas",
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "lr4",
+    "color": "#ff0000",
+    "create": "2026-02-12T01:31:45.023Z",
+    "denominacion": "Entra Sevilla",
+    "dias": "Lunes a Domingo",
+    "horario_ida": [
+      "05:07",
+      "05:22",
+      "05:37",
+      "05:52",
+      "06:07",
+      "06:22",
+      "06:37",
+      "06:52",
+      "07:07",
+      "07:22",
+      "07:37",
+      "07:52",
+      "08:07",
+      "08:22",
+      "08:37",
+      "08:52",
+      "09:07",
+      "09:22",
+      "09:37",
+      "09:52",
+      "10:07",
+      "10:22",
+      "10:37",
+      "10:52",
+      "11:07",
+      "11:22",
+      "11:37",
+      "11:52",
+      "12:07",
+      "12:22",
+      "12:37",
+      "12:52",
+      "13:07",
+      "13:22",
+      "13:37",
+      "13:52",
+      "14:07",
+      "14:22",
+      "14:37",
+      "14:52",
+      "15:07",
+      "15:22",
+      "15:37",
+      "15:52",
+      "16:07",
+      "16:22",
+      "16:37",
+      "16:52",
+      "17:07",
+      "17:37",
+      "17:52",
+      "18:07",
+      "18:37",
+      "18:52",
+      "19:07",
+      "19:22"
+    ],
+    "horario_retorno": [
+      "06:07",
+      "06:22",
+      "06:37",
+      "06:52",
+      "07:07",
+      "07:22",
+      "07:37",
+      "07:52",
+      "08:07",
+      "08:22",
+      "08:37",
+      "08:52",
+      "09:07",
+      "09:22",
+      "09:37",
+      "09:52",
+      "10:07",
+      "10:22",
+      "10:37",
+      "10:52",
+      "11:07",
+      "11:22",
+      "11:37",
+      "11:52",
+      "12:07",
+      "12:22",
+      "12:37",
+      "12:52",
+      "13:07",
+      "13:22",
+      "13:37",
+      "13:52",
+      "14:07",
+      "14:22",
+      "14:37",
+      "14.52",
+      "15:07",
+      "15:22",
+      "15:37",
+      "15:52",
+      "16:07",
+      "16:22",
+      "16:37",
+      "16:52",
+      "17:07",
+      "17:22",
+      "17:37",
+      "17:52",
+      "18:07",
+      "18:37",
+      "18:52",
+      "19:07",
+      "19:37",
+      "19:52",
+      "20:07",
+      "20:22"
+    ],
+    "id": "NEAhPs6gNECnDKpfI2wZ",
+    "nombre": "Macas-Santa Ana-Sevilla-San Luis de Iñinkis-La Punta-Sagrado Corazón",
+    "orden": 4,
+    "origen": "Ida-Retorno",
+    "provincia": "Morona Santiago",
+    "tipo": "rural"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona",
+      "Sevilla Don Bosco"
+    ],
+    "ciudadpasa": [
+      "Macas",
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "lr7",
+    "color": "#026e26",
+    "create": "2026-02-11T19:24:16.793Z",
+    "denominacion": "Sevilla Norte",
+    "dias": "Lunes a Viernes",
+    "horario_ida": [
+      "05:50"
+    ],
+    "horario_retorno": "06:20",
+    "id": "onCuKiL1Q7YdCf3Xp0kk",
+    "nombre": "Macas-San Vicente",
+    "orden": 7,
+    "origen": "Ida-Retorno",
+    "provincia": "Morona Santiago",
+    "tipo": "rural"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona"
+    ],
+    "ciudadpasa": [
+      "Macas",
+      "Proaño"
+    ],
+    "codigo": "lr17",
+    "color": "#2a8dbf",
+    "create": "2026-02-12T19:32:36.210Z",
+    "denominacion": "Morona Oeste",
+    "dias": "Lunes a Domingo",
+    "horario_ida": [
+      "07:30",
+      "15:30",
+      "18:30"
+    ],
+    "horario_retorno": [
+      "08:15",
+      "16:15",
+      "19:15"
+    ],
+    "id": "QevTxwZz574Gf1BbLa9A",
+    "nombre": "Macas-Domono-La Y",
+    "orden": 17,
+    "origen": "Ida-Retorno",
+    "provincia": "Morona Santiago",
+    "tipo": "rural"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona",
+      "Sevilla Don Bosco"
+    ],
+    "ciudadpasa": [
+      "Macas",
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "lr1",
+    "color": "#FF0000",
+    "create": "2026-02-10T19:49:05.401Z",
+    "denominacion": "Entra Sevilla",
+    "dias": "Lunes a Domingo",
+    "horario_ida": [
+      "05:20",
+      "10:00",
+      "13:20",
+      "18:20"
+    ],
+    "horario_retorno": [
+      "06:10",
+      "11:00",
+      "14:20",
+      "Otra linea culmina retorno"
+    ],
+    "id": "y03BM5VZhIwYCG9wNrb8",
+    "nombre": "Macas-Y de San Luis-San Miguel",
+    "orden": 1,
+    "origen": "Ida-Retorno",
+    "provincia": "Morona Santiago",
+    "tipo": "rural"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona",
+      "Sevilla Don Bosco"
+    ],
+    "ciudadpasa": [
+      "Macas",
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "lr9",
+    "color": "#046c2c",
+    "create": "2026-02-12T18:43:09.333Z",
+    "denominacion": "Sevilla Norte",
+    "dias": "Lunes a Domingo",
+    "horario_ida": [
+      "05:00",
+      "07:45",
+      "13:30",
+      "17:45"
+    ],
+    "horario_retorno": [
+      "05:50",
+      "08:55",
+      "14:40",
+      "18:45"
+    ],
+    "id": "Yspo9p3uCpwIkCk3nkEP",
+    "nombre": "Macas,Uyuntsa,Tzuntzuntza-Puerto Pikiur",
+    "orden": 9,
+    "origen": "Ida-Retorno",
+    "provincia": "Morona Santiago",
+    "tipo": "rural"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": [
+      "Morona",
+      "Sevilla Don Bosco"
+    ],
+    "ciudadpasa": [
+      "Macas",
+      "Sevilla Don Bosco"
+    ],
+    "codigo": "lr8",
+    "color": "#034f20",
+    "create": "2026-02-12T18:37:07.093Z",
+    "denominacion": "Sevilla Norte",
+    "dias": "Lunes a Domingo",
+    "horario_ida": [
+      "04:40",
+      "07:30",
+      "13:20",
+      "16:50"
+    ],
+    "horario_retorno": [
+      "05:45",
+      "08:40",
+      "14:20",
+      "17:50"
+    ],
+    "id": "YYrY82eWMMCkQLnL33pg",
+    "nombre": "Macas-Buena Esperanza-Saunt-Cascadas",
+    "orden": 8,
+    "origen": "Ida-Retorno",
+    "provincia": "Morona Santiago",
+    "tipo": "rural"
+  },
+  {
+    "activo": true,
+    "cantonorigen": "Morona",
+    "cantonpasa": "Morona",
+    "ciudadpasa": [
+      "Macas",
+      "Proaño",
+      "San Isidro"
+    ],
+    "codigo": "lr15",
+    "color": "#b813ed",
+    "create": "2026-02-11T20:07:08.225Z",
+    "denominacion": "Morona Oeste",
+    "dias": "Lunes a Domingo",
+    "frecuencia_max": 30,
+    "frecuencia_min": 15,
+    "horario_fin": "20:22",
+    "horario_inicio": "05:22",
+    "id": "z691Hk1tBEtpRc3CbDbG",
+    "nombre": "Macas-San Isidro",
+    "orden": 15,
+    "origen": "Ida-Retorno",
+    "provincia ": "Morona Santiago",
+    "tipo": "rural"
+  }
+]

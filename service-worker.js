@@ -1,4 +1,4 @@
-const CACHE_NAME = "moronabus-shell-v61";
+const CACHE_NAME = "moronabus-shell-v64";
 
 const STATIC_ASSETS = [
   "/",
@@ -41,6 +41,34 @@ self.addEventListener("fetch", event => {
   const request = event.request;
 
   if (request.method !== "GET") return;
+
+  const url = new URL(request.url);
+
+  if (url.pathname === "/data/firestore/manifest.json") {
+    event.respondWith(
+      fetch(request)
+        .then(response => {
+          if (!response.ok) return response;
+          const copy = response.clone();
+          caches.open(CACHE_NAME).then(cache => cache.put(request, copy));
+          return response;
+        })
+        .catch(() => caches.match(request))
+    );
+    return;
+  }
+
+  if (url.pathname.startsWith("/data/firestore/") && url.pathname.endsWith(".json")) {
+    event.respondWith(
+      caches.match(request).then(cached => cached || fetch(request).then(response => {
+        if (!response.ok) return response;
+        const copy = response.clone();
+        caches.open(CACHE_NAME).then(cache => cache.put(request, copy));
+        return response;
+      }))
+    );
+    return;
+  }
 
   if (request.url.includes("/api/")) {
     event.respondWith(

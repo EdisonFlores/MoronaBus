@@ -1,0 +1,5792 @@
+[
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L2",
+    "create": "2026-01-30T23:27:21.008Z",
+    "es_terminal": false,
+    "id": "09jdWgP360pn0FFkEaLd",
+    "nombre_linea": "Línea 2- 27  de Febrero-Norte",
+    "orden": 0,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.315248,
+      "longitude": -78.123774
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L1",
+    "create": "2026-01-27T15:49:34.969Z",
+    "es_terminal": false,
+    "id": "0qBSRGrPtCMgFAxAYs4q",
+    "nombre_linea": "Línea 1- 27 de Febrero-Sur",
+    "orden": 33,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.307669,
+      "longitude": -78.120292
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T22:38:31.088Z",
+    "es_terminal": false,
+    "id": "0r0KjRlQm1D0tL92LmS2",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 68,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.306321,
+      "longitude": -78.120172
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T18:42:59.239Z",
+    "es_terminal": false,
+    "id": "0SglfGCCmfHvSYTvPnse",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 69,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.307696,
+      "longitude": -78.120287
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L1",
+    "create": "2026-01-27T15:37:39.714Z",
+    "es_terminal": false,
+    "id": "1FmFCGhwKdse83r1TSz7",
+    "nombre_linea": "Línea 1- 27 de Febrero-Sur",
+    "orden": 27,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.295343,
+      "longitude": -78.118275
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L3",
+    "create": "2026-02-02T23:36:39.313Z",
+    "es_terminal": false,
+    "id": "1LqXjsJhUj6xjkVJu6iq",
+    "nombre_linea": "Línea 3- La Alborada-Hospital General",
+    "orden": 18,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.28212,
+      "longitude": -78.121744
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T18:55:50.184Z",
+    "es_terminal": false,
+    "id": "1ObNZxfQDSnuSRyJbUA9",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 78,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.318445,
+      "longitude": -78.126188
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T15:16:57.065Z",
+    "es_terminal": false,
+    "id": "1p9pkaDER2z4Xda4c8vt",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 15,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.314031,
+      "longitude": -78.119777
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T15:18:34.465Z",
+    "es_terminal": false,
+    "id": "2ecLBlxpewEg347ctQ7m",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 17,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.311239,
+      "longitude": -78.118444
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T19:05:49.959Z",
+    "es_terminal": false,
+    "id": "2XCMopwMFG9v1utQknnc",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 88,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.327549,
+      "longitude": -78.136193
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L1",
+    "create": "2026-01-27T15:09:49.244Z",
+    "es_terminal": false,
+    "id": "2Z0AyqdWiqxhU3wUrgBb",
+    "nombre_linea": "Línea 1- 27 de Febrero-Sur",
+    "orden": 5,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.3097,
+      "longitude": -78.125099
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L2",
+    "create": "2026-01-31T01:40:29.841Z",
+    "es_terminal": false,
+    "id": "3piqdIoABIbi5F9yY2Hk",
+    "nombre_linea": "Línea 2- 27  de Febrero-Norte",
+    "orden": 21,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.289407,
+      "longitude": -78.124243
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T18:38:53.682Z",
+    "es_terminal": false,
+    "id": "42ZoM71DDeGOo3MxcyBC",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 67,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.304096,
+      "longitude": -78.119971
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L2",
+    "create": "2026-01-31T01:48:08.650Z",
+    "es_terminal": false,
+    "id": "45qmq4sCcgz1LjDjeGvK",
+    "nombre_linea": "Línea 2- 27  de Febrero-Norte",
+    "orden": 25,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.299703,
+      "longitude": -78.121746
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T19:01:32.064Z",
+    "es_terminal": false,
+    "id": "46EjZ7dymjZUM5ZtlOUL",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 83,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.32634,
+      "longitude": -78.131515
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T22:40:23.645Z",
+    "es_terminal": false,
+    "id": "46jMmqcKkFGZyIuN1JMM",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 70,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.312177,
+      "longitude": -78.124557
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L2",
+    "create": "2026-01-30T23:54:45.735Z",
+    "es_terminal": false,
+    "id": "49MtzZFPd6kDwxnvVQCK",
+    "nombre_linea": "Línea 2- 27  de Febrero-Norte",
+    "orden": 12,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.294448,
+      "longitude": -78.117299
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T22:30:23.167Z",
+    "es_terminal": false,
+    "id": "4bOshWyBANW6N2Bj4g9C",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 62,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.293245,
+      "longitude": -78.117213
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L1",
+    "create": "2026-01-27T15:15:47.470Z",
+    "es_terminal": false,
+    "id": "4dgULHJ17CeqbAKYE6gR",
+    "nombre_linea": "Línea 1- 27 de Febrero-Sur",
+    "orden": 11,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.294403,
+      "longitude": -78.120174
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T22:49:33.782Z",
+    "es_terminal": false,
+    "id": "4o1GDnPK9pCnWE7Bea1q",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 78,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.342852,
+      "longitude": -78.140583
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Externa",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T20:32:45.276Z",
+    "es_terminal": false,
+    "id": "4Pn8OfaMe8iHjqqaO8hl",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 6,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.345328,
+      "longitude": -78.148938
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T18:23:51.808Z",
+    "es_terminal": false,
+    "id": "4UPhk1l0JGwhAwvnvW9w",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 55,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.284261,
+      "longitude": -78.123393
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Interna",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T20:32:04.140Z",
+    "es_terminal": false,
+    "id": "4XHZE07iVZeTSa7vJbo9",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 6,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.348236,
+      "longitude": -78.150207
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L2",
+    "create": "2026-01-30T23:45:14.647Z",
+    "es_terminal": false,
+    "id": "5FUxl3FlzVgtsbrdA4Nq",
+    "nombre_linea": "Línea 2- 27  de Febrero-Norte",
+    "orden": 5,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.307382,
+      "longitude": -78.12011
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T21:26:19.391Z",
+    "es_terminal": false,
+    "id": "5kupdlVx4UqAX6Uy7e8Z",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 22,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.304418,
+      "longitude": -78.118933
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L2",
+    "create": "2026-01-31T01:50:46.074Z",
+    "es_terminal": false,
+    "id": "5q5EcS9hQtyeYaN9Qd0H",
+    "nombre_linea": "Línea 2- 27  de Febrero-Norte",
+    "orden": 28,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.305627,
+      "longitude": -78.124176
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L2",
+    "create": "2026-01-31T01:54:24.234Z",
+    "es_terminal": false,
+    "id": "5qhAfa0X2e2OCODpwAes",
+    "nombre_linea": "Línea 2- 27  de Febrero-Norte",
+    "orden": 32,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.314144,
+      "longitude": -78.127652
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L2",
+    "create": "2026-01-30T23:52:12.991Z",
+    "es_terminal": false,
+    "id": "66EHhWmtRjARumhe1vXZ",
+    "nombre_linea": "Línea 2- 27  de Febrero-Norte",
+    "orden": 9,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.300288,
+      "longitude": -78.118646
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Interna",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T22:50:22.045Z",
+    "es_terminal": false,
+    "id": "6Hrr1RK4iUpxurN6U6UL",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 79,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.345173,
+      "longitude": -78.144743
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T17:42:17.740Z",
+    "es_terminal": false,
+    "id": "6ifI3nUPONf93LoIcZ0l",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 40,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.277746,
+      "longitude": -78.113764
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L3",
+    "create": "2026-02-03T01:22:43.264Z",
+    "es_terminal": false,
+    "id": "6KDYPdSwhIm07SsjWhZ2",
+    "nombre_linea": "Línea 3- La Alborada-Hospital General",
+    "orden": 34,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.307698,
+      "longitude": -78.120292
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L3",
+    "create": "2026-02-02T23:08:11.132Z",
+    "es_terminal": false,
+    "id": "6laKkZwfO9AdgAxpkrQ3",
+    "nombre_linea": "Línea 3- La Alborada-Hospital General",
+    "orden": 4,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.313313,
+      "longitude": -78.116264
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Externa",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T22:57:09.893Z",
+    "es_terminal": false,
+    "id": "6MxzBL6KMaH2eAY7RHWM",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 82,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.344883,
+      "longitude": -78.15452
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L1",
+    "create": "2026-01-27T15:30:45.363Z",
+    "es_terminal": false,
+    "id": "7K5IYXsl9TIDmDr8YFdV",
+    "nombre_linea": "Línea 1- 27 de Febrero-Sur",
+    "orden": 20,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.28313,
+      "longitude": -78.121363
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T17:37:56.938Z",
+    "es_terminal": false,
+    "id": "80kLr8n31IdbpBQegZKP",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 35,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.282136,
+      "longitude": -78.121907
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T18:04:41.458Z",
+    "es_terminal": false,
+    "id": "84xiaMS8cRaZtsqZ59sN",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 45,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.27766,
+      "longitude": -78.11374
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T17:35:39.179Z",
+    "es_terminal": false,
+    "id": "89GVNc7UdatZ9kBMUxq2",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 33,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.284331,
+      "longitude": -78.124471
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L3",
+    "create": "2026-02-03T00:03:14.263Z",
+    "es_terminal": false,
+    "id": "8V3eCMCy6PYfsrqLv9eK",
+    "nombre_linea": "Línea 3- La Alborada-Hospital General",
+    "orden": 25,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.288279,
+      "longitude": -78.116827
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L1",
+    "create": "2026-01-27T14:42:32.330Z",
+    "es_terminal": false,
+    "id": "91rwgDS3hEnFMBUJv891",
+    "nombre_linea": "Línea 1- 27 de Febrero-Sur",
+    "orden": 3,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.314476,
+      "longitude": -78.127856
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L3",
+    "create": "2026-02-02T23:12:22.253Z",
+    "es_terminal": false,
+    "id": "9IoiQa7y0LVEl5hLOk0s",
+    "nombre_linea": "Línea 3- La Alborada-Hospital General",
+    "orden": 7,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.306567,
+      "longitude": -78.119088
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L1",
+    "create": "2026-01-27T14:38:22.378Z",
+    "es_terminal": false,
+    "id": "9oKYSEWEgS1IROqb903F",
+    "nombre_linea": "Línea 1- 27 de Febrero-Sur",
+    "orden": 2,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.316264,
+      "longitude": -78.128264
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T14:40:51.962Z",
+    "es_terminal": false,
+    "id": "9PFAsvza44KlHpCHkLXv",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 5,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.325845,
+      "longitude": -78.131772
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T15:22:31.432Z",
+    "es_terminal": false,
+    "id": "9RPWsTjQAekZ3R3o9BkY",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 22,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.304204,
+      "longitude": -78.117782
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L3",
+    "create": "2026-02-02T22:50:30.030Z",
+    "es_terminal": false,
+    "id": "9VQ1llidKOWZYu8PlGA9",
+    "nombre_linea": "Línea 3- La Alborada-Hospital General",
+    "orden": 1,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.32093,
+      "longitude": -78.123897
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T21:56:03.226Z",
+    "es_terminal": false,
+    "id": "9ZtbgmDFWTE3lspbIFL5",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 44,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.258304,
+      "longitude": -78.175315
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T21:39:55.748Z",
+    "es_terminal": false,
+    "id": "a15wojmP2jUq2PpQRGjE",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 33,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.280531,
+      "longitude": -78.122674
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L1",
+    "create": "2026-01-27T15:12:12.229Z",
+    "es_terminal": false,
+    "id": "A6HPJhTdzqSId2KSm77l",
+    "nombre_linea": "Línea 1- 27 de Febrero-Sur",
+    "orden": 6,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.3079064985913837,
+      "longitude": -78.12471160393086
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Externa",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T22:59:08.820Z",
+    "es_terminal": false,
+    "id": "A77TjGgfPjFB3V1S5aF5",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 83,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.34432,
+      "longitude": -78.156113
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-01-27T15:14:30.622Z",
+    "es_terminal": false,
+    "id": "aGwxBFYG3Dw77IiQFKag",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 9,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.341694,
+      "longitude": -78.13932
+    },
+    "update": "2026-02-05T02:33:00.522Z"
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L2",
+    "create": "2026-01-30T23:53:44.392Z",
+    "es_terminal": false,
+    "id": "AIDVeboVQG8xMsTaIwcT",
+    "nombre_linea": "Línea 2- 27  de Febrero-Norte",
+    "orden": 11,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.295483,
+      "longitude": -78.11831
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T19:02:24.808Z",
+    "es_terminal": false,
+    "id": "aswXqKwiOAbY1NxVQnAs",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 84,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.326493,
+      "longitude": -78.132499
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L1",
+    "create": "2026-01-27T15:13:00.292Z",
+    "es_terminal": false,
+    "id": "ay0oTUheBa7DsN7mnpSD",
+    "nombre_linea": "Línea 1- 27 de Febrero-Sur",
+    "orden": 7,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.305664,
+      "longitude": -78.124109
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T21:06:44.881Z",
+    "es_terminal": false,
+    "id": "AZHSRehIFSzxx9vuLLi8",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 15,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.317813,
+      "longitude": -78.129881
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T15:19:22.248Z",
+    "es_terminal": false,
+    "id": "azHugtSfYYNtOlW3BwmG",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 18,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.308403,
+      "longitude": -78.118216
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T18:51:32.272Z",
+    "es_terminal": false,
+    "id": "B4m5jJp5WcO3JcqKTJLt",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 73,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.312871,
+      "longitude": -78.118683
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T19:06:24.855Z",
+    "es_terminal": false,
+    "id": "B5GbeVAF90OupsmCfmgv",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 89,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.330296,
+      "longitude": -78.134677
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T17:10:43.860Z",
+    "es_terminal": false,
+    "id": "B5JaevGTQFf8dBTsvm0f",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 24,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.300176,
+      "longitude": -78.11796
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T20:18:49.269Z",
+    "es_terminal": false,
+    "id": "bA4QPW3kTiJxhyf812TY",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 2,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.3668,
+      "longitude": -78.157902
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L2",
+    "create": "2026-01-31T01:39:20.237Z",
+    "es_terminal": false,
+    "id": "baLi4H3KThN6ePLlFd3l",
+    "nombre_linea": "Línea 2- 27  de Febrero-Norte",
+    "orden": 20,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.287874,
+      "longitude": -78.123704
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T20:39:56.315Z",
+    "es_terminal": false,
+    "id": "BAMWr0cS582hl4DjLT4R",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 9,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.341994,
+      "longitude": -78.139518
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T14:37:39.242Z",
+    "es_terminal": false,
+    "id": "BDMSH8rPE6fXt7RxJUaA",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 4,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.326949,
+      "longitude": -78.132196
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L2",
+    "create": "2026-01-31T00:05:50.974Z",
+    "es_terminal": false,
+    "id": "bDTbSBFYdvAW3WfNGyR1",
+    "nombre_linea": "Línea 2- 27  de Febrero-Norte",
+    "orden": 16,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.283985,
+      "longitude": -78.120362
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T18:18:12.153Z",
+    "es_terminal": false,
+    "id": "blLR2J0mTwTKzS3xs9Yp",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 52,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.282066,
+      "longitude": -78.121939
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L3",
+    "create": "2026-02-02T23:25:56.874Z",
+    "es_terminal": false,
+    "id": "BMQXAUhSqAaBN8mQKDoJ",
+    "nombre_linea": "Línea 3- La Alborada-Hospital General",
+    "orden": 11,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.297704,
+      "longitude": -78.117723
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L3",
+    "create": "2026-02-02T23:48:11.688Z",
+    "es_terminal": false,
+    "id": "Bn7VFXMeXsdtiboeK0vF",
+    "nombre_linea": "Línea 3- La Alborada-Hospital General",
+    "orden": 20,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.284481,
+      "longitude": -78.124474
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L3",
+    "create": "2026-02-02T23:30:06.779Z",
+    "es_terminal": false,
+    "id": "BNaOHYPE2KMZhY7UQWvF",
+    "nombre_linea": "Línea 3- La Alborada-Hospital General",
+    "orden": 14,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.293226,
+      "longitude": -78.117052
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T21:58:19.451Z",
+    "es_terminal": false,
+    "id": "bOFGKckCvAjRuNg0X2dP",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 46,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.255973,
+      "longitude": -78.165533
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T21:25:31.198Z",
+    "es_terminal": false,
+    "id": "bohDGW30ZLQSuGDpdQ25",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 21,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.306589,
+      "longitude": -78.119083
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Externa",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T20:34:16.043Z",
+    "es_terminal": false,
+    "id": "bRLRfIMIGrm40i0eaAys",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 7,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.345074,
+      "longitude": -78.144642
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L3",
+    "create": "2026-02-02T23:27:35.202Z",
+    "es_terminal": false,
+    "id": "c3KovEkDkB9ygtjq8OV8",
+    "nombre_linea": "Línea 3- La Alborada-Hospital General",
+    "orden": 12,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.295501,
+      "longitude": -78.117739
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L3",
+    "create": "2026-02-03T00:03:57.487Z",
+    "es_terminal": false,
+    "id": "CbX6kGSIg6BYVCAYTGN0",
+    "nombre_linea": "Línea 3- La Alborada-Hospital General",
+    "orden": 26,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.292007,
+      "longitude": -78.117106
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T18:59:13.368Z",
+    "es_terminal": false,
+    "id": "CeNJnQJYBhCcToPBLrVm",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 81,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.323497,
+      "longitude": -78.131327
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Interna",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T22:53:21.238Z",
+    "es_terminal": false,
+    "id": "cifteVGMVWI41MCbGhRI",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 81,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.347762,
+      "longitude": -78.152774
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T17:31:12.732Z",
+    "es_terminal": false,
+    "id": "CIIrzsCWjwiEdQOkYBWF",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 29,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.288158,
+      "longitude": -78.116682
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L2",
+    "create": "2026-01-30T23:50:25.616Z",
+    "es_terminal": false,
+    "id": "D3FqrzlsODJPBOE8GN6g",
+    "nombre_linea": "Línea 2- 27  de Febrero-Norte",
+    "orden": 8,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.302218,
+      "longitude": -78.11879
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T21:01:18.664Z",
+    "es_terminal": false,
+    "id": "D7ql0kwJ9OpAHTU5vTkm",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 12,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.322173,
+      "longitude": -78.134213
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T14:31:00.186Z",
+    "es_terminal": false,
+    "id": "dg8488r9U8FzLxmtCAIa",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 2,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.323526,
+      "longitude": -78.135525
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T21:54:26.466Z",
+    "es_terminal": false,
+    "id": "DoIelpwdoT7JINXbNTgk",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 41,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.255938,
+      "longitude": -78.159758
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T20:16:36.071Z",
+    "es_terminal": false,
+    "id": "drTvYPxr2rXcWUHrjZKQ",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 1,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.379058,
+      "longitude": -78.164581
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L2",
+    "create": "2026-01-31T01:43:16.386Z",
+    "es_terminal": false,
+    "id": "dStWECcx9gWHjDeniF6v",
+    "nombre_linea": "Línea 2- 27  de Febrero-Norte",
+    "orden": 23,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.291634,
+      "longitude": -78.120641
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T17:34:52.491Z",
+    "es_terminal": false,
+    "id": "DWJMZUz201wpf59G3Yw4",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 32,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.284197,
+      "longitude": -78.123474
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L2",
+    "create": "2026-01-31T00:30:42.681Z",
+    "es_terminal": false,
+    "id": "E1T8o38gTzA1uZJYdKE0",
+    "nombre_linea": "Línea 2- 27  de Febrero-Norte",
+    "orden": 18,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.285751,
+      "longitude": -78.121605
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T20:49:08.378Z",
+    "es_terminal": false,
+    "id": "e8mZLNOUTdv9j8kMHs69",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 11,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.323427,
+      "longitude": -78.135468
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L3",
+    "create": "2026-02-02T23:37:56.529Z",
+    "es_terminal": false,
+    "id": "EBY5xhNQbtMvaGOdJIlf",
+    "nombre_linea": "Línea 3- La Alborada-Hospital General",
+    "orden": 19,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.282444,
+      "longitude": -78.125252
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L2",
+    "create": "2026-01-30T23:57:00.646Z",
+    "es_terminal": false,
+    "id": "egpatBQTBOnFQgw3hMnr",
+    "nombre_linea": "Línea 2- 27  de Febrero-Norte",
+    "orden": 13,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.293446,
+      "longitude": -78.11709
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T17:41:14.019Z",
+    "es_terminal": false,
+    "id": "eK53MvxVVz0otP61TJQv",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 39,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.275015,
+      "longitude": -78.122441
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T22:30:54.511Z",
+    "es_terminal": false,
+    "id": "ELD5jjGE1Efb5eBTfxZw",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 63,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.294826,
+      "longitude": -78.117307
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T23:05:39.092Z",
+    "es_terminal": false,
+    "id": "Em8p1biWNnM6X8Ucfp6X",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 89,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.390064,
+      "longitude": -78.170147
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L2",
+    "create": "2026-01-31T00:25:22.103Z",
+    "es_terminal": false,
+    "id": "enmnH3xHJvnKJ1ZOtCyW",
+    "nombre_linea": "Línea 2- 27  de Febrero-Norte",
+    "orden": 17,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.283071,
+      "longitude": -78.121511
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T21:15:21.447Z",
+    "es_terminal": false,
+    "id": "ep6q9M62ORjS3FC7aXwk",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 16,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.316151,
+      "longitude": -78.128189
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L2",
+    "create": "2026-01-30T23:37:18.294Z",
+    "es_terminal": false,
+    "id": "eviwRSGzg2b9READW15s",
+    "nombre_linea": "Línea 2- 27  de Febrero-Norte",
+    "orden": 2,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.313455,
+      "longitude": -78.12066
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T18:28:25.713Z",
+    "es_terminal": false,
+    "id": "eVKvDmjni8wtdckm7AIC",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 59,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.288137,
+      "longitude": -78.116824
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T17:42:49.914Z",
+    "es_terminal": false,
+    "id": "EWaCGxpAdgwibLCej0UY",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 41,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.276832,
+      "longitude": -78.112643
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L1",
+    "create": "2026-01-27T15:52:45.265Z",
+    "es_terminal": false,
+    "id": "f222NIoUHaU7BNvXn33s",
+    "nombre_linea": "Línea 1- 27 de Febrero-Sur",
+    "orden": 35,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.313677,
+      "longitude": -78.120864
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T20:40:31.835Z",
+    "es_terminal": false,
+    "id": "Fb9tl4UT589YP8ifbmv9",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 10,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.330738,
+      "longitude": -78.138899
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T18:50:39.879Z",
+    "es_terminal": false,
+    "id": "fD0MS8LCwPI1fSwdHhwK",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 72,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.311689,
+      "longitude": -78.118573
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L3",
+    "create": "2026-02-03T00:02:40.607Z",
+    "es_terminal": false,
+    "id": "fEDmVKuCemwKNSe0fmOz",
+    "nombre_linea": "Línea 3- La Alborada-Hospital General",
+    "orden": 24,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.286447,
+      "longitude": -78.117703
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L3",
+    "create": "2026-02-02T22:53:48.831Z",
+    "es_terminal": false,
+    "id": "FGQxzzLuYw7S7eDOxwSZ",
+    "nombre_linea": "Línea 3- La Alborada-Hospital General",
+    "orden": 2,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.319632,
+      "longitude": -78.122967
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L3",
+    "create": "2026-02-02T23:31:52.938Z",
+    "es_terminal": false,
+    "id": "Fhs1CjzdkjM1PT9844B8",
+    "nombre_linea": "Línea 3- La Alborada-Hospital General",
+    "orden": 16,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.288171,
+      "longitude": -78.116677
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T19:03:06.024Z",
+    "es_terminal": false,
+    "id": "fjOT17L9jLPAE80ooAEQ",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 85,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.324534,
+      "longitude": -78.13446
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L3",
+    "create": "2026-02-03T01:32:31.571Z",
+    "es_terminal": false,
+    "id": "FkiupRtrTUuGZtuIfNeU",
+    "nombre_linea": "Línea 3- La Alborada-Hospital General",
+    "orden": 37,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.308912,
+      "longitude": -78.117565
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T22:18:04.488Z",
+    "es_terminal": false,
+    "id": "fnpTwIsedmd6K7w3FjJa",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 52,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.265602,
+      "longitude": -78.13262
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L1",
+    "create": "2026-01-27T15:37:08.386Z",
+    "es_terminal": false,
+    "id": "fsJOFI8QgTTV5tlpCLiv",
+    "nombre_linea": "Línea 1- 27 de Febrero-Sur",
+    "orden": 26,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.294826,
+      "longitude": -78.117302
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T18:52:40.967Z",
+    "es_terminal": false,
+    "id": "FyhI5OE294TNxmGl1RnR",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 75,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.313865,
+      "longitude": -78.120681
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T17:39:29.658Z",
+    "es_terminal": false,
+    "id": "G4dPd1hOKoighywCmYkb",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 37,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.27915,
+      "longitude": -78.123417
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T18:56:47.720Z",
+    "es_terminal": false,
+    "id": "gfJn4ftSkW0MfO60XrdR",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 79,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.32124,
+      "longitude": -78.128999
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L3",
+    "create": "2026-02-03T02:14:25.188Z",
+    "es_terminal": false,
+    "id": "gISNxLcFKDpkD54FA1Ss",
+    "nombre_linea": "Línea 3- La Alborada-Hospital General",
+    "orden": 41,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.319659,
+      "longitude": -78.122792
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L1",
+    "create": "2026-01-27T15:22:08.172Z",
+    "es_terminal": false,
+    "id": "GJJIqeAmPz0CzccBG1DG",
+    "nombre_linea": "Línea 1- 27 de Febrero-Sur",
+    "orden": 14,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.289463,
+      "longitude": -78.121027
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T21:52:05.269Z",
+    "es_terminal": false,
+    "id": "GKqVYJGZhTNt3CIfEk6H",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 39,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.264195,
+      "longitude": -78.135141
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T21:38:28.069Z",
+    "es_terminal": false,
+    "id": "GkYqRJDFZ5DvZxKJWJlC",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 31,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.2841,
+      "longitude": -78.120217
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T22:43:03.950Z",
+    "es_terminal": false,
+    "id": "GRj2KICfgxyu7dBkXpkh",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 72,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.317462,
+      "longitude": -78.129852
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T21:55:33.866Z",
+    "es_terminal": false,
+    "id": "GrRpmGMhSdtTsus7m3Su",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 43,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.255884,
+      "longitude": -78.165482
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T22:21:55.120Z",
+    "es_terminal": false,
+    "id": "Gt2dBdBCDcLvofpXg417",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 55,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.27677,
+      "longitude": -78.124415
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T22:28:30.847Z",
+    "es_terminal": false,
+    "id": "GUaqvKdFPqEmB69tQvLF",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 59,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.286738,
+      "longitude": -78.117388
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T21:30:43.173Z",
+    "es_terminal": false,
+    "id": "GV7FFn5hOAx9Uwd4niAC",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 26,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.295488,
+      "longitude": -78.118308
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T20:26:20.678Z",
+    "es_terminal": false,
+    "id": "GVDA2SFDAL8SvfcFYB3j",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 3,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.344304,
+      "longitude": -78.157825
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T18:26:35.593Z",
+    "es_terminal": false,
+    "id": "gwbuoNHAVZVbRLdPPvAb",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 57,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.28443,
+      "longitude": -78.120156
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T21:20:21.039Z",
+    "es_terminal": false,
+    "id": "gzpzE7iJuuk2HCsL8k2S",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 18,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.311764,
+      "longitude": -78.123111
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L3",
+    "create": "2026-02-03T00:00:15.735Z",
+    "es_terminal": false,
+    "id": "H1hxOEa0rOHKXut2dij6",
+    "nombre_linea": "Línea 3- La Alborada-Hospital General",
+    "orden": 22,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.283093,
+      "longitude": -78.121325
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T21:34:37.726Z",
+    "es_terminal": false,
+    "id": "h4UjDwWZmWnUvK7Ilbva",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 28,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.29318,
+      "longitude": -78.117031
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T18:42:28.056Z",
+    "es_terminal": false,
+    "id": "hcCR013g18iOOOCLzbBf",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 68,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.306321,
+      "longitude": -78.120174
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T17:38:55.394Z",
+    "es_terminal": false,
+    "id": "HgP1mnxg3Axf4cu1BPe4",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 36,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.280539,
+      "longitude": -78.122655
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T20:39:18.867Z",
+    "es_terminal": false,
+    "id": "hj6tJvqhP8UmLwNnRzzh",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 8,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.343894,
+      "longitude": -78.141627
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T21:53:35.523Z",
+    "es_terminal": false,
+    "id": "htnOYa2q8iOuelX7SSV0",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 40,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.254504,
+      "longitude": -78.156239
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T18:46:47.343Z",
+    "es_terminal": false,
+    "id": "I5tdBWnJDASU31wTxpfk",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 71,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.30933,
+      "longitude": -78.118434
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T21:49:42.875Z",
+    "es_terminal": false,
+    "id": "i6SRZDZggz3BiExSPRfg",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 36,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.266648,
+      "longitude": -78.130104
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T22:47:46.053Z",
+    "es_terminal": false,
+    "id": "iC16aHGDB80pCeIEfXTu",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 76,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.325223,
+      "longitude": -78.137625
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T15:02:38.433Z",
+    "es_terminal": false,
+    "id": "iIFuoSL1vUPWd5jAAxvP",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 7,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.323052,
+      "longitude": -78.130648
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T22:06:21.411Z",
+    "es_terminal": false,
+    "id": "iLqRU1Oac3nMCSveQMti",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 49,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.254373,
+      "longitude": -78.155794
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Externa",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T23:00:40.156Z",
+    "es_terminal": false,
+    "id": "ISxSUKjbDM0WCWD3HVNK",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 84,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.344095,
+      "longitude": -78.157669
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T21:39:24.052Z",
+    "es_terminal": false,
+    "id": "j2IE7WU5wIVwlmX81TE0",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 32,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.282023,
+      "longitude": -78.121805
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T23:04:32.691Z",
+    "es_terminal": false,
+    "id": "j5qeRi6oMMsgk1JUYnPW",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 87,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.389123,
+      "longitude": -78.170074
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T18:52:11.663Z",
+    "es_terminal": false,
+    "id": "J7NinAR8AuQI5BUrWvfc",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 74,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.313988,
+      "longitude": -78.118774
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L1",
+    "create": "2026-01-27T15:29:28.482Z",
+    "es_terminal": false,
+    "id": "JA2O6gKUM9ipF680NVOy",
+    "nombre_linea": "Línea 1- 27 de Febrero-Sur",
+    "orden": 19,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.283763,
+      "longitude": -78.12232
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T18:21:05.001Z",
+    "es_terminal": false,
+    "id": "JBeKWaMcfe6yajIpOOpD",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 53,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.282503,
+      "longitude": -78.125327
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Externa",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T22:54:54.421Z",
+    "es_terminal": false,
+    "id": "jD7qD8vAt37BPbOBglsu",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 81,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.345366,
+      "longitude": -78.152562
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T22:45:09.021Z",
+    "es_terminal": false,
+    "id": "jKu4pbLVkhBNS6WbuaOR",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 73,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.319214,
+      "longitude": -78.1317
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L3",
+    "create": "2026-02-03T01:34:38.159Z",
+    "es_terminal": false,
+    "id": "JLdKNQ9hcoMzmPqIBuTY",
+    "nombre_linea": "Línea 3- La Alborada-Hospital General",
+    "orden": 38,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.310025,
+      "longitude": -78.115537
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T22:20:53.688Z",
+    "es_terminal": false,
+    "id": "jpNpZLdxFlSFv1wohmsW",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 54,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.266833,
+      "longitude": -78.129948
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L2",
+    "create": "2026-01-31T01:52:55.555Z",
+    "es_terminal": false,
+    "id": "jYkfZ6DrNSceP3Kr1Nr7",
+    "nombre_linea": "Línea 2- 27  de Febrero-Norte",
+    "orden": 31,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.31186,
+      "longitude": -78.125834
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T18:35:20.073Z",
+    "es_terminal": false,
+    "id": "kBAC055c5WvWtP5cTMaU",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 62,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.296397,
+      "longitude": -78.118002
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L1",
+    "create": "2026-01-27T15:25:50.908Z",
+    "es_terminal": false,
+    "id": "kE4fPwmKecfbkmABmagm",
+    "nombre_linea": "Línea 1- 27 de Febrero-Sur",
+    "orden": 16,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.287987,
+      "longitude": -78.123704
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T18:07:08.057Z",
+    "es_terminal": false,
+    "id": "kfCQylyteDHQiIlBBZFq",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 50,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.276819,
+      "longitude": -78.124383
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T17:40:03.571Z",
+    "es_terminal": false,
+    "id": "kgfYoQzsyGKcD9JPHX9I",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 37,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.276733,
+      "longitude": -78.124273
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L2",
+    "create": "2026-01-30T23:39:07.734Z",
+    "es_terminal": false,
+    "id": "khLG1bj5S6h55yI844Zc",
+    "nombre_linea": "Línea 2- 27  de Febrero-Norte",
+    "orden": 3,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.311654,
+      "longitude": -78.120518
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T18:37:41.752Z",
+    "es_terminal": false,
+    "id": "kMmou4qeksUGRpownk3J",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 66,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.302904,
+      "longitude": -78.11919
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L1",
+    "create": "2026-01-27T15:42:58.266Z",
+    "es_terminal": false,
+    "id": "kvXD2rCvenGOUk4A6UUk",
+    "nombre_linea": "Línea 1- 27 de Febrero-Sur",
+    "orden": 28,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.296423,
+      "longitude": -78.119265
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T18:58:04.279Z",
+    "es_terminal": false,
+    "id": "kw1mACqgWEDlVQkaICEN",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 80,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.322425,
+      "longitude": -78.130174
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T21:32:01.262Z",
+    "es_terminal": false,
+    "id": "KZp84gUVaTYo5MwWdm8P",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 27,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.294437,
+      "longitude": -78.117299
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T17:26:28.539Z",
+    "es_terminal": false,
+    "id": "L9ZZnJdQrxkLSBWaFEUt",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 27,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.294444,
+      "longitude": -78.117295
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L3",
+    "create": "2026-02-02T23:33:10.634Z",
+    "es_terminal": false,
+    "id": "LAvQwNJouacYRgxkHxEw",
+    "nombre_linea": "Línea 3- La Alborada-Hospital General",
+    "orden": 17,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.283964,
+      "longitude": -78.120418
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T15:09:20.584Z",
+    "es_terminal": false,
+    "id": "lbdsTGg7Fyu1HXdyt2eS",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 11,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.317625,
+      "longitude": -78.125067
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L2",
+    "create": "2026-01-31T01:47:23.587Z",
+    "es_terminal": false,
+    "id": "lE2PDl79NISgRGgNjQmG",
+    "nombre_linea": "Línea 2- 27  de Febrero-Norte",
+    "orden": 24,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.293588,
+      "longitude": -78.120233
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T21:17:53.463Z",
+    "es_terminal": false,
+    "id": "LfpDAV3xglVxce9ee741",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 17,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.312134,
+      "longitude": -78.124364
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Externa",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T22:50:59.613Z",
+    "es_terminal": false,
+    "id": "LGsr110Pb29JEGbWp2k4",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 79,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.345009,
+      "longitude": -78.144797
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T15:08:17.546Z",
+    "es_terminal": false,
+    "id": "LIh63XbDOiD2yViwwQiI",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 10,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.319504,
+      "longitude": -78.127124
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T18:08:07.961Z",
+    "es_terminal": false,
+    "id": "LpI0EKh99KxvyegADh5R",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 51,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.279056,
+      "longitude": -78.123575
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L1",
+    "create": "2026-01-26T20:19:15.964Z",
+    "es_terminal": false,
+    "id": "LpM9rmeQzvP3SjjsBS27",
+    "nombre_linea": "Línea 1- 27 de Febrero-Sur\n",
+    "orden": 0,
+    "provincia": "Morona Santiago",
+    "referenicial": false,
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.315634,
+      "longitude": -78.12313
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T21:54:55.291Z",
+    "es_terminal": false,
+    "id": "lSUaDnF4L1r9lPvrDmZN",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 42,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.255857,
+      "longitude": -78.162151
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T23:03:03.180Z",
+    "es_terminal": false,
+    "id": "Lu0jxN6vJ0IMnCE8kpt3",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 85,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.366473,
+      "longitude": -78.157889
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T18:37:11.888Z",
+    "es_terminal": false,
+    "id": "lU6bBwbWPmmcewJzEbKO",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 65,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.303078,
+      "longitude": -78.117929
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T21:49:03.635Z",
+    "es_terminal": false,
+    "id": "Lx4Yxy4iR599OpxX1Rdc",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 35,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.270668,
+      "longitude": -78.127561
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T18:24:19.344Z",
+    "es_terminal": false,
+    "id": "lZGiV6CWYxx7lKIzlxaJ",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 56,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.283101,
+      "longitude": -78.121328
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Interna",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T22:51:42.821Z",
+    "es_terminal": false,
+    "id": "mdTy45Uq8I5vcCTCMD2C",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 80,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.348373,
+      "longitude": -78.149118
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L3",
+    "create": "2026-02-02T23:59:49.584Z",
+    "es_terminal": false,
+    "id": "mhI8SPObjDVjxyA4Wd1j",
+    "nombre_linea": "Línea 3- La Alborada-Hospital General",
+    "orden": 21,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.284237,
+      "longitude": -78.12338
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L3",
+    "create": "2026-02-03T00:53:39.035Z",
+    "es_terminal": false,
+    "id": "mNLt2AFnpGq4OSUV3DKk",
+    "nombre_linea": "Línea 3- La Alborada-Hospital General",
+    "orden": 30,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.303054,
+      "longitude": -78.117943
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L3",
+    "create": "2026-02-02T23:01:54.255Z",
+    "es_terminal": false,
+    "id": "mq0dKSikiCa8Mb3AodHh",
+    "nombre_linea": "Línea 3- La Alborada-Hospital General",
+    "orden": 3,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.316955,
+      "longitude": -78.117178
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T17:43:33.506Z",
+    "es_terminal": false,
+    "id": "MQkkzBJdh4TBw1v6h0OY",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 42,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.276977,
+      "longitude": -78.10708
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L3",
+    "create": "2026-02-03T00:30:13.685Z",
+    "es_terminal": false,
+    "id": "mrAEq0MHvmNCeGVv7xox",
+    "nombre_linea": "Línea 3- La Alborada-Hospital General",
+    "orden": 27,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.294906,
+      "longitude": -78.117312
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T17:11:21.316Z",
+    "es_terminal": false,
+    "id": "MrrVUs1Tkzp46EESzPuj",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 25,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.298764,
+      "longitude": -78.117531
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T17:33:53.091Z",
+    "es_terminal": false,
+    "id": "ms9TpfdRzOml8eenTLMh",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 31,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.283066,
+      "longitude": -78.12143
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T17:36:11.667Z",
+    "es_terminal": false,
+    "id": "n3j4hEilS22sRjiGS9FV",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 34,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.282463,
+      "longitude": -78.125179
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Interna",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T22:56:03.877Z",
+    "es_terminal": false,
+    "id": "Nsppzr5Rt1d7B3MFCDfi",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 82,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.347386,
+      "longitude": -78.155164
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T15:01:09.137Z",
+    "es_terminal": false,
+    "id": "NtNEB0ABMB6QaSS9axxn",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 6,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.324888,
+      "longitude": -78.13266
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T22:09:42.291Z",
+    "es_terminal": false,
+    "id": "NXVjjJNxsWfSfSUWK0we",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 51,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.265104,
+      "longitude": -78.133642
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Externa",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T22:52:20.605Z",
+    "es_terminal": false,
+    "id": "o4euWS7bwbCB0tsJwQBP",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 80,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.345178,
+      "longitude": -78.148853
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L2",
+    "create": "2026-01-31T00:04:19.496Z",
+    "es_terminal": false,
+    "id": "o9pLMjcwIX0luJDec50l",
+    "nombre_linea": "Línea 2- 27  de Febrero-Norte",
+    "orden": 15,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.288319,
+      "longitude": -78.116671
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T22:23:23.626Z",
+    "es_terminal": false,
+    "id": "OaDu2mud6ic7z23efHnO",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 57,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.282975,
+      "longitude": -78.12144
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T15:20:12.721Z",
+    "es_terminal": false,
+    "id": "OBMcgru1hN4PogFPFQSN",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 19,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.307286,
+      "longitude": -78.118817
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T15:20:49.545Z",
+    "es_terminal": false,
+    "id": "Obz0qVjPQu1T6stcA2Hd",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 20,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.306535,
+      "longitude": -78.119096
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T21:05:32.128Z",
+    "es_terminal": false,
+    "id": "OG3w8IKCbQ10QWj2zSzp",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 14,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.319308,
+      "longitude": -78.131399
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L3",
+    "create": "2026-02-03T01:16:36.265Z",
+    "es_terminal": false,
+    "id": "oJlCMxaNLU1t0Hgt3bAS",
+    "nombre_linea": "Línea 3- La Alborada-Hospital General",
+    "orden": 33,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.30635,
+      "longitude": -78.120172
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T15:15:49.833Z",
+    "es_terminal": false,
+    "id": "ojYNiO0NOLYz8ao8Sips",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 14,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.314168,
+      "longitude": -78.121883
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T18:06:36.977Z",
+    "es_terminal": false,
+    "id": "oqZmNgGEb2wGdnWi8OKB",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 49,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.275379,
+      "longitude": -78.123862
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T15:05:08.233Z",
+    "es_terminal": false,
+    "id": "OupJDiPCLOvn0R9AvONH",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 9,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.320905,
+      "longitude": -78.128519
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L3",
+    "create": "2026-02-03T00:01:21.944Z",
+    "es_terminal": false,
+    "id": "Oxgz5UHiPPoNAhNMhio4",
+    "nombre_linea": "Línea 3- La Alborada-Hospital General",
+    "orden": 23,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.2842,
+      "longitude": -78.120418
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L3",
+    "create": "2026-02-03T00:39:05.828Z",
+    "es_terminal": false,
+    "id": "p5yV2k7WsjZ6GUigOXeX",
+    "nombre_linea": "Línea 3- La Alborada-Hospital General",
+    "orden": 28,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.297506,
+      "longitude": -78.117854
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T18:03:20.497Z",
+    "es_terminal": false,
+    "id": "PJWAmzuvlRtT23xP0x65",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 44,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.276703,
+      "longitude": -78.112729
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L1",
+    "create": "2026-01-27T15:09:04.054Z",
+    "es_terminal": false,
+    "id": "pPu7ae0mYdPF9hmbyUl3",
+    "nombre_linea": "Línea 1- 27 de Febrero-Sur",
+    "orden": 4,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.311828,
+      "longitude": -78.125716
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L3",
+    "create": "2026-02-02T23:23:49.682Z",
+    "es_terminal": false,
+    "id": "PpVUqUthgGqeEOTbh9Kp",
+    "nombre_linea": "Línea 3- La Alborada-Hospital General",
+    "orden": 10,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.300162,
+      "longitude": -78.117978
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T22:31:22.671Z",
+    "es_terminal": false,
+    "id": "PXkMbRw0iFgXJjjmqUHm",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 64,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.295333,
+      "longitude": -78.11827
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T19:04:35.071Z",
+    "es_terminal": false,
+    "id": "pxnV9sjXtHK2mqT1QjHU",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 86,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.323465,
+      "longitude": -78.135484
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L2",
+    "create": "2026-01-30T23:52:51.127Z",
+    "es_terminal": false,
+    "id": "pZIm5xUrZoNqMq1iv8uN",
+    "nombre_linea": "Línea 2- 27  de Febrero-Norte",
+    "orden": 10,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.297734,
+      "longitude": -78.118455
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L3",
+    "create": "2026-02-03T01:27:29.865Z",
+    "es_terminal": false,
+    "id": "pZWONuVMwqRIpsQNx92i",
+    "nombre_linea": "Línea 3- La Alborada-Hospital General",
+    "orden": 36,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.309204,
+      "longitude": -78.119174
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T22:02:08.659Z",
+    "es_terminal": false,
+    "id": "q7FYaBnOn4dDLhhTYhFa",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 48,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.256029,
+      "longitude": -78.160542
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T22:37:32.104Z",
+    "es_terminal": false,
+    "id": "q86sZIPQREKVf5KuJ0CB",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 67,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.302724,
+      "longitude": -78.11985
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T18:05:18.985Z",
+    "es_terminal": false,
+    "id": "QAXH9ZtJ0UDxXAZXYK7Y",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 46,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.274479,
+      "longitude": -78.121062
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L3",
+    "create": "2026-02-02T23:23:06.082Z",
+    "es_terminal": false,
+    "id": "qeiC8SC6w6alit1qqeWG",
+    "nombre_linea": "Línea 3- La Alborada-Hospital General",
+    "orden": 9,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.304225,
+      "longitude": -78.11779
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T17:10:11.284Z",
+    "es_terminal": false,
+    "id": "QeydIKfbGxHPVUEFIvMQ",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 23,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.302341,
+      "longitude": -78.117868
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L1",
+    "create": "2026-01-27T15:34:59.932Z",
+    "es_terminal": false,
+    "id": "qjeeMciYWqQjLpEWUFGr",
+    "nombre_linea": "Línea 1- 27 de Febrero-Sur",
+    "orden": 23,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.288257,
+      "longitude": -78.116848
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L3",
+    "create": "2026-02-02T23:30:53.218Z",
+    "es_terminal": false,
+    "id": "qlgd6gsJ1i12pJkKt4zN",
+    "nombre_linea": "Línea 3- La Alborada-Hospital General",
+    "orden": 15,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.291149,
+      "longitude": -78.116881
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L2",
+    "create": "2026-01-30T23:47:01.822Z",
+    "es_terminal": false,
+    "id": "qLhsifsWGV6fmZplH5xs",
+    "nombre_linea": "Línea 2- 27  de Febrero-Norte",
+    "orden": 6,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.306578,
+      "longitude": -78.119095
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T21:04:19.288Z",
+    "es_terminal": false,
+    "id": "QLNzJrt7QccGcy3y4Yt9",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 13,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.32216,
+      "longitude": -78.134224
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L3",
+    "create": "2026-02-02T23:28:46.699Z",
+    "es_terminal": false,
+    "id": "R2JdjuDAr5Ioh8SMRu2n",
+    "nombre_linea": "Línea 3- La Alborada-Hospital General",
+    "orden": 13,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.294443,
+      "longitude": -78.117294
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T22:29:12.471Z",
+    "es_terminal": false,
+    "id": "r4ONun7KZhdWNv6m2bLc",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 60,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.288112,
+      "longitude": -78.116832
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T15:21:57.056Z",
+    "es_terminal": false,
+    "id": "rBMVQturNO4cnWbVcxbi",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 21,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.30438,
+      "longitude": -78.118943
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L1",
+    "create": "2026-01-27T18:04:02.808Z",
+    "es_terminal": false,
+    "id": "rCo54zH9wHjbLauMtq31",
+    "nombre_linea": "Línea 1- 27 de Febrero-Sur",
+    "orden": 17,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.287459,
+      "longitude": -78.121266
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T18:28:56.296Z",
+    "es_terminal": false,
+    "id": "ReExPLnj1ntbw0nP5vpa",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 60,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.292116,
+      "longitude": -78.11713
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L1",
+    "create": "2026-01-27T15:52:16.305Z",
+    "es_terminal": false,
+    "id": "rHaK3gwpaXqowVdqaBqa",
+    "nombre_linea": "Línea 1- 27 de Febrero-Sur",
+    "orden": 34,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.311978,
+      "longitude": -78.120719
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L3",
+    "create": "2026-02-02T23:19:31.923Z",
+    "es_terminal": false,
+    "id": "rI2l2TdECfJCkxd65XlN",
+    "nombre_linea": "Línea 3- La Alborada-Hospital General",
+    "orden": 8,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.304434,
+      "longitude": -78.118943
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T18:55:15.345Z",
+    "es_terminal": false,
+    "id": "ROef5R8xc0bhRyKoHGrE",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 77,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.315679,
+      "longitude": -78.123187
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T22:35:41.926Z",
+    "es_terminal": false,
+    "id": "RoSF6EueJ75b77SceCwO",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 65,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.296348,
+      "longitude": -78.119262
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T22:20:16.961Z",
+    "es_terminal": false,
+    "id": "Rsk1goTTQ5uWOwuQiXE7",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 53,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.266294,
+      "longitude": -78.131249
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T17:33:08.475Z",
+    "es_terminal": false,
+    "id": "rtNGOd6oEbKmvl6MvOuM",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 30,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.28409,
+      "longitude": -78.120191
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L3",
+    "create": "2026-02-03T01:09:17.778Z",
+    "es_terminal": false,
+    "id": "rvyMIOgZUZI1vKiOdMgV",
+    "nombre_linea": "Línea 3- La Alborada-Hospital General",
+    "orden": 31,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.302898,
+      "longitude": -78.119187
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T19:05:10.655Z",
+    "es_terminal": false,
+    "id": "rXThT1eVz8Phoc1KqKzG",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 87,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.325239,
+      "longitude": -78.137603
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T21:41:20.380Z",
+    "es_terminal": false,
+    "id": "SdCV5L2yjLv3eaYQ8fWi",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 34,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.276508,
+      "longitude": -78.124364
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L2",
+    "create": "2026-01-31T01:51:26.050Z",
+    "es_terminal": false,
+    "id": "SdDAGEOBge4XSZraIxzZ",
+    "nombre_linea": "Línea 2- 27  de Febrero-Norte",
+    "orden": 29,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.307843,
+      "longitude": -78.124726
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T18:35:49.001Z",
+    "es_terminal": false,
+    "id": "SDRtQeIul1qh9mz3IKFT",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 63,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.29864,
+      "longitude": -78.117624
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L3",
+    "create": "2026-02-02T23:08:56.187Z",
+    "es_terminal": false,
+    "id": "Sgwla1l3xDtBOVI1yFy2",
+    "nombre_linea": "Línea 3- La Alborada-Hospital General",
+    "orden": 5,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.309923,
+      "longitude": -78.115389
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L1",
+    "create": "2026-01-27T15:16:55.917Z",
+    "es_terminal": false,
+    "id": "SIOLC5EQF8JMNIIqSSzR",
+    "nombre_linea": "Línea 1- 27 de Febrero-Sur",
+    "orden": 12,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.291642,
+      "longitude": -78.119869
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T21:35:28.831Z",
+    "es_terminal": false,
+    "id": "smXhUmmtuPzFIBtJwqaT",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 29,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.291026,
+      "longitude": -78.116891
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L2",
+    "create": "2026-01-31T00:31:13.375Z",
+    "es_terminal": false,
+    "id": "sNLxerwKK7bRWnZS0tll",
+    "nombre_linea": "Línea 2- 27  de Febrero-Norte",
+    "orden": 19,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.287469,
+      "longitude": -78.121347
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L3",
+    "create": "2026-02-03T02:12:50.412Z",
+    "es_terminal": false,
+    "id": "SU2EsYKTqHjmPTLO8Lkp",
+    "nombre_linea": "Línea 3- La Alborada-Hospital General",
+    "orden": 40,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.316792,
+      "longitude": -78.117331
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L1",
+    "create": "2026-01-27T15:46:42.385Z",
+    "es_terminal": false,
+    "id": "Ta3BfX33AJaPj5nnQeZc",
+    "nombre_linea": "Línea 1- 27 de Febrero-Sur",
+    "orden": 29,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.297402,
+      "longitude": -78.119346
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T18:27:20.480Z",
+    "es_terminal": false,
+    "id": "tbb5Pbf08j7uCIOdHNEf",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 58,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.286566,
+      "longitude": -78.117594
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L3",
+    "create": "2026-02-02T22:48:43.736Z",
+    "es_terminal": false,
+    "id": "tBGaHoXDSlrU1xVl2fZ5",
+    "nombre_linea": "Línea 3- La Alborada-Hospital General",
+    "orden": 0,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.321029,
+      "longitude": -78.12328
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L3",
+    "create": "2026-02-03T00:46:29.235Z",
+    "es_terminal": false,
+    "id": "TCVAsYzJVeUqJDsOsEsK",
+    "nombre_linea": "Línea 3- La Alborada-Hospital General",
+    "orden": 29,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.300167,
+      "longitude": -78.118064
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L3",
+    "create": "2026-02-03T01:26:04.489Z",
+    "es_terminal": false,
+    "id": "TdRVw0K9N9fO4npnCr5C",
+    "nombre_linea": "Línea 3- La Alborada-Hospital General",
+    "orden": 35,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.308953,
+      "longitude": -78.120271
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T22:48:21.693Z",
+    "es_terminal": false,
+    "id": "TlGB5dQBZYZXUc4v05Ve",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 77,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.330985,
+      "longitude": -78.138885
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L1",
+    "create": "2026-01-27T15:49:02.401Z",
+    "es_terminal": false,
+    "id": "TM8j8sBuTHRVpT7CaIww",
+    "nombre_linea": "Línea 1- 27 de Febrero-Sur",
+    "orden": 32,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.306307,
+      "longitude": -78.120161
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L1",
+    "create": "2026-01-27T15:19:01.019Z",
+    "es_terminal": false,
+    "id": "tmSPCEz8rPdMdK9aiU4s",
+    "nombre_linea": "Línea 1- 27 de Febrero-Sur",
+    "orden": 13,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.291497,
+      "longitude": -78.121148
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L1",
+    "create": "2026-01-27T15:33:46.171Z",
+    "es_terminal": false,
+    "id": "ToOHM7amXTDFUjbqpsAa",
+    "nombre_linea": "Línea 1- 27 de Febrero-Sur",
+    "orden": 22,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.28648,
+      "longitude": -78.117726
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T18:22:47.048Z",
+    "es_terminal": false,
+    "id": "tqIlsWlSFA67LDZP9jLP",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 54,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.284462,
+      "longitude": -78.124506
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L1",
+    "create": "2026-01-27T15:35:46.203Z",
+    "es_terminal": false,
+    "id": "UGoLTFWBPyROOKqyILrS",
+    "nombre_linea": "Línea 1- 27 de Febrero-Sur",
+    "orden": 24,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.292074,
+      "longitude": -78.117135
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T21:24:34.470Z",
+    "es_terminal": false,
+    "id": "UgSuv6qlXnckvGX5P9aR",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 20,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.307382,
+      "longitude": -78.120113
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T18:02:45.625Z",
+    "es_terminal": false,
+    "id": "uK77QDlPIdqQEMApj5Gv",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 43,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.277014,
+      "longitude": -78.107238
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L1",
+    "create": "2026-01-26T23:01:12.183Z",
+    "es_terminal": false,
+    "id": "uqETM9P8stlmWXjN0vIt",
+    "nombre_linea": "Línea 1- 27 de Febrero-Sur",
+    "orden": 1,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.318451,
+      "longitude": -78.126255
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L2",
+    "create": "2026-01-30T23:40:44.118Z",
+    "es_terminal": false,
+    "id": "UUqa3AqYeL5YO7WNUZRg",
+    "nombre_linea": "Línea 2- 27  de Febrero-Norte",
+    "orden": 4,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.309845,
+      "longitude": -78.120416
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T22:07:48.682Z",
+    "es_terminal": false,
+    "id": "uVz2b9qQij3VNrHibM8b",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 50,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.26423,
+      "longitude": -78.135324
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L1",
+    "create": "2026-01-27T15:36:25.306Z",
+    "es_terminal": false,
+    "id": "UW5ebH6xWMV9Kwx2haEx",
+    "nombre_linea": "Línea 1- 27 de Febrero-Sur",
+    "orden": 25,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.293239,
+      "longitude": -78.117211
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L1",
+    "create": "2026-01-27T15:14:59.277Z",
+    "es_terminal": false,
+    "id": "Uw7INxwWQBaKKqXZrJQ5",
+    "nombre_linea": "Línea 1- 27 de Febrero-Sur",
+    "orden": 10,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.299176,
+      "longitude": -78.121422
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T22:47:11.070Z",
+    "es_terminal": false,
+    "id": "UWW26NQUt2tMr5Vg1eOt",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 75,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.323264,
+      "longitude": -78.135627
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T15:17:41.121Z",
+    "es_terminal": false,
+    "id": "UXmpX5Z9CcuDaHD8MfoR",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 16,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.312906,
+      "longitude": -78.118613
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T18:53:54.040Z",
+    "es_terminal": false,
+    "id": "vAOWphZ7Onorap0dGNCC",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 76,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.314219,
+      "longitude": -78.122017
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T21:27:29.893Z",
+    "es_terminal": false,
+    "id": "VFLFC3dZOotTbYqPbiSa",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 24,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.300226,
+      "longitude": -78.118627
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L1",
+    "create": "2026-01-27T15:48:02.665Z",
+    "es_terminal": false,
+    "id": "Vg5Ljt2kWXOof9gQj5YY",
+    "nombre_linea": "Línea 1- 27 de Febrero-Sur",
+    "orden": 31,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.302721,
+      "longitude": -78.119853
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T15:12:33.513Z",
+    "es_terminal": false,
+    "id": "VmT4aWlgsPau4URvdDpy",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 13,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.315251,
+      "longitude": -78.12364
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T23:05:06.011Z",
+    "es_terminal": false,
+    "id": "VQkV95NXNPQZYA23CNYW",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 88,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.3897,
+      "longitude": -78.171863
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T17:30:42.451Z",
+    "es_terminal": false,
+    "id": "vtuoKyKJKdV4vDVTVcj5",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 28,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.291101,
+      "longitude": -78.116814
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T22:29:48.703Z",
+    "es_terminal": false,
+    "id": "vwnm3hs2UvrsD8e5fPAB",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 61,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.292049,
+      "longitude": -78.117127
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L2",
+    "create": "2026-01-31T01:57:49.930Z",
+    "es_terminal": false,
+    "id": "w07Sjv8CjUELIKSryOT3",
+    "nombre_linea": "Línea 2- 27  de Febrero-Norte",
+    "orden": 35,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.31681,
+      "longitude": -78.126035
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Interna",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T20:29:49.059Z",
+    "es_terminal": false,
+    "id": "w2FrgHEITDUWlZyPkc7Z",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 5,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.347678,
+      "longitude": -78.153989
+    },
+    "update": "2026-02-05T02:22:32.214Z"
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L1",
+    "create": "2026-01-27T15:13:30.893Z",
+    "es_terminal": false,
+    "id": "wCMvwPsuFxul7mw0MnVU",
+    "nombre_linea": "Línea 1- 27 de Febrero-Sur",
+    "orden": 8,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.301872,
+      "longitude": -78.123018
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T18:05:52.249Z",
+    "es_terminal": false,
+    "id": "wE7WCx7XPBbIAOb7y2BT",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 47,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.274902,
+      "longitude": -78.122366
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T20:14:02.730Z",
+    "es_terminal": false,
+    "id": "wHRPImtwHsltkBOjNrjK",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 0,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.390169,
+      "longitude": -78.170136
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T22:42:24.101Z",
+    "es_terminal": false,
+    "id": "witK2bYNvIrpseWtpPXU",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 71,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.316229,
+      "longitude": -78.128586
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L3",
+    "create": "2026-02-03T01:35:33.183Z",
+    "es_terminal": false,
+    "id": "wjBCY54ClxD1CD6nKxr9",
+    "nombre_linea": "Línea 3- La Alborada-Hospital General",
+    "orden": 39,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.313511,
+      "longitude": -78.116457
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T18:29:33.713Z",
+    "es_terminal": false,
+    "id": "WltafJZ10h289cK03TRA",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 61,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.29485,
+      "longitude": -78.117291
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T22:36:50.158Z",
+    "es_terminal": false,
+    "id": "WNrKl1CYDV9ChASKoJOX",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 66,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.299883,
+      "longitude": -78.119587
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T21:22:09.574Z",
+    "es_terminal": false,
+    "id": "wZZrwClY537viA4Xh2nB",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 19,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.308711,
+      "longitude": -78.121609
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L1",
+    "create": "2026-01-27T15:28:10.972Z",
+    "es_terminal": false,
+    "id": "x49KaPApU87Gq9c79A1E",
+    "nombre_linea": "Línea 1- 27 de Febrero-Sur",
+    "orden": 18,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.285741,
+      "longitude": -78.121502
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L2",
+    "create": "2026-01-30T23:49:37.934Z",
+    "es_terminal": false,
+    "id": "x6shoF4r2nj9VqSmxiTQ",
+    "nombre_linea": "Línea 2- 27  de Febrero-Norte",
+    "orden": 7,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.304453,
+      "longitude": -78.118943
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Externa",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T20:31:08.004Z",
+    "es_terminal": false,
+    "id": "xBEjkhh06IyPtvlayGbn",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 5,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.345114,
+      "longitude": -78.154327
+    },
+    "update": "2026-02-05T02:21:45.824Z"
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Interna",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T23:00:11.636Z",
+    "es_terminal": false,
+    "id": "xCxn2ymAmoK1Y1jTtO7k",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 84,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.344235,
+      "longitude": -78.157731
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L2",
+    "create": "2026-01-31T01:49:54.282Z",
+    "es_terminal": false,
+    "id": "XeE19nNceaYBiJiGxZNJ",
+    "nombre_linea": "Línea 2- 27  de Febrero-Norte",
+    "orden": 27,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.301751,
+      "longitude": -78.123098
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T17:12:27.603Z",
+    "es_terminal": false,
+    "id": "xelviri6h478QGQj7sxY",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 26,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.296513,
+      "longitude": -78.117922
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L3",
+    "create": "2026-02-03T01:11:43.329Z",
+    "es_terminal": false,
+    "id": "XhPYmPEcqQ6NtnDszdg5",
+    "nombre_linea": "Línea 3- La Alborada-Hospital General",
+    "orden": 32,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.304094,
+      "longitude": -78.11996
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T22:22:45.687Z",
+    "es_terminal": false,
+    "id": "Xi9lKrnntP1Gml3SRtOH",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 56,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.279065,
+      "longitude": -78.123567
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L1",
+    "create": "2026-01-27T15:31:28.115Z",
+    "es_terminal": false,
+    "id": "XlBvIoLLc1S1bFywHA82",
+    "nombre_linea": "Línea 1- 27 de Febrero-Sur",
+    "orden": 21,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.284545,
+      "longitude": -78.120013
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T21:57:41.882Z",
+    "es_terminal": false,
+    "id": "xM2sVZRVIP6vL05NG4Ic",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 45,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.258321,
+      "longitude": -78.175237
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T22:39:13.798Z",
+    "es_terminal": false,
+    "id": "XM7qtk49Y4WzyyMYv0is",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 69,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.308719,
+      "longitude": -78.121803
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T22:26:37.679Z",
+    "es_terminal": false,
+    "id": "xnDnIj7kuMUYuQ4bsWk7",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 58,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.28446,
+      "longitude": -78.120129
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T18:36:27.257Z",
+    "es_terminal": false,
+    "id": "xOtLzO3dy1TuoFWdXCiV",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 64,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.300133,
+      "longitude": -78.118047
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Interna",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T22:57:50.717Z",
+    "es_terminal": false,
+    "id": "Xpd4Fva0x8rCUfmFmzw5",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 83,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.346722,
+      "longitude": -78.157395
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L2",
+    "create": "2026-01-30T23:35:53.462Z",
+    "es_terminal": false,
+    "id": "xTIc4BY0vvxzsC3hIx2e",
+    "nombre_linea": "Línea 2- 27  de Febrero-Norte",
+    "orden": 1,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.3142276007287976,
+      "longitude": -78.1219167533207
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T21:26:52.654Z",
+    "es_terminal": false,
+    "id": "xu0nThFYEGYRKlpWlgxQ",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 23,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.302188,
+      "longitude": -78.11878
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T15:03:10.690Z",
+    "es_terminal": false,
+    "id": "y5DFY76AlR1gXAWzqzxw",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 8,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.321956,
+      "longitude": -78.12957
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T21:50:14.675Z",
+    "es_terminal": false,
+    "id": "Y7182zURLLaWfIMhwrVI",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 37,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.26586,
+      "longitude": -78.131847
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T21:50:51.940Z",
+    "es_terminal": false,
+    "id": "YCooI1IVGS5a9ATNEvhR",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 38,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.265032,
+      "longitude": -78.133489
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T14:27:39.651Z",
+    "es_terminal": false,
+    "id": "yHdSzSc161kJEIPOsJRN",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 0,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.330347,
+      "longitude": -78.134626
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T18:43:42.464Z",
+    "es_terminal": false,
+    "id": "YNQLhtNQsJBekEtffHOT",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 70,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.308958,
+      "longitude": -78.120298
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T22:00:05.235Z",
+    "es_terminal": false,
+    "id": "YNT22HIBNzrkoNPfNCTc",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 47,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.255973,
+      "longitude": -78.162103
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L2",
+    "create": "2026-01-31T01:41:51.546Z",
+    "es_terminal": false,
+    "id": "yO9Ls064yXEfP5h54jTi",
+    "nombre_linea": "Línea 2- 27  de Febrero-Norte",
+    "orden": 22,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.289887,
+      "longitude": -78.121242
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L2",
+    "create": "2026-01-31T01:48:38.498Z",
+    "es_terminal": false,
+    "id": "yQ3B1vtocFqBvVSC7wl6",
+    "nombre_linea": "Línea 2- 27  de Febrero-Norte",
+    "orden": 26,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.300175,
+      "longitude": -78.122658
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T23:03:33.731Z",
+    "es_terminal": false,
+    "id": "yqcNivLyQ8Z38NU4SFNh",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 86,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.378701,
+      "longitude": -78.164624
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T14:29:57.298Z",
+    "es_terminal": false,
+    "id": "yRduCAWTLwNLK3FJfnNu",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 1,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.325451,
+      "longitude": -78.137475
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T14:32:04.930Z",
+    "es_terminal": false,
+    "id": "YsaP8Jk5q1jhDep92iEF",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 3,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.324502,
+      "longitude": -78.134583
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L2",
+    "create": "2026-01-31T01:55:05.234Z",
+    "es_terminal": false,
+    "id": "YUmAL2rfXlie5EW4Ocor",
+    "nombre_linea": "Línea 2- 27  de Febrero-Norte",
+    "orden": 34,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.31617,
+      "longitude": -78.128575
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T20:28:25.948Z",
+    "es_terminal": false,
+    "id": "Yvrz1JqlxetvFQd4oarJ",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 4,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.347496,
+      "longitude": -78.155011
+    },
+    "update": "2026-02-05T02:29:24.203Z"
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T15:11:24.376Z",
+    "es_terminal": false,
+    "id": "yXFPf9MgoK5LCc5JVU0q",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 12,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.31658,
+      "longitude": -78.125829
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T21:29:56.984Z",
+    "es_terminal": false,
+    "id": "YyHEZlcpuXqnqmK1mX0n",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 25,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.29764,
+      "longitude": -78.118447
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L2",
+    "create": "2026-01-30T23:57:41.255Z",
+    "es_terminal": false,
+    "id": "YYrCPXIrBfownv5vBceu",
+    "nombre_linea": "Línea 2- 27  de Febrero-Norte",
+    "orden": 14,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.291321,
+      "longitude": -78.116835
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L1",
+    "create": "2026-01-27T15:53:30.474Z",
+    "es_terminal": false,
+    "id": "yzfk4zdDwF98lyKETCJT",
+    "nombre_linea": "Línea 1- 27 de Febrero-Sur",
+    "orden": 36,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.314254,
+      "longitude": -78.122044
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Interna",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T20:33:42.804Z",
+    "es_terminal": false,
+    "id": "z3ncNLR3sPxOj7RPMUDq",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 7,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.34524,
+      "longitude": -78.144684
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L3",
+    "create": "2026-02-02T23:11:12.860Z",
+    "es_terminal": false,
+    "id": "Z558BR3whK1vEO6GCd87",
+    "nombre_linea": "Línea 3- La Alborada-Hospital General",
+    "orden": 6,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.307473,
+      "longitude": -78.118399
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T22:46:35.262Z",
+    "es_terminal": false,
+    "id": "z66zW00p106vyGZtzhMu",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 74,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.321868,
+      "longitude": -78.134208
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T17:40:36.388Z",
+    "es_terminal": false,
+    "id": "Z9J5aFEN2L6tNFXtge71",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 38,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.275492,
+      "longitude": -78.123954
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L1",
+    "create": "2026-01-27T15:23:37.749Z",
+    "es_terminal": false,
+    "id": "zQ5ypcKlowm9sm8yxCbj",
+    "nombre_linea": "Línea 1- 27 de Febrero-Sur",
+    "orden": 15,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.289305,
+      "longitude": -78.124251
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L4",
+    "create": "2026-02-03T18:59:52.095Z",
+    "es_terminal": false,
+    "id": "ZqirFNWVytZjdRfvrXK4",
+    "nombre_linea": "Línea 4-Nueva Jerusalen-Nuestra Señora del Rosario",
+    "orden": 82,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Norte-Sur",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.324832,
+      "longitude": -78.132708
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L1",
+    "create": "2026-01-27T15:47:23.041Z",
+    "es_terminal": false,
+    "id": "ZTFYZgyfIvNa37OVuCHs",
+    "nombre_linea": "Línea 1- 27 de Febrero-Sur",
+    "orden": 30,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.29987,
+      "longitude": -78.119595
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "codigo_linea": "L2",
+    "create": "2026-01-31T01:52:01.682Z",
+    "es_terminal": false,
+    "id": "zxdZ6qidDOJTMWkoGX4Y",
+    "nombre_linea": "Línea 2- 27  de Febrero-Norte",
+    "orden": 30,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.309676,
+      "longitude": -78.125185
+    }
+  },
+  {
+    "activo": true,
+    "canton": "Morona",
+    "ciudad": "Macas",
+    "cobertura": "Normal",
+    "codigo_linea": "L5",
+    "create": "2026-02-04T21:37:41.380Z",
+    "es_terminal": false,
+    "id": "zzxYoKro35THvwADeBb0",
+    "nombre_linea": "Línea 5-Jimbitono-Arapicos",
+    "orden": 30,
+    "provincia": "Morona Santiago",
+    "referencial": false,
+    "sentido": "Sur-Norte",
+    "tipo": "urbana",
+    "ubicacion": {
+      "latitude": -2.288166,
+      "longitude": -78.116682
+    }
+  }
+]

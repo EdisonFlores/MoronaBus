@@ -3,6 +3,9 @@
 import { hideServiceNotice, showServiceNotice } from "../app/service_status.js";
 
 const API_BASE = "";
+const STATIC_DATA_BASE = "/data/firestore";
+const STATIC_MANIFEST_URL = `${STATIC_DATA_BASE}/manifest.json`;
+let manifestPromise = null;
 
 const COLLECTION_TO_ENDPOINT = {
   lugar: "lugares",
@@ -31,9 +34,63 @@ const COLLECTION_TO_ENDPOINT = {
 /**
  * Gestiona resolve endpoint dentro del flujo principal del modulo.
  */
-function resolveEndpoint(name) {
+export function resolveEndpoint(name) {
   const key = String(name || "").trim();
   return COLLECTION_TO_ENDPOINT[key] || key;
+}
+
+async function fetchJson(url, { timeoutMs = 12000 } = {}) {
+  const ctrl = new AbortController();
+  const timer = setTimeout(() => ctrl.abort(), timeoutMs);
+
+  try {
+    const response = await fetch(url, {
+      method: "GET",
+      headers: { "Accept": "application/json" },
+      signal: ctrl.signal
+    });
+
+    if (!response.ok) {
+      const error = new Error(`Error HTTP ${response.status} en ${url}`);
+      error.status = response.status;
+      throw error;
+    }
+
+    return await response.json();
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
+async function getStaticManifest(options = {}) {
+  if (!manifestPromise) {
+    manifestPromise = fetchJson(STATIC_MANIFEST_URL, options).catch(error => {
+      manifestPromise = null;
+      throw error;
+    });
+  }
+  return manifestPromise;
+}
+
+function filterByParams(data, params = {}) {
+  const filters = Object.entries(params).filter(([, value]) => (
+    value !== undefined && value !== null && String(value).trim() !== ""
+  ));
+  if (!filters.length) return data;
+
+  return data.filter(item => filters.every(([field, expected]) => (
+    String(item?.[field] ?? "").trim() === String(expected).trim()
+  )));
+}
+
+async function fetchStaticCollection(endpoint, params = {}, options = {}) {
+  const manifest = await getStaticManifest(options);
+  const dataset = manifest?.datasets?.[endpoint];
+  if (!dataset?.file) throw new Error(`No existe dataset estatico para ${endpoint}`);
+
+  const data = await fetchJson(`${STATIC_DATA_BASE}/${dataset.file}`, options);
+  if (!Array.isArray(data)) throw new Error(`Dataset estatico invalido para ${endpoint}`);
+  return filterByParams(data, params);
 }
 
 /**
@@ -122,7 +179,14 @@ export async function apiGet(path, params = {}, { timeoutMs = 12000 } = {}) {
  */
 export async function fetchCollection(name, params = {}, options = {}) {
   const endpoint = resolveEndpoint(name);
-  return apiGet(endpoint, params, options);
+  try {
+    const data = await fetchStaticCollection(endpoint, params, options);
+    hideServiceNotice();
+    return data;
+  } catch (staticError) {
+    console.warn(`Copia estatica no disponible para ${endpoint}; usando API.`, staticError);
+    return apiGet(endpoint, params, options);
+  }
 }
 
 /* =========================

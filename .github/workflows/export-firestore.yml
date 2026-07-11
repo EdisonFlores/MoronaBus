@@ -1,0 +1,62 @@
+name: Actualizar datos publicos de Firestore
+
+on:
+  workflow_dispatch:
+    inputs:
+      grupo:
+        description: Datos que se actualizaran
+        required: true
+        default: todas
+        type: choice
+        options:
+          - todas
+          - lugares
+          - eventos
+          - transporte
+          - division-territorial
+
+permissions:
+  contents: write
+
+concurrency:
+  group: export-firestore
+  cancel-in-progress: false
+
+jobs:
+  exportar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Preparar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Exportar colecciones publicas
+        run: npm run export-firestore -- "${{ inputs.grupo }}"
+        env:
+          FIREBASE_PROJECT_ID: ${{ secrets.FIREBASE_PROJECT_ID }}
+          FIREBASE_CLIENT_EMAIL: ${{ secrets.FIREBASE_CLIENT_EMAIL }}
+          FIREBASE_PRIVATE_KEY: ${{ secrets.FIREBASE_PRIVATE_KEY }}
+
+      - name: Guardar cambios
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/firestore
+          if git diff --cached --quiet; then
+            echo "No hay cambios en los datos publicos."
+            exit 0
+          fi
+          git commit -m "Actualizar datos publicos de Firestore (${{ inputs.grupo }})"
+          git push origin HEAD:main
