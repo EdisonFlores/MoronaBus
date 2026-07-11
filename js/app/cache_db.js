@@ -1,5 +1,5 @@
 // js/app/cache_db.js
-import { fetchCollection } from "../services/api.js";
+import { fetchCollection, resolveEndpoint } from "../services/api.js";
 
 const cache = new Map();        // name -> { data, ts }
 const inflight = new Map();     // name -> Promise
@@ -17,7 +17,7 @@ function isFresh(entry) {
  * Obtiene get collection cache desde el estado local, la API o los datos cacheados.
  */
 export async function getCollectionCache(name, { force = false, params = {} } = {}) {
-  const keyName = String(name || "").trim();
+  const keyName = resolveEndpoint(name);
   if (!keyName) return [];
 
   const paramsKey = JSON.stringify(params || {});
@@ -51,7 +51,7 @@ export async function getCollectionCache(name, { force = false, params = {} } = 
  * Limpia clear collection cache para dejar la vista o el estado listo para otro flujo.
  */
 export function clearCollectionCache(name, params = {}) {
-  const keyName = String(name || "").trim();
+  const keyName = resolveEndpoint(name);
   const paramsKey = JSON.stringify(params || {});
   const cacheKey = `${keyName}::${paramsKey}`;
   cache.delete(cacheKey);
