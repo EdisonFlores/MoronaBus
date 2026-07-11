@@ -1604,3 +1604,70 @@ main.container-fluid > .row > section {
     animation: none !important;
   }
 }
+
+.leaflet-control-layers label.tm-territorial-layer-option span {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.leaflet-control-layers input.tm-territorial-layer-source {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.leaflet-control-layers .tm-territorial-layer-visual {
+  width: 14px;
+  height: 14px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
+  flex: 0 0 14px;
+}
+
+.leaflet-control-layers input.tm-territorial-layer-source:checked + .tm-territorial-layer-visual {
+  border-color: #0d6efd;
+  background: radial-gradient(circle, #0d6efd 0 45%, #fff 48% 100%);
+}
+
+/* Contenido descriptivo indexable de la página principal. */
+.tm-seo-intro,
+.tm-seo-content {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--card);
+  color: var(--text);
+  padding: 14px 18px;
+}
+
+.tm-seo-intro h1 {
+  margin: 0 0 5px;
+  font-size: clamp(1.25rem, 2vw, 1.65rem);
+  font-weight: 750;
+}
+
+.tm-seo-intro p,
+.tm-seo-content p {
+  margin-bottom: 0;
+  line-height: 1.55;
+}
+
+.tm-seo-content h2 {
+  margin-bottom: 12px;
+  font-size: 1.25rem;
+}
+
+.tm-seo-content h3 {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.tm-seo-note {
+  margin-top: 14px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--primary) 9%, transparent);
+  font-size: 0.9rem;
+}

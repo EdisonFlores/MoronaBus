@@ -1,4 +1,4 @@
-const CACHE_NAME = "moronabus-shell-v50";
+const CACHE_NAME = "moronabus-shell-v61";
 
 const STATIC_ASSETS = [
   "/",
