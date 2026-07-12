@@ -14,6 +14,9 @@ on:
           - eventos
           - transporte
           - division-territorial
+  schedule:
+    # 05:15 UTC corresponde a las 00:15 de Ecuador continental (UTC-5).
+    - cron: "15 5 * * *"
 
 permissions:
   contents: write
@@ -26,6 +29,8 @@ jobs:
   exportar:
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    env:
+      EXPORT_GROUP: ${{ github.event.inputs.grupo || 'todas' }}
 
     steps:
       - name: Descargar repositorio
@@ -43,7 +48,7 @@ jobs:
         run: npm ci
 
       - name: Exportar colecciones publicas
-        run: npm run export-firestore -- "${{ inputs.grupo }}"
+        run: npm run export-firestore -- "$EXPORT_GROUP"
         env:
           FIREBASE_PROJECT_ID: ${{ secrets.FIREBASE_PROJECT_ID }}
           FIREBASE_CLIENT_EMAIL: ${{ secrets.FIREBASE_CLIENT_EMAIL }}
@@ -58,5 +63,5 @@ jobs:
             echo "No hay cambios en los datos publicos."
             exit 0
           fi
-          git commit -m "Actualizar datos publicos de Firestore (${{ inputs.grupo }})"
+          git commit -m "Actualizar datos publicos de Firestore ($EXPORT_GROUP)"
           git push origin HEAD:main
