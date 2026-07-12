@@ -343,6 +343,23 @@
   {
     "activo": true,
     "ciudad": "Morona",
+    "creado": "2026-07-12T02:14:18.594Z",
+    "entorno": "Urbano",
+    "horario": "08:00 a 23:00",
+    "id": "6w51qw89WhYymI9HUP9X",
+    "nombre": "Farmacia Luz",
+    "parroquia": "Macas",
+    "provincia": "Morona Santiago",
+    "subcategoria": "Farmacias",
+    "telefono": "No disponible",
+    "ubicacion": {
+      "latitude": -2.310092,
+      "longitude": -78.124241
+    }
+  },
+  {
+    "activo": true,
+    "ciudad": "Morona",
     "creado": "2026-03-14T20:57:26.063Z",
     "entorno": "Urbano",
     "horario": "07:15 –10:00",

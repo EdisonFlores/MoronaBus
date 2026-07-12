@@ -26,9 +26,9 @@
     },
     "lugares": {
       "collection": "lugar",
-      "documents": 218,
-      "file": "lugares.v7a71485f7eee.json",
-      "version": "7a71485f7eee"
+      "documents": 219,
+      "file": "lugares.v89e4812e7201.json",
+      "version": "89e4812e7201"
     },
     "paradas-rurales": {
       "collection": "paradas_rurales",
@@ -56,6 +56,6 @@
     }
   },
   "exportedGroup": "todas",
-  "generatedAt": "2026-07-11T02:18:06.313Z",
+  "generatedAt": "2026-07-12T07:37:35.977Z",
   "schemaVersion": 1
 }
