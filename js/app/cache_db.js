@@ -46,21 +46,3 @@ export async function getCollectionCache(name, { force = false, params = {} } = 
   inflight.set(cacheKey, p);
   return p;
 }
-
-/**
- * Limpia clear collection cache para dejar la vista o el estado listo para otro flujo.
- */
-export function clearCollectionCache(name, params = {}) {
-  const keyName = resolveEndpoint(name);
-  const paramsKey = JSON.stringify(params || {});
-  const cacheKey = `${keyName}::${paramsKey}`;
-  cache.delete(cacheKey);
-}
-
-/**
- * Limpia clear all caches para dejar la vista o el estado listo para otro flujo.
- */
-export function clearAllCaches() {
-  cache.clear();
-  inflight.clear();
-}

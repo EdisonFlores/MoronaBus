@@ -24,53 +24,6 @@ function matchesSevillaMoronaCanton(value) {
   return city === "Sevilla Don Bosco" || city === "Morona";
 }
 
-/* =========================
-   LEGACY: PROVINCIAS desde "lugares"
-========================= */
-export async function getProvinciasConDatos() {
-  const docs = await getCollectionCache("lugares");
-  const provincias = new Set();
-
-  (Array.isArray(docs) ? docs : []).forEach(d => {
-    if (!d?.activo) return;
-    if (d.provincia?.trim()) provincias.add(d.provincia.trim());
-  });
-
-  return [...provincias].sort((a, b) => a.localeCompare(b));
-}
-
-/* =========================
-   LEGACY: CANTONES desde "lugares"
-========================= */
-export async function getCantonesConDatos(provincia) {
-  const docs = await getCollectionCache("lugares");
-  const cantones = new Set();
-
-  (Array.isArray(docs) ? docs : []).forEach(d => {
-    if (!d?.activo) return;
-    if (d.provincia === provincia && d.ciudad?.trim()) cantones.add(d.ciudad.trim());
-  });
-
-  return [...cantones].sort((a, b) => a.localeCompare(b));
-}
-
-/* =========================
-   LEGACY: PARROQUIAS desde "lugares"
-========================= */
-export async function getParroquiasConDatos(provincia, canton) {
-  const docs = await getCollectionCache("lugares");
-  const parroquias = new Set();
-
-  (Array.isArray(docs) ? docs : []).forEach(d => {
-    if (!d?.activo) return;
-    if (d.provincia === provincia && d.ciudad === canton && d.parroquia?.trim()) {
-      parroquias.add(d.parroquia.trim());
-    }
-  });
-
-  return [...parroquias].sort((a, b) => a.localeCompare(b));
-}
-
 /* =====================================================
    PROVINCIAS desde colección "provincias"
 ===================================================== */

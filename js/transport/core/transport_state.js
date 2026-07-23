@@ -19,26 +19,12 @@ export function setRouteLayer(layer) {
   layerLineas = layer || null;
 }
 /**
- * Obtiene get route layer desde el estado local, la API o los datos cacheados.
- */
-export function getRouteLayer() {
-  return layerLineas;
-}
-
-/**
  * Actualiza set stops layer y sincroniza la interfaz con el estado actual.
  */
 export function setStopsLayer(layerGroup) {
   if (layerParadas) map.removeLayer(layerParadas);
   layerParadas = layerGroup || null;
 }
-/**
- * Obtiene get stops layer desde el estado local, la API o los datos cacheados.
- */
-export function getStopsLayer() {
-  return layerParadas;
-}
-
 /**
  * Actualiza set access layer y sincroniza la interfaz con el estado actual.
  */

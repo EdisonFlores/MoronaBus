@@ -14,7 +14,7 @@ const STEPS = [
     body: "Aquí aparece tu provincia, cantón, parroquia y entorno detectado. Si estás en Sevilla o Morona, la app comparte cobertura para mostrar más información útil."
   },
   {
-    selector: "#category",
+    selector: "#categoryPickerButton",
     title: "Categorías",
     body: "Desde este selector puedes buscar terminales, líneas de bus, taxis, restaurantes, hospedaje, salud, comercios, eventos, bancos, educación, iglesias y más."
   },

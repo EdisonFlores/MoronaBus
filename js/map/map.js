@@ -49,6 +49,7 @@ function getTerritorialOverlay(type) {
 let routeLine = null;
 let routeLines = [];
 let markerSelected = null;
+let renderedPlaceMarkers = [];
 
 let transportLines = [];
 
@@ -97,6 +98,7 @@ function drawFallbackPolyline(points, {
 /* ================= LIMPIEZA ================= */
 export function clearMarkers() {
   markersLayer.clearLayers();
+  renderedPlaceMarkers = [];
 }
 
 /**
@@ -138,14 +140,56 @@ function markerEmoji(place) {
   return emoji || "📍";
 }
 
-function emojiMarkerIcon(emoji) {
+function emojiMarkerIcon(emoji, state = "default") {
+  const dimensions = {
+    default: { size: 34, anchorX: 17, anchorY: 30, popupY: -28 },
+    muted: { size: 25, anchorX: 13, anchorY: 22, popupY: -20 },
+    selected: { size: 46, anchorX: 23, anchorY: 41, popupY: -39 }
+  }[state] || { size: 34, anchorX: 17, anchorY: 30, popupY: -28 };
+
   return L.divIcon({
-    className: "tm-emoji-marker",
+    className: `tm-emoji-marker tm-emoji-marker--${state}`,
     html: `<span>${emoji}</span>`,
-    iconSize: [34, 34],
-    iconAnchor: [17, 30],
-    popupAnchor: [0, -28]
+    iconSize: [dimensions.size, dimensions.size],
+    iconAnchor: [dimensions.anchorX, dimensions.anchorY],
+    popupAnchor: [0, dimensions.popupY]
   });
+}
+
+function placeCoordinates(place) {
+  const location = place?.ubicacion || place?.["ubicaciÃ³n"];
+  return {
+    lat: location?.latitude ?? location?.lat,
+    lng: location?.longitude ?? location?.lng
+  };
+}
+
+function isSamePlace(candidate, selected) {
+  if (candidate === selected) return true;
+
+  const a = placeCoordinates(candidate);
+  const b = placeCoordinates(selected);
+  return Number.isFinite(a.lat) && Number.isFinite(a.lng)
+    && a.lat === b.lat && a.lng === b.lng
+    && String(candidate?.nombre || "") === String(selected?.nombre || "");
+}
+
+/** Resalta el lugar elegido, reduce los demás marcadores y abre su información. */
+export function selectRenderedMarker(place, { openPopup = true } = {}) {
+  let selectedMarker = null;
+
+  renderedPlaceMarkers.forEach(entry => {
+    const selected = isSamePlace(entry.place, place);
+    entry.marker.setIcon(emojiMarkerIcon(markerEmoji(entry.place), selected ? "selected" : "muted"));
+    entry.marker.setZIndexOffset(selected ? 1200 : 0);
+    if (selected) selectedMarker = entry.marker;
+  });
+
+  if (selectedMarker && openPopup) {
+    selectedMarker.openPopup();
+  }
+
+  return Boolean(selectedMarker);
 }
 
 export function renderMarkers(list, onSelect) {
@@ -158,10 +202,15 @@ export function renderMarkers(list, onSelect) {
 
     if (typeof lat !== "number" || typeof lng !== "number") return;
 
-    L.marker([lat, lng], { icon: emojiMarkerIcon(markerEmoji(p)) })
+    const marker = L.marker([lat, lng], { icon: emojiMarkerIcon(markerEmoji(p)) })
       .addTo(markersLayer)
       .bindPopup(buildPopupHTML(p))
-      .on("click", () => onSelect(p));
+      .on("click", () => {
+        selectRenderedMarker(p);
+        onSelect(p);
+      });
+
+    renderedPlaceMarkers.push({ place: p, marker });
   });
 }
 
@@ -285,13 +334,16 @@ export async function drawRoute(userLoc, place, mode, infoBox) {
   const { latitude, longitude } = place.ubicacion;
   const dest = [latitude, longitude];
 
-  markerSelected = L.marker(dest, {
-    icon: emojiMarkerIcon(markerEmoji(place)),
-    zIndexOffset: 900
-  })
-    .addTo(routeOverlay)
-    .bindPopup(buildPopupHTML(place))
-    .openPopup();
+  const usesRenderedMarker = selectRenderedMarker(place);
+  if (!usesRenderedMarker) {
+    markerSelected = L.marker(dest, {
+      icon: emojiMarkerIcon(markerEmoji(place), "selected"),
+      zIndexOffset: 1200
+    })
+      .addTo(routeOverlay)
+      .bindPopup(buildPopupHTML(place))
+      .openPopup();
+  }
 
   const profile = {
     walking: "foot",

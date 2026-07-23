@@ -122,13 +122,3 @@ export function startWeatherAutoRefresh(getUserLoc, minutes = 5) {
   refresh();
   weatherInterval = setInterval(refresh, minutes * 60 * 1000);
 }
-
-/**
- * Detiene stop weather auto refresh y libera recursos asociados.
- */
-export function stopWeatherAutoRefresh() {
-  if (weatherInterval) {
-    clearInterval(weatherInterval);
-    weatherInterval = null;
-  }
-}
