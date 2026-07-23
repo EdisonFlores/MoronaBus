@@ -546,6 +546,11 @@ export async function planAndShowBusStopsForPlace(userLoc, destPlace, ctx = {}, 
     lineasAll = lineasAll.filter(l => allowed.has(normStr(l?.codigo)));
   }
 
+  const selectedLineCode = normStr(ctx?.selectedLineCode || "");
+  if (selectedLineCode) {
+    lineasAll = lineasAll.filter(linea => normStr(linea?.codigo) === selectedLineCode);
+  }
+
   if (!lineasAll.length) {
     if (ui?.infoEl && !ctx?.dryRun) {
       ui.infoEl.innerHTML = `
@@ -599,6 +604,7 @@ export async function planAndShowBusStopsForPlace(userLoc, destPlace, ctx = {}, 
   let best = null;
   let bestLinea = null;
   let bestParadas = null;
+  const urbanCandidateMap = new Map();
 
   for (let level = 0; level < LEVELS; level++) {
     const maxWalkToBoard = BOARD_STEPS[Math.min(level, BOARD_STEPS.length - 1)];
@@ -658,6 +664,12 @@ export async function planAndShowBusStopsForPlace(userLoc, destPlace, ctx = {}, 
 
       const score = plan.score;
 
+      const candidateKey = normStr(linea?.codigo || linea?.id);
+      const storedCandidate = urbanCandidateMap.get(candidateKey);
+      if (!storedCandidate || score < storedCandidate.plan.score) {
+        urbanCandidateMap.set(candidateKey, { plan, linea, paradas: paradasAll });
+      }
+
       const better =
         score < levelBestScore ||
         (levelBest && Math.abs(score - levelBestScore) < 80 &&
@@ -678,12 +690,16 @@ export async function planAndShowBusStopsForPlace(userLoc, destPlace, ctx = {}, 
       }
     }
 
-    if (levelBest && levelBestLinea && levelBestParadas) {
-      best = levelBest;
-      bestLinea = levelBestLinea;
-      bestParadas = levelBestParadas;
-      break;
-    }
+    if (urbanCandidateMap.size >= 4) break;
+  }
+
+  const urbanCandidates = [...urbanCandidateMap.values()]
+    .sort((a, b) => a.plan.score - b.plan.score)
+    .slice(0, 4);
+  if (urbanCandidates.length) {
+    best = urbanCandidates[0].plan;
+    bestLinea = urbanCandidates[0].linea;
+    bestParadas = urbanCandidates[0].paradas;
   }
 
   if (!best || !bestLinea || !bestParadas) {
@@ -712,6 +728,79 @@ export async function planAndShowBusStopsForPlace(userLoc, destPlace, ctx = {}, 
         stopsCount: best?.metrics?.stopsCount || 0
       },
       score: Number.isFinite(best.score) ? best.score : best?.score
+    };
+  }
+
+  if (!selectedLineCode && urbanCandidates.length > 0 && ui?.infoEl) {
+    ui.infoEl.innerHTML = `
+      <div class="tm-route-options">
+        <div class="tm-route-options__heading">
+          <b>Opciones de bus urbano</b>
+          <span>Selecciona una línea para mostrar su recorrido.</span>
+        </div>
+        ${urbanCandidates.map((candidate, index) => `
+          <article class="tm-route-option">
+            <div class="tm-route-option__top">
+              <span class="tm-route-option__rank">${index + 1}</span>
+              <div>
+                <b>${candidate.linea.codigo}${candidate.linea.nombre ? ` - ${candidate.linea.nombre}` : ""}</b>
+                <small>${isLineOperatingNow(candidate.linea, now) ? "Operativa ahora" : "Fuera de servicio ahora"}</small>
+              </div>
+            </div>
+            <div class="tm-route-option__metrics">
+              <span>Subida: ${Math.round(candidate.plan.metrics.walk1)} m</span>
+              <span>Destino: ${Math.round(candidate.plan.metrics.walk2)} m</span>
+              <span>${candidate.plan.metrics.stopsCount} paradas</span>
+            </div>
+            <button type="button" class="btn btn-primary tm-route-option__button" data-urban-option="${index}">
+              <i class="bi bi-map" aria-hidden="true"></i> Ver ruta
+            </button>
+          </article>
+        `).join("")}
+      </div>
+    `;
+    translateNode(ui.infoEl);
+    window.dispatchEvent(new CustomEvent("moronabus:bus-route-options"));
+    ui.infoEl.querySelectorAll("[data-urban-option]").forEach(button => {
+      button.addEventListener("click", async () => {
+        const candidate = urbanCandidates[Number(button.dataset.urbanOption)];
+        if (!candidate) return;
+        const optionsPanel = button.closest(".tm-route-options");
+        button.disabled = true;
+        button.innerHTML = `<span class="spinner-border spinner-border-sm" aria-hidden="true"></span> Cargando ruta`;
+        await planAndShowBusStopsForPlace(
+          userLoc,
+          destPlace,
+          {
+            ...ctx,
+            selectedLineCode: candidate.linea.codigo,
+            keepOptionsVisible: true,
+            dryRun: false,
+            preserveLayers: false
+          },
+          ui
+        );
+        if (optionsPanel && ui?.infoEl) {
+          optionsPanel.querySelectorAll(".tm-route-option").forEach(card => card.classList.remove("is-selected"));
+          optionsPanel.querySelectorAll("[data-urban-option]").forEach(optionButton => {
+            optionButton.disabled = false;
+            optionButton.innerHTML = `<i class="bi bi-map" aria-hidden="true"></i> Ver ruta`;
+          });
+          button.closest(".tm-route-option")?.classList.add("is-selected");
+          optionsPanel.classList.add("has-selection");
+          ui.infoEl.prepend(optionsPanel);
+          translateNode(optionsPanel);
+        }
+      });
+    });
+    return {
+      tipo: "urbano",
+      linea: bestLinea,
+      plan: best,
+      metrics: best.metrics,
+      score: best.score,
+      alternatives: urbanCandidates.map(candidate => candidate.linea),
+      selectionPending: true
     };
   }
 
@@ -810,7 +899,7 @@ export async function planAndShowBusStopsForPlace(userLoc, destPlace, ctx = {}, 
       : "";
 
     ui.infoEl.innerHTML = `
-      <div class="tm-route-card">
+      <div class="tm-route-card tm-route-card--active">
         <div class="tm-route-card__header">
           <span class="tm-route-card__icon"><i class="bi bi-bus-front-fill" aria-hidden="true"></i></span>
           <div>
@@ -841,9 +930,27 @@ export async function planAndShowBusStopsForPlace(userLoc, destPlace, ctx = {}, 
           </div>
         </div>
       </div>
+      ${selectedLineCode && !ctx?.keepOptionsVisible
+        ? `<button type="button" class="btn btn-outline-primary w-100 mt-2" data-back-to-urban-options>
+             <i class="bi bi-arrow-left" aria-hidden="true"></i> Ver otras opciones
+           </button>`
+        : ""}
       ${warnHTML}
     `;
     translateNode(ui.infoEl);
+    window.dispatchEvent(new CustomEvent("moronabus:bus-route-selected", {
+      detail: { place: destPlace, tipo: "urbano", linea: bestLinea }
+    }));
+    const backButton = ui.infoEl.querySelector("[data-back-to-urban-options]");
+    backButton?.addEventListener("click", async () => {
+      const { selectedLineCode: _selectedLineCode, ...optionsCtx } = ctx;
+      await planAndShowBusStopsForPlace(
+        userLoc,
+        destPlace,
+        { ...optionsCtx, dryRun: false, preserveLayers: false },
+        ui
+      );
+    });
   }
 
   map.fitBounds(L.latLngBounds([userLoc, destLoc, boardLL, alightLL]).pad(0.2));

@@ -206,6 +206,7 @@ export function createManualRouting(deps) {
     const mode = getMode?.() || "walking";
 
     if (mode === "bus") {
+      window.dispatchEvent(new CustomEvent("moronabus:bus-route-options"));
       showRouteLoading(infoEl, "Buscando ruta en bus", "Revisando rutas urbanas, rurales, paradas y caminatas.");
 
       const ctxBase = getCtxGeo?.() || {};
