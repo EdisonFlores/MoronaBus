@@ -592,7 +592,9 @@
     "horario_ida": [
       "05:50"
     ],
-    "horario_retorno": "06:20",
+    "horario_retorno": [
+      "06:20"
+    ],
     "id": "onCuKiL1Q7YdCf3Xp0kk",
     "nombre": "Macas-San Vicente",
     "orden": 7,

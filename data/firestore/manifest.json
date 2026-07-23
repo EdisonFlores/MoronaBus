@@ -15,8 +15,8 @@
     "lineas-rurales": {
       "collection": "lineas_rurales",
       "documents": 20,
-      "file": "lineas-rurales.v403e2b7ebb43.json",
-      "version": "403e2b7ebb43"
+      "file": "lineas-rurales.v243234449e37.json",
+      "version": "243234449e37"
     },
     "lineas-urbanas": {
       "collection": "lineas_transporte",
@@ -56,6 +56,6 @@
     }
   },
   "exportedGroup": "todas",
-  "generatedAt": "2026-07-12T07:37:35.977Z",
+  "generatedAt": "2026-07-23T07:44:06.702Z",
   "schemaVersion": 1
 }
