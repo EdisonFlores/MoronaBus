@@ -3,6 +3,30 @@ import { map } from "../../map/map.js";
 import { setAccessLayer, getAccessLayer } from "./transport_state.js";
 import { fetchOsrmRoute } from "../../services/api.js";
 
+export async function getAccessRouteMetrics(fromLatLng, toLatLng, profile = "foot") {
+  if (!fromLatLng || !toLatLng) return null;
+  const coordinates = `${fromLatLng[1]},${fromLatLng[0]};${toLatLng[1]},${toLatLng[0]}`;
+
+  try {
+    const data = await fetchOsrmRoute({
+      profile,
+      coordinates,
+      overview: "false",
+      geometries: "geojson",
+      timeoutMs: 6000
+    });
+    const route = data?.routes?.[0];
+    if (!route) return null;
+    return {
+      distance: Number(route.distance),
+      duration: Number(route.duration)
+    };
+  } catch (error) {
+    console.warn("No se pudo calcular la distancia vial de acceso:", error);
+    return null;
+  }
+}
+
 /* =====================================================
    DASHED usuario -> punto/parada (OSRM vía backend)
    FIX: permitir 2+ dashed sin borrar el anterior
@@ -132,7 +156,7 @@ function stripNearDuplicates(latlngs, epsMeters = 6) {
 /**
  * Dibuja o resalta draw line route following streets sobre el mapa o la interfaz.
  */
-export async function drawLineRouteFollowingStreets(latlngs, color = "#000") {
+export async function buildLineRouteFollowingStreets(latlngs) {
   if (!latlngs || latlngs.length < 2) return null;
 
   const clean = stripNearDuplicates(latlngs, 6);
@@ -188,14 +212,24 @@ export async function drawLineRouteFollowingStreets(latlngs, color = "#000") {
     full.push(...geom);
   }
 
-  const line = L.polyline(full.length ? full : clean, {
-    color: usedFallback ? "#ff9800" : color,
+  return {
+    coords: full.length ? full : clean,
+    usedFallback
+  };
+}
+
+export async function drawLineRouteFollowingStreets(latlngs, color = "#000") {
+  const geometry = await buildLineRouteFollowingStreets(latlngs);
+  if (!geometry?.coords?.length) return null;
+
+  const line = L.polyline(geometry.coords, {
+    color: geometry.usedFallback ? "#ff9800" : color,
     weight: 4,
-    opacity: usedFallback ? 0.8 : 0.9,
-    dashArray: usedFallback ? "8,10" : null
+    opacity: geometry.usedFallback ? 0.8 : 0.9,
+    dashArray: geometry.usedFallback ? "8,10" : null
   }).addTo(map);
 
-  if (usedFallback) {
+  if (geometry.usedFallback) {
     line.bindPopup(`
       <b>Ruta aproximada</b><br>
       OSRM falló, tardó demasiado o devolvió un trazado extraño.<br>

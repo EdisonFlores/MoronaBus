@@ -22,7 +22,8 @@ import {
 
 import {
   drawDashedAccessRoute,
-  drawLineRouteFollowingStreets
+  buildLineRouteFollowingStreets,
+  getAccessRouteMetrics
 } from "../core/transport_osrm.js";
 
 import {
@@ -52,52 +53,15 @@ function normGeoKey(s) {
     .toLowerCase();
 }
 
-/**
- * Evalua si is sevilla morona canton para decidir el flujo de la interfaz.
- */
-function isSevillaMoronaCanton(value) {
-  const v = normLite(value);
-  return v === "morona" || v === "sevilla don bosco" || v.includes("sevilla");
-}
-
-/**
- * Gestiona geo matches dentro del flujo principal del modulo.
- */
-function geoMatches(ctx = {}, place = {}) {
-  if (place?.tipo_territorial === "parroquias") return true;
-
-  const pCtx = normLite(ctx.provincia);
-  const cCtx = normLite(ctx.canton);
-  const paCtx = normLite(ctx.parroquia);
-  const sharedSevillaMorona = ctx?.specialSevilla === true || isSevillaMoronaCanton(ctx.canton);
-
-  if (!pCtx && !cCtx && !paCtx) return true;
-
-  const pPl = normLite(place.provincia);
-  const cPl = normLite(place.canton || place.ciudad);
-  const paPl = normLite(place.parroquia);
-
-  if ((pCtx && !pPl) || (cCtx && !cPl) || (paCtx && !paPl)) return true;
-
-  if (pCtx && pPl && pCtx !== pPl) return false;
-  if (cCtx && cPl && cCtx !== cPl) {
-    if (!(sharedSevillaMorona && isSevillaMoronaCanton(cPl))) return false;
-  }
-  if (paCtx && paPl && paCtx !== paPl && !sharedSevillaMorona) return false;
-
-  return true;
-}
-
 /* =====================================================
    LIMITES (RURAL)
 ===================================================== */
 const RURAL_BOARD_STEPS = [150, 300, 500, 800, 1000, 1200, 1500, 2000, 2600, 3200];
-const RURAL_DEST_STEPS = [250, 450, 650, 900, 1200, 1500, 2000, 2600, 3200];
+const RURAL_DEST_STEPS = [250, 450, 650, 900, 1200, 1500, 2000, 2600, 3200, 4500, 6500];
 
 const LEVELS_RURAL = Math.max(RURAL_BOARD_STEPS.length, RURAL_DEST_STEPS.length);
 const EXAGGERATED_WALK_WARN_M = 2300;
 const WALK_AFTER_ALIGHT_M = 700;
-const K_ALIGHT_CANDIDATES = 8;
 
 /* =====================================================
    MODAL (Bootstrap) - INFO LÍNEA
@@ -323,17 +287,23 @@ function filterRuralLinesByDestinationParish(lineas = [], stopsByLine = new Map(
     return parishKey && stops.some(stop => stopParishKey(stop) === parishKey);
   });
 
-  if (byParishName.length) return byParishName;
-
   if (!destLoc || typeof destLoc[0] !== "number" || typeof destLoc[1] !== "number") return lineas;
 
-  return (Array.isArray(lineas) ? lineas : []).filter(linea => {
+  const byRouteGeometry = (Array.isArray(lineas) ? lineas : []).filter(linea => {
     const stops = stopsByLine.get(linea?.codigo) || [];
-    return stops.some(stop => {
-      const ll = getParadaLatLng(stop);
-      return ll && distMeters(destLoc, ll) <= 6500;
+    return ["ida", "vuelta"].some(sentido => {
+      const ordered = cutStopsAtEnd(buildOrderedStopsForLinea(stops, sentido, linea), sentido);
+      const coords = ordered.map(getParadaLatLng).filter(Boolean);
+      const nearestRoutePoint = findCandidatePointsOnPath(destLoc, coords)[0];
+      return nearestRoutePoint?.d <= 6500;
     });
   });
+
+  const allowedCodes = new Set([
+    ...byParishName.map(linea => linea?.codigo),
+    ...byRouteGeometry.map(linea => linea?.codigo)
+  ]);
+  return (Array.isArray(lineas) ? lineas : []).filter(linea => allowedCodes.has(linea?.codigo));
 }
 
 /**
@@ -403,6 +373,61 @@ function findNearestCoordOnPath(point, coords, distanceFn = null) {
     }
   }
   return best ? { ll: best, d: min } : null;
+}
+
+/**
+ * Proyecta un destino sobre cada segmento del trazado y devuelve el punto
+ * continuo más cercano, no solamente el vértice o la parada más próximos.
+ */
+function findCandidatePointsOnPath(point, coords, distanceFn = null) {
+  if (!Array.isArray(coords) || coords.length < 2 || !point) return [];
+
+  const earthRadius = 6371000;
+  const latRef = Number(point[0]) * Math.PI / 180;
+  const toXY = ll => ({
+    x: (Number(ll[1]) - Number(point[1])) * Math.PI / 180 * earthRadius * Math.cos(latRef),
+    y: (Number(ll[0]) - Number(point[0])) * Math.PI / 180 * earthRadius
+  });
+
+  const candidates = [];
+
+  for (let i = 0; i < coords.length - 1; i++) {
+    const a = toXY(coords[i]);
+    const b = toXY(coords[i + 1]);
+    const dx = b.x - a.x;
+    const dy = b.y - a.y;
+    const lengthSquared = (dx * dx) + (dy * dy);
+    const t = lengthSquared > 0
+      ? Math.max(0, Math.min(1, -((a.x * dx) + (a.y * dy)) / lengthSquared))
+      : 0;
+    const projected = [
+      Number(coords[i][0]) + (Number(coords[i + 1][0]) - Number(coords[i][0])) * t,
+      Number(coords[i][1]) + (Number(coords[i + 1][1]) - Number(coords[i][1])) * t
+    ];
+    const distance = typeof distanceFn === "function"
+      ? distanceFn(projected)
+      : distMeters(point, projected);
+
+    candidates.push({ ll: projected, d: distance, segmentIndex: i, t });
+  }
+
+  candidates.sort((a, b) => a.d - b.d);
+  return candidates.filter((candidate, index, list) =>
+    list.findIndex(other => distMeters(other.ll, candidate.ll) < 12) === index
+  );
+}
+
+function isDestinationBeyondPathEnd(destination, path, projectedPoint) {
+  if (!destination || !Array.isArray(path) || path.length < 2 || !projectedPoint) return false;
+  const end = path[path.length - 1];
+  const previous = path[path.length - 2];
+  if (distMeters(projectedPoint, end) > 25) return false;
+
+  const routeLat = Number(end[0]) - Number(previous[0]);
+  const routeLng = Number(end[1]) - Number(previous[1]);
+  const destLat = Number(destination[0]) - Number(end[0]);
+  const destLng = Number(destination[1]) - Number(end[1]);
+  return (routeLat * destLat) + (routeLng * destLng) > 0;
 }
 
 /**
@@ -720,26 +745,6 @@ function cutStopsAtEnd(paradas, sentidoLower) {
 }
 
 /* =====================================================
-   OSRM: distancia de ruta
-===================================================== */
-async function osrmRouteDistanceMeters(fromLL, toLL, profile = "driving") {
-  try {
-    const [lat1, lon1] = fromLL;
-    const [lat2, lon2] = toLL;
-    const url =
-      `https://router.project-osrm.org/route/v1/${encodeURIComponent(profile)}` +
-      `/${lon1},${lat1};${lon2},${lat2}?overview=false&alternatives=false&steps=false`;
-    const res = await fetch(url);
-    if (!res.ok) return Infinity;
-    const json = await res.json();
-    const d = json?.routes?.[0]?.distance;
-    return Number.isFinite(d) ? d : Infinity;
-  } catch {
-    return Infinity;
-  }
-}
-
-/* =====================================================
    dibujar tramo "auto" dentro del layer del transporte
 ===================================================== */
 async function drawDriveOSRMIntoLayer(layerGroup, fromLL, toLL, color = "#0d6efd") {
@@ -770,30 +775,28 @@ async function drawDriveOSRMIntoLayer(layerGroup, fromLL, toLL, color = "#0d6efd
 /* =====================================================
    DIBUJO RUTA RURAL
 ===================================================== */
-async function drawRuralRouteSmart(paradas, linea, routesGroup) {
+async function drawRuralRouteCoordsSmart(coordsOrdered, linea, routesGroup) {
   const color = linea?.color || "#000";
 
+  if (coordsOrdered.length < 2) return null;
+  const geometry = await buildLineRouteFollowingStreets(coordsOrdered);
+  if (!geometry?.coords?.length) return null;
+
+  const lineLayer = L.polyline(geometry.coords, {
+    color: geometry.usedFallback ? "#ff9800" : color,
+    weight: 4,
+    opacity: geometry.usedFallback ? 0.8 : 0.9,
+    dashArray: geometry.usedFallback ? "8,10" : null
+  }).addTo(routesGroup);
+  const end = geometry.coords[geometry.coords.length - 1];
+  return { any: Boolean(lineLayer), endLL: end || null };
+}
+
+async function drawRuralRouteSmart(paradas, linea, routesGroup) {
   const coordsOrdered = (Array.isArray(paradas) ? paradas : [])
     .map(p => getParadaLatLng(p))
     .filter(Boolean);
-
-  if (coordsOrdered.length < 2) return null;
-
-  const CHUNK = 80;
-  let any = false;
-
-  for (let i = 0; i < coordsOrdered.length - 1; i += (CHUNK - 1)) {
-    const slice = coordsOrdered.slice(i, i + CHUNK);
-    if (slice.length < 2) continue;
-
-    const lineLayer = await drawLineRouteFollowingStreets(slice, color);
-    if (lineLayer) {
-      routesGroup.addLayer(lineLayer);
-      any = true;
-    }
-  }
-
-  return any;
+  return drawRuralRouteCoordsSmart(coordsOrdered, linea, routesGroup);
 }
 
 /* =====================================================
@@ -900,6 +903,24 @@ function departuresNextHour(linea, sentidoLower, now = new Date(), windowMin = 6
   }
 
   return out;
+}
+
+function getNearestDeparture(linea, sentidoLower, now = new Date()) {
+  const raw = normStr(sentidoLower) === "vuelta"
+    ? linea?.horario_retorno
+    : linea?.horario_ida;
+  const current = nowMinutes(now);
+  const departures = (Array.isArray(raw) ? raw : [])
+    .map(value => ({ label: String(value || "").trim(), minutes: parseHHMM(value) }))
+    .filter(item => item.minutes != null)
+    .sort((a, b) => a.minutes - b.minutes);
+
+  const next = departures.find(item => item.minutes >= current);
+  if (!next) return null;
+  return {
+    time: next.label || fmtHHMM(next.minutes),
+    minutesAway: Math.max(0, next.minutes - current)
+  };
 }
 
 /* =====================================================
@@ -1256,18 +1277,6 @@ export async function planAndShowBusStopsForPlace(userLoc, destPlace, ctx = {}, 
 async function _planAndShowBusStopsForPlace(userLoc, destPlace, ctx = {}, ui = {}) {
   if (!userLoc || !destPlace?.ubicacion) return null;
 
-  if (!geoMatches(ctx, destPlace)) {
-    if (ui?.infoEl && !ctx?.dryRun) {
-      ui.infoEl.innerHTML = `
-        <div class="alert alert-info py-2 mb-0">
-          ℹ️ Este destino no coincide con el filtro actual (provincia/cantón/parroquia),
-          por eso el modo <b>bus</b> no se habilita aquí.
-        </div>
-      `;
-    }
-    return null;
-  }
-
   if (!ctx?.preserveLayers) clearTransportLayers();
 
   const now = (ctx?.now instanceof Date) ? ctx.now : new Date();
@@ -1278,9 +1287,9 @@ async function _planAndShowBusStopsForPlace(userLoc, destPlace, ctx = {}, ui = {
 
   let lineasAll = await getLineasByTipo("rural", {
     ...ctx,
-    ignoreGeoFilter: ctx?.ignoreGeoFilter === true ||
-      ctx?.specialSevilla === true ||
-      destPlace?.tipo_territorial === "parroquias"
+    // Las líneas rurales pueden cruzar parroquias y cantones. La validez se
+    // decide por la cercanía real de su recorrido, no por el contexto activo.
+    ignoreGeoFilter: true
   });
 
   if (!lineasAll?.length) {
@@ -1327,22 +1336,12 @@ async function _planAndShowBusStopsForPlace(userLoc, destPlace, ctx = {}, ui = {
 
   const requireOpNow = (ctx?.requireOperatingNow !== false);
   if (requireOpNow) {
-    const operativas = lineas.filter(l => l?.activo && isLineOperatingNow(l, now));
-
-    if (operativas.length) {
-      lineas = operativas;
-    } else {
-      lineas = filterRuralLinesByDestinationParish(lineasAll, stopsCacheByLinea, destPlace);
-
-      if (ui?.infoEl && !ctx?.dryRun) {
-        ui.infoEl.innerHTML = `
-          <div class="alert alert-warning py-2 mb-2">
-            ⚠️ No hay líneas rurales marcadas como <b>operativas ahora</b>.
-            Se mostrará la mejor ruta registrada (puede no estar disponible en este momento).
-          </div>
-        `;
-      }
-    }
+    // No se eliminan anticipadamente las líneas fuera de horario: una de ellas
+    // puede ser la única que realmente alcanza el destino. Se ordenan para
+    // evaluar primero las operativas y la prioridad se resuelve más abajo.
+    lineas = [...lineas].sort((a, b) =>
+      Number(isLineOperatingNow(b, now)) - Number(isLineOperatingNow(a, now))
+    );
   }
 
   let routesGroup = null;
@@ -1361,6 +1360,7 @@ async function _planAndShowBusStopsForPlace(userLoc, destPlace, ctx = {}, ui = {
   }
 
   let best = null;
+  const candidatePool = new Map();
   const W_TIME = 12;
 
   const reqSentido = normStr(ctx?.sentido || "auto");
@@ -1399,20 +1399,22 @@ async function _planAndShowBusStopsForPlace(userLoc, destPlace, ctx = {}, ui = {
         if (visibles.length < 2) continue;
 
         const nearestStopUser = findNearestStop(userLoc, visibles);
-        const nearestCoordUser = findNearestCoordOnPath(userLoc, coords);
+        const nearestRouteUser = findCandidatePointsOnPath(userLoc, coords)[0];
 
         let boardLL = null;
         let boardDist = Infinity;
         let boardLabel = "";
+        let usesRouteBoardPoint = false;
 
-        if (nearestStopUser && nearestStopUser.d <= maxBoard) {
+        if (nearestStopUser && nearestStopUser.d <= Math.min(maxBoard, WALK_AFTER_ALIGHT_M)) {
           boardLL = nearestStopUser.ll;
           boardDist = nearestStopUser.d;
           boardLabel = "Parada";
-        } else if (nearestCoordUser && nearestCoordUser.d <= maxBoard) {
-          boardLL = nearestCoordUser.ll;
-          boardDist = nearestCoordUser.d;
-          boardLabel = "Punto de la ruta";
+        } else if (nearestRouteUser && nearestRouteUser.d <= maxBoard) {
+          boardLL = nearestRouteUser.ll;
+          boardDist = nearestRouteUser.d;
+          boardLabel = "Punto más cercano de la vía";
+          usesRouteBoardPoint = true;
         } else {
           continue;
         }
@@ -1420,118 +1422,61 @@ async function _planAndShowBusStopsForPlace(userLoc, destPlace, ctx = {}, ui = {
         const idxBoard = findNearestCoordIndex(coords, boardLL);
         if (idxBoard < 0) continue;
 
-        const candidates = [];
-        for (let i = idxBoard + 1; i < paradas.length; i++) {
-          const pStop = paradas[i];
-          if (!isStopCandidateForBoardAlight(pStop)) continue;
+        // La evaluación debe ser rápida: se usa la geometría registrada y solo
+        // se consulta OSRM para la línea ganadora al momento de dibujarla.
+        const roadCoords = coords;
+        const idxBoardOnRoad = findNearestCoordIndex(roadCoords, boardLL);
+        if (idxBoardOnRoad < 0) continue;
 
-          const ll = getParadaLatLng(pStop);
+        const remainingPath = roadCoords.slice(idxBoardOnRoad);
+
+        let nearestDestinationStop = null;
+        for (let stopIndex = idxBoard + 1; stopIndex < paradas.length; stopIndex++) {
+          const stop = paradas[stopIndex];
+          if (!isStopCandidateForBoardAlight(stop)) continue;
+          const ll = getParadaLatLng(stop);
           if (!ll) continue;
-
-          const dLine = destDistance(ll);
-          if (dLine <= maxDest) {
-            candidates.push({ idx: i, ll, dLine, stop: pStop });
+          const d = destDistance(ll);
+          if (!nearestDestinationStop || d < nearestDestinationStop.d) {
+            nearestDestinationStop = { stop, ll, d, stopIndex };
           }
         }
 
-        if (!candidates.length) {
-          const nearestCoordDest = findNearestCoordOnPath(destLoc, coords.slice(idxBoard + 1), destDistance);
-          if (!nearestCoordDest || nearestCoordDest.d > maxDest) continue;
+        const usesRoutePoint = !nearestDestinationStop || nearestDestinationStop.d > WALK_AFTER_ALIGHT_M;
+        const projectionTarget = usesRoutePoint ? destLoc : nearestDestinationStop.ll;
+        const projectedAlight = findCandidatePointsOnPath(
+          projectionTarget,
+          remainingPath,
+          usesRoutePoint ? destDistance : undefined
+        )[0];
+        if (!projectedAlight) continue;
 
-          const alightLL = nearestCoordDest.ll;
-          const idxAlight = findNearestCoordIndex(coords, alightLL);
-          if (idxAlight < 0) continue;
-          if (!(idxBoard < idxAlight)) continue;
+        const alightLL = projectedAlight.ll;
+        const walkToDest = destDistance(alightLL);
+        if (walkToDest > maxDest) continue;
 
-          const tramoCoords = coords.slice(idxBoard, idxAlight + 1);
-          if (tramoCoords.length < 2) continue;
-
-          let tramoDist = 0;
-          for (let j = 1; j < tramoCoords.length; j++) tramoDist += distMeters(tramoCoords[j - 1], tramoCoords[j]);
-
-          const dtMin = 0;
-
-          const walkToDest = nearestCoordDest.d;
-          const useAuto = walkToDest > WALK_AFTER_ALIGHT_M;
-
-          const extra = useAuto ? 0 : walkToDest;
-          const score = boardDist + extra + tramoDist + (dtMin * W_TIME);
-
-          const cand = {
-            linea,
-            sentido: sentidoTry,
-            sentidoLower,
-            paradas,
-            coords,
-            visibles,
-            boardLL,
-            boardDist,
-            boardLabel,
-            idxBoard,
-            alightLL,
-            alightLabel: "Punto de la ruta",
-            idxAlight,
-            tramoCoords,
-            fromIdx: idxBoard,
-            toIdx: idxAlight,
-            walkToDest,
-            useAuto,
-            dtMin,
-            score,
-            _driveMeters: Infinity
-          };
-
-          if (!best || cand.score < best.score) best = cand;
-          continue;
+        const idxAlight = usesRoutePoint
+          ? Math.max(idxBoard, findNearestCoordIndex(coords, alightLL))
+          : nearestDestinationStop.stopIndex;
+        const idxAlightOnRoad = idxBoardOnRoad + projectedAlight.segmentIndex;
+        const tramoCoords = roadCoords.slice(idxBoardOnRoad, idxAlightOnRoad + 1);
+        if (!tramoCoords.length) continue;
+        if (distMeters(tramoCoords[tramoCoords.length - 1], alightLL) > 2) {
+          tramoCoords.push(alightLL);
         }
-
-        candidates.sort((a, b) => a.dLine - b.dLine);
-        const top = candidates.slice(0, Math.max(1, K_ALIGHT_CANDIDATES));
-
-        let chosen = null;
-        const walkables = top.filter(x => x.dLine <= WALK_AFTER_ALIGHT_M);
-        if (walkables.length) {
-          chosen = walkables[0];
-        } else {
-          let bestDrive = Infinity;
-          for (const c of top) {
-            const drive = await osrmRouteDistanceMeters(c.ll, destLoc, "driving");
-            const val = Number.isFinite(drive) ? drive : Infinity;
-            if (val < bestDrive) {
-              bestDrive = val;
-              chosen = { ...c, driveMeters: val };
-            }
-          }
-          if (!chosen) chosen = top[0];
-        }
-
-        const alightLL = chosen.ll;
-        const idxAlight = chosen.idx;
-        if (!(idxBoard < idxAlight)) continue;
-
-        const tramoCoords = coords.slice(idxBoard, idxAlight + 1);
-        if (tramoCoords.length < 2) continue;
+        if (tramoCoords.length < 2 || distMeters(tramoCoords[0], tramoCoords[tramoCoords.length - 1]) < 10) continue;
 
         let tramoDist = 0;
-        for (let j = 1; j < tramoCoords.length; j++) tramoDist += distMeters(tramoCoords[j - 1], tramoCoords[j]);
+        for (let j = 1; j < tramoCoords.length; j++) {
+          tramoDist += distMeters(tramoCoords[j - 1], tramoCoords[j]);
+        }
 
         const dtMin = 0;
-
-        const walkToDest = chosen.dLine;
-        const useAuto = walkToDest > WALK_AFTER_ALIGHT_M;
-
-        const driveMeters = useAuto
-          ? (Number.isFinite(chosen.driveMeters) ? chosen.driveMeters : Infinity)
-          : Infinity;
-
+        const beyondLastStop = isDestinationBeyondPathEnd(destLoc, remainingPath, alightLL);
+        const useAuto = beyondLastStop || walkToDest > WALK_AFTER_ALIGHT_M;
+        const nextDeparture = getNearestDeparture(linea, sentidoLower, now);
         const extra = useAuto ? 0 : walkToDest;
-
-        const score =
-          boardDist +
-          extra +
-          tramoDist +
-          (dtMin * W_TIME) +
-          (useAuto && Number.isFinite(driveMeters) ? (driveMeters * 0.35) : 0);
+        const score = boardDist + extra + tramoDist + (dtMin * W_TIME);
 
         const cand = {
           linea,
@@ -1543,25 +1488,54 @@ async function _planAndShowBusStopsForPlace(userLoc, destPlace, ctx = {}, ui = {
           boardLL,
           boardDist,
           boardLabel,
+          usesRouteBoardPoint,
           idxBoard,
           alightLL,
-          alightLabel: "Parada",
+          alightLabel: usesRoutePoint ? "Punto más cercano de la vía" : "Parada",
+          projectionTarget,
           idxAlight,
           tramoCoords,
+          routeUsedFallback: false,
           fromIdx: idxBoard,
           toIdx: idxAlight,
           walkToDest,
           useAuto,
+          beyondLastStop,
+          usesRoutePoint,
+          operatingNow: isLineOperatingNow(linea, now),
+          nextDeparture,
+          hasTurnsToday: Boolean(nextDeparture),
           dtMin,
           score,
-          _driveMeters: driveMeters
+          _driveMeters: Infinity
         };
 
-        if (!best || cand.score < best.score) best = cand;
+        const candidateKey = `${linea?.codigo || linea?.id}|${sentidoLower}|${usesRoutePoint ? "via" : "parada"}`;
+        const storedCandidate = candidatePool.get(candidateKey);
+        if (!storedCandidate || cand.score < storedCandidate.score) {
+          candidatePool.set(candidateKey, cand);
+        }
+
+        const candidatePriority =
+          (cand.hasTurnsToday ? 0 : 4) +
+          (cand.operatingNow ? 0 : 2) +
+          (cand.usesRoutePoint ? 1 : 0);
+        const bestPriority = best
+          ? ((best.hasTurnsToday ? 0 : 4) +
+            (best.operatingNow ? 0 : 2) +
+            (best.usesRoutePoint ? 1 : 0))
+          : Infinity;
+        const hasBetterPriority = !best || candidatePriority < bestPriority;
+        const hasSamePriority = best && candidatePriority === bestPriority;
+        const isCloserToDestination = hasSamePriority && cand.walkToDest < best.walkToDest - 10;
+        const isEquivalentDistance = hasSamePriority && Math.abs(cand.walkToDest - best.walkToDest) <= 10;
+        if (hasBetterPriority || isCloserToDestination || (isEquivalentDistance && cand.score < best.score)) best = cand;
       }
     }
 
-    if (best) break;
+    // Si solo apareció una alternativa fuera de horario, se siguen ampliando
+    // los límites para no ignorar una línea operativa un poco más distante.
+    if (best?.hasTurnsToday || (best && !requireOpNow)) break;
   }
 
   if (!best) {
@@ -1590,6 +1564,108 @@ async function _planAndShowBusStopsForPlace(userLoc, destPlace, ctx = {}, ui = {
       score: best.score
     };
   }
+
+  // Se validan las alternativas más cercanas contra su geometría vial real.
+  // Así una diagonal entre puntos rurales separados no puede hacer parecer que
+  // una línea pasa junto al destino cuando en realidad circula por otra vía.
+  const allCandidates = [...candidatePool.values()];
+  const byDistance = [...allCandidates].sort((a, b) =>
+    a.walkToDest - b.walkToDest || a.score - b.score
+  );
+  const upcomingByDistance = allCandidates
+    .filter(candidate => candidate.hasTurnsToday)
+    .sort((a, b) => a.walkToDest - b.walkToDest || a.score - b.score);
+  const shortlistMap = new Map();
+  [...upcomingByDistance.slice(0, 3), ...byDistance.slice(0, 3)].forEach(candidate => {
+    const key = `${candidate.linea?.codigo || candidate.linea?.id}|${candidate.sentidoLower}|${candidate.usesRoutePoint}`;
+    shortlistMap.set(key, candidate);
+  });
+  const shortlist = [...shortlistMap.values()];
+
+  let refinedCandidates = (await Promise.all(shortlist.map(async candidate => {
+    const roadGeometry = await buildLineRouteFollowingStreets(candidate.coords);
+    if (!roadGeometry?.coords?.length || roadGeometry.usedFallback) return null;
+
+    const boardProjection = findCandidatePointsOnPath(
+      candidate.usesRouteBoardPoint ? userLoc : candidate.boardLL,
+      roadGeometry.coords
+    )[0];
+    if (!boardProjection) return null;
+
+    const boardLL = boardProjection.ll;
+    const remainingRoadPath = roadGeometry.coords.slice(boardProjection.segmentIndex);
+    if (distMeters(remainingRoadPath[0], boardLL) > 2) {
+      remainingRoadPath.unshift(boardLL);
+    } else {
+      remainingRoadPath[0] = boardLL;
+    }
+
+    const roadProjection = findCandidatePointsOnPath(
+      candidate.projectionTarget,
+      remainingRoadPath,
+      candidate.usesRoutePoint ? destDistance : undefined
+    )[0];
+    if (!roadProjection) return null;
+
+    const alightLL = roadProjection.ll;
+    const straightToDest = destDistance(alightLL);
+    const tramoCoords = remainingRoadPath.slice(0, roadProjection.segmentIndex + 1);
+    if (distMeters(tramoCoords[tramoCoords.length - 1], alightLL) > 2) {
+      tramoCoords.push(alightLL);
+    }
+    if (tramoCoords.length < 2) return null;
+
+    const beyondLastStop = isDestinationBeyondPathEnd(destLoc, remainingRoadPath, alightLL);
+    return {
+      ...candidate,
+      boardLL,
+      straightToBoard: distMeters(userLoc, boardLL),
+      alightLL,
+      tramoCoords,
+      straightToDest,
+      beyondLastStop,
+      routeUsedFallback: false
+    };
+  }))).filter(Boolean);
+
+  refinedCandidates = await Promise.all(refinedCandidates.map(async candidate => {
+    const [accessMetrics, boardingMetrics] = await Promise.all([
+      getAccessRouteMetrics(candidate.alightLL, destLoc, "foot"),
+      getAccessRouteMetrics(userLoc, candidate.boardLL, "foot")
+    ]);
+    const networkDistance = Number(accessMetrics?.distance);
+    const hasNetworkDistance = Number.isFinite(networkDistance) && networkDistance >= 0;
+    const walkToDest = hasNetworkDistance ? networkDistance : candidate.straightToDest;
+    const boardingNetworkDistance = Number(boardingMetrics?.distance);
+    const hasBoardingNetworkDistance = Number.isFinite(boardingNetworkDistance) && boardingNetworkDistance >= 0;
+    const boardDist = hasBoardingNetworkDistance ? boardingNetworkDistance : candidate.straightToBoard;
+
+    return {
+      ...candidate,
+      boardDist,
+      boardingRouteAvailable: hasBoardingNetworkDistance,
+      accessRouteAvailable: hasNetworkDistance,
+      accessRouteDuration: Number(accessMetrics?.duration) || null,
+      walkToDest,
+      passesNearBoarding: boardDist <= WALK_AFTER_ALIGHT_M,
+      passesNearDestination: walkToDest <= WALK_AFTER_ALIGHT_M,
+      useAuto: candidate.beyondLastStop || walkToDest > WALK_AFTER_ALIGHT_M
+    };
+  }));
+
+  refinedCandidates.sort((a, b) =>
+    Number(b.passesNearBoarding) - Number(a.passesNearBoarding) ||
+    Number(b.passesNearDestination) - Number(a.passesNearDestination) ||
+    Number(b.hasTurnsToday) - Number(a.hasTurnsToday) ||
+    Number(b.operatingNow) - Number(a.operatingNow) ||
+    Number(b.accessRouteAvailable) - Number(a.accessRouteAvailable) ||
+    a.walkToDest - b.walkToDest ||
+    Number(a.usesRoutePoint) - Number(b.usesRoutePoint) ||
+    a.score - b.score
+  );
+
+  if (!refinedCandidates.length) return null;
+  best = refinedCandidates[0];
 
   setCurrentLinea(best.linea);
   setCurrentParadas(best.paradas);
@@ -1628,22 +1704,28 @@ async function _planAndShowBusStopsForPlace(userLoc, destPlace, ctx = {}, ui = {
     radius: 10, color: "#2e7d32", fillColor: "#2e7d32", fillOpacity: 1, weight: 3
   }).addTo(layerStops).bindPopup(`<b>✅ Subir aquí</b><br>${best.boardLabel}`);
 
-  L.circleMarker(best.alightLL, {
+  const alightMarker = L.circleMarker(best.alightLL, {
     radius: 10, color: "#c62828", fillColor: "#c62828", fillOpacity: 1, weight: 3
   }).addTo(layerStops).bindPopup(`<b>⛔ Bajar aquí</b><br>${best.alightLabel}`);
 
   await drawDashedAccessRoute(userLoc, best.boardLL, "#666");
 
-  const tramoParadas = best.paradas.slice(best.fromIdx, best.toIdx + 1);
-  await drawRuralRouteSmart(tramoParadas, best.linea, routesGroup);
+  L.polyline(best.tramoCoords, {
+    color: best.routeUsedFallback ? "#ff9800" : (best.linea?.color || "#000"),
+    weight: 4,
+    opacity: best.routeUsedFallback ? 0.8 : 0.9,
+    dashArray: best.routeUsedFallback ? "8,10" : null
+  }).addTo(routesGroup);
 
   if (best.useAuto) {
     await drawDriveOSRMIntoLayer(routesGroup, best.alightLL, destLoc, "#0d6efd");
   } else {
     await drawDashedAccessRoute(best.alightLL, destLoc, "#666");
   }
+  alightMarker.openPopup();
 
   const op = isLineOperatingNow(best.linea, now);
+  const nearestDeparture = getNearestDeparture(best.linea, best.sentidoLower, now);
   const exagerated = (best.boardDist > EXAGGERATED_WALK_WARN_M || best.walkToDest > EXAGGERATED_WALK_WARN_M);
 
   if (ui?.infoEl) {
@@ -1676,6 +1758,13 @@ async function _planAndShowBusStopsForPlace(userLoc, destPlace, ctx = {}, ui = {
           <div class="tm-route-metric">
             <span>${best.useAuto ? "Tramo final" : "Camina al destino"}</span>
             <b>${best.useAuto ? "Auto" : `${Math.round(best.walkToDest)} m`}</b>
+          </div>
+          <div class="tm-route-metric">
+            <span>Próxima salida</span>
+            <b>${nearestDeparture?.time || "Sin más salidas hoy"}</b>
+            ${nearestDeparture
+              ? `<small>${nearestDeparture.minutesAway === 0 ? "Sale ahora" : `En ${nearestDeparture.minutesAway} min`}</small>`
+              : ""}
           </div>
         </div>
       </div>
