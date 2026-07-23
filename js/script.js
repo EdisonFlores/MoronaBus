@@ -68,6 +68,8 @@ let tripTracker = {
   place: null,
   source: "",
   modeSelected: false,
+  busRouteSelectionPending: false,
+  busRouteReady: false,
   completed: false
 };
 
@@ -271,6 +273,11 @@ function getTripActionsEl() {
  */
 function renderTripButton() {
   if (!tripTracker.place) return;
+  if (getMode?.() === "bus" && !tripTracker.busRouteReady) {
+    const el = document.getElementById("trip-actions");
+    if (el) el.innerHTML = "";
+    return;
+  }
   if (!tripTracker.modeSelected) {
     const el = document.getElementById("trip-actions");
     if (el) el.innerHTML = "";
@@ -393,6 +400,7 @@ function showTripStartForDropdownSelection(place, source = "list") {
   tripTracker.place = place;
   tripTracker.source = source;
   tripTracker.modeSelected = false;
+  tripTracker.busRouteReady = false;
   tripTracker.completed = false;
   hideTripStart();
 }
@@ -410,6 +418,10 @@ function rebuildSelectedRoute({ showTripButton = false } = {}) {
     tripTracker.completed = false;
     selectRenderedMarker(selectedPlace);
   }
+
+  tripTracker.busRouteSelectionPending = getMode?.() === "bus";
+  if (tripTracker.busRouteSelectionPending) tripTracker.busRouteReady = false;
+  if (tripTracker.busRouteSelectionPending) hideTripStart();
 
   const p = manual.buildRoute();
   if (showTripButton || tripTracker.place) setTimeout(() => renderTripButton(), 80);
@@ -429,6 +441,26 @@ function hideTripStart() {
   const el = document.getElementById("trip-actions");
   if (el) el.innerHTML = "";
 }
+
+window.addEventListener("moronabus:bus-route-options", () => {
+  tripTracker.busRouteSelectionPending = true;
+  tripTracker.busRouteReady = false;
+  hideTripStart();
+});
+
+window.addEventListener("moronabus:bus-route-selected", event => {
+  const selectedPlace = event?.detail?.place;
+  const selectedLocation = selectedPlace?.ubicacion || selectedPlace?.["ubicaci\u00f3n"];
+  if (selectedPlace && selectedLocation) {
+    if (!selectedPlace.ubicacion) selectedPlace.ubicacion = selectedLocation;
+    tripTracker.place = selectedPlace;
+    tripTracker.modeSelected = true;
+    tripTracker.completed = false;
+  }
+  tripTracker.busRouteSelectionPending = false;
+  tripTracker.busRouteReady = true;
+  renderTripButton();
+});
 
 /**
  * Detiene stop trip tracking y libera recursos asociados.
@@ -1335,6 +1367,9 @@ function wireModeButtons({ onModeChange } = {}) {
 
       setTravelMode(m);
       syncModeButtons(m);
+      tripTracker.busRouteSelectionPending = m === "bus";
+      tripTracker.busRouteReady = false;
+      if (tripTracker.busRouteSelectionPending) hideTripStart();
       if (placeForTrip?.ubicacion || placeForTrip?.["ubicaci\u00f3n"]) {
         if (!placeForTrip.ubicacion) placeForTrip.ubicacion = placeForTrip["ubicaci\u00f3n"];
         tripTracker.place = placeForTrip;

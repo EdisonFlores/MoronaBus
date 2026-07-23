@@ -1,4 +1,4 @@
-const CACHE_NAME = "moronabus-shell-v67";
+const CACHE_NAME = "moronabus-shell-v72";
 
 const STATIC_ASSETS = [
   "/",
@@ -46,6 +46,11 @@ self.addEventListener("fetch", event => {
 
   const url = new URL(request.url);
 
+  // Las solicitudes de terceros (por ejemplo GTM) deben resolverse fuera del
+  // service worker. Interceptarlas provoca rechazos de FetchEvent cuando el
+  // navegador, la red o un bloqueador impiden su descarga.
+  if (url.origin !== self.location.origin) return;
+
   if (url.pathname === "/data/firestore/manifest.json") {
     event.respondWith(
       fetch(request)
@@ -87,12 +92,17 @@ self.addEventListener("fetch", event => {
 
   if (request.mode === "navigate") {
     event.respondWith(
-      fetch(request).catch(() => caches.match("/index.html"))
+      fetch(request).catch(async () =>
+        (await caches.match("/index.html")) ||
+        new Response("Sin conexión", { status: 503, headers: { "Content-Type": "text/plain; charset=utf-8" } })
+      )
     );
     return;
   }
 
   event.respondWith(
-    caches.match(request).then(cached => cached || fetch(request))
+    caches.match(request).then(cached => cached || fetch(request).catch(() =>
+      new Response("Recurso no disponible", { status: 503, headers: { "Content-Type": "text/plain; charset=utf-8" } })
+    ))
   );
 });

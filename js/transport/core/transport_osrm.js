@@ -22,7 +22,9 @@ export async function getAccessRouteMetrics(fromLatLng, toLatLng, profile = "foo
       duration: Number(route.duration)
     };
   } catch (error) {
-    console.warn("No se pudo calcular la distancia vial de acceso:", error);
+    if (error?.name !== "AbortError") {
+      console.warn("No se pudo calcular la distancia vial de acceso:", error);
+    }
     return null;
   }
 }

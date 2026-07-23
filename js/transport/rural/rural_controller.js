@@ -1322,6 +1322,10 @@ async function _planAndShowBusStopsForPlace(userLoc, destPlace, ctx = {}, ui = {
   }
 
   let lineas = filterRuralLinesByDestinationParish(lineasAll, stopsCacheByLinea, destPlace);
+  const selectedLineCode = normStr(ctx?.selectedLineCode || "");
+  if (selectedLineCode) {
+    lineas = lineas.filter(linea => normStr(linea?.codigo) === selectedLineCode);
+  }
 
   if (!lineas.length) {
     if (ui?.infoEl && !ctx?.dryRun) {
@@ -1363,7 +1367,7 @@ async function _planAndShowBusStopsForPlace(userLoc, destPlace, ctx = {}, ui = {
   const candidatePool = new Map();
   const W_TIME = 12;
 
-  const reqSentido = normStr(ctx?.sentido || "auto");
+  const reqSentido = normStr(ctx?.selectedSentido || ctx?.sentido || "auto");
   const sentidosToTry = (reqSentido === "ida" || reqSentido === "vuelta") ? [reqSentido] : ["ida", "vuelta"];
 
   for (let level = 0; level < LEVELS_RURAL; level++) {
@@ -1533,9 +1537,8 @@ async function _planAndShowBusStopsForPlace(userLoc, destPlace, ctx = {}, ui = {
       }
     }
 
-    // Si solo apareció una alternativa fuera de horario, se siguen ampliando
-    // los límites para no ignorar una línea operativa un poco más distante.
-    if (best?.hasTurnsToday || (best && !requireOpNow)) break;
+    if (selectedLineCode && best) break;
+    if (!selectedLineCode && candidatePool.size >= 4) break;
   }
 
   if (!best) {
@@ -1665,6 +1668,84 @@ async function _planAndShowBusStopsForPlace(userLoc, destPlace, ctx = {}, ui = {
   );
 
   if (!refinedCandidates.length) return null;
+
+  const ruralAlternatives = refinedCandidates.slice(0, 4);
+  if (!selectedLineCode && ruralAlternatives.length > 0 && ui?.infoEl) {
+    ui.infoEl.innerHTML = `
+      <div class="tm-route-options">
+        <div class="tm-route-options__heading">
+          <b>Opciones de bus rural</b>
+          <span>Selecciona una línea para mostrar su recorrido.</span>
+        </div>
+        ${ruralAlternatives.map((candidate, index) => `
+          <article class="tm-route-option">
+            <div class="tm-route-option__top">
+              <span class="tm-route-option__rank">${index + 1}</span>
+              <div>
+                <b>${candidate.linea.codigo} - ${candidate.linea.nombre || ""}</b>
+                <small>${candidate.operatingNow ? "Operativa ahora" : "Fuera de servicio ahora"}</small>
+              </div>
+            </div>
+            <div class="tm-route-option__metrics">
+              <span>Subida: ${Math.round(candidate.boardDist)} m</span>
+              <span>Destino: ${candidate.useAuto ? "Auto" : `${Math.round(candidate.walkToDest)} m`}</span>
+              <span>${candidate.nextDeparture?.time ? `Salida: ${candidate.nextDeparture.time}` : "Sin más salidas hoy"}</span>
+            </div>
+            <button type="button" class="btn btn-primary tm-route-option__button" data-rural-option="${index}">
+              <i class="bi bi-map" aria-hidden="true"></i> Ver ruta
+            </button>
+          </article>
+        `).join("")}
+      </div>
+    `;
+    translateNode(ui.infoEl);
+    window.dispatchEvent(new CustomEvent("moronabus:bus-route-options"));
+    ui.infoEl.querySelectorAll("[data-rural-option]").forEach(button => {
+      button.addEventListener("click", async () => {
+        const candidate = ruralAlternatives[Number(button.dataset.ruralOption)];
+        if (!candidate) return;
+        const optionsPanel = button.closest(".tm-route-options");
+        button.disabled = true;
+        button.innerHTML = `<span class="spinner-border spinner-border-sm" aria-hidden="true"></span> Cargando ruta`;
+        await planAndShowBusStopsForPlace(
+          userLoc,
+          destPlace,
+          {
+            ...ctx,
+            selectedLineCode: candidate.linea.codigo,
+            selectedSentido: candidate.sentidoLower,
+            keepOptionsVisible: true,
+            dryRun: false,
+            preserveLayers: false
+          },
+          ui
+        );
+        if (optionsPanel && ui?.infoEl) {
+          optionsPanel.querySelectorAll(".tm-route-option").forEach(card => card.classList.remove("is-selected"));
+          optionsPanel.querySelectorAll("[data-rural-option]").forEach(optionButton => {
+            optionButton.disabled = false;
+            optionButton.innerHTML = `<i class="bi bi-map" aria-hidden="true"></i> Ver ruta`;
+          });
+          button.closest(".tm-route-option")?.classList.add("is-selected");
+          optionsPanel.classList.add("has-selection");
+          ui.infoEl.prepend(optionsPanel);
+          translateNode(optionsPanel);
+        }
+      });
+    });
+    const first = ruralAlternatives[0];
+    return {
+      tipo: "rural",
+      linea: first.linea,
+      sentido: titleCase(normStr(first.sentido)),
+      useAuto: first.useAuto,
+      metrics: { walk1: first.boardDist, walk2: first.walkToDest, stopsCount: Math.max(0, first.toIdx - first.fromIdx) },
+      score: first.score,
+      alternatives: ruralAlternatives.map(candidate => candidate.linea),
+      selectionPending: true
+    };
+  }
+
   best = refinedCandidates[0];
 
   setCurrentLinea(best.linea);
@@ -1730,7 +1811,7 @@ async function _planAndShowBusStopsForPlace(userLoc, destPlace, ctx = {}, ui = {
 
   if (ui?.infoEl) {
     ui.infoEl.innerHTML = `
-      <div class="tm-route-card">
+      <div class="tm-route-card tm-route-card--active">
         <div class="tm-route-card__header">
           <span class="tm-route-card__icon"><i class="bi bi-bus-front-fill" aria-hidden="true"></i></span>
           <div>
@@ -1768,13 +1849,37 @@ async function _planAndShowBusStopsForPlace(userLoc, destPlace, ctx = {}, ui = {
           </div>
         </div>
       </div>
+      ${selectedLineCode && !ctx?.keepOptionsVisible
+        ? `<button type="button" class="btn btn-outline-primary w-100 mt-2" data-back-to-rural-options>
+             <i class="bi bi-arrow-left" aria-hidden="true"></i> Ver otras opciones
+           </button>`
+        : ""}
       ${(!best.useAuto && exagerated)
         ? `<div class="alert alert-warning py-2 mt-2 mb-0">⚠️ Se encontró ruta pero requiere caminata grande.</div>`
         : ""}
     `;
   }
 
-  if (ui?.infoEl) translateNode(ui.infoEl);
+  if (ui?.infoEl) {
+    translateNode(ui.infoEl);
+    window.dispatchEvent(new CustomEvent("moronabus:bus-route-selected", {
+      detail: { place: destPlace, tipo: "rural", linea: best.linea }
+    }));
+    const backButton = ui.infoEl.querySelector("[data-back-to-rural-options]");
+    backButton?.addEventListener("click", async () => {
+      const {
+        selectedLineCode: _selectedLineCode,
+        selectedSentido: _selectedSentido,
+        ...optionsCtx
+      } = ctx;
+      await planAndShowBusStopsForPlace(
+        userLoc,
+        destPlace,
+        { ...optionsCtx, dryRun: false, preserveLayers: false },
+        ui
+      );
+    });
+  }
 
   map.fitBounds(L.latLngBounds([userLoc, destLoc, best.boardLL, best.alightLL]).pad(0.2));
   return { tipo: "rural", linea: best.linea, sentido: titleCase(normStr(best.sentido)), useAuto: best.useAuto, score: best.score };

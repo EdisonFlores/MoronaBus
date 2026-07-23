@@ -128,7 +128,7 @@ function normalizeErrorMessage(json, status) {
 /**
  * Gestiona api get dentro del flujo principal del modulo.
  */
-export async function apiGet(path, params = {}, { timeoutMs = 12000 } = {}) {
+export async function apiGet(path, params = {}, { timeoutMs = 12000, suppressServiceNotice = false } = {}) {
   const endpoint = String(path || "").trim().replace(/^\/+/, "").replace(/^api\//, "");
   const url = `${API_BASE}/api/${endpoint}${buildQuery(params)}`;
 
@@ -165,9 +165,11 @@ export async function apiGet(path, params = {}, { timeoutMs = 12000 } = {}) {
     return json?.data ?? json;
   } catch (error) {
     if (!navigator.onLine) throw error;
-    showServiceNotice({
-      autoHideMs: error?.name === "AbortError" ? 14000 : 12000
-    });
+    if (!suppressServiceNotice) {
+      showServiceNotice({
+        autoHideMs: error?.name === "AbortError" ? 14000 : 12000
+      });
+    }
     throw error;
   } finally {
     clearTimeout(timer);
@@ -224,5 +226,5 @@ export async function fetchOsrmRoute({
     params.annotations = String(annotations);
   }
 
-  return apiGet("osrm-route", params, { timeoutMs });
+  return apiGet("osrm-route", params, { timeoutMs, suppressServiceNotice: true });
 }
