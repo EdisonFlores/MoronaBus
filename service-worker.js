@@ -1,15 +1,17 @@
-const CACHE_NAME = "moronabus-shell-v64";
+const CACHE_NAME = "moronabus-shell-v66";
 
 const STATIC_ASSETS = [
   "/",
   "/index.html",
   "/css/styles.css",
   "/js/script.js",
+  "/js/map/map.js",
   "/js/services/api.js",
   "/js/services/geoportal.js",
   "/data/geoportal/barrios.geojson",
   "/data/geoportal/parroquias.geojson",
   "/js/app/i18n.js",
+  "/js/app/category_picker.js",
   "/js/app/service_status.js",
   "/js/app/tutorial.js",
   "/js/app/voice_assistant.js",

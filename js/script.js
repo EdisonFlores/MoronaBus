@@ -11,6 +11,7 @@ import {
   barriosOverlay,
   parroquiasOverlay,
   renderMarkers,
+  selectRenderedMarker,
   clearMarkers,
   clearRoute,
   clearTerritorialLayer,
@@ -46,6 +47,7 @@ import { getTerritorialLayer, territorialFeatureToPlace } from "./services/geopo
 import { initWeatherPopup } from "./app/weather_popup.js";
 import { initVoiceReader } from "./app/voice_assistant.js";
 import { initInteractiveTutorial } from "./app/tutorial.js";
+import { initCategoryPicker } from "./app/category_picker.js";
 
 import {
   getProvinciasFS,
@@ -91,11 +93,13 @@ let forceVirtualMoronaNext = false;
 const category = document.getElementById("category");
 const extra = document.getElementById("extra-controls");
 const bannerWrap = document.getElementById("loc-banner-wrap");
+const categoryPicker = initCategoryPicker(category);
 // 🔹 Ocultar aviso cuando el usuario interactúa con el select
 if (category) {
   category.addEventListener("focus", hideDetectedFacadeOnCategoryChange);
   category.addEventListener("click", hideDetectedFacadeOnCategoryChange);
 }
+document.getElementById("categoryPicker")?.addEventListener("category-picker-open", hideDetectedFacadeOnCategoryChange);
 /* ================= HEADER INIT ================= */
 applyThemeUI();
 applyLanguageUI();
@@ -397,6 +401,16 @@ function showTripStartForDropdownSelection(place, source = "list") {
  * Gestiona rebuild selected route dentro del flujo principal del modulo.
  */
 function rebuildSelectedRoute({ showTripButton = false } = {}) {
+  const selectedPlace = activePlace || tripTracker.place;
+  const selectedLocation = selectedPlace?.ubicacion || selectedPlace?.["ubicaci\u00f3n"];
+  if (selectedPlace && selectedLocation) {
+    if (!selectedPlace.ubicacion) selectedPlace.ubicacion = selectedLocation;
+    tripTracker.place = selectedPlace;
+    tripTracker.modeSelected = true;
+    tripTracker.completed = false;
+    selectRenderedMarker(selectedPlace);
+  }
+
   const p = manual.buildRoute();
   if (showTripButton || tripTracker.place) setTimeout(() => renderTripButton(), 80);
   Promise.resolve(p)
@@ -1411,14 +1425,15 @@ function renderEventMarkers(list, onSelect) {
 
 /* ================= EVENTO CATEGORÍA ================= */
 category.onchange = async () => {
+  if (!category.value) {
+    clearFullMapAndPanel();
+    if (bannerWrap) bannerWrap.innerHTML = "";
+    return;
+  }
+
   resetMap();
   dataList.length = 0;
   territorialSelectionState = null;
-
-  if (!category.value) {
-    showDetectedFacade();
-    return;
-  }
 
   hideDetectedFacadeOnCategoryChange();
 
@@ -2391,6 +2406,7 @@ function clearFullMapAndPanel() {
   if (infoBox) infoBox.innerHTML = "";
 
   if (category) category.value = "";
+  categoryPicker.sync();
 
   showDetectedFacade();
   refreshLayersOverlays();
