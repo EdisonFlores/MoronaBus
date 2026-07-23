@@ -286,11 +286,14 @@ main.container-fluid > .row > section {
 }
 
 .tm-category-picker__panel {
-  position: absolute;
-  top: calc(100% + 6px);
-  left: 0;
-  width: min(420px, calc(100vw - 32px));
-  max-height: min(68vh, 590px);
+  position: fixed;
+  z-index: 1300;
+  top: var(--picker-panel-top, auto);
+  right: auto;
+  bottom: var(--picker-panel-bottom, auto);
+  left: var(--picker-panel-left, 12px);
+  width: var(--picker-panel-width, min(420px, calc(100vw - 24px)));
+  max-height: min(var(--picker-panel-max-height, 68dvh), 590px);
   overflow-y: auto;
   padding: 10px;
   border: 1px solid var(--control-border);
@@ -300,6 +303,14 @@ main.container-fluid > .row > section {
   box-shadow: 0 18px 45px var(--shadow);
   overscroll-behavior: contain;
   scrollbar-gutter: stable;
+}
+
+.tm-category-picker__panel[data-placement="above"] {
+  transform-origin: bottom center;
+}
+
+.tm-category-picker__backdrop {
+  display: none;
 }
 
 .tm-category-picker__search-wrap {
@@ -320,6 +331,8 @@ main.container-fluid > .row > section {
 }
 
 .tm-category-picker__search {
+  flex: 1 1 auto;
+  min-width: 0;
   width: 100%;
   min-height: 40px;
   border: 0;
@@ -413,14 +426,36 @@ main.container-fluid > .row > section {
 }
 
 @media (max-width: 767.98px) {
+  .tm-category-picker__backdrop {
+    position: fixed;
+    z-index: 1290;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    border: 0;
+    background: rgba(0,0,0,0.48);
+  }
+
+  .tm-category-picker__backdrop[hidden] {
+    display: none;
+  }
+
   .tm-category-picker__panel {
     position: fixed;
-    inset: auto 8px 8px;
+    z-index: 1300;
+    inset: auto 8px max(8px, env(safe-area-inset-bottom));
     width: auto;
-    max-height: min(76vh, 640px);
+    max-height: min(62dvh, 520px);
     border-radius: 16px;
     padding-bottom: max(12px, env(safe-area-inset-bottom));
     box-shadow: 0 -12px 45px rgba(0,0,0,0.38);
+    scrollbar-gutter: auto;
+  }
+
+  .tm-category-picker__search-wrap {
+    padding: 6px;
   }
 
   .tm-category-group__toggle,
