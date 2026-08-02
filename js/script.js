@@ -685,6 +685,8 @@ function withMarkerEmoji(list, emoji) {
 
 const territorialVisualCache = new Map();
 let territorialSelectionState = null;
+let activeTerritorialOverlay = "";
+let territorialOverlayRequestId = 0;
 
 async function loadTerritorialVisualData(type) {
   if (territorialVisualCache.has(type)) return territorialVisualCache.get(type);
@@ -696,6 +698,8 @@ async function loadTerritorialVisualData(type) {
 async function showVisualTerritorialOverlay(type) {
   const targetOverlay = type === "parroquias" ? parroquiasOverlay : barriosOverlay;
   const otherOverlay = type === "parroquias" ? barriosOverlay : parroquiasOverlay;
+  const requestId = ++territorialOverlayRequestId;
+  activeTerritorialOverlay = type;
 
   try {
     otherOverlay.clearLayers();
@@ -703,6 +707,8 @@ async function showVisualTerritorialOverlay(type) {
   } catch {}
 
   const data = await loadTerritorialVisualData(type);
+  if (requestId !== territorialOverlayRequestId || activeTerritorialOverlay !== type) return;
+
   try { targetOverlay.addTo(map); } catch {}
   renderTerritorialLayer(data.geojson, {
     type,
@@ -715,8 +721,107 @@ async function showVisualTerritorialOverlay(type) {
   setTimeout(() => layersUI?.syncOverlayStates?.(), 0);
 }
 
+async function showAllRegisteredPlacesOverlay() {
+  const lugares = await getCollectionCache("lugares");
+  if (!map.hasLayer(markersLayer)) return;
+
+  const allPlaces = (Array.isArray(lugares) ? lugares : [])
+    .filter(place => {
+      if (place?.activo === false) return false;
+      const location = place?.ubicacion || place?.["ubicación"];
+      const lat = location?.latitude ?? location?.lat;
+      const lng = location?.longitude ?? location?.lng;
+      return Number.isFinite(lat) && Number.isFinite(lng);
+    })
+    .sort((a, b) => String(a?.nombre || "").localeCompare(String(b?.nombre || "")));
+
+  const placesWithCategoryEmoji = allPlaces.map(place => ({
+    ...place,
+    markerEmoji:
+      place?.markerEmoji ||
+      getCategoryOptionEmoji(place?.subcategoria) ||
+      "📍"
+  }));
+
+  const selectFromOverview = async place => {
+    try {
+      await selectRegisteredPlaceFromMapLayer(place);
+    } catch (error) {
+      console.error("No se pudo seleccionar el lugar desde la capa:", error);
+    } finally {
+      // El flujo normal de la lista filtra los marcadores por categoría.
+      // Si Lugares sigue activo, se restaura el conjunto completo y solo se
+      // destaca el documento elegido.
+      if (map.hasLayer(markersLayer)) {
+        renderMarkers(placesWithCategoryEmoji, selectFromOverview);
+        selectRenderedMarker(place);
+      }
+    }
+  };
+
+  renderMarkers(placesWithCategoryEmoji, selectFromOverview);
+
+  try { markersLayer.addTo(map); } catch {}
+  setTimeout(() => layersUI?.syncOverlayStates?.(), 0);
+}
+
+function isSameRegisteredPlace(a, b) {
+  if (!a || !b) return false;
+  if (a?.id && b?.id) return String(a.id) === String(b.id);
+
+  const aLocation = a?.ubicacion || a?.["ubicación"];
+  const bLocation = b?.ubicacion || b?.["ubicación"];
+  const aLat = aLocation?.latitude ?? aLocation?.lat;
+  const aLng = aLocation?.longitude ?? aLocation?.lng;
+  const bLat = bLocation?.latitude ?? bLocation?.lat;
+  const bLng = bLocation?.longitude ?? bLocation?.lng;
+
+  return String(a?.nombre || "") === String(b?.nombre || "")
+    && Number(aLat) === Number(bLat)
+    && Number(aLng) === Number(bLng);
+}
+
+async function selectRegisteredPlaceFromMapLayer(place) {
+  const subcategory = String(place?.subcategoria || "").trim();
+  const categoryOption = Array.from(category?.options || []).find(option => (
+    option.value && normLite(option.value) === normLite(subcategory)
+  ));
+
+  if (categoryOption) {
+    category.value = categoryOption.value;
+    categoryPicker?.sync?.();
+    await category.onchange?.();
+
+    if (categoryOption.value === "Alimentacion" && place?.tipocomida) {
+      const foodType = document.getElementById("sel-tipo-comida");
+      if (foodType) {
+        foodType.value = String(place.tipocomida);
+        await foodType.onchange?.();
+      }
+    }
+
+    const selectedIndex = dataList.findIndex(item => isSameRegisteredPlace(item, place));
+    const placesSelect = document.getElementById("lugares");
+    if (selectedIndex >= 0 && placesSelect) {
+      placesSelect.value = String(selectedIndex);
+      await placesSelect.onchange?.();
+      selectRenderedMarker(dataList[selectedIndex]);
+      return;
+    }
+  }
+
+  // Respaldo para documentos cuya subcategoría todavía no exista en el selector.
+  stopTripTracking(true);
+  clearRoutingArtifacts();
+  activePlace = place;
+  setActivePlaceAction(place);
+  hideDetectedFacadeOnPlaceSelection();
+  showTripStartForDropdownSelection(place, "map-layer");
+  rebuildSelectedRoute({ showTripButton: true });
+}
+
 function initTerritorialOverlayEvents() {
-  map.on("overlayadd", event => {
+  map.on("baselayerchange", event => {
     const name = String(event?.name || "");
     if (name === "Barrios") {
       showVisualTerritorialOverlay("barrios").catch(error => {
@@ -726,6 +831,15 @@ function initTerritorialOverlayEvents() {
     if (name === "Parroquias") {
       showVisualTerritorialOverlay("parroquias").catch(error => {
         console.error("No se pudo mostrar Parroquias:", error);
+      });
+    }
+  });
+
+  map.on("overlayadd", event => {
+    const name = String(event?.name || "");
+    if (name === "📌 Lugares") {
+      showAllRegisteredPlacesOverlay().catch(error => {
+        console.error("No se pudieron mostrar todos los lugares:", error);
       });
     }
   });

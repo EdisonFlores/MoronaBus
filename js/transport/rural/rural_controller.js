@@ -1587,7 +1587,7 @@ async function _planAndShowBusStopsForPlace(userLoc, destPlace, ctx = {}, ui = {
 
   let refinedCandidates = (await Promise.all(shortlist.map(async candidate => {
     const roadGeometry = await buildLineRouteFollowingStreets(candidate.coords);
-    if (!roadGeometry?.coords?.length || roadGeometry.usedFallback) return null;
+    if (!roadGeometry?.coords?.length) return null;
 
     const boardProjection = findCandidatePointsOnPath(
       candidate.usesRouteBoardPoint ? userLoc : candidate.boardLL,
@@ -1627,7 +1627,7 @@ async function _planAndShowBusStopsForPlace(userLoc, destPlace, ctx = {}, ui = {
       tramoCoords,
       straightToDest,
       beyondLastStop,
-      routeUsedFallback: false
+      routeUsedFallback: Boolean(roadGeometry.usedFallback)
     };
   }))).filter(Boolean);
 
@@ -1652,7 +1652,10 @@ async function _planAndShowBusStopsForPlace(userLoc, destPlace, ctx = {}, ui = {
       walkToDest,
       passesNearBoarding: boardDist <= WALK_AFTER_ALIGHT_M,
       passesNearDestination: walkToDest <= WALK_AFTER_ALIGHT_M,
-      useAuto: candidate.beyondLastStop || walkToDest > WALK_AFTER_ALIGHT_M
+      useAuto: candidate.beyondLastStop || walkToDest > WALK_AFTER_ALIGHT_M,
+      usesApproximateGeometry: Boolean(
+        candidate.routeUsedFallback || !hasNetworkDistance || !hasBoardingNetworkDistance
+      )
     };
   }));
 
@@ -1669,7 +1672,73 @@ async function _planAndShowBusStopsForPlace(userLoc, destPlace, ctx = {}, ui = {
 
   if (!refinedCandidates.length) return null;
 
-  const ruralAlternatives = refinedCandidates.slice(0, 4);
+  // La distancia vial no sirve solo para ordenar: también determina si una
+  // línea es una alternativa coherente. Si alguna pasa realmente cerca del
+  // destino, se excluyen las que obligarían a recorrer un tramo final lejano.
+  // El modo bus + auto queda como respaldo únicamente cuando ninguna pasa
+  // cerca, conservando solo opciones comparables con la mejor disponible.
+  const networkValidated = refinedCandidates.some(candidate => candidate.accessRouteAvailable)
+    ? refinedCandidates.filter(candidate => candidate.accessRouteAvailable)
+    : refinedCandidates;
+  if (!networkValidated.length) {
+    if (ui?.infoEl) {
+      ui.infoEl.innerHTML = `
+        <div class="alert alert-warning py-2 mb-2">
+          ⚠️ No se pudo validar por carretera la cercanía de las líneas rurales al destino. Intenta nuevamente.
+        </div>
+      `;
+    }
+    return null;
+  }
+  const orderedByDestination = [...networkValidated].sort((a, b) =>
+    a.walkToDest - b.walkToDest || a.score - b.score
+  );
+  const closestDistance = Number(orderedByDestination[0]?.walkToDest);
+  const relativeTolerance = Number.isFinite(closestDistance)
+    ? Math.max(750, closestDistance * 0.35)
+    : 0;
+  const configuredLimit = Number(destPlace?.bus_max_dest_meters);
+  const absoluteLimit = Number.isFinite(configuredLimit) && configuredLimit > 0
+    ? configuredLimit
+    : RURAL_DEST_STEPS[RURAL_DEST_STEPS.length - 1];
+  let coherentCandidates = Number.isFinite(closestDistance)
+    ? orderedByDestination.filter(candidate =>
+        candidate.walkToDest <= absoluteLimit &&
+        candidate.walkToDest <= closestDistance + relativeTolerance
+      )
+    : [];
+
+  // Una línea se presenta una sola vez. Si sus sentidos producen dos planes,
+  // se conserva el que tenga mejor cercanía vial y puntuación.
+  const coherentByLine = new Map();
+  coherentCandidates.forEach(candidate => {
+    const key = normStr(candidate.linea?.codigo || candidate.linea?.id);
+    const stored = coherentByLine.get(key);
+    if (!stored ||
+      candidate.walkToDest < stored.walkToDest - 10 ||
+      (Math.abs(candidate.walkToDest - stored.walkToDest) <= 10 && candidate.score < stored.score)) {
+      coherentByLine.set(key, candidate);
+    }
+  });
+  coherentCandidates = [...coherentByLine.values()].sort((a, b) =>
+    Number(b.hasTurnsToday) - Number(a.hasTurnsToday) ||
+    Number(b.operatingNow) - Number(a.operatingNow) ||
+    a.walkToDest - b.walkToDest ||
+    a.boardDist - b.boardDist ||
+    a.score - b.score
+  );
+
+  const ruralAlternatives = coherentCandidates.slice(0, 4);
+  if (!ruralAlternatives.length) {
+    if (ui?.infoEl) {
+      ui.infoEl.innerHTML = `
+        <div class="alert alert-warning py-2 mb-2">
+          ❌ No se encontró una línea rural que pase suficientemente cerca del destino por carretera.
+        </div>
+      `;
+    }
+    return null;
+  }
   if (!selectedLineCode && ruralAlternatives.length > 0 && ui?.infoEl) {
     ui.infoEl.innerHTML = `
       <div class="tm-route-options">
@@ -1691,6 +1760,11 @@ async function _planAndShowBusStopsForPlace(userLoc, destPlace, ctx = {}, ui = {
               <span>Destino: ${candidate.useAuto ? "Auto" : `${Math.round(candidate.walkToDest)} m`}</span>
               <span>${candidate.nextDeparture?.time ? `Salida: ${candidate.nextDeparture.time}` : "Sin más salidas hoy"}</span>
             </div>
+            ${candidate.usesApproximateGeometry ? `
+              <div class="alert alert-warning py-2 mb-0 tm-route-option__warning">
+                ⚠️ Trazado aproximado: OSRM no respondió; se usarán líneas rectas referenciales.
+              </div>
+            ` : ""}
             <button type="button" class="btn btn-primary tm-route-option__button" data-rural-option="${index}">
               <i class="bi bi-map" aria-hidden="true"></i> Ver ruta
             </button>
@@ -1746,7 +1820,7 @@ async function _planAndShowBusStopsForPlace(userLoc, destPlace, ctx = {}, ui = {
     };
   }
 
-  best = refinedCandidates[0];
+  best = ruralAlternatives[0];
 
   setCurrentLinea(best.linea);
   setCurrentParadas(best.paradas);
@@ -1791,12 +1865,19 @@ async function _planAndShowBusStopsForPlace(userLoc, destPlace, ctx = {}, ui = {
 
   await drawDashedAccessRoute(userLoc, best.boardLL, "#666");
 
-  L.polyline(best.tramoCoords, {
+  const busRouteLine = L.polyline(best.tramoCoords, {
     color: best.routeUsedFallback ? "#ff9800" : (best.linea?.color || "#000"),
     weight: 4,
     opacity: best.routeUsedFallback ? 0.8 : 0.9,
     dashArray: best.routeUsedFallback ? "8,10" : null
   }).addTo(routesGroup);
+  if (best.routeUsedFallback) {
+    busRouteLine.bindPopup(`
+      <b>Ruta aproximada</b><br>
+      OSRM no respondió o tardó demasiado.<br>
+      Las paradas se conectaron mediante líneas rectas referenciales.
+    `);
+  }
 
   if (best.useAuto) {
     await drawDriveOSRMIntoLayer(routesGroup, best.alightLL, destLoc, "#0d6efd");
@@ -1856,6 +1937,11 @@ async function _planAndShowBusStopsForPlace(userLoc, destPlace, ctx = {}, ui = {
         : ""}
       ${(!best.useAuto && exagerated)
         ? `<div class="alert alert-warning py-2 mt-2 mb-0">⚠️ Se encontró ruta pero requiere caminata grande.</div>`
+        : ""}
+      ${best.usesApproximateGeometry
+        ? `<div class="alert alert-warning py-2 mt-2 mb-0">
+             ⚠️ <b>Ruta aproximada:</b> OSRM no respondió o tardó demasiado. Por eso el recorrido se dibuja con líneas rectas entre los puntos registrados y las distancias son referenciales.
+           </div>`
         : ""}
     `;
   }
