@@ -54,18 +54,53 @@ let renderedPlaceMarkers = [];
 let transportLines = [];
 
 /* ================= POPUP HELPERS ================= */
+function escapePopupText(value) {
+  return String(value ?? "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
 function buildPopupHTML(p) {
-  if (!p) return `<b>Lugar</b>`;
+  if (!p) return `<div class="tm-place-popup"><b>Lugar</b></div>`;
   if (p.popupHTML && String(p.popupHTML).trim()) return String(p.popupHTML);
 
-  const nombre = p.nombre || "Lugar";
-  const tel = p.telefono || "N/D";
-  const horario = p.horario || "N/D";
+  const nombre = escapePopupText(p.nombre || "Lugar");
+  const ciudad = escapePopupText(p.ciudad || p.canton || "");
+  const categoria = escapePopupText(p.subcategoria || "");
+  const tel = escapePopupText(p.telefono || "No disponible");
+  const horario = escapePopupText(p.horario || "No disponible");
+  const telMissing = !String(p.telefono || "").trim();
+  const horarioMissing = !String(p.horario || "").trim();
+  const emoji = escapePopupText(markerEmoji(p));
 
   return `
-    <b>${nombre}</b><br>
-    📞 ${tel}<br>
-    🕒 ${horario}
+    <article class="tm-place-popup">
+      <header class="tm-place-popup__header">
+        <span class="tm-place-popup__emoji" aria-hidden="true">${emoji}</span>
+        <span class="tm-place-popup__heading">
+          <strong>${nombre}</strong>
+          ${categoria ? `<small>${categoria}</small>` : ""}
+        </span>
+      </header>
+      <div class="tm-place-popup__details">
+        ${ciudad ? `
+          <div class="tm-place-popup__row">
+            <span class="tm-place-popup__icon" aria-hidden="true">📍</span>
+            <span><small>Ciudad</small><b>${ciudad}</b></span>
+          </div>` : ""}
+        <div class="tm-place-popup__row${telMissing ? " is-missing" : ""}">
+          <span class="tm-place-popup__icon" aria-hidden="true">📞</span>
+          <span><small>Teléfono</small><b>${tel}</b></span>
+        </div>
+        <div class="tm-place-popup__row${horarioMissing ? " is-missing" : ""}">
+          <span class="tm-place-popup__icon" aria-hidden="true">🕒</span>
+          <span><small>Horario</small><b>${horario}</b></span>
+        </div>
+      </div>
+    </article>
   `;
 }
 /**
@@ -204,7 +239,11 @@ export function renderMarkers(list, onSelect) {
 
     const marker = L.marker([lat, lng], { icon: emojiMarkerIcon(markerEmoji(p)) })
       .addTo(markersLayer)
-      .bindPopup(buildPopupHTML(p))
+      .bindPopup(buildPopupHTML(p), {
+        className: "tm-place-popup-shell",
+        minWidth: 210,
+        maxWidth: 280
+      })
       .on("click", () => {
         selectRenderedMarker(p);
         onSelect(p);
@@ -341,7 +380,11 @@ export async function drawRoute(userLoc, place, mode, infoBox) {
       zIndexOffset: 1200
     })
       .addTo(routeOverlay)
-      .bindPopup(buildPopupHTML(place))
+      .bindPopup(buildPopupHTML(place), {
+        className: "tm-place-popup-shell",
+        minWidth: 210,
+        maxWidth: 280
+      })
       .openPopup();
   }
 

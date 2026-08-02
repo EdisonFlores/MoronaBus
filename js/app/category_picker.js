@@ -139,12 +139,14 @@ export function initCategoryPicker(select) {
 
   const openPanel = () => {
     if (select.disabled) return;
+    panel.scrollTop = 0;
     panel.hidden = false;
     backdrop.hidden = false;
     positionPanel();
     trigger.setAttribute("aria-expanded", "true");
     picker.classList.add("is-open");
     picker.dispatchEvent(new CustomEvent("category-picker-open", { bubbles: true }));
+    requestAnimationFrame(() => { panel.scrollTop = 0; });
     if (window.matchMedia("(min-width: 768px)").matches) {
       requestAnimationFrame(() => search.focus());
     }

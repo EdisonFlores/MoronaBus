@@ -8,75 +8,79 @@ export function initLayersUI({
 } = {}) {
   if (!map) return null;
 
-  const TERRITORIAL_NAMES = ["Barrios", "Parroquias"];
-  const territorialNameSet = new Set(TERRITORIAL_NAMES);
   let currentOverlays = { ...overlays };
 
-  const lc = L.control.layers(baseLayers, currentOverlays, { collapsed: true }).addTo(map);
-
-  function normalizeLabelText(value) {
-    return String(value || "")
+  function isPlacesLayerName(name) {
+    const clean = String(name || "")
       .replace(/[^\p{L}\p{N}\s]/gu, "")
       .trim()
       .toLowerCase();
+    return clean === "lugares" || clean === "places";
   }
 
-  function territorialNameFromLabel(label) {
-    const clean = normalizeLabelText(label?.textContent);
-    if (clean === "barrios" || clean === "neighborhoods") return "Barrios";
-    if (clean === "parroquias" || clean === "parishes") return "Parroquias";
-    return "";
-  }
-
-  function getLayerByName(name) {
-    return currentOverlays[name] || null;
-  }
-
-  function enforceTerritorialExclusivity(selectedName) {
-    TERRITORIAL_NAMES.forEach(name => {
-      if (name === selectedName) return;
-      const layer = getLayerByName(name);
-      if (layer && map.hasLayer(layer)) map.removeLayer(layer);
+  function splitContentLayers(entries = currentOverlays) {
+    const territorial = {};
+    const independent = {};
+    Object.entries(entries).forEach(([name, layer]) => {
+      if (isPlacesLayerName(name)) independent[name] = layer;
+      else territorial[name] = layer;
     });
+    return { territorial, independent };
   }
 
-  function decorateTerritorialSelectors() {
-    const form = lc?._form;
-    if (!form) return;
+  const initialContent = splitContentLayers();
 
-    const labels = form.querySelectorAll("label");
-    labels.forEach(label => {
-      const territorialName = territorialNameFromLabel(label);
-      if (!territorialName) return;
+  // Leaflet usa radios nativos para las capas base y casillas para overlays.
+  // Se crean dos controles nativos independientes para conservar dos grupos:
+  // mapa base (OSM/TopoMap) y contenido (Lugares/Barrios/Parroquias).
+  const baseControl = L.control.layers(baseLayers, {}, {
+    collapsed: true,
+    position: "topright"
+  }).addTo(map);
 
-      const input = label.querySelector("input.leaflet-control-layers-selector");
-      if (!input) return;
+  const contentControl = L.control.layers(initialContent.territorial, initialContent.independent, {
+    collapsed: true,
+    position: "topright"
+  }).addTo(map);
 
-      label.classList.add("tm-territorial-layer-option");
-      input.type = "radio";
-      input.name = "tm-territorial-overlay";
-      input.classList.add("tm-territorial-layer-radio");
-      input.classList.add("tm-territorial-layer-source");
-      input.checked = !!getLayerByName(territorialName) && map.hasLayer(getLayerByName(territorialName));
+  function addControlTitle(control, title, ariaLabel) {
+    const container = control?.getContainer?.();
+    const form = control?._form;
+    if (!container || !form) return;
 
-      if (!input.nextElementSibling?.classList?.contains("tm-territorial-layer-visual")) {
-        const visual = document.createElement("span");
-        visual.className = "tm-territorial-layer-visual";
-        visual.setAttribute("aria-hidden", "true");
-        input.insertAdjacentElement("afterend", visual);
+    container.setAttribute("aria-label", ariaLabel || title);
+    if (form.querySelector(".tm-layers-control-title")) return;
+
+    const heading = document.createElement("div");
+    heading.className = "tm-layers-control-title";
+    heading.textContent = title;
+    form.insertBefore(heading, form.firstChild);
+  }
+
+  addControlTitle(baseControl, "Mapas", "Seleccionar mapa base");
+  addControlTitle(contentControl, "Capas de información", "Seleccionar información visible en el mapa");
+
+  function territorialLayers() {
+    return Object.entries(currentOverlays)
+      .filter(([name]) => !isPlacesLayerName(name))
+      .map(([, layer]) => layer);
+  }
+
+  function enforceTerritorialExclusivity(selectedLayer) {
+    territorialLayers().forEach(layer => {
+      if (layer !== selectedLayer && map.hasLayer(layer)) {
+        map.removeLayer(layer);
       }
-
-      if (input.dataset.tmTerritorialBound === "1") return;
-      input.dataset.tmTerritorialBound = "1";
-      input.addEventListener("change", () => {
-        if (!input.checked) return;
-        enforceTerritorialExclusivity(territorialName);
-        setTimeout(syncOverlayStates, 0);
-      });
     });
   }
 
-  setTimeout(decorateTerritorialSelectors, 0);
+  // También protege las capas añadidas desde otros flujos de la aplicación,
+  // no solamente desde el control visual.
+  map.on("layeradd", event => {
+    if (!territorialLayers().includes(event?.layer)) return;
+    enforceTerritorialExclusivity(event.layer);
+    setTimeout(syncOverlayStates, 0);
+  });
 
   const MyLoc = L.Control.extend({
     options: { position: "topleft" },
@@ -86,77 +90,55 @@ export function initLayersUI({
       btn.innerHTML = "&#128205;";
       btn.title = "Mostrar mi ubicacion";
       L.DomEvent.disableClickPropagation(btn);
-      L.DomEvent.on(btn, "click", (e) => {
-        L.DomEvent.stop(e);
+      L.DomEvent.on(btn, "click", event => {
+        L.DomEvent.stop(event);
         if (typeof onMyLocation === "function") onMyLocation();
       });
       return btn;
     }
   });
 
-  const myLocCtrl = new MyLoc();
-  myLocCtrl.addTo(map);
+  new MyLoc().addTo(map);
 
   function updateOverlays(newOverlays = {}) {
-    Object.keys(currentOverlays).forEach(name => {
-      try { lc.removeLayer(currentOverlays[name]); } catch {}
+    Object.values(currentOverlays).forEach(layer => {
+      try { contentControl.removeLayer(layer); } catch {}
     });
 
     currentOverlays = { ...newOverlays };
 
-    Object.keys(currentOverlays).forEach(name => {
-      try { lc.addOverlay(currentOverlays[name], name); } catch {}
+    Object.entries(currentOverlays).forEach(([name, layer]) => {
+      try {
+        if (isPlacesLayerName(name)) contentControl.addOverlay(layer, name);
+        else contentControl.addBaseLayer(layer, name);
+      } catch {}
     });
 
-    setTimeout(() => {
-      decorateTerritorialSelectors();
-      syncOverlayStates();
-    }, 0);
+    syncOverlayStates();
+  }
+
+  function syncControlInputs(control) {
+    const inputs = control?._form?.querySelectorAll?.("input.leaflet-control-layers-selector") || [];
+    inputs.forEach(input => {
+      const entry = (control?._layers || [])
+        .find(item => String(item?.layer?._leaflet_id) === String(input.layerId));
+      if (entry?.layer) input.checked = map.hasLayer(entry.layer);
+    });
   }
 
   function syncOverlayStates() {
-    const inputs = lc?._form?.querySelectorAll?.("input.leaflet-control-layers-selector") || [];
-    inputs.forEach(input => {
-      const entry = (lc?._layers || []).find(item => String(item?.layer?._leaflet_id) === String(input.layerId));
-      if (!entry?.overlay) return;
-
-      const label = input.closest("label");
-      const territorialName = territorialNameFromLabel(label);
-      if (territorialName) {
-        label?.classList.add("tm-territorial-layer-option");
-        input.type = "radio";
-        input.name = "tm-territorial-overlay";
-        input.classList.add("tm-territorial-layer-radio", "tm-territorial-layer-source");
-        if (!input.nextElementSibling?.classList?.contains("tm-territorial-layer-visual")) {
-          const visual = document.createElement("span");
-          visual.className = "tm-territorial-layer-visual";
-          visual.setAttribute("aria-hidden", "true");
-          input.insertAdjacentElement("afterend", visual);
-        }
-      }
-
-      input.checked = map.hasLayer(entry.layer);
-    });
-
-    decorateTerritorialSelectors();
+    syncControlInputs(baseControl);
+    syncControlInputs(contentControl);
   }
 
-  map.on("overlayadd", event => {
-    const name = String(event?.name || "");
-    if (territorialNameSet.has(name)) enforceTerritorialExclusivity(name);
+  map.on("baselayerchange overlayadd overlayremove layerremove", () => {
     setTimeout(syncOverlayStates, 0);
   });
 
-  map.on("overlayremove", () => {
-    setTimeout(syncOverlayStates, 0);
-  });
-
-  const container = lc.getContainer?.();
-  if (container) {
-    L.DomEvent.on(container, "mouseover click", () => {
-      setTimeout(decorateTerritorialSelectors, 0);
-    });
-  }
-
-  return { layersControl: lc, updateOverlays, syncOverlayStates };
+  return {
+    layersControl: baseControl,
+    contentLayersControl: contentControl,
+    updateOverlays,
+    syncOverlayStates
+  };
 }

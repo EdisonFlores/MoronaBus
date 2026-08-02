@@ -49,6 +49,39 @@ function normLite(s) {
   return String(s || "").trim().toLowerCase();
 }
 
+function getCoverageOptions(stops = []) {
+  return [...new Set(
+    (Array.isArray(stops) ? stops : [])
+      .map(stop => normCobertura(stop?.cobertura))
+      .filter(coverage => coverage && coverage !== "Normal")
+  )].sort((a, b) => a.localeCompare(b));
+}
+
+function filterStopsByCoverage(stops = [], coverage = "") {
+  const selectedCoverage = normCobertura(coverage);
+  const source = Array.isArray(stops) ? stops : [];
+  if (!selectedCoverage || selectedCoverage === "Normal") return [...source];
+
+  const byOrder = new Map();
+  source.forEach(stop => {
+    const order = Number(stop?.orden);
+    if (!Number.isFinite(order)) return;
+    if (!byOrder.has(order)) byOrder.set(order, []);
+    byOrder.get(order).push(stop);
+  });
+
+  return [...byOrder.keys()]
+    .sort((a, b) => a - b)
+    .map(order => {
+      const group = byOrder.get(order) || [];
+      return group.find(stop => normCobertura(stop?.cobertura) === selectedCoverage)
+        || group.find(stop => normCobertura(stop?.cobertura) === "Normal")
+        || group.find(stop => !normCobertura(stop?.cobertura))
+        || null;
+    })
+    .filter(Boolean);
+}
+
 /**
  * Evalua si is sevilla morona canton para decidir el flujo de la interfaz.
  */
@@ -230,6 +263,7 @@ export async function cargarLineasTransporte(tipo, container, ctx = {}) {
 
   let currentLineaSel = null;
   let sentidosCache = [];
+  let coberturasCache = [];
   let currentSentido = "";
   let currentCobertura = "";
 
@@ -248,6 +282,8 @@ export async function cargarLineasTransporte(tipo, container, ctx = {}) {
       if (extraWrap) extraWrap.innerHTML = "";
 
       currentLineaSel = linea || null;
+      sentidosCache = [];
+      coberturasCache = [];
       currentSentido = "";
       currentCobertura = "";
 
@@ -255,19 +291,25 @@ export async function cargarLineasTransporte(tipo, container, ctx = {}) {
 
       showLineaModal(linea, new Date());
 
+      const paradas = await getParadasByLinea(linea.codigo, ctx);
+      coberturasCache = getCoverageOptions(paradas);
       const needsSentido = ["l3", "l4", "l5"].includes(normStr(linea.codigo));
-      if (!needsSentido) {
-        await mostrarRutaLinea(linea, {}, ctx);
-        return;
+
+      if (needsSentido) {
+        sentidosCache = [...new Set(
+          paradas.map(p => titleCase(normStr(p.sentido))).filter(Boolean)
+        )].filter(Boolean).sort();
       }
 
-      const paradas = await getParadasByLinea(linea.codigo, ctx);
-
-      sentidosCache = [...new Set(
-        paradas.map(p => titleCase(normStr(p.sentido))).filter(Boolean)
-      )].filter(Boolean).sort();
-
       if (!sentidosCache.length) {
+        if (coberturasCache.length) {
+          renderLineaExtraControls(container, {
+            sentidos: [],
+            showCobertura: true,
+            coberturas: coberturasCache,
+          });
+          return;
+        }
         await mostrarRutaLinea(linea, {}, ctx);
         return;
       }
@@ -281,8 +323,6 @@ export async function cargarLineasTransporte(tipo, container, ctx = {}) {
     }
 
     if (!currentLineaSel) return;
-
-    const isL5 = normStr(currentLineaSel.codigo) === "l5";
 
     if (target.id === "select-sentido") {
       const sentidoSel = titleCase(normStr(target.value));
@@ -300,7 +340,7 @@ export async function cargarLineasTransporte(tipo, container, ctx = {}) {
         return;
       }
 
-      if (!isL5) {
+      if (!coberturasCache.length) {
         await mostrarRutaLinea(currentLineaSel, { sentido: currentSentido }, ctx);
         return;
       }
@@ -308,7 +348,7 @@ export async function cargarLineasTransporte(tipo, container, ctx = {}) {
       renderLineaExtraControls(container, {
         sentidos: sentidosCache,
         showCobertura: true,
-        coberturas: ["Interna", "Externa"],
+        coberturas: coberturasCache,
       });
 
       const selSentido2 = container.querySelector("#select-sentido");
@@ -321,14 +361,12 @@ export async function cargarLineasTransporte(tipo, container, ctx = {}) {
     }
 
     if (target.id === "select-cobertura") {
-      if (!isL5) return;
-
       const covSel = normCobertura(target.value);
 
       clearTransportLayers();
       currentCobertura = covSel;
 
-      if (!currentSentido || !currentCobertura) return;
+      if (!currentCobertura || (sentidosCache.length && !currentSentido)) return;
 
       await mostrarRutaLinea(currentLineaSel, {
         sentido: currentSentido,
@@ -357,29 +395,7 @@ export async function mostrarRutaLinea(linea, opts = {}, ctx = {}) {
     paradas = paradas.filter(p => titleCase(normStr(p.sentido)) === sentidoSel);
   }
 
-  const isL5 = normStr(linea.codigo) === "l5";
-  if (isL5 && coberturaSel) {
-    const byOrder = new Map();
-    paradas.forEach(p => {
-      const o = Number(p.orden);
-      if (!Number.isFinite(o)) return;
-      if (!byOrder.has(o)) byOrder.set(o, []);
-      byOrder.get(o).push(p);
-    });
-
-    const ordenes = [...byOrder.keys()].sort((a, b) => a - b);
-    const finalParadas = [];
-
-    for (const o of ordenes) {
-      const group = byOrder.get(o) || [];
-      const pickCob = group.find(p => normCobertura(p.cobertura) === coberturaSel);
-      const pickNorm = group.find(p => normCobertura(p.cobertura) === "Normal");
-      const chosen = pickCob || pickNorm || group[0];
-      if (chosen) finalParadas.push(chosen);
-    }
-
-    paradas = finalParadas;
-  }
+  if (coberturaSel) paradas = filterStopsByCoverage(paradas, coberturaSel);
 
   if (!paradas.length) return;
 
@@ -547,6 +563,7 @@ export async function planAndShowBusStopsForPlace(userLoc, destPlace, ctx = {}, 
   }
 
   const selectedLineCode = normStr(ctx?.selectedLineCode || "");
+  const selectedCoverage = normCobertura(ctx?.selectedCoverage || "");
   if (selectedLineCode) {
     lineasAll = lineasAll.filter(linea => normStr(linea?.codigo) === selectedLineCode);
   }
@@ -604,6 +621,7 @@ export async function planAndShowBusStopsForPlace(userLoc, destPlace, ctx = {}, 
   let best = null;
   let bestLinea = null;
   let bestParadas = null;
+  let bestCoverage = "";
   const urbanCandidateMap = new Map();
 
   for (let level = 0; level < LEVELS; level++) {
@@ -625,19 +643,30 @@ export async function planAndShowBusStopsForPlace(userLoc, destPlace, ctx = {}, 
       const paradasAll = await getParadasByLinea(linea.codigo, ctx);
       if (!paradasAll?.length) continue;
 
-      const origen = String(linea?.origen || "").toLowerCase();
-      const codigo = normStr(linea.codigo);
+      const availableCoverages = getCoverageOptions(paradasAll);
+      const coverageVariants = selectedCoverage
+        ? [selectedCoverage]
+        : (availableCoverages.length ? availableCoverages : [""]);
 
-      const isCirculacion = (origen === "circulacion" || codigo === "l1" || codigo === "l2");
-      const isCircularOneWay = isCirculacion;
+      for (const coverage of coverageVariants) {
+        const paradasForPlan = coverage
+          ? filterStopsByCoverage(paradasAll, coverage)
+          : [...paradasAll];
+        if (paradasForPlan.length < 2) continue;
 
-      const W = isCirculacion ? CIRC : BASE;
+        const origen = String(linea?.origen || "").toLowerCase();
+        const codigo = normStr(linea.codigo);
 
-      const plan = planLineBoardAlightByOrder({
+        const isCirculacion = (origen === "circulacion" || codigo === "l1" || codigo === "l2");
+        const isCircularOneWay = isCirculacion;
+
+        const W = isCirculacion ? CIRC : BASE;
+
+        const plan = planLineBoardAlightByOrder({
         userLoc,
         destLoc,
         destGeometry: destPlace?.usar_poligono_bus === true ? (destPlace?.geometry || null) : null,
-        stops: paradasAll,
+        stops: paradasForPlan,
         isCircularOneWay,
 
         kBoard: 35,
@@ -652,41 +681,48 @@ export async function planAndShowBusStopsForPlace(userLoc, destPlace, ctx = {}, 
         wStops: W.wStops
       });
 
-      if (!plan) continue;
+        if (!plan) continue;
 
-      if (isCirculacion) {
-        const total = paradasAll.length;
-        if (total >= 10) {
-          const ratio = plan.metrics.stopsCount / total;
-          if (ratio > MAX_LOOP_RATIO) continue;
+        if (isCirculacion) {
+          const total = paradasForPlan.length;
+          if (total >= 10) {
+            const ratio = plan.metrics.stopsCount / total;
+            if (ratio > MAX_LOOP_RATIO) continue;
+          }
         }
-      }
 
-      const score = plan.score;
+        const score = plan.score;
 
-      const candidateKey = normStr(linea?.codigo || linea?.id);
-      const storedCandidate = urbanCandidateMap.get(candidateKey);
-      if (!storedCandidate || score < storedCandidate.plan.score) {
-        urbanCandidateMap.set(candidateKey, { plan, linea, paradas: paradasAll });
-      }
+        const candidateKey = normStr(linea?.codigo || linea?.id);
+        const storedCandidate = urbanCandidateMap.get(candidateKey);
+        if (!storedCandidate || score < storedCandidate.plan.score) {
+          urbanCandidateMap.set(candidateKey, {
+            plan,
+            linea,
+            paradas: paradasForPlan,
+            coverage,
+            availableCoverages
+          });
+        }
 
-      const better =
-        score < levelBestScore ||
-        (levelBest && Math.abs(score - levelBestScore) < 80 &&
-          Math.max(plan.metrics.walk1, plan.metrics.walk2) < Math.max(levelBest.metrics.walk1, levelBest.metrics.walk2));
+        const better =
+          score < levelBestScore ||
+          (levelBest && Math.abs(score - levelBestScore) < 80 &&
+            Math.max(plan.metrics.walk1, plan.metrics.walk2) < Math.max(levelBest.metrics.walk1, levelBest.metrics.walk2));
 
-      const tieCirculationBetter =
-        levelBest &&
-        (String(levelBestLinea?.origen || "").toLowerCase() === "circulacion") &&
-        isCirculacion &&
-        Math.abs(score - levelBestScore) < 120 &&
-        plan.metrics.stopsCount < levelBest.metrics.stopsCount;
+        const tieCirculationBetter =
+          levelBest &&
+          (String(levelBestLinea?.origen || "").toLowerCase() === "circulacion") &&
+          isCirculacion &&
+          Math.abs(score - levelBestScore) < 120 &&
+          plan.metrics.stopsCount < levelBest.metrics.stopsCount;
 
-      if (better || tieCirculationBetter) {
-        levelBestScore = score;
-        levelBest = plan;
-        levelBestLinea = linea;
-        levelBestParadas = paradasAll;
+        if (better || tieCirculationBetter) {
+          levelBestScore = score;
+          levelBest = plan;
+          levelBestLinea = linea;
+          levelBestParadas = paradasForPlan;
+        }
       }
     }
 
@@ -700,6 +736,7 @@ export async function planAndShowBusStopsForPlace(userLoc, destPlace, ctx = {}, 
     best = urbanCandidates[0].plan;
     bestLinea = urbanCandidates[0].linea;
     bestParadas = urbanCandidates[0].paradas;
+    bestCoverage = urbanCandidates[0].coverage || "";
   }
 
   if (!best || !bestLinea || !bestParadas) {
@@ -727,7 +764,8 @@ export async function planAndShowBusStopsForPlace(userLoc, destPlace, ctx = {}, 
         walk2: best?.metrics?.walk2 || 0,
         stopsCount: best?.metrics?.stopsCount || 0
       },
-      score: Number.isFinite(best.score) ? best.score : best?.score
+      score: Number.isFinite(best.score) ? best.score : best?.score,
+      coverage: bestCoverage
     };
   }
 
@@ -752,7 +790,19 @@ export async function planAndShowBusStopsForPlace(userLoc, destPlace, ctx = {}, 
               <span>Destino: ${Math.round(candidate.plan.metrics.walk2)} m</span>
               <span>${candidate.plan.metrics.stopsCount} paradas</span>
             </div>
-            <button type="button" class="btn btn-primary tm-route-option__button" data-urban-option="${index}">
+            ${candidate.availableCoverages?.length ? `
+              <label class="tm-route-option__coverage">
+                <span>Cobertura</span>
+                <select class="form-select form-select-sm" data-urban-coverage="${index}">
+                  <option value="">Seleccione cobertura</option>
+                  ${candidate.availableCoverages.map(coverage => `
+                    <option value="${coverage}">${coverage}</option>
+                  `).join("")}
+                </select>
+              </label>
+            ` : ""}
+            <button type="button" class="btn btn-primary tm-route-option__button" data-urban-option="${index}"
+              ${candidate.availableCoverages?.length ? "disabled" : ""}>
               <i class="bi bi-map" aria-hidden="true"></i> Ver ruta
             </button>
           </article>
@@ -761,10 +811,22 @@ export async function planAndShowBusStopsForPlace(userLoc, destPlace, ctx = {}, 
     `;
     translateNode(ui.infoEl);
     window.dispatchEvent(new CustomEvent("moronabus:bus-route-options"));
+    ui.infoEl.querySelectorAll("[data-urban-coverage]").forEach(select => {
+      select.addEventListener("change", () => {
+        const optionButton = ui.infoEl.querySelector(`[data-urban-option="${select.dataset.urbanCoverage}"]`);
+        if (optionButton) optionButton.disabled = !normCobertura(select.value);
+      });
+    });
     ui.infoEl.querySelectorAll("[data-urban-option]").forEach(button => {
       button.addEventListener("click", async () => {
         const candidate = urbanCandidates[Number(button.dataset.urbanOption)];
         if (!candidate) return;
+        const coverageSelect = ui.infoEl.querySelector(`[data-urban-coverage="${button.dataset.urbanOption}"]`);
+        const coverage = normCobertura(coverageSelect?.value || "");
+        if (candidate.availableCoverages?.length && !coverage) {
+          coverageSelect?.focus();
+          return;
+        }
         const optionsPanel = button.closest(".tm-route-options");
         button.disabled = true;
         button.innerHTML = `<span class="spinner-border spinner-border-sm" aria-hidden="true"></span> Cargando ruta`;
@@ -774,6 +836,7 @@ export async function planAndShowBusStopsForPlace(userLoc, destPlace, ctx = {}, 
           {
             ...ctx,
             selectedLineCode: candidate.linea.codigo,
+            selectedCoverage: coverage,
             keepOptionsVisible: true,
             dryRun: false,
             preserveLayers: false
@@ -783,7 +846,10 @@ export async function planAndShowBusStopsForPlace(userLoc, destPlace, ctx = {}, 
         if (optionsPanel && ui?.infoEl) {
           optionsPanel.querySelectorAll(".tm-route-option").forEach(card => card.classList.remove("is-selected"));
           optionsPanel.querySelectorAll("[data-urban-option]").forEach(optionButton => {
-            optionButton.disabled = false;
+            const optionCoverage = optionsPanel.querySelector(
+              `[data-urban-coverage="${optionButton.dataset.urbanOption}"]`
+            );
+            optionButton.disabled = Boolean(optionCoverage && !normCobertura(optionCoverage.value));
             optionButton.innerHTML = `<i class="bi bi-map" aria-hidden="true"></i> Ver ruta`;
           });
           button.closest(".tm-route-option")?.classList.add("is-selected");
@@ -800,6 +866,7 @@ export async function planAndShowBusStopsForPlace(userLoc, destPlace, ctx = {}, 
       metrics: best.metrics,
       score: best.score,
       alternatives: urbanCandidates.map(candidate => candidate.linea),
+      coverage: "",
       selectionPending: true
     };
   }
@@ -912,6 +979,12 @@ export async function planAndShowBusStopsForPlace(userLoc, destPlace, ctx = {}, 
             <span>Sentido</span>
             <b>${best.direction}</b>
           </div>
+          ${bestCoverage ? `
+            <div class="tm-route-metric">
+              <span>Cobertura</span>
+              <b>${bestCoverage}</b>
+            </div>
+          ` : ""}
           <div class="tm-route-metric">
             <span>Camina a subir</span>
             <b>${walk1m} m</b>
@@ -943,7 +1016,11 @@ export async function planAndShowBusStopsForPlace(userLoc, destPlace, ctx = {}, 
     }));
     const backButton = ui.infoEl.querySelector("[data-back-to-urban-options]");
     backButton?.addEventListener("click", async () => {
-      const { selectedLineCode: _selectedLineCode, ...optionsCtx } = ctx;
+      const {
+        selectedLineCode: _selectedLineCode,
+        selectedCoverage: _selectedCoverage,
+        ...optionsCtx
+      } = ctx;
       await planAndShowBusStopsForPlace(
         userLoc,
         destPlace,
@@ -954,5 +1031,12 @@ export async function planAndShowBusStopsForPlace(userLoc, destPlace, ctx = {}, 
   }
 
   map.fitBounds(L.latLngBounds([userLoc, destLoc, boardLL, alightLL]).pad(0.2));
-  return { tipo: "urbano", linea: bestLinea, plan: best, metrics: best.metrics, score: best.score };
+  return {
+    tipo: "urbano",
+    linea: bestLinea,
+    plan: best,
+    metrics: best.metrics,
+    score: best.score,
+    coverage: bestCoverage
+  };
 }
